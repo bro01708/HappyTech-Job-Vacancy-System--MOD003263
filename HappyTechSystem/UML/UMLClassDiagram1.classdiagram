@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="747578e4-81c3-4a1b-a7a9-06b8f2e3536c" name="UMLClassDiagram1" linkedPackageId="9f016042-c2f3-493a-8aff-5c148e7b98f3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="747578e4-81c3-4a1b-a7a9-06b8f2e3536c" name="UMLClassDiagram1" linkedPackageId="9f016042-c2f3-493a-8aff-5c148e7b98f3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="23894083-1c2d-4832-b8f3-682d68050f9c">
       <elementDefinition Id="857f9459-6b93-4928-898c-45d1e8190858" />
@@ -13,20 +13,6 @@
 }</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="489172a1-f73d-41d5-b4bc-2f878249b24c">
-      <profileInstance Id="c6991cf0-be03-4374-8b5d-4443615892aa" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="b9fdd130-987b-4725-9541-31cd185f0320">
-      <profileInstance Id="e7fb6c9b-045e-43fa-851c-5557a51ad959" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="3aabe9f6-ab07-41b9-937c-22f993917f8e" name="Question" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -187,6 +173,12 @@
           <operation Id="04acd642-2ca7-41b2-9838-e58e1add443e" name="rankings" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="71d15c55-005d-4cff-b5d3-41b804b5128f" />
           </operation>
+          <operation Id="a418e6f4-1bac-45e3-be14-878a2f262c9b" name="CreateInterview" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cf28ac51-b342-4b1d-a6b3-92701e17a3df" />
+          </operation>
+          <operation Id="9d39e163-8b81-4a46-b465-c30aece5e292" name="FormatEmails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="587ad0bf-760e-4159-ad8d-a46e1c90b04d" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -214,6 +206,12 @@
             <elementDefinition Id="2b8c55e4-6776-4c68-9890-a50920841d5a" />
             <type_NamedElement>
               <referencedTypeMoniker Id="8539b749-4d36-4b37-b3cb-b1972385e0bc" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="a2c82e2e-74e7-493c-a534-b20b3f4f468e" name="email" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a7bd2527-d71a-454f-8425-8766b65521bb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c1983967-658a-4dcb-9949-5c5f04231edf" LastKnownName="email" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -244,8 +242,13 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="739197f5-5602-4ca3-9124-95a17c773c53" name="Response" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="739197f5-5602-4ca3-9124-95a17c773c53" name="Emailer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d" />
+        <ownedAttributesInternal>
+          <property Id="c9373d2d-9c25-43b7-a592-641034e084a2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9b6ff26b-59f8-4901-ba10-c2bd99ac7acf" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="4c52b3d6-9c5f-4db3-97b6-f8c5b3955d72" name="createEmail" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="78635893-2264-4d4d-b8cd-91e12000661d" />
@@ -256,8 +259,62 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="086bc485-6285-48a4-80fc-4b0ddc218f56" name="Feedback Template" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b3de3a17-c513-48ba-a2a1-a3309609e199" />
+        <ownedAttributesInternal>
+          <property Id="06a48a11-b1a0-4bf2-a5ab-8739359929c6" name="type" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64222787-5397-4296-9a90-7a44890feab7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="22a99524-8e08-4c89-b5d2-a3dd9013a181" name="header" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bd53c7e0-d03e-4db8-8229-ab08ea3b6deb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="4735bf56-2253-406e-9c24-61b10b1d453b" name="body" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4db1633b-1544-4a12-97db-07843936ac12" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0d6381a9-b324-4760-80be-56f04d775eb4" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3da95e79-dd1d-4fff-a813-7697b01148fd" name="Email" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b77adfea-231f-4102-8d12-6a491f90ed1c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c1983967-658a-4dcb-9949-5c5f04231edf" name="email" isAbstract="false" isLeaf="false" cachedFullName="email">
+        <elementDefinition Id="6bb792a7-7a7b-40c2-8016-d844c5ea5e56" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="9f016042-c2f3-493a-8aff-5c148e7b98f3" name="UML">
     <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="489172a1-f73d-41d5-b4bc-2f878249b24c">
+        <profileInstance Id="c6991cf0-be03-4374-8b5d-4443615892aa" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b9fdd130-987b-4725-9541-31cd185f0320">
+        <profileInstance Id="e7fb6c9b-045e-43fa-851c-5557a51ad959" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
