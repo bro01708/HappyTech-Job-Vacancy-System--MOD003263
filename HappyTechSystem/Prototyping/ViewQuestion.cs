@@ -15,6 +15,12 @@ namespace Prototyping
         private questionBank qb = questionBank.getInst();
         private int id;
         private string tag, text;
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public ViewQuestion()
         {
             InitializeComponent();
