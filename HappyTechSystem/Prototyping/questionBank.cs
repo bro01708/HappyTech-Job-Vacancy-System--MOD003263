@@ -41,7 +41,8 @@ namespace Prototyping
 
         public void LoadForm()
         {
-            qlCount = questionList.Count() + 1;
+            qlCount = questionList.Count;
+            qlCount = qlCount + 1;
             qcf = new QuestionCreatorForm(qlCount);
             qcf.Show();
         }

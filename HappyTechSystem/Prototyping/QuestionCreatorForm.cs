@@ -27,7 +27,7 @@ namespace Prototyping
         {
             q = new Question(pID, tb_Tag.Text, tb_QText.Text);
             qb.addToList(q);
-            MessageBox.Show("Question Added! Closing...");
+            //MessageBox.Show("Question Added! Closing...");
             this.Close();
         }
     }

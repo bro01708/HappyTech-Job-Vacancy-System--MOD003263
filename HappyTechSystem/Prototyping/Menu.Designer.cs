@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 261);
+            this.ClientSize = new System.Drawing.Size(558, 261);
             this.Controls.Add(this.btn_view);
             this.Controls.Add(this.btn_Create);
             this.Name = "Menu";

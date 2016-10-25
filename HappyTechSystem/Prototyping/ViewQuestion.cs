@@ -13,13 +13,18 @@ namespace Prototyping
     public partial class ViewQuestion : Form
     {
         private questionBank qb = questionBank.getInst();
+        private int id;
+        private string tag, text;
         public ViewQuestion()
         {
             InitializeComponent();
 
             foreach (Question q in qb.getQ)
             {
-                lb_Q.Items.Add(q);
+                id = q.getID();
+                tag = q.getTag();
+                text = q.getText();
+                lb_Q.Items.Add("ID: " + id + ", Tag: " + tag + ", Text: " + text);
             }
         }
     }

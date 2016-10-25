@@ -23,5 +23,19 @@ namespace Prototyping
                 //Response R = new Response();
             }
         }
+
+        public int getID()
+        {
+            return ID;
+        }
+        public string getTag()
+        {
+            return tag;
+        }
+
+        public string getText()
+        {
+            return text;
+        }
     }
 }

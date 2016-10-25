@@ -34,9 +34,9 @@
             // lb_Q
             // 
             this.lb_Q.FormattingEnabled = true;
-            this.lb_Q.Location = new System.Drawing.Point(13, 13);
+            this.lb_Q.Location = new System.Drawing.Point(13, 64);
             this.lb_Q.Name = "lb_Q";
-            this.lb_Q.Size = new System.Drawing.Size(259, 238);
+            this.lb_Q.Size = new System.Drawing.Size(259, 173);
             this.lb_Q.TabIndex = 0;
             // 
             // ViewQuestion

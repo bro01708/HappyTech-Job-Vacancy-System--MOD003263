@@ -12,7 +12,7 @@ namespace Prototyping
 {
     public partial class Menu : Form
     {
-        private questionBank qb = new questionBank();
+        private questionBank qb = questionBank.getInst();
 
         public Menu()
         {
