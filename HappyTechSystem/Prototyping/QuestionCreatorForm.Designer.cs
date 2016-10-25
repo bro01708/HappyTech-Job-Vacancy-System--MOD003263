@@ -84,7 +84,6 @@
             // 
             this.tb_Tag.Location = new System.Drawing.Point(76, 110);
             this.tb_Tag.Name = "tb_Tag";
-            this.tb_Tag.ReadOnly = true;
             this.tb_Tag.Size = new System.Drawing.Size(100, 20);
             this.tb_Tag.TabIndex = 3;
             // 
@@ -93,7 +92,6 @@
             this.tb_QText.Location = new System.Drawing.Point(287, 56);
             this.tb_QText.Multiline = true;
             this.tb_QText.Name = "tb_QText";
-            this.tb_QText.ReadOnly = true;
             this.tb_QText.Size = new System.Drawing.Size(457, 74);
             this.tb_QText.TabIndex = 5;
             // 

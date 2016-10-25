@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prototyping
 {
-    class Question
+    public class Question
     {       
         private int ID;
         private string tag;

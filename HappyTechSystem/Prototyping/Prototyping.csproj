@@ -63,6 +63,12 @@
     <Compile Include="Question.cs" />
     <Compile Include="questionBank.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="ViewQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewQuestion.Designer.cs">
+      <DependentUpon>ViewQuestion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +84,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewQuestion.resx">
+      <DependentUpon>ViewQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

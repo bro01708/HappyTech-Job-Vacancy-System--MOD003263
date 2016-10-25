@@ -21,7 +21,13 @@ namespace Prototyping
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
-            qb.CreateQuestion();
+            qb.LoadForm();
+        }
+
+        private void btn_view_Click(object sender, EventArgs e)
+        {
+            ViewQuestion vq = new ViewQuestion();
+            vq.Show();
         }
     }
 }
