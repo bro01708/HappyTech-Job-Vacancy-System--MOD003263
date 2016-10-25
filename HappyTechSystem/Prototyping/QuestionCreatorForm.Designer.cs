@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 62);
+            this.label1.Location = new System.Drawing.Point(44, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // tb_ID
             // 
-            this.tb_ID.Location = new System.Drawing.Point(86, 59);
+            this.tb_ID.Location = new System.Drawing.Point(76, 59);
             this.tb_ID.Name = "tb_ID";
             this.tb_ID.ReadOnly = true;
             this.tb_ID.Size = new System.Drawing.Size(100, 20);
@@ -82,7 +82,7 @@
             // 
             // tb_Tag
             // 
-            this.tb_Tag.Location = new System.Drawing.Point(86, 110);
+            this.tb_Tag.Location = new System.Drawing.Point(76, 110);
             this.tb_Tag.Name = "tb_Tag";
             this.tb_Tag.ReadOnly = true;
             this.tb_Tag.Size = new System.Drawing.Size(100, 20);
@@ -257,6 +257,7 @@
             this.btn_CreateQuestion.TabIndex = 23;
             this.btn_CreateQuestion.Text = "Create Question";
             this.btn_CreateQuestion.UseVisualStyleBackColor = true;
+            this.btn_CreateQuestion.Click += new System.EventHandler(this.btn_CreateQuestion_Click);
             // 
             // QuestionCreatorForm
             // 

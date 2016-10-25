@@ -16,8 +16,7 @@ namespace Prototyping
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            questionBank QB = new questionBank();
-            QB.CreateQuestion();
+            Application.Run(new Menu());
         }
     }
 }
