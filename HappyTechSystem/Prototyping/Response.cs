@@ -12,7 +12,7 @@ namespace Prototyping
         byte rank;
         string feedbackText;
 
-        public Response(string m_criteria, byte m_rank, string m_feedbackText)
+        public Response(byte m_rank, string m_criteria,  string m_feedbackText)
         {
             critera = m_criteria;
             rank = m_rank;

@@ -25,10 +25,12 @@ namespace Prototyping
 
         private void btn_CreateQuestion_Click(object sender, EventArgs e)
         {
-            q = new Question(pID, cb_Tag.Text, tb_QText.Text);
+            TextBox[] textboxes = { tb_Criteria1, tb_feedback1, tb_Criteria2, tb_feedback2, tb_Criteria3, tb_feedback3, tb_Criteria4, tb_feedback4, tb_Criteria5, tb_feedback5 };
+            q = new Question(pID, cb_Tag.Text, tb_QText.Text, textboxes);
             qb.addToList(q);
             //MessageBox.Show("Question Added! Closing...");
-            this.Close();
+            this.Close();          
         }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Prototyping
 {
@@ -13,14 +14,15 @@ namespace Prototyping
         private string text;
         List<Response> responses = new List<Response>();
 
-        public Question(int m_ID, string m_tag, string m_text)
+        public Question(int m_ID, string m_tag, string m_text, TextBox[] m_textboxes)
         {
             ID = m_ID;
             tag = m_tag;
             text = m_text;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 9; i+=2)
             {
-                //Response R = new Response();
+                Response R = new Response(Convert.ToByte(i), m_textboxes[i].Text, m_textboxes[i + 1].Text);
+                responses.Add(R);
             }
         }
 
