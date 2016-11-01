@@ -114,8 +114,44 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="86f1f495-7e98-42d7-9a6f-2e66053ac1cc" name="op1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="86f1f495-7e98-42d7-9a6f-2e66053ac1cc" name="getText" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="00aee2c6-3f04-4cac-901f-eff034db3161" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3d17dc60-e369-48e1-9d08-9a45f4b1dfe3" direction="Return" isUnique="false">
+                  <elementDefinition Id="b595daf1-ed8b-4758-a701-928770dd113c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4726aa35-4294-474b-aaec-6a3ddadbf24c" name="getTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9c5e4427-dbdf-40bc-a5f0-bb260ebc14df" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6804d4fe-72f0-49c4-82c3-56a3b0484d2b" direction="Return" isUnique="false">
+                  <elementDefinition Id="143677f1-e630-45fb-b325-efead98f79d4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="abd6d2ee-8812-43a8-a95b-1ad20ac40bf5" name="getID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ea65c4db-d13b-484d-ab71-0fb4c716048e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="be4914fb-8d27-4a2a-8105-c07913155184" direction="Return" isUnique="false">
+                  <elementDefinition Id="1606619b-37b3-463b-8656-1f8595a59217" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a4221942-8ee5-4d64-935d-2f6ec5269aed" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -224,6 +260,9 @@
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
+          </operation>
+          <operation Id="86598d67-879a-42f5-9ae5-c7a503982714" name="getQuestionList : List&lt;Question&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c07a981c-6423-472d-be2f-aa633a374235" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -452,6 +491,16 @@
         <elementDefinition Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="218a1604-d465-4c39-9667-1ef9c0c993b6" name="Main Menu : Form" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08ccf977-e921-4fe2-b190-183faf241031" />
+        <ownedOperationsInternal>
+          <operation Id="a60f2b54-8ea8-4ccd-a1cb-16edf98d54f5" name="createQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2d67bea2-fcc5-44fe-9d93-6e642e8ab7d3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="9f016042-c2f3-493a-8aff-5c148e7b98f3" name="UML">
     <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />
