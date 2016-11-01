@@ -39,5 +39,10 @@ namespace Prototyping
         {
             return text;
         }
+         public override string ToString()
+        {
+            return ID.ToString();
+        }
+
     }
 }

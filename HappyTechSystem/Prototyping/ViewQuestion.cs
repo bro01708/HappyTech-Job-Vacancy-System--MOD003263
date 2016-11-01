@@ -20,6 +20,13 @@ namespace Prototyping
         {
             this.Close();
         }
+        private void lb_Q_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Question Question = (Question)lb_Q.SelectedItem;
+            tb_QText.Text = Question.getText();
+            tb_ID.Text = Question.getID().ToString();
+            
+        }
 
         public ViewQuestion()
         {
@@ -30,7 +37,7 @@ namespace Prototyping
                 id = q.getID();
                 tag = q.getTag();
                 text = q.getText();
-                lb_Q.Items.Add("ID: " + id + ", Tag: " + tag + ", Text: " + text);
+                lb_Q.Items.Add(q);
             }
         }
     }
