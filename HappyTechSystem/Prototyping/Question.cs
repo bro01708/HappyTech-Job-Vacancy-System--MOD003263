@@ -20,7 +20,7 @@ namespace Prototyping
             ID = m_ID;
             tag = m_tag;
             text = m_text;
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i <= 9; i++)
             {
                criteriaAndFeedback[i] = m_textboxes[i];
             }
