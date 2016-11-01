@@ -53,14 +53,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lb_Q
             // 
             this.lb_Q.FormattingEnabled = true;
-            this.lb_Q.Location = new System.Drawing.Point(12, 11);
+            this.lb_Q.Location = new System.Drawing.Point(12, 37);
             this.lb_Q.Name = "lb_Q";
-            this.lb_Q.Size = new System.Drawing.Size(259, 511);
+            this.lb_Q.Size = new System.Drawing.Size(259, 485);
             this.lb_Q.TabIndex = 0;
             this.lb_Q.SelectedIndexChanged += new System.EventHandler(this.lb_Q_SelectedIndexChanged);
             // 
@@ -278,11 +280,31 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Question ID";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Question ID";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(143, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Tag";
+            // 
             // ViewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 564);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_Tag);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -342,5 +364,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_ID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

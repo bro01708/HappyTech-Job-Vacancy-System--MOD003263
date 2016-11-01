@@ -12,17 +12,17 @@ namespace Prototyping
         private int ID;
         private string tag;
         private string text;
-        List<Response> responses = new List<Response>();
+        //even numbers will store criteria, and the consecutive odd number stores the feedback for email use.
+        private string[] criteriaAndFeedback = new string[10];
 
-        public Question(int m_ID, string m_tag, string m_text, TextBox[] m_textboxes)
+        public Question(int m_ID, string m_tag, string m_text, string[] m_textboxes)
         {
             ID = m_ID;
             tag = m_tag;
             text = m_text;
-            for (int i = 0; i < 9; i+=2)
+            for (int i = 0; i < 9; i++)
             {
-                Response R = new Response(Convert.ToByte(i), m_textboxes[i].Text, m_textboxes[i + 1].Text);
-                responses.Add(R);
+               criteriaAndFeedback[i] = m_textboxes[i];
             }
         }
 
@@ -41,7 +41,11 @@ namespace Prototyping
         }
          public override string ToString()
         {
-            return ID.ToString();
+            return ID.ToString() + "                                           " + tag;
+        }
+        public string GetCriteriaAndFeedback(int index)
+        {
+            return criteriaAndFeedback[index];
         }
 
     }
