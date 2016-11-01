@@ -94,12 +94,6 @@
               <referencedTypeMoniker Id="916abb22-e28a-4e36-a5c6-befe147e1ee2" LastKnownName="List&lt;Response&gt;" />
             </type_NamedElement>
           </property>
-          <property Id="6838be0f-71f7-4164-8bf9-30702e1aa3ba" name="score" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="eef319b9-37d2-4c9d-8ab5-40c41183be32" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="61cb6044-fb1f-4f50-bb78-7beb77f081d5" LastKnownName="byte" />
-            </type_NamedElement>
-          </property>
           <property Id="a7f0710f-a980-4741-8636-f82b52c5e2d1" name="questionTag" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="4697678d-d146-4aa0-b799-9e324f3de2f8" />
             <type_NamedElement>
@@ -194,6 +188,12 @@
               <referencedTypeMoniker Id="b50fcf3c-d821-4db3-aedc-e97b632941a6" LastKnownName="List&lt;Question&gt;" />
             </type_NamedElement>
           </property>
+          <property Id="5db2584d-2355-4822-bfcd-0326845f1f2a" name="qlCount" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70de4756-f520-4081-8236-fe513548c3bd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="14c12ad5-4880-4f08-8081-f4460b484a65" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="9563416d-9138-4e2f-b213-4a576567f02c" name="CreateQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -263,6 +263,48 @@
           </operation>
           <operation Id="86598d67-879a-42f5-9ae5-c7a503982714" name="getQuestionList : List&lt;Question&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c07a981c-6423-472d-be2f-aa633a374235" />
+          </operation>
+          <operation Id="c5ff9a0f-5111-47fb-a8ae-3ed09b1da0fc" name="UniqueInst" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="19ddaaf7-e39a-4555-8c23-e7d939bba8a7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ff954b8c-bb9e-4d7c-82de-346631918d9e" direction="Return" isUnique="false">
+                  <elementDefinition Id="948611cd-2f92-439a-9d9e-355e64bb5ec5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="897e2da8-fb01-47bf-a9d2-0c44271a06ab" LastKnownName="QuestionBank" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d271eab6-a116-4bf1-9dfc-9442e5f9a2ed" name="GetInst" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="261a620a-b107-4e27-ab61-a219a1f5d2f5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="27b075c1-d3f6-4a27-a469-d6c09e9c428d" direction="Return" isUnique="false">
+                  <elementDefinition Id="58172a0c-fe73-402b-916d-f7e8dbf4b3f2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="897e2da8-fb01-47bf-a9d2-0c44271a06ab" LastKnownName="QuestionBank" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="35f6d5c4-5626-4e88-a879-02ad5b342bcb" name="AddToList" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6f83f723-956b-4d41-bcb7-4996d73a0b40" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e790727e-3ed6-4761-ade3-4517c02a8ed7" direction="Return" isUnique="false">
+                  <elementDefinition Id="81b62640-c028-41c4-a579-393fed396e80" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bdef7a2a-fd26-4865-886e-233388b7dceb" name="+ LoadForm();void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8eda6075-ee92-4bcd-aa24-848386703cf7" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -501,6 +543,16 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="14c12ad5-4880-4f08-8081-f4460b484a65" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="897e2da8-fb01-47bf-a9d2-0c44271a06ab" name="QuestionBank" isAbstract="false" isLeaf="false" cachedFullName="UML::QuestionBank">
+        <elementDefinition Id="1cb1be04-4364-4cb5-9a85-dd6472095126" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="9f016042-c2f3-493a-8aff-5c148e7b98f3" name="UML">
     <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />

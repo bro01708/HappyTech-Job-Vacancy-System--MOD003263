@@ -198,25 +198,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="eef319b9-37d2-4c9d-8ab5-40c41183be32"
-            name="score"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="b5fc4611-6a2a-4cf5-9763-bf44f051f44f"
-                LastKnownName="byte"
-                LastKnownLocation="UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="4697678d-d146-4aa0-b799-9e324f3de2f8"
             name="questionTag"
             visibility="Private"
@@ -413,6 +394,25 @@
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="70de4756-f520-4081-8236-fe513548c3bd"
+            name="qlCount"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -538,6 +538,88 @@
           <operation
             Id="c07a981c-6423-472d-be2f-aa633a374235"
             name="getQuestionList : List&lt;Question&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="19ddaaf7-e39a-4555-8c23-e7d939bba8a7"
+            name="UniqueInst"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="948611cd-2f92-439a-9d9e-355e64bb5ec5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
+                      LastKnownName="QuestionBank"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="261a620a-b107-4e27-ab61-a219a1f5d2f5"
+            name="GetInst"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="58172a0c-fe73-402b-916d-f7e8dbf4b3f2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
+                      LastKnownName="QuestionBank"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6f83f723-956b-4d41-bcb7-4996d73a0b40"
+            name="AddToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="81b62640-c028-41c4-a579-393fed396e80"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2dbdfa24-49c9-4110-b6dd-7d3d82588449"
+                      LastKnownName="void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8eda6075-ee92-4bcd-aa24-848386703cf7"
+            name="+ LoadForm();void"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
