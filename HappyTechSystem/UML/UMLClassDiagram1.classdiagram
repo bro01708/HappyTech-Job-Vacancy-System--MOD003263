@@ -12,6 +12,12 @@
 	questionList.items.add(q)
 }</body>
     </comment>
+    <comment Id="9ecec56e-d213-4a20-b17a-020d8d9f2e09">
+      <elementDefinition Id="6f9dfba5-6806-4840-92fa-312bec31e358" />
+      <body>Email class may be already defined in .NET under system.net.mail.
+
+If so we will use this instead.</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
@@ -603,10 +609,10 @@
               <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="0b944544-b5b1-4c66-899e-38258ffd15a7" name="Greeting" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="0b944544-b5b1-4c66-899e-38258ffd15a7" name="greeting" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="aca59808-7ce3-4df0-bff6-9f68b38b6dfd" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="b5958468-7dff-473a-a7e0-d62790f9ffd4" LastKnownName="string" />
+              <referencedTypeMoniker Id="b9f93873-8780-4ddf-a383-f563c7ed4e02" LastKnownName="string" />
             </type_NamedElement>
           </property>
           <property Id="33290b20-6ee9-4df9-aaa9-3d9cbaff613d" name="signOff" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -615,13 +621,74 @@
               <referencedTypeMoniker Id="60bc7874-65dc-43db-aa54-979fe5a804d3" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="53564a54-abde-41c4-a215-fc2ec0627bc8" name="body3" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="ce441343-5581-437a-a41d-55e46d173451" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="0b2ce760-beeb-4879-8e3b-cc734d63a7d2" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="599cf4a9-2ff9-4f8c-94a5-67fda8dab5d4" name="GetBody" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3dc214a0-9fd7-419d-88ea-023a6d8df22a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="311b8a3d-7975-46a1-b152-354e595dc7a6" direction="Return" isUnique="false">
+                  <elementDefinition Id="035825a7-5b61-482a-a961-8aa0af51374d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="77a9a663-777d-4dea-bfc6-b3423d6ef068" LastKnownName="Void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9e057aba-a0aa-440a-bb8a-5448303c608b" name="GetGreeting" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="82fe6764-b96b-4b88-b9ad-7838a7404df2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d73fb25f-60d9-4416-a908-b4c23ead9fa3" direction="Return" isUnique="false">
+                  <elementDefinition Id="0379cea0-3fb8-413d-abfb-66c865a4a241" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="77a9a663-777d-4dea-bfc6-b3423d6ef068" LastKnownName="Void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2c8cb9fc-e976-451c-8b6d-3ab5781411ff" name="GetHeader" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dc4b753c-b67a-4b57-82c5-8f7d5b551bc2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="391c823d-daf5-4d8e-b0e3-4939269d2b9a" direction="Return" isUnique="false">
+                  <elementDefinition Id="4443567f-b0ba-4ab1-9142-11960319c15e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="77a9a663-777d-4dea-bfc6-b3423d6ef068" LastKnownName="Void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="49bebdd8-2f80-427b-a1d6-4c30a3dd6e67" name="GetSignOff" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="997df8f0-f104-4af2-965c-c78d47cdbec6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="05c55342-e2a4-4fb9-bca5-c430de54d1a2" direction="Return" isUnique="false">
+                  <elementDefinition Id="cf5dfd59-dc26-407b-81ad-a9baf183cbc7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8191e5d4-2146-4596-938a-2dacb5a809e9" name="GetType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5e2504b2-16c1-45bb-b24b-50e68dfbeec1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7688d5a3-7a21-4cc8-a194-ef6ce668dbf0" direction="Return" isUnique="false">
+                  <elementDefinition Id="1585c527-8b69-4e07-8e18-6f9e0b8dcd96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="77a9a663-777d-4dea-bfc6-b3423d6ef068" LastKnownName="Void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -704,16 +771,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0b2ce760-beeb-4879-8e3b-cc734d63a7d2" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="b5958468-7dff-473a-a7e0-d62790f9ffd4" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="60bc7874-65dc-43db-aa54-979fe5a804d3" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
         <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
       </referencedType>
@@ -721,6 +778,16 @@
     <packageHasNamedElement>
       <referencedType Id="15d1d939-41a9-4c81-adb9-e728c4f4ed87" name="list&lt;Email&gt;" isAbstract="false" isLeaf="false" cachedFullName="list&lt;Email&gt;">
         <elementDefinition Id="03e01a2d-d249-4bc0-ba1b-711671a8457e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="77a9a663-777d-4dea-bfc6-b3423d6ef068" name="Void" isAbstract="false" isLeaf="false" cachedFullName="Void">
+        <elementDefinition Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b9f93873-8780-4ddf-a383-f563c7ed4e02" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

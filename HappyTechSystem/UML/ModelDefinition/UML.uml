@@ -15,6 +15,12 @@
 	questionList.items.add(q)
 }</body>
     </comment>
+    <comment
+      Id="6f9dfba5-6806-4840-92fa-312bec31e358">
+      <body>Email class may be already defined in .NET under system.net.mail.
+
+If so we will use this instead.</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -1373,7 +1379,7 @@
           </property>
           <property
             Id="aca59808-7ce3-4df0-bff6-9f68b38b6dfd"
-            name="Greeting"
+            name="greeting"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1409,26 +1415,129 @@
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="ce441343-5581-437a-a41d-55e46d173451"
-            name="body3"
-            visibility="Private"
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3dc214a0-9fd7-419d-88ea-023a6d8df22a"
+            name="GetBody"
             isLeaf="false"
             isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
-                LastKnownName="string"
-                LastKnownLocation="UML.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="035825a7-5b61-482a-a961-8aa0af51374d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+                      LastKnownName="Void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="82fe6764-b96b-4b88-b9ad-7838a7404df2"
+            name="GetGreeting"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0379cea0-3fb8-413d-abfb-66c865a4a241"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+                      LastKnownName="Void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dc4b753c-b67a-4b57-82c5-8f7d5b551bc2"
+            name="GetHeader"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4443567f-b0ba-4ab1-9142-11960319c15e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+                      LastKnownName="Void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="997df8f0-f104-4af2-965c-c78d47cdbec6"
+            name="GetSignOff"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf5dfd59-dc26-407b-81ad-a9baf183cbc7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2dbdfa24-49c9-4110-b6dd-7d3d82588449"
+                      LastKnownName="void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5e2504b2-16c1-45bb-b24b-50e68dfbeec1"
+            name="GetType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1585c527-8b69-4e07-8e18-6f9e0b8dcd96"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+                      LastKnownName="Void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1621,6 +1730,11 @@
       <undefinedType
         Id="03e01a2d-d249-4bc0-ba1b-711671a8457e"
         name="list&lt;Email&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+        name="Void" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
