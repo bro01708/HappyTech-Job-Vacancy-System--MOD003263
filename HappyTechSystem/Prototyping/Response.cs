@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace Prototyping
 {
     class Response
     {
-        string critera;
-        byte rank;
         string feedbackText;
-
-        public Response(byte m_rank, string m_criteria,  string m_feedbackText)
+        public Response()
         {
-            critera = m_criteria;
-            rank = m_rank;
-            feedbackText = m_feedbackText;
+            
+            
         }
 
 
