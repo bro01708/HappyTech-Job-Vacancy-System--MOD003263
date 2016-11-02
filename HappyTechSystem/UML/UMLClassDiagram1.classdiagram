@@ -511,6 +511,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="6c5e7e07-7b9f-46cf-a3bc-44f79ffe9369" name="EmailTemplate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="747845ff-b5c5-486a-a9fc-b96f3cd7e082" name="Lower" value="3">
+                      <elementDefinition Id="1a95d652-6b32-4c03-acd3-4db7638e35b9" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d11dc2ef-09f4-44c2-94f8-237058861962" name="Upper" value="*">
+                      <elementDefinition Id="6f4bb1c1-591b-4a7e-bae5-790cbd4ced00" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="b47f440e-0b40-4ce2-98ff-c4c02e205106" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -527,6 +537,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="b06e9586-91eb-40a8-9493-b57239a9b650" name="Email" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="f52b705d-e6bf-4779-b9d5-9177a95443a0" name="Lower" value="∞">
+                      <elementDefinition Id="13cfbecc-6629-4f60-82d2-bf88a486fa8f" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f7228465-0d8a-491e-9b8b-296e3ecc1cbc" name="Upper" value="∞">
+                      <elementDefinition Id="370088bf-0269-44ee-a02d-443bcd8e0888" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="aa4f8566-b85e-4c3a-9e03-d38a1f34bd55" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -543,6 +563,9 @@
           </property>
           <property Id="77f222fc-c38c-406b-bd83-fe2b84633cda" name="hrManager" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="422ce01f-ee06-4a47-b11f-5fedf4705fff" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0d6381a9-b324-4760-80be-56f04d775eb4" LastKnownName="string" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
