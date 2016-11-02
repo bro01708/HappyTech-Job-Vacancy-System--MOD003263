@@ -62,7 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="questionBank.cs" />
-    <Compile Include="Response.cs" />
     <Compile Include="ViewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
