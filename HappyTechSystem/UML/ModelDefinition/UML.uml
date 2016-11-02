@@ -161,7 +161,7 @@
         <ownedAttributesInternal>
           <property
             Id="0955559f-61d7-470a-afb4-9212dfe6a928"
-            name="questionText"
+            name="text"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -180,7 +180,7 @@
           </property>
           <property
             Id="f0cfff50-3cf3-4a8f-b388-dd67d5963461"
-            name="responseList"
+            name="criteria[]"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -192,14 +192,14 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="6e567815-0116-447e-b2bd-74f6bef7ff8d"
-                LastKnownName="List&lt;Response&gt;"
+                Id="b63fad0b-eb21-4713-b032-c53c011d1e17"
+                LastKnownName="String[]"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="4697678d-d146-4aa0-b799-9e324f3de2f8"
-            name="questionTag"
+            name="tag"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -210,15 +210,15 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="e58fe60c-65ce-4925-9b2a-4eb3a0eac8f8"
-            name="questionID"
+            name="ID"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -235,11 +235,30 @@
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="bc64ed06-255b-4a5f-8e71-646925d06ef8"
+            name="feedback[]"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="66282984-9d72-499b-83a5-676db14e604f"
+                LastKnownName="string[]"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="00aee2c6-3f04-4cac-901f-eff034db3161"
-            name="getText"
+            name="GetText"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -263,7 +282,7 @@
           </operation>
           <operation
             Id="9c5e4427-dbdf-40bc-a5f0-bb260ebc14df"
-            name="getTag"
+            name="GetTag"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -287,7 +306,7 @@
           </operation>
           <operation
             Id="ea65c4db-d13b-484d-ab71-0fb4c716048e"
-            name="getID"
+            name="GetID"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -303,6 +322,78 @@
                     <undefinedTypeMoniker
                       Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
                       LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1fff9f5e-a4c2-4630-86a0-e4ee6611e518"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8397f856-301d-489c-9219-7f470d07b6ad"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="224e4be0-2aaf-4416-b0dc-c1607062a0a2"
+            name="GetCriteria"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="79a78736-6e63-4e5e-b78b-865298b1277b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0989944e-2c88-4213-8ce0-993d06a3f940"
+            name="GetFeedback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="29cc849e-1f3e-4a2a-bf5b-637bda3a22cf"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
                       LastKnownLocation="UML.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -571,7 +662,6 @@
           <operation
             Id="261a620a-b107-4e27-ab61-a219a1f5d2f5"
             name="GetInst"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -619,12 +709,22 @@
           </operation>
           <operation
             Id="8eda6075-ee92-4bcd-aa24-848386703cf7"
-            name="+ LoadForm();void"
+            name="LoadForm"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="81c4e71c-1e4e-4569-8332-3eedf0fa3442"
+                  name=");void("
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -709,6 +809,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="5919f2e3-21b6-47ed-b273-101b796fa71b"
+            isDerived="false"
+            sourceEndRoleName="Vacancy"
+            targetEndRoleName="EmailMgmt"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d"
+              LastKnownName="EmailFactory"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b4a653c0-3c2d-4fe0-81bd-51de5b5ca297"
+                  name="Vacancy"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd3ffd9f-43fd-4ed1-8f76-3de2e06d2c54"
+                  name="EmailMgmt"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -770,7 +909,7 @@
           </property>
           <property
             Id="c48e4d8f-214b-4207-af53-2cd4a155ee6d"
-            name="maxScore"
+            name="requiredScore"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -782,8 +921,8 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="b5fc4611-6a2a-4cf5-9763-bf44f051f44f"
-                LastKnownName="byte"
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
@@ -843,7 +982,7 @@
         <ownedAttributesInternal>
           <property
             Id="ee43815c-be2d-46d0-bafa-0575541fa3da"
-            name="applicantEmail"
+            name="applicantEmailAddress"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -854,15 +993,15 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="2b8c55e4-6776-4c68-9890-a50920841d5a"
-            name="applicantName"
+            name="applicantFirstName"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -873,15 +1012,15 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="a7bd2527-d71a-454f-8425-8766b65521bb"
-            name="responseList"
+            Id="00a35783-6df7-4e3e-94b2-e0321d504291"
+            name="applicantLastName"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -890,7 +1029,52 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="175161b7-038c-48ec-9f21-019e9f92c58f"
+            name="applicantTitle"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7bfcfbcd-1dcf-4598-be62-ebda53895918"
+            name="cv"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -936,13 +1120,113 @@
     <packageHasNamedElement>
       <class
         Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d"
-        name="Emailer"
+        name="EmailFactory"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4ac7f583-8238-414b-9059-a31a0e292a53"
+            isDerived="false"
+            sourceEndRoleName="EmailFactory"
+            targetEndRoleName="EmailTemplate"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b3de3a17-c513-48ba-a2a1-a3309609e199"
+              LastKnownName="EmailTemplate"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d7846d5e-8f59-4108-8283-b08d56ab219c"
+                  name="EmailFactory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b47f440e-0b40-4ce2-98ff-c4c02e205106"
+                  name="EmailTemplate"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2a225d06-a6a5-4435-ab4d-90f64bec644c"
+            isDerived="false"
+            sourceEndRoleName="EmailFactory"
+            targetEndRoleName="Email"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b77adfea-231f-4102-8d12-6a491f90ed1c"
+              LastKnownName="Email"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="21a659d5-2e0e-4d7c-8e0e-cd39d70acb89"
+                  name="EmailFactory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aa4f8566-b85e-4c3a-9e03-d38a1f34bd55"
+                  name="Email"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="9b6ff26b-59f8-4901-ba10-c2bd99ac7acf"
+            name="emailrecords"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="03e01a2d-d249-4bc0-ba1b-711671a8457e"
+                LastKnownName="list&lt;Email&gt;"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="422ce01f-ee06-4a47-b11f-5fedf4705fff"
+            name="hrManager"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -970,6 +1254,14 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="cf16c988-7c18-442b-b53a-2f6c5e8442f3"
+            name="previewEmail"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -984,7 +1276,7 @@
     <packageHasNamedElement>
       <class
         Id="b3de3a17-c513-48ba-a2a1-a3309609e199"
-        name="Feedback Template"
+        name="EmailTemplate"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -1046,6 +1338,63 @@
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="aca59808-7ce3-4df0-bff6-9f68b38b6dfd"
+            name="Greeting"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d50d0a23-3dee-45cc-8ee8-fb4fcd479a8d"
+            name="signOff"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ce441343-5581-437a-a41d-55e46d173451"
+            name="body3"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -1060,7 +1409,58 @@
         name="Email"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="b26c63d7-254b-48ab-800c-43ecae08a8c7"
+            name="content"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cf2c4314-9606-4891-98bb-be3fa82aba43"
+            name="adressee"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6500c892-52b9-4683-92e7-8ffe50f60f25"
+            name="subject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b8a8dec5-bf52-4245-86fc-97ee15bde836"
+            name="sentDate"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <undefinedType
@@ -1168,6 +1568,26 @@
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="66282984-9d72-499b-83a5-676db14e604f"
+        name="string[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b63fad0b-eb21-4713-b032-c53c011d1e17"
+        name="String[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8ce95e56-2d95-47a3-b145-20f968275d8a"
+        name="ttring" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="03e01a2d-d249-4bc0-ba1b-711671a8457e"
+        name="list&lt;Email&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
