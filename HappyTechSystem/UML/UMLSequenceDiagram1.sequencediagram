@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="6dfc1336-861c-4d12-8458-ec74bffacbbf" name="Sequence1" linkedPackageId="dc8fb5dc-cd59-4e34-be8d-f7bcca9f4180" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="18e42984-5381-4fb8-8c57-738f4d432dce">
+      <profileInstance Id="bac8633e-5bc6-4a1c-8074-75e769b2224b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2a91338b-f78f-42ba-bb74-53cddaf0de91">
+      <profileInstance Id="5d48e103-7794-4d25-bf96-1bfdf2a24c3a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="374de515-2219-4083-b9a8-1de62a13d01a" name="Sequence1" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="69339301-ad1e-405e-ad10-5d63562ffa51" />
+        <lifelines>
+          <lifeline Id="5306d13e-c48e-480b-a889-f10865712fef" name="QuestionBank" isActor="false" lifelineDisplayName="QuestionBank">
+            <elementDefinition Id="e13a9151-5594-4536-81a6-27724ce02b28" />
+            <represents>
+              <propertyMoniker Id="c56a99d1-bf12-4874-9c1c-f237eea19b66" />
+            </represents>
+          </lifeline>
+          <lifeline Id="a7b9f292-f1b2-4eaa-97cf-a8cbcf82c062" name="Vacancy" isActor="false" lifelineDisplayName="Vacancy">
+            <elementDefinition Id="7eba6d5e-e896-4224-8881-7218b4fb2283" />
+            <represents>
+              <propertyMoniker Id="95a32fe3-2f10-4c03-acb9-9fb3e3f7c3ee" />
+            </represents>
+          </lifeline>
+          <lifeline Id="2c300b9c-67de-4390-8acd-6f328e279f13" name="Interview" isActor="false" lifelineDisplayName="Interview">
+            <elementDefinition Id="c7772c84-94e9-4a41-b126-6e704c7319a0" />
+            <represents>
+              <propertyMoniker Id="0604c6a0-950d-4e25-85ba-feda0dce43ed" />
+            </represents>
+          </lifeline>
+        </lifelines>
+        <ownedAttributesInternal>
+          <property Id="95a32fe3-2f10-4c03-acb9-9fb3e3f7c3ee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="56b79ef0-c54f-4dee-b850-5f2eedbe4ff8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bd955650-e23a-43b1-98f2-19be5d423f55" LastKnownName="Vacancy" />
+            </type_NamedElement>
+          </property>
+          <property Id="0604c6a0-950d-4e25-85ba-feda0dce43ed" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7deded78-37be-4784-985f-c4f03b671c54" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c6fd4db1-329b-47b9-96db-7ae224b806f1" LastKnownName="Interview" />
+            </type_NamedElement>
+          </property>
+          <property Id="c56a99d1-bf12-4874-9c1c-f237eea19b66" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1d12d094-e54b-46fe-ba6c-f11753253860" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="415b7c6c-6989-4cec-847b-a3ed7692238a" LastKnownName="QuestionBank" />
+            </type_NamedElement>
+          </property>
+          <property Id="7a194280-c8f7-4864-a140-c81f790ddc90" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3038d9bc-2138-4c5f-8fde-64c230b51a86" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e041b3fb-4b28-4291-834d-37dfd53efbaf" LastKnownName="Question" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bd955650-e23a-43b1-98f2-19be5d423f55" name="Vacancy" isAbstract="false" isLeaf="false" cachedFullName="UML::Vacancy">
+        <elementDefinition Id="954cad59-1d79-4a0f-ad0e-8fdc24ddb486" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c6fd4db1-329b-47b9-96db-7ae224b806f1" name="Interview" isAbstract="false" isLeaf="false" cachedFullName="UML::Interview">
+        <elementDefinition Id="829ce18c-7e5a-4fb3-a537-16f9bc2c8982" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="415b7c6c-6989-4cec-847b-a3ed7692238a" name="QuestionBank" isAbstract="false" isLeaf="false" cachedFullName="UML::QuestionBank">
+        <elementDefinition Id="1cb1be04-4364-4cb5-9a85-dd6472095126" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e041b3fb-4b28-4291-834d-37dfd53efbaf" name="Question" isAbstract="false" isLeaf="false" cachedFullName="UML::Question">
+        <elementDefinition Id="8a3855d7-4a55-4dae-be87-03177d65fbd3" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="dc8fb5dc-cd59-4e34-be8d-f7bcca9f4180" name="UML">
+    <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />
+  </package>
+</SequenceDesignerModel>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a"
   name="UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1735,6 +1735,647 @@ If so we will use this instead.</body>
       <undefinedType
         Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
         name="Void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="69339301-ad1e-405e-ad10-5d63562ffa51"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <lifelines>
+          <lifeline
+            Id="e13a9151-5594-4536-81a6-27724ce02b28"
+            name="QuestionBank"
+            isActor="false"
+            lifelineDisplayName="QuestionBank">
+            <represents>
+              <propertyMoniker
+                Id="1d12d094-e54b-46fe-ba6c-f11753253860"
+                LastKnownLocation="UML.uml" />
+            </represents>
+          </lifeline>
+          <lifeline
+            Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
+            name="Vacancy"
+            isActor="false"
+            lifelineDisplayName="Vacancy">
+            <represents>
+              <propertyMoniker
+                Id="56b79ef0-c54f-4dee-b850-5f2eedbe4ff8"
+                LastKnownLocation="UML.uml" />
+            </represents>
+          </lifeline>
+          <lifeline
+            Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
+            name="Interview"
+            isActor="false"
+            lifelineDisplayName="Interview">
+            <represents>
+              <propertyMoniker
+                Id="7deded78-37be-4784-985f-c4f03b671c54"
+                LastKnownLocation="UML.uml" />
+            </represents>
+          </lifeline>
+        </lifelines>
+        <ownedAttributesInternal>
+          <property
+            Id="56b79ef0-c54f-4dee-b850-5f2eedbe4ff8"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="954cad59-1d79-4a0f-ad0e-8fdc24ddb486"
+                LastKnownName="Vacancy"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7deded78-37be-4784-985f-c4f03b671c54"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="829ce18c-7e5a-4fb3-a537-16f9bc2c8982"
+                LastKnownName="Interview"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1d12d094-e54b-46fe-ba6c-f11753253860"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
+                LastKnownName="QuestionBank"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3038d9bc-2138-4c5f-8fde-64c230b51a86"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="8a3855d7-4a55-4dae-be87-03177d65fbd3"
+                LastKnownName="Question"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5dff476d-c326-4432-a02a-03c21d3644ac"
+        name="HR Manager"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="7475cc95-f544-4f9f-9437-5173a1441f46"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Review"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3b19a4ac-7464-4d07-a99e-07763396dc7b"
+              LastKnownName="Review"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dc35a52d-7ee3-4457-a367-91eb2167b9ff"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="148f8def-bfb8-43ee-b864-50fb25d19dd4"
+                  name="Review"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7a487347-3a41-4741-9f14-430002526646"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Manage Question Bank"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="cdacf90c-c325-4b44-be5e-761a7926f846"
+              LastKnownName="Manage Question Bank"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="70fb0e55-1c75-4fb1-b249-2c41547c4010"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca27f703-5c5f-4087-b629-e42bf2f39444"
+                  name="Manage Question Bank"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0ad7337f-22fc-400b-ba43-0e55c3b20ea8"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Set Up Vacancy"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1ffc3484-e7e1-4057-bb76-71eea2996290"
+              LastKnownName="Set Up Vacancy"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eeb960a5-a21e-4be3-b4e2-86f478288e1b"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2d64f60f-e1fe-4d09-8a96-cb382e765267"
+                  name="Set Up Vacancy"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6fc63a90-71d1-461f-8647-ba9bd5ebb626"
+        name="Interviewer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8aa7fda7-ba97-4de0-bb91-254eaa5b5997"
+            isDerived="false"
+            sourceEndRoleName="Actor2"
+            targetEndRoleName="Conduct Interview"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7a69e212-7f60-41af-a082-e168f24604b0"
+              LastKnownName="Conduct Interview"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cdd04a60-169e-4678-ac0a-889f619c90a4"
+                  name="Actor2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="00889716-2fea-4aeb-8911-17917305b8e6"
+                  name="Conduct Interview"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8ff2cfd1-0354-4280-b94b-ca29d7f9615b"
+        name="Applicant"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="62a55201-1dfe-49b8-973c-f74ad4c3fc0a"
+            isDerived="false"
+            sourceEndRoleName="Actor3"
+            targetEndRoleName="Ask/Answer Questions"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5b852168-b4aa-4411-a11f-a5b977cc90e1"
+              LastKnownName="Ask/Answer Questions"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2b727f2-98ca-4790-b121-38faf3e1e4a2"
+                  name="Actor3"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="893acf4f-7cf9-4f11-8024-54b176b33a45"
+                  name="Ask/Answer Questions"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="73709da1-3fad-460c-9e31-1efbccd46e81"
+        name="Review"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="18feef99-4f33-4826-8023-aecc798df092"
+        name="View Rankings"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="2f3c7d62-a13b-4dc8-b3db-f0aa97ad10c5">
+            <useCaseMoniker
+              Id="e90d065f-c954-4c99-97e9-aba10d92eb49"
+              LastKnownName="Choose Vacancy"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3b19a4ac-7464-4d07-a99e-07763396dc7b"
+        name="Review"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ede8e969-7b25-4418-acae-1137f7168041">
+            <useCaseMoniker
+              Id="18feef99-4f33-4826-8023-aecc798df092"
+              LastKnownName="View Rankings"
+              LastKnownLocation="UML.uml" />
+          </extend>
+          <extend
+            Id="4ab09f3f-ff3f-492f-bd2f-3bcdf06cfb54">
+            <useCaseMoniker
+              Id="f4c86175-25d3-4eb8-9a99-9214c0163cd5"
+              LastKnownName="Email Feedback"
+              LastKnownLocation="UML.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7a69e212-7f60-41af-a082-e168f24604b0"
+        name="Conduct Interview"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="aa359acb-2a68-494d-abb1-d3cd2fa6da41">
+            <useCaseMoniker
+              Id="1ffc3484-e7e1-4057-bb76-71eea2996290"
+              LastKnownName="Set Up Vacancy"
+              LastKnownLocation="UML.uml" />
+          </include>
+          <include
+            Id="1e66b615-df98-47e1-9359-f0868473d125">
+            <useCaseMoniker
+              Id="e960cd9b-9da9-4b4c-b4ba-b930785e484c"
+              LastKnownName="Rank/Record Answer"
+              LastKnownLocation="UML.uml" />
+          </include>
+          <include
+            Id="aabdc3e8-fb28-44c6-9e97-e772142b39a3">
+            <useCaseMoniker
+              Id="1aa522aa-cf89-42ba-81a1-7a6edf5e0d55"
+              LastKnownName="Select Vacancy"
+              LastKnownLocation="UML.uml" />
+          </include>
+          <include
+            Id="5c647ed0-0eed-4ef7-b033-c97c5bb4c55c">
+            <useCaseMoniker
+              Id="b947b785-8dda-409c-bd55-a6d24b4de0bf"
+              LastKnownName="Set Up Applicant"
+              LastKnownLocation="UML.uml" />
+          </include>
+          <include
+            Id="855b92f9-0277-4cff-8059-3523410fa831">
+            <useCaseMoniker
+              Id="f50277d9-db64-438f-b483-2776cc372496"
+              LastKnownName="Take Extra Notes"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1ffc3484-e7e1-4057-bb76-71eea2996290"
+        name="Set Up Vacancy"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="6c46b785-8237-41f9-9d64-8949a2e6fa9b">
+            <useCaseMoniker
+              Id="ea8bc28d-457f-43f2-aa89-f05352aa95d2"
+              LastKnownName="Select Question From Bank"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cdacf90c-c325-4b44-be5e-761a7926f846"
+        name="Manage Question Bank"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="152984a5-9e24-498f-a00b-ad2369523c0e">
+            <useCaseMoniker
+              Id="a6b883a2-eb38-4bdf-8ec0-ff65b870cad1"
+              LastKnownName="Create Question"
+              LastKnownLocation="UML.uml" />
+          </extend>
+          <extend
+            Id="e809a223-7e15-419b-97d5-6f80716bd73c">
+            <useCaseMoniker
+              Id="6d99ed12-eed8-4cd3-bb48-818d4ba4730c"
+              LastKnownName="Edit Question "
+              LastKnownLocation="UML.uml" />
+          </extend>
+          <extend
+            Id="4e800144-e48f-476a-931a-190ab5c6ed37">
+            <useCaseMoniker
+              Id="d316e7c5-39e4-42ab-b0c1-8a4e04fe4c9a"
+              LastKnownName="Delete Question"
+              LastKnownLocation="UML.uml" />
+          </extend>
+          <extend
+            Id="c2d9d8fc-1c2d-43d0-aff5-6c57132a7a4e">
+            <useCaseMoniker
+              Id="3d182c11-9eac-4bb6-bb65-9725b0c854d4"
+              LastKnownName="Edit Category"
+              LastKnownLocation="UML.uml" />
+          </extend>
+          <extend
+            Id="a5e05017-7c0f-4011-ad1a-522d82b807dc">
+            <useCaseMoniker
+              Id="e6397c72-aaf5-4a2f-8baf-102f6d349034"
+              LastKnownName="Create Category"
+              LastKnownLocation="UML.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a0d5a0d8-f5c7-4e2c-b07f-fac103b1ffd2"
+        name="C"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f4c86175-25d3-4eb8-9a99-9214c0163cd5"
+        name="Email Feedback"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="3e9b7bd0-a357-478d-ba1a-44a80dcf19a5">
+            <useCaseMoniker
+              Id="3d1a1223-5b84-49d3-aff9-114c629e2083"
+              LastKnownName="Resolve Tied Ranking"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e90d065f-c954-4c99-97e9-aba10d92eb49"
+        name="Choose Vacancy"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3d1a1223-5b84-49d3-aff9-114c629e2083"
+        name="Resolve Tied Ranking"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="181e6646-0202-41ad-92b4-31fc18c658fd"
+        name="Manage "
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a6b883a2-eb38-4bdf-8ec0-ff65b870cad1"
+        name="Create Question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6d99ed12-eed8-4cd3-bb48-818d4ba4730c"
+        name="Edit Question "
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d316e7c5-39e4-42ab-b0c1-8a4e04fe4c9a"
+        name="Delete Question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e6397c72-aaf5-4a2f-8baf-102f6d349034"
+        name="Create Category"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3d182c11-9eac-4bb6-bb65-9725b0c854d4"
+        name="Edit Category"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e960cd9b-9da9-4b4c-b4ba-b930785e484c"
+        name="Rank/Record Answer"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="87ab6c75-0873-4104-b430-9a0e24d56ef7">
+            <useCaseMoniker
+              Id="5b852168-b4aa-4411-a11f-a5b977cc90e1"
+              LastKnownName="Ask/Answer Questions"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1aa522aa-cf89-42ba-81a1-7a6edf5e0d55"
+        name="Select Vacancy"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b947b785-8dda-409c-bd55-a6d24b4de0bf"
+        name="Set Up Applicant"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="803bcac6-27e5-44aa-90f4-054025710120">
+            <useCaseMoniker
+              Id="ded07daa-0ff7-4aef-805f-1c06e531716a"
+              LastKnownName="Attatch CV"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f50277d9-db64-438f-b483-2776cc372496"
+        name="Take Extra Notes"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5b852168-b4aa-4411-a11f-a5b977cc90e1"
+        name="Ask/Answer Questions"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ded07daa-0ff7-4aef-805f-1c06e531716a"
+        name="Attatch CV"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ea8bc28d-457f-43f2-aa89-f05352aa95d2"
+        name="Select Question From Bank"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

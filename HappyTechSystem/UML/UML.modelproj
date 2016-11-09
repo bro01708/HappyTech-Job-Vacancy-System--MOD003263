@@ -29,6 +29,20 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLClassDiagram1.classdiagram</DependentUpon>
     </Content>
+    <Content Include="UMLSequenceDiagram1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagram1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagram1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLUseCaseDiagram1.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLUseCaseDiagram1.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLUseCaseDiagram1.usecasediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\UML.uml">
       <SubType>Content</SubType>
