@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="68bf0979-e5f6-457d-a694-1c5887e5e212" name="UMLUseCaseDiagram1" linkedPackageId="b926e121-9473-44c7-9f16-0f5f3be31183" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="2b899f19-5299-41d0-b959-dfca3a55c2ee">
+      <profileInstance Id="f97473d5-d234-4423-8344-5e0153409553" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="04d67d09-5772-4686-b8da-71a0d067d015">
+      <profileInstance Id="c7fee29d-ac5a-4381-a80e-8debfdf731f7" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a3254ba9-122e-47f9-bcc0-f5651c0d5cf5" name="HR Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5dff476d-c326-4432-a02a-03c21d3644ac" />
+        <targetEnds>
+          <association Id="6a94d7f1-dc75-4761-bf00-ab27591b9eaf" isDerived="false" sourceEndRoleName="Actor1" targetEndRoleName="Review" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4f457448-d519-4500-8d95-7a14200390c2" LastKnownName="Review" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2077c150-9986-452f-b19f-59543eb8e432" name="Actor1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dc35a52d-7ee3-4457-a367-91eb2167b9ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8d39f16-7423-411e-b951-754e41f5cc97" name="Review" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="148f8def-bfb8-43ee-b864-50fb25d19dd4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7475cc95-f544-4f9f-9437-5173a1441f46" />
+          </association>
+          <association Id="160f19b4-9448-492c-87b1-b2ac18a2f32f" isDerived="false" sourceEndRoleName="Actor1" targetEndRoleName="Manage Question Bank" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="02949192-2c59-4593-9e4c-3e85a2f64ccd" LastKnownName="Manage Question Bank" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0580825-79b7-4897-809b-b5f372d6539a" name="Actor1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="70fb0e55-1c75-4fb1-b249-2c41547c4010" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3ed906e-d43e-4b63-b751-1f59f546a09f" name="Manage Question Bank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ca27f703-5c5f-4087-b629-e42bf2f39444" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7a487347-3a41-4741-9f14-430002526646" />
+          </association>
+          <association Id="35a4e80f-1c6c-473f-8c05-758e8b636b18" isDerived="false" sourceEndRoleName="Actor1" targetEndRoleName="Set Up Vacancy" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="57430f44-ea81-4c9b-b539-39235de10e6a" LastKnownName="Set Up Vacancy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b00914ec-c70b-453d-ac09-ac54a9ab0bb5" name="Actor1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eeb960a5-a21e-4be3-b4e2-86f478288e1b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24a6a8df-6c65-4a3f-8401-78426ebc24bb" name="Set Up Vacancy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2d64f60f-e1fe-4d09-8a96-cb382e765267" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ad7337f-22fc-400b-ba43-0e55c3b20ea8" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="8e3eded1-7bf1-4a92-a364-40f24ea667a2" name="Interviewer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6fc63a90-71d1-461f-8647-ba9bd5ebb626" />
+        <targetEnds>
+          <association Id="148a4962-e262-4fa7-a7cf-b84c44253f7f" isDerived="false" sourceEndRoleName="Actor2" targetEndRoleName="Conduct Interview" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7be9cda7-8fc2-4dc8-a76e-fc949f4c949e" LastKnownName="Conduct Interview" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d98e5d1a-5b95-49bb-8de7-c74f7e419923" name="Actor2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cdd04a60-169e-4678-ac0a-889f619c90a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95e9c2d3-3ad7-4e5f-b839-a8ba1d62b42b" name="Conduct Interview" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="00889716-2fea-4aeb-8911-17917305b8e6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8aa7fda7-ba97-4de0-bb91-254eaa5b5997" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="5a305aa4-15fb-43e3-9289-f85b11cce2e7" name="Applicant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8ff2cfd1-0354-4280-b94b-ca29d7f9615b" />
+        <targetEnds>
+          <association Id="45abd70e-fff7-43f5-a9fb-e4a93a89de99" isDerived="false" sourceEndRoleName="Actor3" targetEndRoleName="Ask/Answer Questions" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="24abb9f7-1c79-4f97-b5b7-37fe9448826b" LastKnownName="Ask/Answer Questions" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="96e61e1b-d15f-4c65-830c-9ebd7e164c0c" name="Actor3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2b727f2-98ca-4790-b121-38faf3e1e4a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b7b70e2-b014-48c6-8b25-054d321ca4ec" name="Ask/Answer Questions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="893acf4f-7cf9-4f11-8024-54b176b33a45" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="62a55201-1dfe-49b8-973c-f74ad4c3fc0a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b53cc6f6-9646-4a52-a1bd-2a61289facb9" name="View Rankings" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="18feef99-4f33-4826-8023-aecc798df092" />
+        <additions>
+          <include Id="789c2a54-3bd5-4c9a-b8a5-30cd07297b51">
+            <useCaseMoniker Id="21e98acd-4deb-4709-874d-10275de7042e" LastKnownName="Choose Vacancy" />
+            <elementDefinition Id="2f3c7d62-a13b-4dc8-b3db-f0aa97ad10c5" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4f457448-d519-4500-8d95-7a14200390c2" name="Review" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b19a4ac-7464-4d07-a99e-07763396dc7b" />
+        <extendedCases>
+          <extend Id="0a90ac44-329d-4c6e-827d-a61a5e16b882">
+            <useCaseMoniker Id="b53cc6f6-9646-4a52-a1bd-2a61289facb9" LastKnownName="View Rankings" />
+            <elementDefinition Id="ede8e969-7b25-4418-acae-1137f7168041" />
+          </extend>
+          <extend Id="4185a397-66ef-4081-9c5e-398ce376cb7e">
+            <useCaseMoniker Id="37c769ba-8699-42ab-a0bf-f468b6f9b046" LastKnownName="Email Feedback" />
+            <elementDefinition Id="4ab09f3f-ff3f-492f-bd2f-3bcdf06cfb54" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7be9cda7-8fc2-4dc8-a76e-fc949f4c949e" name="Conduct Interview" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7a69e212-7f60-41af-a082-e168f24604b0" />
+        <additions>
+          <include Id="c277e43c-42f6-4e7b-8b9e-17ad47c076ba">
+            <useCaseMoniker Id="57430f44-ea81-4c9b-b539-39235de10e6a" LastKnownName="Set Up Vacancy" />
+            <elementDefinition Id="aa359acb-2a68-494d-abb1-d3cd2fa6da41" />
+          </include>
+          <include Id="978a3ce3-43d9-4e03-91f2-62403d5dbf25">
+            <useCaseMoniker Id="38bce1e8-0458-4972-beb4-990e1b40a4dc" LastKnownName="Rank/Record Answer" />
+            <elementDefinition Id="1e66b615-df98-47e1-9359-f0868473d125" />
+          </include>
+          <include Id="1bc42181-2385-46b5-8b41-0f243a8a9b7d">
+            <useCaseMoniker Id="94249a56-6062-43af-b114-b2405430eb38" LastKnownName="Select Vacancy" />
+            <elementDefinition Id="aabdc3e8-fb28-44c6-9e97-e772142b39a3" />
+          </include>
+          <include Id="3176853a-9e6c-4213-a4bf-d812255d1989">
+            <useCaseMoniker Id="fbca5987-9883-413b-8be4-d2512a1eccbd" LastKnownName="Set Up Applicant" />
+            <elementDefinition Id="5c647ed0-0eed-4ef7-b033-c97c5bb4c55c" />
+          </include>
+          <include Id="ad7b6632-3d2d-4994-a704-67983ec4d5c5">
+            <useCaseMoniker Id="5c9b6373-fb61-4f50-8907-06f9affe302a" LastKnownName="Take Extra Notes" />
+            <elementDefinition Id="855b92f9-0277-4cff-8059-3523410fa831" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="57430f44-ea81-4c9b-b539-39235de10e6a" name="Set Up Vacancy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1ffc3484-e7e1-4057-bb76-71eea2996290" />
+        <additions>
+          <include Id="18ab555f-8638-442d-a7b1-d1ba0474ccc2">
+            <useCaseMoniker Id="450763a0-8a4b-413a-a1bc-3542e1c7984e" LastKnownName="Select Question From Bank" />
+            <elementDefinition Id="6c46b785-8237-41f9-9d64-8949a2e6fa9b" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="02949192-2c59-4593-9e4c-3e85a2f64ccd" name="Manage Question Bank" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cdacf90c-c325-4b44-be5e-761a7926f846" />
+        <extendedCases>
+          <extend Id="46987e16-3364-4acd-bc67-74baf24164f1">
+            <useCaseMoniker Id="33e59bc5-715d-49d1-bb78-c8f7348ef706" LastKnownName="Create Question" />
+            <elementDefinition Id="152984a5-9e24-498f-a00b-ad2369523c0e" />
+          </extend>
+          <extend Id="40fcaa69-8440-4df8-aba7-125ed90ea1c2">
+            <useCaseMoniker Id="02f32276-f405-4ec6-9582-9bb1a8ef8900" LastKnownName="Edit Question " />
+            <elementDefinition Id="e809a223-7e15-419b-97d5-6f80716bd73c" />
+          </extend>
+          <extend Id="46d8cc1d-f0e1-4c08-ab54-b35d7dfd2d21">
+            <useCaseMoniker Id="0b7795c7-6e86-4f45-a0a7-4241e8401d09" LastKnownName="Delete Question" />
+            <elementDefinition Id="4e800144-e48f-476a-931a-190ab5c6ed37" />
+          </extend>
+          <extend Id="a89f92b9-c178-45f4-be49-6f9a804bc34c">
+            <useCaseMoniker Id="b232f20b-663e-4304-86e1-d950151f2486" LastKnownName="Edit Category" />
+            <elementDefinition Id="c2d9d8fc-1c2d-43d0-aff5-6c57132a7a4e" />
+          </extend>
+          <extend Id="c847fe5b-eabb-4663-a96e-01c7bac090fa">
+            <useCaseMoniker Id="9a850707-ffad-4ffa-8a0f-5c31ce98d221" LastKnownName="Create Category" />
+            <elementDefinition Id="a5e05017-7c0f-4011-ad1a-522d82b807dc" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="37c769ba-8699-42ab-a0bf-f468b6f9b046" name="Email Feedback" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f4c86175-25d3-4eb8-9a99-9214c0163cd5" />
+        <additions>
+          <include Id="8e7a6d7b-53a3-4364-a63d-39b3624d659e">
+            <useCaseMoniker Id="1d08f953-b94b-46c4-bf6b-632a6ce1dc97" LastKnownName="Resolve Tied Ranking" />
+            <elementDefinition Id="3e9b7bd0-a357-478d-ba1a-44a80dcf19a5" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="21e98acd-4deb-4709-874d-10275de7042e" name="Choose Vacancy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e90d065f-c954-4c99-97e9-aba10d92eb49" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1d08f953-b94b-46c4-bf6b-632a6ce1dc97" name="Resolve Tied Ranking" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3d1a1223-5b84-49d3-aff9-114c629e2083" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="33e59bc5-715d-49d1-bb78-c8f7348ef706" name="Create Question" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a6b883a2-eb38-4bdf-8ec0-ff65b870cad1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="02f32276-f405-4ec6-9582-9bb1a8ef8900" name="Edit Question " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d99ed12-eed8-4cd3-bb48-818d4ba4730c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0b7795c7-6e86-4f45-a0a7-4241e8401d09" name="Delete Question" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d316e7c5-39e4-42ab-b0c1-8a4e04fe4c9a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9a850707-ffad-4ffa-8a0f-5c31ce98d221" name="Create Category" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e6397c72-aaf5-4a2f-8baf-102f6d349034" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b232f20b-663e-4304-86e1-d950151f2486" name="Edit Category" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3d182c11-9eac-4bb6-bb65-9725b0c854d4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="38bce1e8-0458-4972-beb4-990e1b40a4dc" name="Rank/Record Answer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e960cd9b-9da9-4b4c-b4ba-b930785e484c" />
+        <additions>
+          <include Id="fd8a79cb-040d-437a-8f30-87eebd329b96">
+            <useCaseMoniker Id="24abb9f7-1c79-4f97-b5b7-37fe9448826b" LastKnownName="Ask/Answer Questions" />
+            <elementDefinition Id="87ab6c75-0873-4104-b430-9a0e24d56ef7" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="94249a56-6062-43af-b114-b2405430eb38" name="Select Vacancy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1aa522aa-cf89-42ba-81a1-7a6edf5e0d55" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fbca5987-9883-413b-8be4-d2512a1eccbd" name="Set Up Applicant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b947b785-8dda-409c-bd55-a6d24b4de0bf" />
+        <additions>
+          <include Id="78eefa88-0bc3-4912-a8e4-f06f95c02ae5">
+            <useCaseMoniker Id="5f7d9bcb-4f1b-4d31-a3d9-2e7ba723f064" LastKnownName="Attatch CV" />
+            <elementDefinition Id="803bcac6-27e5-44aa-90f4-054025710120" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c9b6373-fb61-4f50-8907-06f9affe302a" name="Take Extra Notes" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f50277d9-db64-438f-b483-2776cc372496" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="24abb9f7-1c79-4f97-b5b7-37fe9448826b" name="Ask/Answer Questions" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5b852168-b4aa-4411-a11f-a5b977cc90e1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5f7d9bcb-4f1b-4d31-a3d9-2e7ba723f064" name="Attatch CV" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ded07daa-0ff7-4aef-805f-1c06e531716a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="450763a0-8a4b-413a-a1bc-3542e1c7984e" name="Select Question From Bank" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea8bc28d-457f-43f2-aa89-f05352aa95d2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b926e121-9473-44c7-9f16-0f5f3be31183" name="UML">
+    <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />
+  </package>
+</useCaseModelRoot>
