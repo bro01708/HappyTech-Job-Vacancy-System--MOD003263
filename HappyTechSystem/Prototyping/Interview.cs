@@ -10,22 +10,22 @@ namespace Prototyping
     {
         private string applicantEmailAddress, applicantFirstName, applicantLastName, applicantTitle, cv;
 
-        public void AttachCV()
+        public void AttachCV() //Attaches CV of applicant to be interviewed
         {
 
         }
 
-        public void CalculateScore()
+        public void CalculateScore() //Adds up users points to make final score
         {
 
         }
 
-        public void SelectVacancy()
+        public void SelectVacancy() //Selects which vacancy the interview is for
         {
 
         }
 
-        public void StoreRecords()
+        public void StoreRecords() //Stores applicants personal details
         {
 
         }

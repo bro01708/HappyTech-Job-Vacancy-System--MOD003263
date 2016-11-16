@@ -9,28 +9,28 @@ namespace Prototyping
     class EmailTemplate
     {
         private string body, greeting, header, signOff, type;
-        public void GetBody()
+        public void GetBody() //Creats email body
         {
 
         }
 
-        public void GetGreeting()
+        public void GetGreeting() //Creates email greeting
         {
 
         }
 
-        public void GetHeader()
+        public void GetHeader() //Creates email header
         {
 
         
         }
 
-        public void GetSignOff()
+        public void GetSignOff() 
         {
 
         }
 
-        public void GetType()
+        public void GetEmailType()
         {
 
         }

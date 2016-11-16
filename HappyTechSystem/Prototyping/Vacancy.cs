@@ -9,7 +9,7 @@ namespace Prototyping
     class Vacancy
     {
         private List<Interview> interviews = new List<Interview>();
-        private List<Question> questionsToBeUsed = new List<Question>();
+        private List<Question> questionsToBeUsed = new List<Question>(); //Stores questions for the interview
         private int requiredScore;
         private string vacancyCode;
 
@@ -25,7 +25,7 @@ namespace Prototyping
         }
 
 
-        public void Rankings()
+        public void Rankings() //Ranks every users' final score to find the chosen applicant
         {
 
 

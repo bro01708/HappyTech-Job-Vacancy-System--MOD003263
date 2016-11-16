@@ -8,10 +8,10 @@ namespace Prototyping
 {
     class EmailFactory
     {
-        private List<Email> emailRecords= new List<Email>();
+        private List<Email> emailRecords= new List<Email>(); //Stores all applicants email addresses
         private string hrManager;
 
-        public void CreateEmail()
+        public void CreateEmail() 
         {
 
         }
