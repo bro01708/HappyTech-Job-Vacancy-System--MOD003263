@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email.cs" />
+    <Compile Include="EmailFactory.cs" />
+    <Compile Include="EmailTemplate.cs" />
+    <Compile Include="Interview.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="questionBank.cs" />
+    <Compile Include="Vacancy.cs" />
     <Compile Include="ViewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
