@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
-    public partial class QuestionCreation : Form
+    public partial class CreateQuestion : Form
     {
-        public QuestionCreation()
+        public CreateQuestion()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace HappyTechSystem
             MessageBox.Show("The question ID is automatically incremented, so there's no need to manually enter an ID!");
         }
 
-        private void QuestionCreation_Load(object sender, EventArgs e)
+        private void CreateQuestion_FormClosed(object sender, FormClosedEventArgs e)
         {
 
         }

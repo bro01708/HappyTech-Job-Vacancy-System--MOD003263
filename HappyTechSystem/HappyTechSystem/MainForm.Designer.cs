@@ -33,23 +33,24 @@
             this.newQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newEmailTempleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newVacancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conductInterviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyEmailTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyVacancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewQuestionBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmailTemplatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewVacanciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewInterviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_dev = new System.Windows.Forms.Label();
             this.lbl_nav = new System.Windows.Forms.Label();
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.pb_logo = new System.Windows.Forms.PictureBox();
             this.lbl_databaseStatus = new System.Windows.Forms.Label();
             this.lbl_databaseLoad = new System.Windows.Forms.Label();
-            this.vaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vacancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.questionBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vacanciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.emailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -58,12 +59,12 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
-            this.modifyToolStripMenuItem,
+            this.conductInterviewToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.viewToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(786, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(949, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,34 +81,38 @@
             // newQuestionToolStripMenuItem
             // 
             this.newQuestionToolStripMenuItem.Name = "newQuestionToolStripMenuItem";
-            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newQuestionToolStripMenuItem.Text = "New Question";
+            this.newQuestionToolStripMenuItem.Click += new System.EventHandler(this.newQuestionToolStripMenuItem_Click);
             // 
             // newEmailTempleToolStripMenuItem
             // 
             this.newEmailTempleToolStripMenuItem.Name = "newEmailTempleToolStripMenuItem";
-            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newEmailTempleToolStripMenuItem.Text = "New Email Template";
+            this.newEmailTempleToolStripMenuItem.Click += new System.EventHandler(this.newEmailTempleToolStripMenuItem_Click);
             // 
             // newVacancyToolStripMenuItem
             // 
             this.newVacancyToolStripMenuItem.Name = "newVacancyToolStripMenuItem";
-            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newVacancyToolStripMenuItem.Text = "New Vacancy";
+            this.newVacancyToolStripMenuItem.Click += new System.EventHandler(this.newVacancyToolStripMenuItem_Click);
             // 
-            // modifyToolStripMenuItem
+            // conductInterviewToolStripMenuItem
             // 
-            this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.modifyToolStripMenuItem.Text = "Conduct Interview";
+            this.conductInterviewToolStripMenuItem.Name = "conductInterviewToolStripMenuItem";
+            this.conductInterviewToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.conductInterviewToolStripMenuItem.Text = "Conduct Interview";
+            this.conductInterviewToolStripMenuItem.Click += new System.EventHandler(this.conductInterviewToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modifyQuestionToolStripMenuItem,
-            this.vaToolStripMenuItem,
-            this.vacancyToolStripMenuItem,
-            this.emailToolStripMenuItem});
+            this.modifyEmailTemplateToolStripMenuItem,
+            this.modifyVacancyToolStripMenuItem,
+            this.modifyEmailToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.viewToolStripMenuItem.Text = "Modify";
@@ -115,25 +120,83 @@
             // modifyQuestionToolStripMenuItem
             // 
             this.modifyQuestionToolStripMenuItem.Name = "modifyQuestionToolStripMenuItem";
-            this.modifyQuestionToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.modifyQuestionToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.modifyQuestionToolStripMenuItem.Text = "Question";
+            this.modifyQuestionToolStripMenuItem.Click += new System.EventHandler(this.modifyQuestionToolStripMenuItem_Click);
+            // 
+            // modifyEmailTemplateToolStripMenuItem
+            // 
+            this.modifyEmailTemplateToolStripMenuItem.Name = "modifyEmailTemplateToolStripMenuItem";
+            this.modifyEmailTemplateToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.modifyEmailTemplateToolStripMenuItem.Text = "Email Template";
+            this.modifyEmailTemplateToolStripMenuItem.Click += new System.EventHandler(this.modifyEmailTemplateToolStripMenuItem_Click);
+            // 
+            // modifyVacancyToolStripMenuItem
+            // 
+            this.modifyVacancyToolStripMenuItem.Name = "modifyVacancyToolStripMenuItem";
+            this.modifyVacancyToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.modifyVacancyToolStripMenuItem.Text = "Vacancy";
+            this.modifyVacancyToolStripMenuItem.Click += new System.EventHandler(this.modifyVacancyToolStripMenuItem_Click);
+            // 
+            // modifyEmailToolStripMenuItem
+            // 
+            this.modifyEmailToolStripMenuItem.Name = "modifyEmailToolStripMenuItem";
+            this.modifyEmailToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.modifyEmailToolStripMenuItem.Text = "Email";
+            this.modifyEmailToolStripMenuItem.Click += new System.EventHandler(this.modifyEmailToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem1
             // 
             this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.questionBankToolStripMenuItem,
-            this.tToolStripMenuItem,
-            this.vacanciesToolStripMenuItem,
-            this.emailsToolStripMenuItem});
+            this.viewQuestionBankToolStripMenuItem,
+            this.viewEmailTemplatesToolStripMenuItem,
+            this.viewVacanciesToolStripMenuItem,
+            this.viewInterviewsToolStripMenuItem,
+            this.viewEmailsToolStripMenuItem});
             this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
             this.viewToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem1.Text = "View";
+            // 
+            // viewQuestionBankToolStripMenuItem
+            // 
+            this.viewQuestionBankToolStripMenuItem.Name = "viewQuestionBankToolStripMenuItem";
+            this.viewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewQuestionBankToolStripMenuItem.Text = "Question Bank";
+            this.viewQuestionBankToolStripMenuItem.Click += new System.EventHandler(this.viewQuestionBankToolStripMenuItem_Click);
+            // 
+            // viewEmailTemplatesToolStripMenuItem
+            // 
+            this.viewEmailTemplatesToolStripMenuItem.Name = "viewEmailTemplatesToolStripMenuItem";
+            this.viewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewEmailTemplatesToolStripMenuItem.Text = "Email Templates";
+            this.viewEmailTemplatesToolStripMenuItem.Click += new System.EventHandler(this.viewEmailTemplatesToolStripMenuItem_Click);
+            // 
+            // viewVacanciesToolStripMenuItem
+            // 
+            this.viewVacanciesToolStripMenuItem.Name = "viewVacanciesToolStripMenuItem";
+            this.viewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewVacanciesToolStripMenuItem.Text = "Vacancies";
+            this.viewVacanciesToolStripMenuItem.Click += new System.EventHandler(this.viewVacanciesToolStripMenuItem_Click);
+            // 
+            // viewInterviewsToolStripMenuItem
+            // 
+            this.viewInterviewsToolStripMenuItem.Name = "viewInterviewsToolStripMenuItem";
+            this.viewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewInterviewsToolStripMenuItem.Text = "Interviews";
+            this.viewInterviewsToolStripMenuItem.Click += new System.EventHandler(this.viewInterviewsToolStripMenuItem_Click);
+            // 
+            // viewEmailsToolStripMenuItem
+            // 
+            this.viewEmailsToolStripMenuItem.Name = "viewEmailsToolStripMenuItem";
+            this.viewEmailsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewEmailsToolStripMenuItem.Text = "Emails";
+            this.viewEmailsToolStripMenuItem.Click += new System.EventHandler(this.viewEmailsToolStripMenuItem_Click);
             // 
             // lbl_dev
             // 
             this.lbl_dev.AutoSize = true;
             this.lbl_dev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dev.Location = new System.Drawing.Point(232, 360);
+            this.lbl_dev.Location = new System.Drawing.Point(305, 385);
             this.lbl_dev.Name = "lbl_dev";
             this.lbl_dev.Size = new System.Drawing.Size(311, 15);
             this.lbl_dev.TabIndex = 5;
@@ -143,7 +206,7 @@
             // 
             this.lbl_nav.AutoSize = true;
             this.lbl_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nav.Location = new System.Drawing.Point(137, 286);
+            this.lbl_nav.Location = new System.Drawing.Point(213, 311);
             this.lbl_nav.Name = "lbl_nav";
             this.lbl_nav.Size = new System.Drawing.Size(505, 26);
             this.lbl_nav.TabIndex = 7;
@@ -153,7 +216,7 @@
             // 
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_welcome.Location = new System.Drawing.Point(100, 255);
+            this.lbl_welcome.Location = new System.Drawing.Point(176, 280);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(601, 31);
             this.lbl_welcome.TabIndex = 8;
@@ -161,7 +224,7 @@
             // 
             // pb_logo
             // 
-            this.pb_logo.Location = new System.Drawing.Point(307, 150);
+            this.pb_logo.Location = new System.Drawing.Point(383, 175);
             this.pb_logo.Name = "pb_logo";
             this.pb_logo.Size = new System.Drawing.Size(149, 102);
             this.pb_logo.TabIndex = 9;
@@ -170,7 +233,7 @@
             // lbl_databaseStatus
             // 
             this.lbl_databaseStatus.AutoSize = true;
-            this.lbl_databaseStatus.Location = new System.Drawing.Point(636, 28);
+            this.lbl_databaseStatus.Location = new System.Drawing.Point(819, 33);
             this.lbl_databaseStatus.Name = "lbl_databaseStatus";
             this.lbl_databaseStatus.Size = new System.Drawing.Size(83, 13);
             this.lbl_databaseStatus.TabIndex = 11;
@@ -179,59 +242,17 @@
             // lbl_databaseLoad
             // 
             this.lbl_databaseLoad.AutoSize = true;
-            this.lbl_databaseLoad.Location = new System.Drawing.Point(726, 28);
+            this.lbl_databaseLoad.Location = new System.Drawing.Point(909, 33);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
             this.lbl_databaseLoad.Size = new System.Drawing.Size(27, 13);
             this.lbl_databaseLoad.TabIndex = 12;
             this.lbl_databaseLoad.Text = "N/A";
             // 
-            // vaToolStripMenuItem
-            // 
-            this.vaToolStripMenuItem.Name = "vaToolStripMenuItem";
-            this.vaToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.vaToolStripMenuItem.Text = "Email Template";
-            // 
-            // vacancyToolStripMenuItem
-            // 
-            this.vacancyToolStripMenuItem.Name = "vacancyToolStripMenuItem";
-            this.vacancyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.vacancyToolStripMenuItem.Text = "Vacancy";
-            // 
-            // emailToolStripMenuItem
-            // 
-            this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
-            this.emailToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.emailToolStripMenuItem.Text = "Email";
-            // 
-            // questionBankToolStripMenuItem
-            // 
-            this.questionBankToolStripMenuItem.Name = "questionBankToolStripMenuItem";
-            this.questionBankToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.questionBankToolStripMenuItem.Text = "Question Bank";
-            // 
-            // tToolStripMenuItem
-            // 
-            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
-            this.tToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.tToolStripMenuItem.Text = "Email Templates";
-            // 
-            // vacanciesToolStripMenuItem
-            // 
-            this.vacanciesToolStripMenuItem.Name = "vacanciesToolStripMenuItem";
-            this.vacanciesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.vacanciesToolStripMenuItem.Text = "Vacancies";
-            // 
-            // emailsToolStripMenuItem
-            // 
-            this.emailsToolStripMenuItem.Name = "emailsToolStripMenuItem";
-            this.emailsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.emailsToolStripMenuItem.Text = "Emails";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 516);
+            this.ClientSize = new System.Drawing.Size(949, 567);
             this.Controls.Add(this.lbl_databaseLoad);
             this.Controls.Add(this.lbl_databaseStatus);
             this.Controls.Add(this.pb_logo);
@@ -265,16 +286,17 @@
         private System.Windows.Forms.ToolStripMenuItem newQuestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newEmailTempleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newVacancyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conductInterviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyQuestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem vaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vacancyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem questionBankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vacanciesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem emailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyEmailTemplateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyVacancyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyEmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewQuestionBankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmailTemplatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewVacanciesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewInterviewsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmailsToolStripMenuItem;
     }
 }

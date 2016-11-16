@@ -1,6 +1,6 @@
 ﻿namespace HappyTechSystem
 {
-    partial class QuestionCreation
+    partial class CreateQuestion
     {
         /// <summary>
         /// Required designer variable.
@@ -285,7 +285,7 @@
             this.btn_createQuestionHelp.Text = "?";
             this.btn_createQuestionHelp.UseVisualStyleBackColor = true;
             // 
-            // QuestionCreation
+            // CreateQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,9 +315,9 @@
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.tb_questionID);
             this.Controls.Add(this.lbl_questionID);
-            this.Name = "QuestionCreation";
-            this.Text = "QuestionCreation";
-            this.Load += new System.EventHandler(this.QuestionCreation_Load);
+            this.Name = "CreateQuestion";
+            this.Text = "CreateQuestion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateQuestion_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
