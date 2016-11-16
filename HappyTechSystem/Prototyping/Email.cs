@@ -8,5 +8,7 @@ namespace Prototyping
 {
     class Email
     {
+        private string addresses, content, subject;
+        private int sentDate;
     }
 }

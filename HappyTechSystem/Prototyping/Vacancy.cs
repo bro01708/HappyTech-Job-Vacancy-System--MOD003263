@@ -8,6 +8,11 @@ namespace Prototyping
 {
     class Vacancy
     {
+        private List<Interview> interviews = new List<Interview>();
+        private List<Question> questionsToBeUsed = new List<Question>();
+        private int requiredScore;
+        private string vacancyCode;
+
         public void CreateInterview()
         {
 

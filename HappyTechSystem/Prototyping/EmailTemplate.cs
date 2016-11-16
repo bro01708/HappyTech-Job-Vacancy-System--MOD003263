@@ -8,6 +8,7 @@ namespace Prototyping
 {
     class EmailTemplate
     {
+        private string body, greeting, header, signOff, type;
         public void GetBody()
         {
 

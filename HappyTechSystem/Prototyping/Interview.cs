@@ -8,6 +8,8 @@ namespace Prototyping
 {
     class Interview
     {
+        private string applicantEmailAddress, applicantFirstName, applicantLastName, applicantTitle, cv;
+
         public void AttachCV()
         {
 
