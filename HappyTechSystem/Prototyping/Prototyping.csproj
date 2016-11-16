@@ -52,6 +52,8 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Question.cs" />
+    <Compile Include="questionBank.cs" />
     <Compile Include="QuestionCreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
