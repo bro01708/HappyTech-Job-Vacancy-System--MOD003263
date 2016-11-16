@@ -46,11 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConductInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConductInterview.Designer.cs">
+      <DependentUpon>ConductInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTemplate.Designer.cs">
+      <DependentUpon>CreateTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateVacancy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateVacancy.Designer.cs">
+      <DependentUpon>CreateVacancy.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyEmail.Designer.cs">
+      <DependentUpon>ModifyEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyQuestion.Designer.cs">
+      <DependentUpon>ModifyQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyTemplate.Designer.cs">
+      <DependentUpon>ModifyTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyVacancy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyVacancy.Designer.cs">
+      <DependentUpon>ModifyVacancy.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,11 +102,35 @@
     <Compile Include="QuestionCreation.Designer.cs">
       <DependentUpon>QuestionCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewEmail.Designer.cs">
+      <DependentUpon>ViewEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInterview.Designer.cs">
+      <DependentUpon>ViewInterview.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewQuestionBank.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewQuestionBank.Designer.cs">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTemplates.Designer.cs">
+      <DependentUpon>ViewTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewVacancies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewVacancies.Designer.cs">
+      <DependentUpon>ViewVacancies.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
