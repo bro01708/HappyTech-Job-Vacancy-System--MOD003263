@@ -147,6 +147,9 @@
     <EmbeddedResource Include="CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewQuestionBank.resx">
+      <DependentUpon>ViewQuestionBank.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
