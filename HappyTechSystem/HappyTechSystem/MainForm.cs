@@ -46,6 +46,8 @@ namespace HappyTechSystem
             if (ActiveMdiChild != null)
             {
                 lbl_welcome.SendToBack();
+                lbl_databaseLoad.SendToBack();
+                lbl_databaseStatus.SendToBack();
                 lbl_nav.SendToBack();
                 lbl_dev.SendToBack();
                 pb_logo.SendToBack();
@@ -53,6 +55,8 @@ namespace HappyTechSystem
             else
             {
                 lbl_welcome.BringToFront();
+                lbl_databaseLoad.BringToFront();
+                lbl_databaseStatus.BringToFront();
                 lbl_nav.BringToFront();
                 lbl_dev.BringToFront();
                 pb_logo.BringToFront();
@@ -62,7 +66,12 @@ namespace HappyTechSystem
         #region Creation Menu Items
         private void newQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (createQuestion == null)
+            {
+                createQuestion = new CreateQuestion();
+                createQuestion.MdiParent = this;
+                createQuestion.Show();
+            }
         }
 
         private void newEmailTempleToolStripMenuItem_Click(object sender, EventArgs e)
