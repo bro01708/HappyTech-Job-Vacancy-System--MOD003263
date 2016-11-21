@@ -17,30 +17,13 @@ namespace HappyTechSystem
         {
             InitializeComponent();
         }
-        
-        //new form variables are created, followed by event handlers when a menu strip item is clicked on, to allow a form to display within the main mdi form
-        #region Form Variables
-        //question forms
-        private static CreateQuestion createQuestion;
-        private ModifyQuestion modifyQuestion;
-        private ViewQuestionBank viewQuestionBank;
-        //interview forms
-        ConductInterview conductInterview;
-        ViewInterview viewInterview;
-        //template forms
-        CreateTemplate createTemplate;
-        ModifyTemplate modifyTemplate;
-        ViewTemplates viewTemplates;
-        //vacancy forms
-        CreateVacancy createVacancy;
-        ModifyVacancy modifyVacancy;
-        ViewVacancies viewVacancies;
-        //email forms
-        ModifyEmail modifyEmail;
-        ViewEmail viewEmail;
 
-        #endregion
-        //allows the splash screen labels to hide when a form is opened, showing again when the forms closed
+        /// <summary>
+        /// Created by Dan
+        /// allows the splash screen labels to hide when a form is opened, showing again when the forms closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_MdiChildActivate(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
@@ -62,39 +45,26 @@ namespace HappyTechSystem
         #region Creation Menu Items
         private void newQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            CreateQuestion createQuestion = new CreateQuestion();
+            formCheck(createQuestion);
         }
 
         private void newEmailTempleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (createTemplate == null)
-            {
-                createTemplate = new CreateTemplate();
-                createTemplate.MdiParent = this;
-                createTemplate.Show();
-            }
+            CreateTemplate createTemplate = new CreateTemplate();
+            formCheck(createTemplate);
         }
 
         private void newVacancyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (createVacancy == null)
-            {
-                createVacancy = new CreateVacancy();
-                createVacancy.MdiParent = this;
-                createVacancy.Show();
-            }
+            CreateVacancy createVacancy = new CreateVacancy();
+            formCheck(createVacancy);
         }
 
         private void conductInterviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (conductInterview == null)
-            {
-
-                conductInterview = new ConductInterview();
-                //formCheck(conductInterview);
-                conductInterview.MdiParent = this;
-                conductInterview.Show();
-            }
+            ConductInterview conductInterview = new ConductInterview();
+            formCheck(conductInterview);
         }
 
         #endregion
@@ -102,110 +72,79 @@ namespace HappyTechSystem
         #region Modify Menu Items
         private void modifyQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (modifyQuestion == null)
-            {
-                modifyQuestion = new ModifyQuestion();
-                modifyQuestion.MdiParent = this;
-                modifyQuestion.Show();
-            }
+            ModifyQuestion modifyQuestion = new ModifyQuestion();
+            formCheck(modifyQuestion);
         }
 
         private void modifyEmailTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (modifyTemplate == null)
-            {
-                modifyTemplate = new ModifyTemplate();
-                modifyTemplate.MdiParent = this;
-                modifyTemplate.Show();
-            }
+            ModifyEmail modifyEmail = new ModifyEmail();
+            formCheck(modifyEmail);
         }
 
         private void modifyVacancyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (modifyVacancy == null)
-            {
-                modifyVacancy = new ModifyVacancy();
-                modifyVacancy.MdiParent = this;
-                modifyVacancy.Show();
-            }
+            ModifyVacancy modifyVacancy = new ModifyVacancy();
+            formCheck(modifyVacancy);
         }
 
         private void modifyEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (modifyEmail == null)
-            {
-                modifyEmail = new ModifyEmail();
-                modifyEmail.MdiParent = this;
-                modifyEmail.Show();
-            }
+            ModifyEmail modifyEmail = new ModifyEmail();
+            formCheck(modifyEmail);
         }
         #endregion
 
         #region View Menu Items
         private void viewQuestionBankToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (viewQuestionBank == null)
-            {
-                viewQuestionBank = new ViewQuestionBank();
-                viewQuestionBank.MdiParent = this;
-                viewQuestionBank.Show();
-            }
+            ViewQuestionBank viewQuestionBank = new ViewQuestionBank();
+            formCheck(viewQuestionBank);
         }
 
         private void viewEmailTemplatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (viewTemplates == null)
-            {
-                viewTemplates = new ViewTemplates();
-                viewTemplates.MdiParent = this;
-                viewTemplates.Show();
-            }
+            ViewTemplates viewTemplates = new ViewTemplates();
+            formCheck(viewTemplates);
         }
 
         private void viewVacanciesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (viewVacancies == null)
-            {
-                viewVacancies = new ViewVacancies();
-                viewVacancies.MdiParent = this;
-                viewVacancies.Show();
-            }
+            ViewVacancies viewVacancies = new ViewVacancies();
+            formCheck(viewVacancies);
         }
 
         private void viewInterviewsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (viewInterview == null)
-            {
-                viewInterview = new ViewInterview();
-                viewInterview.MdiParent = this;
-                viewInterview.Show();
-            }
+            ViewInterview viewInterview = new ViewInterview();
+            formCheck(viewInterview);
         }
         private void viewEmailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (viewEmail == null)
-            {
-                viewEmail = new ViewEmail();
-                viewEmail.MdiParent = this;
-                viewEmail.Show();
-            }
+            ViewEmail viewEmail = new ViewEmail();
+            formCheck(viewEmail);
         }
         #endregion
 
-        //form checker
-        private void formCheck(Type f)
+        /// <summary>
+        /// Created By Peter.
+        /// This Method checks to see if a form already has an instance active. 
+        /// It accepts a form parameter and will create the form if it doesnt exist.
+        /// </summary>
+        /// <param name="f"></param>
+        private void formCheck(Form f)
         {
-            string st = f.ToString();
+            
             foreach (Form form in Application.OpenForms)
             {
-                if (form.GetType() == typeof(CreateQuestion))
+                if (form.GetType() == f.GetType())
                 {
                     form.Activate();
                     return;
                 }
             }
 
-            Form newForm = new CreateQuestion();
+            Form newForm = f;
             newForm.MdiParent = this;
             newForm.Show();
         }
