@@ -316,7 +316,7 @@
             this.Controls.Add(this.tb_questionID);
             this.Controls.Add(this.lbl_questionID);
             this.Name = "CreateQuestion";
-            this.Text = "CreateQuestion";
+            this.Text = "Create a Question";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateQuestion_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

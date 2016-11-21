@@ -43,6 +43,7 @@
             this.lbl_help = new System.Windows.Forms.Label();
             this.btn_help = new System.Windows.Forms.Button();
             this.lbl_help2 = new System.Windows.Forms.Label();
+            this.btn_feedbackHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tb_greeting
@@ -98,7 +99,7 @@
             // 
             this.btn_addName.Location = new System.Drawing.Point(450, 131);
             this.btn_addName.Name = "btn_addName";
-            this.btn_addName.Size = new System.Drawing.Size(152, 23);
+            this.btn_addName.Size = new System.Drawing.Size(153, 23);
             this.btn_addName.TabIndex = 6;
             this.btn_addName.Text = "Insert Interviewee\'s Name";
             this.btn_addName.UseVisualStyleBackColor = true;
@@ -107,7 +108,7 @@
             // 
             this.btn_position.Location = new System.Drawing.Point(450, 160);
             this.btn_position.Name = "btn_position";
-            this.btn_position.Size = new System.Drawing.Size(152, 23);
+            this.btn_position.Size = new System.Drawing.Size(153, 23);
             this.btn_position.TabIndex = 7;
             this.btn_position.Text = "Insert Position";
             this.btn_position.UseVisualStyleBackColor = true;
@@ -116,9 +117,9 @@
             // 
             this.btn_feedback.Location = new System.Drawing.Point(450, 189);
             this.btn_feedback.Name = "btn_feedback";
-            this.btn_feedback.Size = new System.Drawing.Size(152, 23);
+            this.btn_feedback.Size = new System.Drawing.Size(118, 23);
             this.btn_feedback.TabIndex = 8;
-            this.btn_feedback.Text = "Insert Feedback";
+            this.btn_feedback.Text = "Insert Feedback Area";
             this.btn_feedback.UseVisualStyleBackColor = true;
             // 
             // lbl_signOff
@@ -160,7 +161,7 @@
             // btn_help
             // 
             this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_help.Location = new System.Drawing.Point(564, 12);
+            this.btn_help.Location = new System.Drawing.Point(564, 5);
             this.btn_help.Name = "btn_help";
             this.btn_help.Size = new System.Drawing.Size(38, 33);
             this.btn_help.TabIndex = 13;
@@ -171,17 +172,27 @@
             // 
             this.lbl_help2.AutoSize = true;
             this.lbl_help2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_help2.Location = new System.Drawing.Point(14, 30);
+            this.lbl_help2.Location = new System.Drawing.Point(14, 41);
             this.lbl_help2.Name = "lbl_help2";
             this.lbl_help2.Size = new System.Drawing.Size(333, 18);
             this.lbl_help2.TabIndex = 14;
             this.lbl_help2.Text = "Click the \"?\" button if you need further help!";
             // 
+            // btn_feedbackHelp
+            // 
+            this.btn_feedbackHelp.Location = new System.Drawing.Point(574, 189);
+            this.btn_feedbackHelp.Name = "btn_feedbackHelp";
+            this.btn_feedbackHelp.Size = new System.Drawing.Size(29, 23);
+            this.btn_feedbackHelp.TabIndex = 15;
+            this.btn_feedbackHelp.Text = "?";
+            this.btn_feedbackHelp.UseVisualStyleBackColor = true;
+            // 
             // CreateTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 361);
+            this.ClientSize = new System.Drawing.Size(615, 361);
+            this.Controls.Add(this.btn_feedbackHelp);
             this.Controls.Add(this.lbl_help2);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.lbl_help);
@@ -198,7 +209,7 @@
             this.Controls.Add(this.lbl_greeting);
             this.Controls.Add(this.tb_greeting);
             this.Name = "CreateTemplate";
-            this.Text = "CreateTemplate";
+            this.Text = "Create a Template";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +232,6 @@
         private System.Windows.Forms.Label lbl_help;
         private System.Windows.Forms.Button btn_help;
         private System.Windows.Forms.Label lbl_help2;
+        private System.Windows.Forms.Button btn_feedbackHelp;
     }
 }

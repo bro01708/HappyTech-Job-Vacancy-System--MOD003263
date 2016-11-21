@@ -41,7 +41,10 @@
             this.btn_help = new System.Windows.Forms.Button();
             this.lbl_score = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_slots = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_questionBank
@@ -55,7 +58,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(77, 23);
+            this.lbl_name.Location = new System.Drawing.Point(43, 22);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(100, 13);
             this.lbl_name.TabIndex = 1;
@@ -91,7 +94,7 @@
             // 
             // tb_vacancyName
             // 
-            this.tb_vacancyName.Location = new System.Drawing.Point(58, 39);
+            this.tb_vacancyName.Location = new System.Drawing.Point(24, 38);
             this.tb_vacancyName.Name = "tb_vacancyName";
             this.tb_vacancyName.Size = new System.Drawing.Size(132, 20);
             this.tb_vacancyName.TabIndex = 5;
@@ -110,9 +113,10 @@
             // lbl_selectQuestion
             // 
             this.lbl_selectQuestion.AutoSize = true;
-            this.lbl_selectQuestion.Location = new System.Drawing.Point(77, 86);
+            this.lbl_selectQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_selectQuestion.Location = new System.Drawing.Point(22, 86);
             this.lbl_selectQuestion.Name = "lbl_selectQuestion";
-            this.lbl_selectQuestion.Size = new System.Drawing.Size(383, 13);
+            this.lbl_selectQuestion.Size = new System.Drawing.Size(485, 13);
             this.lbl_selectQuestion.TabIndex = 9;
             this.lbl_selectQuestion.Text = "----------------------------- Select Questions to use for this vacancy: ---------" +
     "-------------------- ";
@@ -151,7 +155,7 @@
             // lbl_score
             // 
             this.lbl_score.AutoSize = true;
-            this.lbl_score.Location = new System.Drawing.Point(291, 23);
+            this.lbl_score.Location = new System.Drawing.Point(167, 22);
             this.lbl_score.Name = "lbl_score";
             this.lbl_score.Size = new System.Drawing.Size(191, 13);
             this.lbl_score.TabIndex = 13;
@@ -159,16 +163,34 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(349, 39);
+            this.numericUpDown1.Location = new System.Drawing.Point(364, 20);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(68, 20);
             this.numericUpDown1.TabIndex = 14;
+            // 
+            // lbl_slots
+            // 
+            this.lbl_slots.AutoSize = true;
+            this.lbl_slots.Location = new System.Drawing.Point(167, 49);
+            this.lbl_slots.Name = "lbl_slots";
+            this.lbl_slots.Size = new System.Drawing.Size(172, 13);
+            this.lbl_slots.TabIndex = 15;
+            this.lbl_slots.Text = "Enter the amount of interview slots:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(364, 47);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(68, 20);
+            this.numericUpDown2.TabIndex = 16;
             // 
             // CreateVacancy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 337);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.lbl_slots);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.lbl_score);
             this.Controls.Add(this.btn_help);
@@ -183,8 +205,9 @@
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lb_questionBank);
             this.Name = "CreateVacancy";
-            this.Text = "CreateVacancy";
+            this.Text = "Create a Vacancy";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +228,7 @@
         private System.Windows.Forms.Button btn_help;
         private System.Windows.Forms.Label lbl_score;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lbl_slots;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }

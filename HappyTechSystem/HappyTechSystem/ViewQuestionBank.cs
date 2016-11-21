@@ -16,5 +16,15 @@ namespace HappyTechSystem
         {
             InitializeComponent();
         }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            //alter tables within the database
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            //allow all fields bar questionID to be edited.
+        }
     }
 }

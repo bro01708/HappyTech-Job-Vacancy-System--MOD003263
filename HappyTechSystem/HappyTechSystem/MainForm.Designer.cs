@@ -34,17 +34,12 @@
             this.newEmailTempleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newVacancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conductInterviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyEmailTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyVacancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewQuestionBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEmailTemplatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewVacanciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewInterviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEmailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewQuestionBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewEmailTemplatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewVacanciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewInterviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyViewEmailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_dev = new System.Windows.Forms.Label();
             this.lbl_nav = new System.Windows.Forms.Label();
             this.lbl_welcome = new System.Windows.Forms.Label();
@@ -57,11 +52,11 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.conductInterviewToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.viewToolStripMenuItem1});
+            this.modifyViewToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(949, 24);
@@ -74,6 +69,7 @@
             this.newQuestionToolStripMenuItem,
             this.newEmailTempleToolStripMenuItem,
             this.newVacancyToolStripMenuItem});
+            this.createToolStripMenuItem.ForeColor = System.Drawing.Color.Crimson;
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.createToolStripMenuItem.Text = "Create";
@@ -81,116 +77,80 @@
             // newQuestionToolStripMenuItem
             // 
             this.newQuestionToolStripMenuItem.Name = "newQuestionToolStripMenuItem";
-            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newQuestionToolStripMenuItem.Text = "New Question";
             this.newQuestionToolStripMenuItem.Click += new System.EventHandler(this.newQuestionToolStripMenuItem_Click);
             // 
             // newEmailTempleToolStripMenuItem
             // 
             this.newEmailTempleToolStripMenuItem.Name = "newEmailTempleToolStripMenuItem";
-            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newEmailTempleToolStripMenuItem.Text = "New Email Template";
             this.newEmailTempleToolStripMenuItem.Click += new System.EventHandler(this.newEmailTempleToolStripMenuItem_Click);
             // 
             // newVacancyToolStripMenuItem
             // 
             this.newVacancyToolStripMenuItem.Name = "newVacancyToolStripMenuItem";
-            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newVacancyToolStripMenuItem.Text = "New Vacancy";
             this.newVacancyToolStripMenuItem.Click += new System.EventHandler(this.newVacancyToolStripMenuItem_Click);
             // 
             // conductInterviewToolStripMenuItem
             // 
+            this.conductInterviewToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
             this.conductInterviewToolStripMenuItem.Name = "conductInterviewToolStripMenuItem";
             this.conductInterviewToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.conductInterviewToolStripMenuItem.Text = "Conduct Interview";
             this.conductInterviewToolStripMenuItem.Click += new System.EventHandler(this.conductInterviewToolStripMenuItem_Click);
             // 
-            // viewToolStripMenuItem
+            // modifyViewToolStripMenuItem1
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifyQuestionToolStripMenuItem,
-            this.modifyEmailTemplateToolStripMenuItem,
-            this.modifyVacancyToolStripMenuItem,
-            this.modifyEmailToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.viewToolStripMenuItem.Text = "Modify";
+            this.modifyViewToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.modifyViewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifyViewQuestionBankToolStripMenuItem,
+            this.modifyViewEmailTemplatesToolStripMenuItem,
+            this.modifyViewVacanciesToolStripMenuItem,
+            this.modifyViewInterviewsToolStripMenuItem,
+            this.modifyViewEmailsToolStripMenuItem});
+            this.modifyViewToolStripMenuItem1.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.modifyViewToolStripMenuItem1.Name = "modifyViewToolStripMenuItem1";
+            this.modifyViewToolStripMenuItem1.Size = new System.Drawing.Size(87, 20);
+            this.modifyViewToolStripMenuItem1.Text = "Modify/View";
             // 
-            // modifyQuestionToolStripMenuItem
+            // modifyViewQuestionBankToolStripMenuItem
             // 
-            this.modifyQuestionToolStripMenuItem.Name = "modifyQuestionToolStripMenuItem";
-            this.modifyQuestionToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.modifyQuestionToolStripMenuItem.Text = "Question";
-            this.modifyQuestionToolStripMenuItem.Click += new System.EventHandler(this.modifyQuestionToolStripMenuItem_Click);
+            this.modifyViewQuestionBankToolStripMenuItem.Name = "modifyViewQuestionBankToolStripMenuItem";
+            this.modifyViewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewQuestionBankToolStripMenuItem.Text = "Question Bank";
+            this.modifyViewQuestionBankToolStripMenuItem.Click += new System.EventHandler(this.modifyViewQuestionBankToolStripMenuItemClick);
             // 
-            // modifyEmailTemplateToolStripMenuItem
+            // modifyViewEmailTemplatesToolStripMenuItem
             // 
-            this.modifyEmailTemplateToolStripMenuItem.Name = "modifyEmailTemplateToolStripMenuItem";
-            this.modifyEmailTemplateToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.modifyEmailTemplateToolStripMenuItem.Text = "Email Template";
-            this.modifyEmailTemplateToolStripMenuItem.Click += new System.EventHandler(this.modifyEmailTemplateToolStripMenuItem_Click);
+            this.modifyViewEmailTemplatesToolStripMenuItem.Name = "modifyViewEmailTemplatesToolStripMenuItem";
+            this.modifyViewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewEmailTemplatesToolStripMenuItem.Text = "Email Templates";
+            this.modifyViewEmailTemplatesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailTemplatesToolStripMenuItem_Click);
             // 
-            // modifyVacancyToolStripMenuItem
+            // modifyViewVacanciesToolStripMenuItem
             // 
-            this.modifyVacancyToolStripMenuItem.Name = "modifyVacancyToolStripMenuItem";
-            this.modifyVacancyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.modifyVacancyToolStripMenuItem.Text = "Vacancy";
-            this.modifyVacancyToolStripMenuItem.Click += new System.EventHandler(this.modifyVacancyToolStripMenuItem_Click);
+            this.modifyViewVacanciesToolStripMenuItem.Name = "modifyViewVacanciesToolStripMenuItem";
+            this.modifyViewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewVacanciesToolStripMenuItem.Text = "Vacancies";
+            this.modifyViewVacanciesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewVacanciesToolStripMenuItem_Click);
             // 
-            // modifyEmailToolStripMenuItem
+            // modifyViewInterviewsToolStripMenuItem
             // 
-            this.modifyEmailToolStripMenuItem.Name = "modifyEmailToolStripMenuItem";
-            this.modifyEmailToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.modifyEmailToolStripMenuItem.Text = "Email";
-            this.modifyEmailToolStripMenuItem.Click += new System.EventHandler(this.modifyEmailToolStripMenuItem_Click);
+            this.modifyViewInterviewsToolStripMenuItem.Name = "modifyViewInterviewsToolStripMenuItem";
+            this.modifyViewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewInterviewsToolStripMenuItem.Text = "Interviews";
+            this.modifyViewInterviewsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewInterviewsToolStripMenuItem_Click);
             // 
-            // viewToolStripMenuItem1
+            // modifyViewEmailsToolStripMenuItem
             // 
-            this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewQuestionBankToolStripMenuItem,
-            this.viewEmailTemplatesToolStripMenuItem,
-            this.viewVacanciesToolStripMenuItem,
-            this.viewInterviewsToolStripMenuItem,
-            this.viewEmailsToolStripMenuItem});
-            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem1.Text = "View";
-            // 
-            // viewQuestionBankToolStripMenuItem
-            // 
-            this.viewQuestionBankToolStripMenuItem.Name = "viewQuestionBankToolStripMenuItem";
-            this.viewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewQuestionBankToolStripMenuItem.Text = "Question Bank";
-            this.viewQuestionBankToolStripMenuItem.Click += new System.EventHandler(this.viewQuestionBankToolStripMenuItem_Click);
-            // 
-            // viewEmailTemplatesToolStripMenuItem
-            // 
-            this.viewEmailTemplatesToolStripMenuItem.Name = "viewEmailTemplatesToolStripMenuItem";
-            this.viewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewEmailTemplatesToolStripMenuItem.Text = "Email Templates";
-            this.viewEmailTemplatesToolStripMenuItem.Click += new System.EventHandler(this.viewEmailTemplatesToolStripMenuItem_Click);
-            // 
-            // viewVacanciesToolStripMenuItem
-            // 
-            this.viewVacanciesToolStripMenuItem.Name = "viewVacanciesToolStripMenuItem";
-            this.viewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewVacanciesToolStripMenuItem.Text = "Vacancies";
-            this.viewVacanciesToolStripMenuItem.Click += new System.EventHandler(this.viewVacanciesToolStripMenuItem_Click);
-            // 
-            // viewInterviewsToolStripMenuItem
-            // 
-            this.viewInterviewsToolStripMenuItem.Name = "viewInterviewsToolStripMenuItem";
-            this.viewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewInterviewsToolStripMenuItem.Text = "Interviews";
-            this.viewInterviewsToolStripMenuItem.Click += new System.EventHandler(this.viewInterviewsToolStripMenuItem_Click);
-            // 
-            // viewEmailsToolStripMenuItem
-            // 
-            this.viewEmailsToolStripMenuItem.Name = "viewEmailsToolStripMenuItem";
-            this.viewEmailsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewEmailsToolStripMenuItem.Text = "Emails";
-            this.viewEmailsToolStripMenuItem.Click += new System.EventHandler(this.viewEmailsToolStripMenuItem_Click);
+            this.modifyViewEmailsToolStripMenuItem.Name = "modifyViewEmailsToolStripMenuItem";
+            this.modifyViewEmailsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewEmailsToolStripMenuItem.Text = "Emails";
+            this.modifyViewEmailsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailsToolStripMenuItem_Click);
             // 
             // lbl_dev
             // 
@@ -253,7 +213,6 @@
             // pb_logo
             // 
             this.pb_logo.BackColor = System.Drawing.Color.Transparent;
-            this.pb_logo.Image = global::HappyTechSystem.Properties.Resources.logo3;
             this.pb_logo.Location = new System.Drawing.Point(409, 147);
             this.pb_logo.Name = "pb_logo";
             this.pb_logo.Size = new System.Drawing.Size(127, 130);
@@ -301,16 +260,11 @@
         private System.Windows.Forms.ToolStripMenuItem newEmailTempleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newVacancyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conductInterviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyQuestionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modifyEmailTemplateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyVacancyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyEmailToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewQuestionBankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEmailTemplatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewVacanciesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewInterviewsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEmailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewQuestionBankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewEmailTemplatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewVacanciesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewInterviewsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyViewEmailsToolStripMenuItem;
     }
 }

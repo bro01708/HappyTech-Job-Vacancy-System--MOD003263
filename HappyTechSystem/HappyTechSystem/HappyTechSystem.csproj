@@ -70,30 +70,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyEmail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifyEmail.Designer.cs">
-      <DependentUpon>ModifyEmail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModifyQuestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifyQuestion.Designer.cs">
-      <DependentUpon>ModifyQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModifyTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifyTemplate.Designer.cs">
-      <DependentUpon>ModifyTemplate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModifyVacancy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifyVacancy.Designer.cs">
-      <DependentUpon>ModifyVacancy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreateQuestion.cs">
@@ -159,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmail.resx">
       <DependentUpon>ViewEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInterview.resx">
+      <DependentUpon>ViewInterview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewQuestionBank.resx">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>

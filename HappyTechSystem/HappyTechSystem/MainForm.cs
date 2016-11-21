@@ -69,57 +69,31 @@ namespace HappyTechSystem
 
         #endregion
 
-        #region Modify Menu Items
-        private void modifyQuestionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModifyQuestion modifyQuestion = new ModifyQuestion();
-            formCheck(modifyQuestion);
-        }
-
-        private void modifyEmailTemplateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModifyEmail modifyEmail = new ModifyEmail();
-            formCheck(modifyEmail);
-        }
-
-        private void modifyVacancyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModifyVacancy modifyVacancy = new ModifyVacancy();
-            formCheck(modifyVacancy);
-        }
-
-        private void modifyEmailToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModifyEmail modifyEmail = new ModifyEmail();
-            formCheck(modifyEmail);
-        }
-        #endregion
-
-        #region View Menu Items
-        private void viewQuestionBankToolStripMenuItem_Click(object sender, EventArgs e)
+        #region Modify and View Menu Items
+        private void modifyViewQuestionBankToolStripMenuItemClick(object sender, EventArgs e)
         {
             ViewQuestionBank viewQuestionBank = new ViewQuestionBank();
             formCheck(viewQuestionBank);
         }
 
-        private void viewEmailTemplatesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modifyViewEmailTemplatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewTemplates viewTemplates = new ViewTemplates();
             formCheck(viewTemplates);
         }
 
-        private void viewVacanciesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modifyViewVacanciesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewVacancies viewVacancies = new ViewVacancies();
             formCheck(viewVacancies);
         }
 
-        private void viewInterviewsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modifyViewInterviewsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewInterview viewInterview = new ViewInterview();
             formCheck(viewInterview);
         }
-        private void viewEmailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modifyViewEmailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewEmail viewEmail = new ViewEmail();
             formCheck(viewEmail);
