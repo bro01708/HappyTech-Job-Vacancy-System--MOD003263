@@ -62,15 +62,7 @@ namespace HappyTechSystem
         #region Creation Menu Items
         private void newQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (createQuestion == null)
-            //{
-
-            //}
-
-
-            createQuestion = new CreateQuestion();
-            createQuestion.MdiParent = this;
-            createQuestion.Show();
+            
         }
 
         private void newEmailTempleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,7 +91,7 @@ namespace HappyTechSystem
             {
 
                 conductInterview = new ConductInterview();
-                formCheck(conductInterview);
+                //formCheck(conductInterview);
                 conductInterview.MdiParent = this;
                 conductInterview.Show();
             }
@@ -198,21 +190,24 @@ namespace HappyTechSystem
                 viewEmail.Show();
             }
         }
-#endregion
+        #endregion
 
         //form checker
-        private void formCheck(Form f)
+        private void formCheck(Type f)
         {
-            //Type t = f.GetType();
+            string st = f.ToString();
             foreach (Form form in Application.OpenForms)
             {
-                if (form.GetType() == typeof())
+                if (form.GetType() == typeof(CreateQuestion))
                 {
                     form.Activate();
-                    //form.WindowState = FormWindowState.Normal
                     return;
                 }
             }
+
+            Form newForm = new CreateQuestion();
+            newForm.MdiParent = this;
+            newForm.Show();
         }
     }
 }
