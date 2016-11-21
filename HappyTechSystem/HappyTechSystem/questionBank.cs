@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Prototyping
+namespace HappyTechSystem
 {
     public class questionBank
     {
         private List<Question> questionList = new List<Question>();
         private int qlCount;
-        private QuestionCreatorForm qcf;
-
         public questionBank()
         {
             
