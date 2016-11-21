@@ -150,6 +150,9 @@
     <EmbeddedResource Include="CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmail.resx">
+      <DependentUpon>ViewEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewQuestionBank.resx">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
     </EmbeddedResource>

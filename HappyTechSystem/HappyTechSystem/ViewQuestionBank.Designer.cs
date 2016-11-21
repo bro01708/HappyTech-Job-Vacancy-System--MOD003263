@@ -231,7 +231,7 @@
             // lbl_questionText
             // 
             this.lbl_questionText.AutoSize = true;
-            this.lbl_questionText.Location = new System.Drawing.Point(387, 10);
+            this.lbl_questionText.Location = new System.Drawing.Point(389, 13);
             this.lbl_questionText.Name = "lbl_questionText";
             this.lbl_questionText.Size = new System.Drawing.Size(76, 13);
             this.lbl_questionText.TabIndex = 30;
@@ -265,7 +265,7 @@
             // 
             // tb_categoryTag
             // 
-            this.tb_categoryTag.Location = new System.Drawing.Point(280, 32);
+            this.tb_categoryTag.Location = new System.Drawing.Point(280, 29);
             this.tb_categoryTag.Name = "tb_categoryTag";
             this.tb_categoryTag.Size = new System.Drawing.Size(100, 20);
             this.tb_categoryTag.TabIndex = 49;
