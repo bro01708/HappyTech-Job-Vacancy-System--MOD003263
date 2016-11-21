@@ -16,5 +16,11 @@ namespace HappyTechSystem
         {
             InitializeComponent();
         }
+
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You will need at least five questions to create a vacancy.\nChoose from the question bank and click 'Create Vacancy' when you're done");
+
+        }
     }
 }

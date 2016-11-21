@@ -48,9 +48,9 @@
             this.lbl_dev = new System.Windows.Forms.Label();
             this.lbl_nav = new System.Windows.Forms.Label();
             this.lbl_welcome = new System.Windows.Forms.Label();
-            this.pb_logo = new System.Windows.Forms.PictureBox();
             this.lbl_databaseStatus = new System.Windows.Forms.Label();
             this.lbl_databaseLoad = new System.Windows.Forms.Label();
+            this.pb_logo = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -195,7 +195,9 @@
             // lbl_dev
             // 
             this.lbl_dev.AutoSize = true;
+            this.lbl_dev.BackColor = System.Drawing.Color.Transparent;
             this.lbl_dev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dev.ForeColor = System.Drawing.Color.Teal;
             this.lbl_dev.Location = new System.Drawing.Point(305, 385);
             this.lbl_dev.Name = "lbl_dev";
             this.lbl_dev.Size = new System.Drawing.Size(311, 15);
@@ -205,34 +207,32 @@
             // lbl_nav
             // 
             this.lbl_nav.AutoSize = true;
+            this.lbl_nav.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nav.ForeColor = System.Drawing.Color.Teal;
             this.lbl_nav.Location = new System.Drawing.Point(213, 311);
             this.lbl_nav.Name = "lbl_nav";
-            this.lbl_nav.Size = new System.Drawing.Size(505, 26);
+            this.lbl_nav.Size = new System.Drawing.Size(499, 26);
             this.lbl_nav.TabIndex = 7;
-            this.lbl_nav.Text = "Use the dropdowns above to navigate the program!";
+            this.lbl_nav.Text = "Use the dropdowns above to navigate the program";
             // 
             // lbl_welcome
             // 
             this.lbl_welcome.AutoSize = true;
+            this.lbl_welcome.BackColor = System.Drawing.Color.Transparent;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_welcome.ForeColor = System.Drawing.Color.Teal;
             this.lbl_welcome.Location = new System.Drawing.Point(176, 280);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(601, 31);
             this.lbl_welcome.TabIndex = 8;
             this.lbl_welcome.Text = "Welcome to the HappyTech Application Manager";
             // 
-            // pb_logo
-            // 
-            this.pb_logo.Location = new System.Drawing.Point(383, 175);
-            this.pb_logo.Name = "pb_logo";
-            this.pb_logo.Size = new System.Drawing.Size(149, 102);
-            this.pb_logo.TabIndex = 9;
-            this.pb_logo.TabStop = false;
-            // 
             // lbl_databaseStatus
             // 
             this.lbl_databaseStatus.AutoSize = true;
+            this.lbl_databaseStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_databaseStatus.ForeColor = System.Drawing.Color.Teal;
             this.lbl_databaseStatus.Location = new System.Drawing.Point(779, 35);
             this.lbl_databaseStatus.Name = "lbl_databaseStatus";
             this.lbl_databaseStatus.Size = new System.Drawing.Size(89, 13);
@@ -242,6 +242,7 @@
             // lbl_databaseLoad
             // 
             this.lbl_databaseLoad.AutoSize = true;
+            this.lbl_databaseLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_databaseLoad.ForeColor = System.Drawing.Color.Red;
             this.lbl_databaseLoad.Location = new System.Drawing.Point(874, 35);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
@@ -249,10 +250,21 @@
             this.lbl_databaseLoad.TabIndex = 12;
             this.lbl_databaseLoad.Text = "Not Loaded";
             // 
+            // pb_logo
+            // 
+            this.pb_logo.BackColor = System.Drawing.Color.Transparent;
+            this.pb_logo.Image = global::HappyTechSystem.Properties.Resources.logo3;
+            this.pb_logo.Location = new System.Drawing.Point(409, 147);
+            this.pb_logo.Name = "pb_logo";
+            this.pb_logo.Size = new System.Drawing.Size(127, 130);
+            this.pb_logo.TabIndex = 9;
+            this.pb_logo.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(949, 567);
             this.Controls.Add(this.lbl_databaseLoad);
             this.Controls.Add(this.lbl_databaseStatus);

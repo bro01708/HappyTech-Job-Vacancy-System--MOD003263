@@ -132,8 +132,14 @@
     <Compile Include="ViewVacancies.Designer.cs">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConductInterview.resx">
+      <DependentUpon>ConductInterview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateTemplate.resx">
       <DependentUpon>CreateTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateVacancy.resx">
+      <DependentUpon>CreateVacancy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -146,6 +152,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
@@ -168,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
