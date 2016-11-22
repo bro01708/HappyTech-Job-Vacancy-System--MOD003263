@@ -8,18 +8,18 @@ namespace HappyTechSystem
 {
     public class Question
     {
-        private string Text;
-        private int ID;
-        private string Tag;
+        private string text;
+        private int id;
+        private string tag;
 
-        public String GetText {  get { return Text; } set { Text = value; }  }
+        public String GetText {  get { return text; } set { text = value; }  }
 
-        public String GetTag { get { return Tag; } set { Tag = value; } }
-        public int GetID { get { return ID; } set { ID = value; } }
+        public String GetTag { get { return tag; } set { tag = value; } }
+        public int GetID { get { return id; } set { id = value; } }
 
         public override string ToString()
         {
-            return Text;
+            return text;
         }
     }
 }

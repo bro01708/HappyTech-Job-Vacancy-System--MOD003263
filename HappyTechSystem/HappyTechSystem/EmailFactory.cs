@@ -9,14 +9,29 @@ namespace HappyTechSystem
     class EmailFactory
     {
         private List<Email> emailRecords= new List<Email>(); //Stores all applicants email addresses
-        private string hrManager;
+        private List<EmailTemplate> templates = new List<EmailTemplate>();
+        private bool dbLoaded;
 
-        public void CreateEmail() 
+        private static EmailFactory uniqueInst = null;
+        public EmailFactory()
+        {
+            RefreshDBConnection();
+        }
+        public static EmailFactory getInst()
+        {
+            if (uniqueInst == null)
+            {
+                uniqueInst = new EmailFactory();
+            }
+            return uniqueInst;
+        }
+
+        public void AddTemplate() 
         {
 
         }
 
-        public void PreviewEmail()
+        public void RemoveTemplate(int m_id)
         {
 
         }
@@ -24,6 +39,21 @@ namespace HappyTechSystem
         public void SendEmail()
         {
 
+        }
+
+        public void RefreshDBConnection()
+        {
+            try
+            {
+                MetaLayer ml = MetaLayer.instance();
+                templates = ml.getEmailTemplates();
+                dbLoaded = true;
+            }
+            catch (Exception e)
+            {
+                dbLoaded = false;
+                throw e;
+            }
         }
     }
 }

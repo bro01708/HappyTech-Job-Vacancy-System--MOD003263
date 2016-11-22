@@ -10,13 +10,14 @@ namespace HappyTechSystem
 {
     public class QuestionBank
     {
+        //Holds the list of available quesiton objects for access by any other class
         private List<Question> questionList = new List<Question>();
-        private int qlCount;
-        //private QuestionCreatorForm qcf;
+        //Flag to confirm DB load Correctly
+        private bool dbLoaded;
 
         public QuestionBank()
         {
-            
+            RefreshDBConnection();
         }
 
         private static QuestionBank uniqueInst = null;
@@ -38,13 +39,58 @@ namespace HappyTechSystem
         {
             questionList.Add(m_q);
         }
-
-        public void LoadForm()
+        
+        public void removeFromList(int m_question_ID)
         {
-            qlCount = questionList.Count;
-            qlCount = qlCount + 1;
-            //qcf = new QuestionCreatorForm(qlCount);
-            //qcf.Show();
+            foreach (Question q in questionList)
+            {
+                if (q.GetID == m_question_ID)
+                {
+                    questionList.Remove(q);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Created By Peter.
+        /// Returns the question ID of the last Question stored in the list.
+        /// This allows for the new questions to have QuestionID's that are never duplicates.
+        /// </summary>
+        /// <returns></returns>
+        public int getHighestQuestionID()
+        {
+            try
+            {
+                int questionCount = questionList.Count();
+                return questionList[questionCount - 1].GetID;
+                
+            }
+            catch (Exception e)
+            {
+
+                throw e ;
+            }
+        }
+
+        /// <summary>
+        /// Created by Peter
+        /// Used on initialization to obtain question object data from DB. Also use to refresh DB
+        /// after removing an entry in order to resync to avoid mismatches.
+        /// </summary>
+        public void RefreshDBConnection()
+        {
+            try
+            {
+                MetaLayer ml = MetaLayer.instance();
+                questionList = ml.getQuestions();
+                dbLoaded = true;
+            }
+            catch (Exception e)
+            {
+                dbLoaded = false;
+                throw e;
+            }
         }
     }
 }

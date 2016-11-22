@@ -6,33 +6,17 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem
 {
-    class EmailTemplate
+    public class EmailTemplate
     {
-        private string body, greeting, header, signOff, type;
-        public void GetBody() //Creats email body
-        {
+        private string  body, subject, type;
+        private int id;
 
-        }
+        public int GetID { get { return id; } set { id = value; } }
 
-        public void GetGreeting() //Creates email greeting
-        {
+        public String GetBody { get { return body; } set { body = value; } }
 
-        }
+        public String GetSubject { get { return subject; } set { subject = value; } }
 
-        public void GetHeader() //Creates email header
-        {
-
-        
-        }
-
-        public void GetSignOff() 
-        {
-
-        }
-
-        public void GetEmailType()
-        {
-
-        }
+        public String GetTemplateType { get { return type; } set { type = value; } }
     }
 }
