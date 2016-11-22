@@ -53,12 +53,24 @@
             this.lbl_rank5 = new System.Windows.Forms.Label();
             this.btn_createQuestion = new System.Windows.Forms.Button();
             this.btn_createQuestionHelp = new System.Windows.Forms.Button();
+            this.gb_category = new System.Windows.Forms.GroupBox();
+            this.btn_categoryDone = new System.Windows.Forms.Button();
+            this.lbl_deleteConfirmation = new System.Windows.Forms.Label();
+            this.lbl_deleteCategory = new System.Windows.Forms.Label();
+            this.btn_deleteCategory = new System.Windows.Forms.Button();
+            this.lbl_addNewCategory = new System.Windows.Forms.Label();
+            this.cb_deleteCategory = new System.Windows.Forms.ComboBox();
+            this.lbl_addConfimation = new System.Windows.Forms.Label();
+            this.tb_addCategory = new System.Windows.Forms.TextBox();
+            this.btn_addCategory = new System.Windows.Forms.Button();
+            this.btn_manageCategories = new System.Windows.Forms.Button();
+            this.gb_category.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_questionID
             // 
             this.lbl_questionID.AutoSize = true;
-            this.lbl_questionID.Location = new System.Drawing.Point(13, 13);
+            this.lbl_questionID.Location = new System.Drawing.Point(18, 11);
             this.lbl_questionID.Name = "lbl_questionID";
             this.lbl_questionID.Size = new System.Drawing.Size(63, 13);
             this.lbl_questionID.TabIndex = 0;
@@ -66,7 +78,7 @@
             // 
             // tb_questionID
             // 
-            this.tb_questionID.Location = new System.Drawing.Point(90, 10);
+            this.tb_questionID.Location = new System.Drawing.Point(34, 27);
             this.tb_questionID.Name = "tb_questionID";
             this.tb_questionID.ReadOnly = true;
             this.tb_questionID.Size = new System.Drawing.Size(28, 20);
@@ -75,11 +87,11 @@
             // lbl_category
             // 
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(13, 36);
+            this.lbl_category.Location = new System.Drawing.Point(124, 10);
             this.lbl_category.Name = "lbl_category";
-            this.lbl_category.Size = new System.Drawing.Size(71, 13);
+            this.lbl_category.Size = new System.Drawing.Size(208, 13);
             this.lbl_category.TabIndex = 3;
-            this.lbl_category.Text = "Category Tag";
+            this.lbl_category.Text = "Select a Category to tag this question with:";
             // 
             // comboBox1
             // 
@@ -93,16 +105,16 @@
             "Receptionist",
             "HR Manager",
             "Sales Rep"});
-            this.comboBox1.Location = new System.Drawing.Point(90, 33);
+            this.comboBox1.Location = new System.Drawing.Point(147, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 21);
+            this.comboBox1.Size = new System.Drawing.Size(145, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.Text = "Base";
             // 
             // lbl_questionText
             // 
             this.lbl_questionText.AutoSize = true;
-            this.lbl_questionText.Location = new System.Drawing.Point(12, 77);
+            this.lbl_questionText.Location = new System.Drawing.Point(17, 68);
             this.lbl_questionText.Name = "lbl_questionText";
             this.lbl_questionText.Size = new System.Drawing.Size(120, 13);
             this.lbl_questionText.TabIndex = 5;
@@ -110,7 +122,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 77);
+            this.textBox1.Location = new System.Drawing.Point(147, 68);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(394, 99);
@@ -118,7 +130,7 @@
             // 
             // tb_response1
             // 
-            this.tb_response1.Location = new System.Drawing.Point(142, 218);
+            this.tb_response1.Location = new System.Drawing.Point(147, 206);
             this.tb_response1.Multiline = true;
             this.tb_response1.Name = "tb_response1";
             this.tb_response1.Size = new System.Drawing.Size(185, 41);
@@ -126,7 +138,7 @@
             // 
             // tb_feedback1
             // 
-            this.tb_feedback1.Location = new System.Drawing.Point(347, 218);
+            this.tb_feedback1.Location = new System.Drawing.Point(352, 206);
             this.tb_feedback1.Multiline = true;
             this.tb_feedback1.Name = "tb_feedback1";
             this.tb_feedback1.Size = new System.Drawing.Size(185, 41);
@@ -134,7 +146,7 @@
             // 
             // tb_feedback2
             // 
-            this.tb_feedback2.Location = new System.Drawing.Point(347, 265);
+            this.tb_feedback2.Location = new System.Drawing.Point(352, 253);
             this.tb_feedback2.Multiline = true;
             this.tb_feedback2.Name = "tb_feedback2";
             this.tb_feedback2.Size = new System.Drawing.Size(185, 41);
@@ -142,7 +154,7 @@
             // 
             // tb_response2
             // 
-            this.tb_response2.Location = new System.Drawing.Point(142, 265);
+            this.tb_response2.Location = new System.Drawing.Point(147, 253);
             this.tb_response2.Multiline = true;
             this.tb_response2.Name = "tb_response2";
             this.tb_response2.Size = new System.Drawing.Size(185, 41);
@@ -150,7 +162,7 @@
             // 
             // tb_feedback3
             // 
-            this.tb_feedback3.Location = new System.Drawing.Point(347, 312);
+            this.tb_feedback3.Location = new System.Drawing.Point(352, 300);
             this.tb_feedback3.Multiline = true;
             this.tb_feedback3.Name = "tb_feedback3";
             this.tb_feedback3.Size = new System.Drawing.Size(185, 41);
@@ -158,7 +170,7 @@
             // 
             // tb_response3
             // 
-            this.tb_response3.Location = new System.Drawing.Point(142, 312);
+            this.tb_response3.Location = new System.Drawing.Point(147, 300);
             this.tb_response3.Multiline = true;
             this.tb_response3.Name = "tb_response3";
             this.tb_response3.Size = new System.Drawing.Size(185, 41);
@@ -166,7 +178,7 @@
             // 
             // tb_feedback4
             // 
-            this.tb_feedback4.Location = new System.Drawing.Point(347, 359);
+            this.tb_feedback4.Location = new System.Drawing.Point(352, 347);
             this.tb_feedback4.Multiline = true;
             this.tb_feedback4.Name = "tb_feedback4";
             this.tb_feedback4.Size = new System.Drawing.Size(185, 41);
@@ -174,7 +186,7 @@
             // 
             // tb_response4
             // 
-            this.tb_response4.Location = new System.Drawing.Point(142, 359);
+            this.tb_response4.Location = new System.Drawing.Point(147, 347);
             this.tb_response4.Multiline = true;
             this.tb_response4.Name = "tb_response4";
             this.tb_response4.Size = new System.Drawing.Size(185, 41);
@@ -182,7 +194,7 @@
             // 
             // tb_feedback5
             // 
-            this.tb_feedback5.Location = new System.Drawing.Point(347, 406);
+            this.tb_feedback5.Location = new System.Drawing.Point(352, 394);
             this.tb_feedback5.Multiline = true;
             this.tb_feedback5.Name = "tb_feedback5";
             this.tb_feedback5.Size = new System.Drawing.Size(185, 41);
@@ -190,7 +202,7 @@
             // 
             // tb_response5
             // 
-            this.tb_response5.Location = new System.Drawing.Point(142, 406);
+            this.tb_response5.Location = new System.Drawing.Point(147, 394);
             this.tb_response5.Multiline = true;
             this.tb_response5.Name = "tb_response5";
             this.tb_response5.Size = new System.Drawing.Size(185, 41);
@@ -199,7 +211,7 @@
             // lbl_response
             // 
             this.lbl_response.AutoSize = true;
-            this.lbl_response.Location = new System.Drawing.Point(193, 202);
+            this.lbl_response.Location = new System.Drawing.Point(198, 190);
             this.lbl_response.Name = "lbl_response";
             this.lbl_response.Size = new System.Drawing.Size(90, 13);
             this.lbl_response.TabIndex = 17;
@@ -208,7 +220,7 @@
             // lbl_feedback
             // 
             this.lbl_feedback.AutoSize = true;
-            this.lbl_feedback.Location = new System.Drawing.Point(379, 202);
+            this.lbl_feedback.Location = new System.Drawing.Point(384, 190);
             this.lbl_feedback.Name = "lbl_feedback";
             this.lbl_feedback.Size = new System.Drawing.Size(133, 13);
             this.lbl_feedback.TabIndex = 18;
@@ -218,7 +230,7 @@
             // 
             this.lbl_rank1.AutoSize = true;
             this.lbl_rank1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rank1.Location = new System.Drawing.Point(13, 228);
+            this.lbl_rank1.Location = new System.Drawing.Point(18, 216);
             this.lbl_rank1.Name = "lbl_rank1";
             this.lbl_rank1.Size = new System.Drawing.Size(124, 18);
             this.lbl_rank1.TabIndex = 19;
@@ -228,7 +240,7 @@
             // 
             this.lbl_rank2.AutoSize = true;
             this.lbl_rank2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rank2.Location = new System.Drawing.Point(13, 275);
+            this.lbl_rank2.Location = new System.Drawing.Point(18, 263);
             this.lbl_rank2.Name = "lbl_rank2";
             this.lbl_rank2.Size = new System.Drawing.Size(61, 18);
             this.lbl_rank2.TabIndex = 20;
@@ -238,7 +250,7 @@
             // 
             this.lbl_rank3.AutoSize = true;
             this.lbl_rank3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rank3.Location = new System.Drawing.Point(13, 321);
+            this.lbl_rank3.Location = new System.Drawing.Point(18, 309);
             this.lbl_rank3.Name = "lbl_rank3";
             this.lbl_rank3.Size = new System.Drawing.Size(61, 18);
             this.lbl_rank3.TabIndex = 21;
@@ -248,7 +260,7 @@
             // 
             this.lbl_rank4.AutoSize = true;
             this.lbl_rank4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rank4.Location = new System.Drawing.Point(13, 368);
+            this.lbl_rank4.Location = new System.Drawing.Point(18, 356);
             this.lbl_rank4.Name = "lbl_rank4";
             this.lbl_rank4.Size = new System.Drawing.Size(61, 18);
             this.lbl_rank4.TabIndex = 22;
@@ -258,7 +270,7 @@
             // 
             this.lbl_rank5.AutoSize = true;
             this.lbl_rank5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rank5.Location = new System.Drawing.Point(13, 416);
+            this.lbl_rank5.Location = new System.Drawing.Point(18, 404);
             this.lbl_rank5.Name = "lbl_rank5";
             this.lbl_rank5.Size = new System.Drawing.Size(112, 18);
             this.lbl_rank5.TabIndex = 23;
@@ -268,9 +280,9 @@
             // 
             this.btn_createQuestion.Enabled = false;
             this.btn_createQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_createQuestion.Location = new System.Drawing.Point(16, 456);
+            this.btn_createQuestion.Location = new System.Drawing.Point(21, 444);
             this.btn_createQuestion.Name = "btn_createQuestion";
-            this.btn_createQuestion.Size = new System.Drawing.Size(470, 35);
+            this.btn_createQuestion.Size = new System.Drawing.Size(712, 35);
             this.btn_createQuestion.TabIndex = 24;
             this.btn_createQuestion.Text = "Create Question";
             this.btn_createQuestion.UseVisualStyleBackColor = true;
@@ -278,20 +290,130 @@
             // btn_createQuestionHelp
             // 
             this.btn_createQuestionHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_createQuestionHelp.Location = new System.Drawing.Point(493, 456);
+            this.btn_createQuestionHelp.Location = new System.Drawing.Point(745, 444);
             this.btn_createQuestionHelp.Name = "btn_createQuestionHelp";
             this.btn_createQuestionHelp.Size = new System.Drawing.Size(39, 35);
             this.btn_createQuestionHelp.TabIndex = 25;
             this.btn_createQuestionHelp.Text = "?";
             this.btn_createQuestionHelp.UseVisualStyleBackColor = true;
             // 
+            // gb_category
+            // 
+            this.gb_category.Controls.Add(this.btn_categoryDone);
+            this.gb_category.Controls.Add(this.lbl_deleteConfirmation);
+            this.gb_category.Controls.Add(this.lbl_deleteCategory);
+            this.gb_category.Controls.Add(this.btn_deleteCategory);
+            this.gb_category.Controls.Add(this.lbl_addNewCategory);
+            this.gb_category.Controls.Add(this.cb_deleteCategory);
+            this.gb_category.Controls.Add(this.lbl_addConfimation);
+            this.gb_category.Controls.Add(this.tb_addCategory);
+            this.gb_category.Controls.Add(this.btn_addCategory);
+            this.gb_category.Enabled = false;
+            this.gb_category.Location = new System.Drawing.Point(562, 119);
+            this.gb_category.Name = "gb_category";
+            this.gb_category.Size = new System.Drawing.Size(222, 222);
+            this.gb_category.TabIndex = 26;
+            this.gb_category.TabStop = false;
+            this.gb_category.Text = "Category Manager";
+            // 
+            // btn_categoryDone
+            // 
+            this.btn_categoryDone.Location = new System.Drawing.Point(47, 178);
+            this.btn_categoryDone.Name = "btn_categoryDone";
+            this.btn_categoryDone.Size = new System.Drawing.Size(124, 37);
+            this.btn_categoryDone.TabIndex = 8;
+            this.btn_categoryDone.Text = "Done";
+            this.btn_categoryDone.UseVisualStyleBackColor = true;
+            // 
+            // lbl_deleteConfirmation
+            // 
+            this.lbl_deleteConfirmation.AutoSize = true;
+            this.lbl_deleteConfirmation.Location = new System.Drawing.Point(11, 147);
+            this.lbl_deleteConfirmation.Name = "lbl_deleteConfirmation";
+            this.lbl_deleteConfirmation.Size = new System.Drawing.Size(16, 13);
+            this.lbl_deleteConfirmation.TabIndex = 7;
+            this.lbl_deleteConfirmation.Text = "...";
+            // 
+            // lbl_deleteCategory
+            // 
+            this.lbl_deleteCategory.AutoSize = true;
+            this.lbl_deleteCategory.Location = new System.Drawing.Point(44, 107);
+            this.lbl_deleteCategory.Name = "lbl_deleteCategory";
+            this.lbl_deleteCategory.Size = new System.Drawing.Size(94, 13);
+            this.lbl_deleteCategory.TabIndex = 6;
+            this.lbl_deleteCategory.Text = "Delete a category:";
+            // 
+            // btn_deleteCategory
+            // 
+            this.btn_deleteCategory.Location = new System.Drawing.Point(165, 121);
+            this.btn_deleteCategory.Name = "btn_deleteCategory";
+            this.btn_deleteCategory.Size = new System.Drawing.Size(48, 23);
+            this.btn_deleteCategory.TabIndex = 5;
+            this.btn_deleteCategory.Text = "Delete";
+            this.btn_deleteCategory.UseVisualStyleBackColor = true;
+            this.btn_deleteCategory.Click += new System.EventHandler(this.btn_deleteCategory_Click);
+            // 
+            // lbl_addNewCategory
+            // 
+            this.lbl_addNewCategory.AutoSize = true;
+            this.lbl_addNewCategory.Location = new System.Drawing.Point(44, 29);
+            this.lbl_addNewCategory.Name = "lbl_addNewCategory";
+            this.lbl_addNewCategory.Size = new System.Drawing.Size(106, 13);
+            this.lbl_addNewCategory.TabIndex = 4;
+            this.lbl_addNewCategory.Text = "Add a new Category:";
+            // 
+            // cb_deleteCategory
+            // 
+            this.cb_deleteCategory.FormattingEnabled = true;
+            this.cb_deleteCategory.Location = new System.Drawing.Point(14, 123);
+            this.cb_deleteCategory.Name = "cb_deleteCategory";
+            this.cb_deleteCategory.Size = new System.Drawing.Size(145, 21);
+            this.cb_deleteCategory.TabIndex = 3;
+            // 
+            // lbl_addConfimation
+            // 
+            this.lbl_addConfimation.AutoSize = true;
+            this.lbl_addConfimation.Location = new System.Drawing.Point(11, 72);
+            this.lbl_addConfimation.Name = "lbl_addConfimation";
+            this.lbl_addConfimation.Size = new System.Drawing.Size(16, 13);
+            this.lbl_addConfimation.TabIndex = 2;
+            this.lbl_addConfimation.Text = "...";
+            // 
+            // tb_addCategory
+            // 
+            this.tb_addCategory.Location = new System.Drawing.Point(14, 49);
+            this.tb_addCategory.Name = "tb_addCategory";
+            this.tb_addCategory.Size = new System.Drawing.Size(145, 20);
+            this.tb_addCategory.TabIndex = 1;
+            // 
+            // btn_addCategory
+            // 
+            this.btn_addCategory.Location = new System.Drawing.Point(165, 47);
+            this.btn_addCategory.Name = "btn_addCategory";
+            this.btn_addCategory.Size = new System.Drawing.Size(48, 23);
+            this.btn_addCategory.TabIndex = 0;
+            this.btn_addCategory.Text = "Add";
+            this.btn_addCategory.UseVisualStyleBackColor = true;
+            // 
+            // btn_manageCategories
+            // 
+            this.btn_manageCategories.Location = new System.Drawing.Point(356, 18);
+            this.btn_manageCategories.Name = "btn_manageCategories";
+            this.btn_manageCategories.Size = new System.Drawing.Size(185, 35);
+            this.btn_manageCategories.TabIndex = 27;
+            this.btn_manageCategories.Text = "Manage Categories";
+            this.btn_manageCategories.UseVisualStyleBackColor = true;
+            // 
             // CreateQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 503);
+            this.ClientSize = new System.Drawing.Size(796, 487);
+            this.Controls.Add(this.btn_manageCategories);
+            this.Controls.Add(this.gb_category);
             this.Controls.Add(this.btn_createQuestionHelp);
             this.Controls.Add(this.btn_createQuestion);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbl_rank5);
             this.Controls.Add(this.lbl_rank4);
             this.Controls.Add(this.lbl_rank3);
@@ -311,13 +433,14 @@
             this.Controls.Add(this.tb_response1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_questionText);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.tb_questionID);
             this.Controls.Add(this.lbl_questionID);
             this.Name = "CreateQuestion";
             this.Text = "Create a Question";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateQuestion_FormClosed);
+            this.gb_category.ResumeLayout(false);
+            this.gb_category.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +473,16 @@
         private System.Windows.Forms.Label lbl_rank5;
         private System.Windows.Forms.Button btn_createQuestion;
         private System.Windows.Forms.Button btn_createQuestionHelp;
+        private System.Windows.Forms.GroupBox gb_category;
+        private System.Windows.Forms.TextBox tb_addCategory;
+        private System.Windows.Forms.Button btn_addCategory;
+        private System.Windows.Forms.Label lbl_addConfimation;
+        private System.Windows.Forms.Label lbl_deleteCategory;
+        private System.Windows.Forms.Button btn_deleteCategory;
+        private System.Windows.Forms.Label lbl_addNewCategory;
+        private System.Windows.Forms.ComboBox cb_deleteCategory;
+        private System.Windows.Forms.Button btn_manageCategories;
+        private System.Windows.Forms.Label lbl_deleteConfirmation;
+        private System.Windows.Forms.Button btn_categoryDone;
     }
 }

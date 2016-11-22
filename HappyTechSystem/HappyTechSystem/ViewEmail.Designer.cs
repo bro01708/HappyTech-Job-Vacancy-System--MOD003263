@@ -82,6 +82,7 @@
             // 
             // btn_delete
             // 
+            this.btn_delete.ForeColor = System.Drawing.Color.Red;
             this.btn_delete.Location = new System.Drawing.Point(569, 145);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(53, 39);

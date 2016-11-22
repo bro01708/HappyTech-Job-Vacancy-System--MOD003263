@@ -129,7 +129,7 @@
             // lbl_feedback
             // 
             this.lbl_feedback.AutoSize = true;
-            this.lbl_feedback.Location = new System.Drawing.Point(630, 142);
+            this.lbl_feedback.Location = new System.Drawing.Point(596, 142);
             this.lbl_feedback.Name = "lbl_feedback";
             this.lbl_feedback.Size = new System.Drawing.Size(133, 13);
             this.lbl_feedback.TabIndex = 43;
@@ -146,7 +146,7 @@
             // 
             // tb_feedback5
             // 
-            this.tb_feedback5.Location = new System.Drawing.Point(598, 346);
+            this.tb_feedback5.Location = new System.Drawing.Point(564, 346);
             this.tb_feedback5.Multiline = true;
             this.tb_feedback5.Name = "tb_feedback5";
             this.tb_feedback5.ReadOnly = true;
@@ -164,7 +164,7 @@
             // 
             // tb_feedback4
             // 
-            this.tb_feedback4.Location = new System.Drawing.Point(598, 299);
+            this.tb_feedback4.Location = new System.Drawing.Point(564, 299);
             this.tb_feedback4.Multiline = true;
             this.tb_feedback4.Name = "tb_feedback4";
             this.tb_feedback4.ReadOnly = true;
@@ -182,7 +182,7 @@
             // 
             // tb_feedback3
             // 
-            this.tb_feedback3.Location = new System.Drawing.Point(598, 252);
+            this.tb_feedback3.Location = new System.Drawing.Point(564, 252);
             this.tb_feedback3.Multiline = true;
             this.tb_feedback3.Name = "tb_feedback3";
             this.tb_feedback3.ReadOnly = true;
@@ -200,7 +200,7 @@
             // 
             // tb_feedback2
             // 
-            this.tb_feedback2.Location = new System.Drawing.Point(598, 205);
+            this.tb_feedback2.Location = new System.Drawing.Point(564, 205);
             this.tb_feedback2.Multiline = true;
             this.tb_feedback2.Name = "tb_feedback2";
             this.tb_feedback2.ReadOnly = true;
@@ -218,7 +218,7 @@
             // 
             // tb_feedback1
             // 
-            this.tb_feedback1.Location = new System.Drawing.Point(598, 158);
+            this.tb_feedback1.Location = new System.Drawing.Point(564, 158);
             this.tb_feedback1.Multiline = true;
             this.tb_feedback1.Name = "tb_feedback1";
             this.tb_feedback1.ReadOnly = true;
@@ -240,7 +240,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(394, 99);
+            this.textBox1.Size = new System.Drawing.Size(360, 99);
             this.textBox1.TabIndex = 31;
             // 
             // lbl_questionText
@@ -290,7 +290,7 @@
             // 
             this.btn_delete.Enabled = false;
             this.btn_delete.ForeColor = System.Drawing.Color.Red;
-            this.btn_delete.Location = new System.Drawing.Point(804, 147);
+            this.btn_delete.Location = new System.Drawing.Point(765, 147);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(48, 48);
             this.btn_delete.TabIndex = 50;
@@ -299,7 +299,7 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(804, 7);
+            this.btn_edit.Location = new System.Drawing.Point(765, 7);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(48, 48);
             this.btn_edit.TabIndex = 51;
@@ -309,7 +309,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(804, 345);
+            this.btn_close.Location = new System.Drawing.Point(765, 345);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(48, 48);
             this.btn_close.TabIndex = 52;
@@ -319,7 +319,7 @@
             // btn_save
             // 
             this.btn_save.Enabled = false;
-            this.btn_save.Location = new System.Drawing.Point(804, 93);
+            this.btn_save.Location = new System.Drawing.Point(765, 93);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(48, 48);
             this.btn_save.TabIndex = 53;
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 405);
+            this.ClientSize = new System.Drawing.Size(825, 405);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_close);
@@ -362,7 +362,7 @@
             this.Controls.Add(this.lbl_questionID);
             this.Controls.Add(this.lb_Q);
             this.Name = "ViewQuestionBank";
-            this.Text = "ViewQuestionBank";
+            this.Text = "Modify and View Question Bank";
             this.ResumeLayout(false);
             this.PerformLayout();
 

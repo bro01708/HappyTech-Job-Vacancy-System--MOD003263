@@ -31,6 +31,8 @@
             this.cb_vacancy = new System.Windows.Forms.ComboBox();
             this.lbl_vacancy = new System.Windows.Forms.Label();
             this.p_questions = new System.Windows.Forms.Panel();
+            this.lbl_extraNotes = new System.Windows.Forms.Label();
+            this.tb_notes = new System.Windows.Forms.TextBox();
             this.cb_rank5 = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.cb_rank4 = new System.Windows.Forms.CheckBox();
@@ -39,7 +41,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.cb_rank2 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_questionID = new System.Windows.Forms.TextBox();
             this.lbl_questionID = new System.Windows.Forms.Label();
             this.cb_rank1 = new System.Windows.Forms.CheckBox();
             this.tb_rank1 = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.tb_interviewerName = new System.Windows.Forms.TextBox();
             this.tb_applicantName = new System.Windows.Forms.TextBox();
             this.lbl_attachCV = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.lbl_extraNotes = new System.Windows.Forms.Label();
             this.tb_cvPath = new System.Windows.Forms.TextBox();
             this.btn_browseCV = new System.Windows.Forms.Button();
             this.btn_beginHelp = new System.Windows.Forms.Button();
@@ -64,6 +64,7 @@
             // 
             // cb_vacancy
             // 
+            this.cb_vacancy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_vacancy.FormattingEnabled = true;
             this.cb_vacancy.Location = new System.Drawing.Point(229, 12);
             this.cb_vacancy.Name = "cb_vacancy";
@@ -72,6 +73,7 @@
             // 
             // lbl_vacancy
             // 
+            this.lbl_vacancy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_vacancy.AutoSize = true;
             this.lbl_vacancy.Location = new System.Drawing.Point(13, 19);
             this.lbl_vacancy.Name = "lbl_vacancy";
@@ -81,8 +83,9 @@
             // 
             // p_questions
             // 
+            this.p_questions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p_questions.Controls.Add(this.lbl_extraNotes);
-            this.p_questions.Controls.Add(this.textBox6);
+            this.p_questions.Controls.Add(this.tb_notes);
             this.p_questions.Controls.Add(this.cb_rank5);
             this.p_questions.Controls.Add(this.textBox5);
             this.p_questions.Controls.Add(this.cb_rank4);
@@ -91,7 +94,7 @@
             this.p_questions.Controls.Add(this.textBox3);
             this.p_questions.Controls.Add(this.cb_rank2);
             this.p_questions.Controls.Add(this.textBox2);
-            this.p_questions.Controls.Add(this.textBox1);
+            this.p_questions.Controls.Add(this.tb_questionID);
             this.p_questions.Controls.Add(this.lbl_questionID);
             this.p_questions.Controls.Add(this.cb_rank1);
             this.p_questions.Controls.Add(this.tb_rank1);
@@ -103,6 +106,23 @@
             this.p_questions.Name = "p_questions";
             this.p_questions.Size = new System.Drawing.Size(755, 357);
             this.p_questions.TabIndex = 2;
+            // 
+            // lbl_extraNotes
+            // 
+            this.lbl_extraNotes.AutoSize = true;
+            this.lbl_extraNotes.Location = new System.Drawing.Point(248, 269);
+            this.lbl_extraNotes.Name = "lbl_extraNotes";
+            this.lbl_extraNotes.Size = new System.Drawing.Size(262, 13);
+            this.lbl_extraNotes.TabIndex = 17;
+            this.lbl_extraNotes.Text = "Add any additional notes about the interviewee below:";
+            // 
+            // tb_notes
+            // 
+            this.tb_notes.Location = new System.Drawing.Point(184, 288);
+            this.tb_notes.Multiline = true;
+            this.tb_notes.Name = "tb_notes";
+            this.tb_notes.Size = new System.Drawing.Size(386, 56);
+            this.tb_notes.TabIndex = 16;
             // 
             // cb_rank5
             // 
@@ -176,13 +196,13 @@
             this.textBox2.Size = new System.Drawing.Size(143, 66);
             this.textBox2.TabIndex = 8;
             // 
-            // textBox1
+            // tb_questionID
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
-            this.textBox1.TabIndex = 7;
+            this.tb_questionID.Location = new System.Drawing.Point(106, 7);
+            this.tb_questionID.Name = "tb_questionID";
+            this.tb_questionID.ReadOnly = true;
+            this.tb_questionID.Size = new System.Drawing.Size(25, 20);
+            this.tb_questionID.TabIndex = 7;
             // 
             // lbl_questionID
             // 
@@ -239,6 +259,8 @@
             // 
             // btn_complete
             // 
+            this.btn_complete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_complete.Enabled = false;
             this.btn_complete.Location = new System.Drawing.Point(277, 507);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(255, 42);
@@ -248,6 +270,7 @@
             // 
             // lbl_applicantName
             // 
+            this.lbl_applicantName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_applicantName.AutoSize = true;
             this.lbl_applicantName.Location = new System.Drawing.Point(13, 48);
             this.lbl_applicantName.Name = "lbl_applicantName";
@@ -257,6 +280,7 @@
             // 
             // btn_beginInterview
             // 
+            this.btn_beginInterview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_beginInterview.Enabled = false;
             this.btn_beginInterview.Location = new System.Drawing.Point(277, 114);
             this.btn_beginInterview.Name = "btn_beginInterview";
@@ -267,6 +291,7 @@
             // 
             // lbl_interviewerName
             // 
+            this.lbl_interviewerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_interviewerName.AutoSize = true;
             this.lbl_interviewerName.Location = new System.Drawing.Point(13, 82);
             this.lbl_interviewerName.Name = "lbl_interviewerName";
@@ -276,6 +301,7 @@
             // 
             // tb_interviewerName
             // 
+            this.tb_interviewerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tb_interviewerName.Location = new System.Drawing.Point(162, 79);
             this.tb_interviewerName.Name = "tb_interviewerName";
             this.tb_interviewerName.Size = new System.Drawing.Size(188, 20);
@@ -283,6 +309,7 @@
             // 
             // tb_applicantName
             // 
+            this.tb_applicantName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tb_applicantName.Location = new System.Drawing.Point(162, 45);
             this.tb_applicantName.Name = "tb_applicantName";
             this.tb_applicantName.Size = new System.Drawing.Size(188, 20);
@@ -290,6 +317,7 @@
             // 
             // lbl_attachCV
             // 
+            this.lbl_attachCV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_attachCV.AutoSize = true;
             this.lbl_attachCV.Location = new System.Drawing.Point(366, 48);
             this.lbl_attachCV.Name = "lbl_attachCV";
@@ -297,25 +325,9 @@
             this.lbl_attachCV.TabIndex = 20;
             this.lbl_attachCV.Text = "Attach CV:";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(184, 288);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(386, 56);
-            this.textBox6.TabIndex = 16;
-            // 
-            // lbl_extraNotes
-            // 
-            this.lbl_extraNotes.AutoSize = true;
-            this.lbl_extraNotes.Location = new System.Drawing.Point(248, 269);
-            this.lbl_extraNotes.Name = "lbl_extraNotes";
-            this.lbl_extraNotes.Size = new System.Drawing.Size(262, 13);
-            this.lbl_extraNotes.TabIndex = 17;
-            this.lbl_extraNotes.Text = "Add any additional notes about the interviewee below:";
-            // 
             // tb_cvPath
             // 
+            this.tb_cvPath.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tb_cvPath.Location = new System.Drawing.Point(430, 44);
             this.tb_cvPath.Name = "tb_cvPath";
             this.tb_cvPath.Size = new System.Drawing.Size(224, 20);
@@ -323,6 +335,7 @@
             // 
             // btn_browseCV
             // 
+            this.btn_browseCV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_browseCV.Location = new System.Drawing.Point(660, 42);
             this.btn_browseCV.Name = "btn_browseCV";
             this.btn_browseCV.Size = new System.Drawing.Size(38, 23);
@@ -333,6 +346,7 @@
             // 
             // btn_beginHelp
             // 
+            this.btn_beginHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_beginHelp.Location = new System.Drawing.Point(538, 114);
             this.btn_beginHelp.Name = "btn_beginHelp";
             this.btn_beginHelp.Size = new System.Drawing.Size(27, 24);
@@ -381,7 +395,7 @@
         private System.Windows.Forms.Button btn_nextQuestion;
         private System.Windows.Forms.Button btn_previousQuestion;
         private System.Windows.Forms.TextBox tb_questionText;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_questionID;
         private System.Windows.Forms.Label lbl_questionID;
         private System.Windows.Forms.CheckBox cb_rank5;
         private System.Windows.Forms.TextBox textBox5;
@@ -399,7 +413,7 @@
         private System.Windows.Forms.TextBox tb_applicantName;
         private System.Windows.Forms.Label lbl_attachCV;
         private System.Windows.Forms.Label lbl_extraNotes;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tb_notes;
         private System.Windows.Forms.TextBox tb_cvPath;
         private System.Windows.Forms.Button btn_browseCV;
         private System.Windows.Forms.Button btn_beginHelp;

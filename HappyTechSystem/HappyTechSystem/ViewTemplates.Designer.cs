@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ViewTemplates
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "ViewTemplates";
+            this.ClientSize = new System.Drawing.Size(403, 171);
+            this.Name = "ViewTemplates";
+            this.Text = "Modify and View Templates";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

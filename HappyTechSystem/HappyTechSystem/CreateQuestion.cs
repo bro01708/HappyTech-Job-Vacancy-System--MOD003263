@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI Form to support question creation, plugging into the database as necessary.
+    /// </summary>
     public partial class CreateQuestion : Form
     {
         public CreateQuestion()
@@ -25,6 +29,11 @@ namespace HappyTechSystem
         private void CreateQuestion_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void btn_deleteCategory_Click(object sender, EventArgs e)
+        {
+            //if selection is "base", dont allow deletion!
         }
     }
 }

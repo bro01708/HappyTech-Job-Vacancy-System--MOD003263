@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -142,6 +143,12 @@
     <EmbeddedResource Include="ViewQuestionBank.resx">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewTemplates.resx">
+      <DependentUpon>ViewTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewVacancies.resx">
+      <DependentUpon>ViewVacancies.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,12 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\logo.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\logo2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\logo3.png" />

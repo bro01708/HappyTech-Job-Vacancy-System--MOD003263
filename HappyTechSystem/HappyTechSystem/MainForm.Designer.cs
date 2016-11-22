@@ -46,8 +46,12 @@
             this.lbl_databaseStatus = new System.Windows.Forms.Label();
             this.lbl_databaseLoad = new System.Windows.Forms.Label();
             this.pb_logo = new System.Windows.Forms.PictureBox();
+            this.p_splash = new System.Windows.Forms.Panel();
+            this.p_databaseStatus = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
+            this.p_splash.SuspendLayout();
+            this.p_databaseStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -59,7 +63,7 @@
             this.modifyViewToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(949, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,11 +158,14 @@
             // 
             // lbl_dev
             // 
+            this.lbl_dev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dev.AutoSize = true;
             this.lbl_dev.BackColor = System.Drawing.Color.Transparent;
             this.lbl_dev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dev.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_dev.Location = new System.Drawing.Point(305, 385);
+            this.lbl_dev.Location = new System.Drawing.Point(162, 232);
             this.lbl_dev.Name = "lbl_dev";
             this.lbl_dev.Size = new System.Drawing.Size(311, 15);
             this.lbl_dev.TabIndex = 5;
@@ -166,11 +173,14 @@
             // 
             // lbl_nav
             // 
+            this.lbl_nav.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nav.AutoSize = true;
             this.lbl_nav.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nav.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_nav.Location = new System.Drawing.Point(213, 311);
+            this.lbl_nav.Location = new System.Drawing.Point(53, 174);
             this.lbl_nav.Name = "lbl_nav";
             this.lbl_nav.Size = new System.Drawing.Size(499, 26);
             this.lbl_nav.TabIndex = 7;
@@ -178,11 +188,14 @@
             // 
             // lbl_welcome
             // 
+            this.lbl_welcome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.BackColor = System.Drawing.Color.Transparent;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_welcome.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_welcome.Location = new System.Drawing.Point(176, 280);
+            this.lbl_welcome.Location = new System.Drawing.Point(16, 143);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(601, 31);
             this.lbl_welcome.TabIndex = 8;
@@ -193,7 +206,7 @@
             this.lbl_databaseStatus.AutoSize = true;
             this.lbl_databaseStatus.BackColor = System.Drawing.Color.Transparent;
             this.lbl_databaseStatus.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_databaseStatus.Location = new System.Drawing.Point(779, 35);
+            this.lbl_databaseStatus.Location = new System.Drawing.Point(15, 9);
             this.lbl_databaseStatus.Name = "lbl_databaseStatus";
             this.lbl_databaseStatus.Size = new System.Drawing.Size(89, 13);
             this.lbl_databaseStatus.TabIndex = 11;
@@ -204,7 +217,7 @@
             this.lbl_databaseLoad.AutoSize = true;
             this.lbl_databaseLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_databaseLoad.ForeColor = System.Drawing.Color.Red;
-            this.lbl_databaseLoad.Location = new System.Drawing.Point(874, 35);
+            this.lbl_databaseLoad.Location = new System.Drawing.Point(110, 9);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
             this.lbl_databaseLoad.Size = new System.Drawing.Size(63, 13);
             this.lbl_databaseLoad.TabIndex = 12;
@@ -213,34 +226,61 @@
             // pb_logo
             // 
             this.pb_logo.BackColor = System.Drawing.Color.Transparent;
-            this.pb_logo.Location = new System.Drawing.Point(409, 147);
+            this.pb_logo.Image = global::HappyTechSystem.Properties.Resources.logo3;
+            this.pb_logo.Location = new System.Drawing.Point(257, 3);
             this.pb_logo.Name = "pb_logo";
-            this.pb_logo.Size = new System.Drawing.Size(127, 130);
+            this.pb_logo.Size = new System.Drawing.Size(131, 137);
             this.pb_logo.TabIndex = 9;
             this.pb_logo.TabStop = false;
+            // 
+            // p_splash
+            // 
+            this.p_splash.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p_splash.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.p_splash.BackColor = System.Drawing.Color.DarkGray;
+            this.p_splash.Controls.Add(this.lbl_welcome);
+            this.p_splash.Controls.Add(this.lbl_dev);
+            this.p_splash.Controls.Add(this.lbl_nav);
+            this.p_splash.Controls.Add(this.pb_logo);
+            this.p_splash.Location = new System.Drawing.Point(185, 239);
+            this.p_splash.Name = "p_splash";
+            this.p_splash.Size = new System.Drawing.Size(633, 271);
+            this.p_splash.TabIndex = 14;
+            // 
+            // p_databaseStatus
+            // 
+            this.p_databaseStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.p_databaseStatus.BackColor = System.Drawing.Color.DarkGray;
+            this.p_databaseStatus.Controls.Add(this.lbl_databaseLoad);
+            this.p_databaseStatus.Controls.Add(this.lbl_databaseStatus);
+            this.p_databaseStatus.Location = new System.Drawing.Point(813, 27);
+            this.p_databaseStatus.Name = "p_databaseStatus";
+            this.p_databaseStatus.Size = new System.Drawing.Size(183, 33);
+            this.p_databaseStatus.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(949, 567);
-            this.Controls.Add(this.lbl_databaseLoad);
-            this.Controls.Add(this.lbl_databaseStatus);
-            this.Controls.Add(this.pb_logo);
-            this.Controls.Add(this.lbl_welcome);
-            this.Controls.Add(this.lbl_nav);
-            this.Controls.Add(this.lbl_dev);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.p_databaseStatus);
+            this.Controls.Add(this.p_splash);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Application Manager";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MdiChildActivate += new System.EventHandler(this.MainForm_MdiChildActivate);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
+            this.p_splash.ResumeLayout(false);
+            this.p_splash.PerformLayout();
+            this.p_databaseStatus.ResumeLayout(false);
+            this.p_databaseStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem modifyViewVacanciesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyViewInterviewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyViewEmailsToolStripMenuItem;
+        private System.Windows.Forms.Panel p_splash;
+        private System.Windows.Forms.Panel p_databaseStatus;
     }
 }

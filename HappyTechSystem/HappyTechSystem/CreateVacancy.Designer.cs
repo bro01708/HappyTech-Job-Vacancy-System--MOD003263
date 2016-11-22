@@ -40,11 +40,11 @@
             this.lbl_questionsToBeUsed = new System.Windows.Forms.Label();
             this.btn_help = new System.Windows.Forms.Button();
             this.lbl_score = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nud_acceptanceScore = new System.Windows.Forms.NumericUpDown();
             this.lbl_slots = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.nud_interviewSlots = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_acceptanceScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_interviewSlots)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_questionBank
@@ -155,43 +155,43 @@
             // lbl_score
             // 
             this.lbl_score.AutoSize = true;
-            this.lbl_score.Location = new System.Drawing.Point(167, 22);
+            this.lbl_score.Location = new System.Drawing.Point(195, 23);
             this.lbl_score.Name = "lbl_score";
             this.lbl_score.Size = new System.Drawing.Size(191, 13);
             this.lbl_score.TabIndex = 13;
             this.lbl_score.Text = "Set the minimum score for acceptance:";
             // 
-            // numericUpDown1
+            // nud_acceptanceScore
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(364, 20);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(68, 20);
-            this.numericUpDown1.TabIndex = 14;
+            this.nud_acceptanceScore.Location = new System.Drawing.Point(392, 21);
+            this.nud_acceptanceScore.Name = "nud_acceptanceScore";
+            this.nud_acceptanceScore.Size = new System.Drawing.Size(68, 20);
+            this.nud_acceptanceScore.TabIndex = 14;
             // 
             // lbl_slots
             // 
             this.lbl_slots.AutoSize = true;
-            this.lbl_slots.Location = new System.Drawing.Point(167, 49);
+            this.lbl_slots.Location = new System.Drawing.Point(195, 50);
             this.lbl_slots.Name = "lbl_slots";
             this.lbl_slots.Size = new System.Drawing.Size(172, 13);
             this.lbl_slots.TabIndex = 15;
             this.lbl_slots.Text = "Enter the amount of interview slots:";
             // 
-            // numericUpDown2
+            // nud_interviewSlots
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(364, 47);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(68, 20);
-            this.numericUpDown2.TabIndex = 16;
+            this.nud_interviewSlots.Location = new System.Drawing.Point(392, 48);
+            this.nud_interviewSlots.Name = "nud_interviewSlots";
+            this.nud_interviewSlots.Size = new System.Drawing.Size(68, 20);
+            this.nud_interviewSlots.TabIndex = 16;
             // 
             // CreateVacancy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 337);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.nud_interviewSlots);
             this.Controls.Add(this.lbl_slots);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nud_acceptanceScore);
             this.Controls.Add(this.lbl_score);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.lbl_questionsToBeUsed);
@@ -206,8 +206,8 @@
             this.Controls.Add(this.lb_questionBank);
             this.Name = "CreateVacancy";
             this.Text = "Create a Vacancy";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_acceptanceScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_interviewSlots)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,8 +227,8 @@
         private System.Windows.Forms.Label lbl_questionsToBeUsed;
         private System.Windows.Forms.Button btn_help;
         private System.Windows.Forms.Label lbl_score;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_acceptanceScore;
         private System.Windows.Forms.Label lbl_slots;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nud_interviewSlots;
     }
 }

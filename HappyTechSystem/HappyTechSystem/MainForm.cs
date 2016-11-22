@@ -28,21 +28,18 @@ namespace HappyTechSystem
         {
             if (ActiveMdiChild != null)
             {
-                lbl_welcome.SendToBack();
-                lbl_nav.SendToBack();
-                lbl_dev.SendToBack();
-                pb_logo.SendToBack();
+                p_splash.SendToBack();
+                p_databaseStatus.SendToBack();
             }
             else
             {
-                lbl_welcome.BringToFront();
-                lbl_nav.BringToFront();
-                lbl_dev.BringToFront();
-                pb_logo.BringToFront();
+                p_splash.BringToFront();
+                p_databaseStatus.BringToFront();
             }
         }
 
         #region Creation Menu Items
+
         private void newQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateQuestion createQuestion = new CreateQuestion();
@@ -70,6 +67,7 @@ namespace HappyTechSystem
         #endregion
 
         #region Modify and View Menu Items
+
         private void modifyViewQuestionBankToolStripMenuItemClick(object sender, EventArgs e)
         {
             ViewQuestionBank viewQuestionBank = new ViewQuestionBank();
@@ -93,11 +91,13 @@ namespace HappyTechSystem
             ViewInterview viewInterview = new ViewInterview();
             formCheck(viewInterview);
         }
+
         private void modifyViewEmailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewEmail viewEmail = new ViewEmail();
             formCheck(viewEmail);
         }
+
         #endregion
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace HappyTechSystem
         /// <param name="f"></param>
         private void formCheck(Form f)
         {
-            
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == f.GetType())
@@ -121,6 +121,30 @@ namespace HappyTechSystem
             Form newForm = f;
             newForm.MdiParent = this;
             newForm.Show();
+        }
+        /// <summary>
+        /// Created by Dan
+        /// On MDI Parent Load, allow the background color to be editable.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            MdiClient chld;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                try
+                {
+                    chld = (MdiClient)ctrl;
+
+                    chld.BackColor = this.BackColor;
+                }
+                catch (InvalidCastException exe)
+                {
+
+                }
+            }
         }
     }
 }
