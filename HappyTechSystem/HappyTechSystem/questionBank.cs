@@ -8,23 +8,23 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
-    public class questionBank
+    public class QuestionBank
     {
         private List<Question> questionList = new List<Question>();
         private int qlCount;
         //private QuestionCreatorForm qcf;
 
-        public questionBank()
+        public QuestionBank()
         {
             
         }
 
-        private static questionBank uniqueInst = null;
-        public static questionBank getInst()
+        private static QuestionBank uniqueInst = null;
+        public static QuestionBank getInst()
         { 
             if (uniqueInst == null)
             {
-                uniqueInst = new questionBank();
+                uniqueInst = new QuestionBank();
             }
             return uniqueInst;
         }
