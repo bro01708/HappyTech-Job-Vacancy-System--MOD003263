@@ -13,6 +13,7 @@ namespace HappyTechSystem.Core
     {
         //Holds the list of available quesiton objects for access by any other class
         private List<Question> questionList = new List<Question>();
+
         //Flag to confirm DB load Correctly
         private bool dbLoaded;
 
@@ -51,7 +52,6 @@ namespace HappyTechSystem.Core
                 }
             }
         }
-
 
         /// <summary>
         /// Created By Peter.

@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Email.cs" />
-    <Compile Include="Core\EmailFactory.cs" />
+    <Compile Include="Core\EmailBank.cs" />
     <Compile Include="Core\EmailTemplate.cs" />
     <Compile Include="DataBase\DBFactory.cs" />
     <Compile Include="DBTest.cs">

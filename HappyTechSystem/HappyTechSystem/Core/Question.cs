@@ -15,6 +15,7 @@ namespace HappyTechSystem.Core
         public String GetText {  get { return text; } set { text = value; }  }
 
         public String GetTag { get { return tag; } set { tag = value; } }
+
         public int GetID { get { return id; } set { id = value; } }
 
         public override string ToString()

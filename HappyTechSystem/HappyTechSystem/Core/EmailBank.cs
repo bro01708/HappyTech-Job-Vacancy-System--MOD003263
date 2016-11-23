@@ -7,22 +7,22 @@ using HappyTechSystem.DB;
 
 namespace HappyTechSystem.Core
 {
-    class EmailFactory
+    class EmailBank
     {
         private List<Email> emailRecords= new List<Email>(); //Stores all applicants email addresses
         private List<EmailTemplate> templates = new List<EmailTemplate>();
         private bool dbLoaded;
 
-        private static EmailFactory uniqueInst = null;
-        public EmailFactory()
+        private static EmailBank uniqueInst = null;
+        public EmailBank()
         {
             RefreshDBConnection();
         }
-        public static EmailFactory getInst()
+        public static EmailBank getInst()
         {
             if (uniqueInst == null)
             {
-                uniqueInst = new EmailFactory();
+                uniqueInst = new EmailBank();
             }
             return uniqueInst;
         }

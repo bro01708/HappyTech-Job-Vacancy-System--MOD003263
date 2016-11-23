@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="747578e4-81c3-4a1b-a7a9-06b8f2e3536c" name="UMLClassDiagram1" linkedPackageId="9f016042-c2f3-493a-8aff-5c148e7b98f3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="747578e4-81c3-4a1b-a7a9-06b8f2e3536c" name="UMLClassDiagram1" linkedPackageId="9f016042-c2f3-493a-8aff-5c148e7b98f3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="23894083-1c2d-4832-b8f3-682d68050f9c">
       <elementDefinition Id="857f9459-6b93-4928-898c-45d1e8190858" />
@@ -59,6 +59,22 @@ If so we will use this instead.</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="2d469ef2-1223-4bcd-ac24-567a4ee9e0ee" />
+          </association>
+          <association Id="69d934f6-ba73-4412-b439-89bb300295fb" isDerived="false" sourceEndRoleName="Question" targetEndRoleName="Qcreate" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5dbb9c26-609e-4506-9571-e72b933507c4" LastKnownName="Qcreate" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="14246257-6c87-4af5-9cae-c9da8c2b2ec5" name="Question" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7bcf03c6-63e1-4963-a87b-ebd071965519" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9266304d-969d-4ae6-9dfa-75d088d3c0c3" name="Qcreate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b45a6b1f-58fc-4a6f-b677-264424980edd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dcc354d3-f653-45df-9d18-630736d9d5f3" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -205,6 +221,22 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="fc9dad45-ac62-4102-9cfe-f98ecdcb4957" />
           </association>
+          <association Id="39437d9a-b229-47f1-8709-9601b84b2233" isDerived="false" sourceEndRoleName="QuestionBank" targetEndRoleName="Qcreate" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5dbb9c26-609e-4506-9571-e72b933507c4" LastKnownName="Qcreate" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="51bb56e2-0665-480d-b61a-2f5785fb14d2" name="QuestionBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="37c7b142-488a-443c-9db4-eeeb4fde6566" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5e24d4ca-6117-4e7b-a53c-98f97f6636d1" name="Qcreate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4bbbbc9d-d90d-4b57-9710-750e93094159" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e7449284-fc34-4929-adea-31b44229c22b" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="ec560306-ef4a-4ce7-9f83-14dd02e5cdb0" name="questionList" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -219,73 +251,11 @@ If so we will use this instead.</body>
               <referencedTypeMoniker Id="14c12ad5-4880-4f08-8081-f4460b484a65" LastKnownName="int" />
             </type_NamedElement>
           </property>
+          <property Id="5d22c5d1-f7ff-407c-b27d-943770533d4d" name="CategoryList&lt;String&gt;" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c48e99c6-0dcb-4877-a55a-aa1de03044fa" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="9563416d-9138-4e2f-b213-4a576567f02c" name="CreateQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="c580464e-b2e5-4f7f-90ec-40a196fe4e27" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="4c5162dd-140e-4020-a428-a31a89c5099a" direction="Return" isUnique="false">
-                  <elementDefinition Id="ecd3c6ac-a6d6-49a0-b8fb-719d494f5df1" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="5e6ab610-264e-400e-ad81-19bbe957a092" name="DeleteQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a475031e-9a7b-4a3d-adca-6ec3494cd96e" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="3e1cc82e-3444-4a12-a2f1-edb5cec41aa6" direction="Return" isUnique="false">
-                  <elementDefinition Id="890ca27d-e7a7-45b7-a132-fb128bb8542c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="d0917529-c5f0-46bf-b3a6-f8f4052d30d4" name="EditQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9030e442-a939-4bda-b208-57afa7fe2b69" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="aa58ae36-b691-4b03-9629-2d332ca314e9" direction="Return" isUnique="false">
-                  <elementDefinition Id="531af717-fd66-45f2-8e7d-871d7bb62a3c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="49c13c4e-7f68-42d4-9f12-e90570080df7" name="CreateCategory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="c829ff67-3d76-48b5-954e-91adcd068c9b" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="c71732ef-3fa6-4d1b-991c-4d124df01de2" direction="Return" isUnique="false">
-                  <elementDefinition Id="d49aadbc-3d7c-4ff1-b7ff-f39f7d1cf008" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="777fdb86-823d-4454-8919-6c49afbe2775" name="EditCategory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="53dfe088-ffed-44de-ba93-8e015f5dc444" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="0e037ab7-ab6f-4d56-9998-a4e8af294906" direction="Return" isUnique="false">
-                  <elementDefinition Id="e255a5e9-19cc-4404-90bf-2ef84b228f8f" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35bb4365-2d98-4844-8dd9-05765ee122b0" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation Id="86598d67-879a-42f5-9ae5-c7a503982714" name="getQuestionList : List&lt;Question&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c07a981c-6423-472d-be2f-aa633a374235" />
           </operation>
@@ -328,12 +298,32 @@ If so we will use this instead.</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="bdef7a2a-fd26-4865-886e-233388b7dceb" name="LoadForm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="8eda6075-ee92-4bcd-aa24-848386703cf7" />
+          <operation Id="c5d1e955-53f0-4b3b-9dbc-a2f5c6a820a7" name="RemoveFromList" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a02fe1d3-1563-4866-a434-79b5b1f99ce3" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="01a35533-7ac1-44a9-8967-c52450957d51" name=");void(" direction="In" isUnique="false">
-                  <elementDefinition Id="81c4e71c-1e4e-4569-8332-3eedf0fa3442" />
+                <parameter Id="878c23ce-6b5c-4f45-81ba-4ca51b899667" name="m_id" direction="In" isUnique="false">
+                  <elementDefinition Id="c041431d-52c5-4670-bff7-4bfcdf3a2047" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="648a6cdc-5bd8-42a6-9fad-e374056069da" name="AddCat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f7408547-e5d3-4db8-914b-29c01e359f7d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e79521c-1434-4fdc-bb0f-eda5b2c3039d" name="m_CatName" direction="In" isUnique="false">
+                  <elementDefinition Id="df300e34-fd95-4b37-a18d-e959c674b237" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7012426b-8644-4351-95b9-f7c2cb8453f7" name="RemoveCatm_" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2f42bf7-a061-4130-865e-2fade7229ba1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ea4b0f98-40fb-46eb-a91f-378dcd3b7f36" name="catName" direction="In" isUnique="false">
+                  <elementDefinition Id="86d37772-d745-442a-a4b8-345b8694fa89" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -377,7 +367,7 @@ If so we will use this instead.</body>
             <elementDefinition Id="386d3840-aa12-4697-a1ca-084527516445" />
           </association>
           <association Id="e464b406-2ebe-4876-8f6c-d6aa3740ac6e" isDerived="false" sourceEndRoleName="Vacancy" targetEndRoleName="EmailMgmt" isLeaf="false" isAbstract="false">
-            <classMoniker Id="739197f5-5602-4ca3-9124-95a17c773c53" LastKnownName="EmailFactory" />
+            <classMoniker Id="739197f5-5602-4ca3-9124-95a17c773c53" LastKnownName="EmailBank" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="ea01db1a-0094-4bd5-8d7d-8b8c35bd47f5" name="Vacancy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -391,6 +381,38 @@ If so we will use this instead.</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="5919f2e3-21b6-47ed-b273-101b796fa71b" />
+          </association>
+          <association Id="4a94a870-c085-4528-b40d-56a6a4ab1e11" isDerived="false" sourceEndRoleName="VacancyBank" targetEndRoleName="VacancyCreator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="29b461c1-12e4-4226-93a1-55b7f1cb40b9" LastKnownName="InterviewCreator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a9fcdcbc-80a6-4e96-b548-88777435cfa7" name="VacancyBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a784fccd-a6f6-4a56-98d7-fee98ab7115f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="911bc3ea-46e7-40c5-9cf6-9209f9ea0ca9" name="VacancyCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a855722-eb2b-4c8f-8884-fb6268f32abd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c34bbfb4-0447-494e-bd0e-f44198212067" />
+          </association>
+          <association Id="afb241c2-0659-4065-893a-1a4651fc8ae3" isDerived="false" sourceEndRoleName="Vacancy" targetEndRoleName="VacancyCreator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ba0f194b-e40d-4f53-82a2-a89e16769ea8" LastKnownName="VacancyCreator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="006bc7f9-8626-453c-9665-29e67cb9bb5b" name="Vacancy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9e830077-a923-4eaf-acbc-d9411712ec8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3bf9e5d-5ce6-4c4d-abae-9703ed2f94c2" name="VacancyCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b17b0f0a-ef2c-493e-a64d-a1b1403d7bd4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="51a2c960-8edd-447c-ba4c-3d06ac5237e7" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -504,7 +526,7 @@ If so we will use this instead.</body>
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="739197f5-5602-4ca3-9124-95a17c773c53" name="EmailFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="739197f5-5602-4ca3-9124-95a17c773c53" name="EmailBank" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d" />
         <targetEnds>
           <association Id="c3d4f357-f5d3-4d4f-961a-d6664b2956ef" isDerived="false" sourceEndRoleName="EmailFactory" targetEndRoleName="EmailTemplate" isLeaf="false" isAbstract="false">
@@ -559,6 +581,38 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="2a225d06-a6a5-4435-ab4d-90f64bec644c" />
           </association>
+          <association Id="b35ad8ab-a14a-41da-9263-0e1d45649297" isDerived="false" sourceEndRoleName="EmailBank" targetEndRoleName="EmailCreator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e83cab6e-946f-4623-b245-6c031c2c0d07" LastKnownName="EmailCreator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4ced804d-a878-4dd7-8ea5-9777ebf33591" name="EmailBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="84b7cf98-9262-4ac3-a7fe-898a7bfd3a77" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c969f0e3-d7f4-4c9e-a2c1-1d162cac8374" name="EmailCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9f45b13c-b0b9-422f-9db4-af6a0bd1c785" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7bc3505e-36dd-4171-a106-951a1a15bc3b" />
+          </association>
+          <association Id="f8310bff-308e-41cc-9e8f-547c6343aa16" isDerived="false" sourceEndRoleName="EmailBank" targetEndRoleName="EmailSender" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6ac1eab6-79e4-4f31-b30b-43578c467e56" LastKnownName="EmailSender" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3f20c187-d602-4f40-8a2d-16bbbfc1171c" name="EmailBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="893d8842-731d-46a6-a02a-a3808a0483e3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3668c862-0cf9-4f11-a601-e639b00c7750" name="EmailSender" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="960ac44a-6d3e-43e6-a620-fd68fb7ae3bc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3537dd18-47c4-42bd-b69c-b20579120090" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="c9373d2d-9c25-43b7-a592-641034e084a2" name="emailrecords" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -590,6 +644,24 @@ If so we will use this instead.</body>
     <logicalClassDesignerModelHasTypes>
       <class Id="086bc485-6285-48a4-80fc-4b0ddc218f56" name="EmailTemplate" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b3de3a17-c513-48ba-a2a1-a3309609e199" />
+        <targetEnds>
+          <association Id="999f14f0-f0d3-429d-a43d-1daeefacb6a0" isDerived="false" sourceEndRoleName="EmailTemplate" targetEndRoleName="EmailTemplateCreator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="7461dd3e-e8cd-4243-8f75-3769d70331bb" LastKnownName="EmailTemplateCreator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9beeef59-bbdf-459a-b1a8-140a2669f902" name="EmailTemplate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a03412ed-a5fe-4f94-8a59-5b9c944846fb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26573434-8113-4b4d-a2d2-955da53d561e" name="EmailTemplateCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a2582fc3-d192-4d9c-ae88-34862bbba5ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ca357d6-3039-4e29-8f9c-66a0ec4d84e4" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="06a48a11-b1a0-4bf2-a5ab-8739359929c6" name="type" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="64222787-5397-4296-9a90-7a44890feab7" />
@@ -699,6 +771,24 @@ If so we will use this instead.</body>
     <logicalClassDesignerModelHasTypes>
       <class Id="3da95e79-dd1d-4fff-a813-7697b01148fd" name="Email" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b77adfea-231f-4102-8d12-6a491f90ed1c" />
+        <targetEnds>
+          <association Id="260a226c-5f5d-4d8e-a1eb-2275d1def0d5" isDerived="false" sourceEndRoleName="Email" targetEndRoleName="EmailCreator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e83cab6e-946f-4623-b245-6c031c2c0d07" LastKnownName="EmailCreator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fdd3b6e4-f8e4-4a01-9dd7-747526ededf4" name="Email" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="42b696f1-f36f-4a3d-9186-8791179af2e4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="55b778d9-3401-4c10-92c0-31b52ffce8b2" name="EmailCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a24d8426-0402-4796-af15-4b9a11f6f5b3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d79b6aa4-8e2d-4110-9573-3b63c5bb7d0f" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="b3d37e75-2127-4b4f-8d2f-9f3e5dbaea2d" name="content" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b26c63d7-254b-48ab-800c-43ecae08a8c7" />
@@ -790,6 +880,128 @@ If so we will use this instead.</body>
         <elementDefinition Id="fddb0bcd-447a-422d-b5ac-64847a73c52e" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5dbb9c26-609e-4506-9571-e72b933507c4" name="Qcreate" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="47fce1a5-f8b6-4ccd-afe9-318f7af2b756" />
+        <ownedOperationsInternal>
+          <operation Id="515ac106-c71a-4d05-9550-1c3fa3612466" name="CreateQuestion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86180693-5889-4b8f-9603-7b702718a974" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="29b461c1-12e4-4226-93a1-55b7f1cb40b9" name="InterviewCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5bbf31e0-6a54-4092-9495-7e5a5ad59e5e" />
+        <targetEnds>
+          <association Id="1196aee4-9be8-49d8-922c-3c049eab4020" isDerived="false" sourceEndRoleName="VacancyCreator" targetEndRoleName="Interview" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b42abf23-68d5-424c-8d42-6675b293c127" LastKnownName="Interview" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7be232e9-dd47-4171-ae19-dba829fc6e11" name="VacancyCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="50235a12-06d7-4c59-9bcb-e42b45c95b91" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40e97648-4c24-4945-b6d2-36623dd39a4a" name="Interview" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e656fbb3-af6f-4592-9f22-6275e062583a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1840062d-ebf8-4c89-a12a-e572040aef93" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7461dd3e-e8cd-4243-8f75-3769d70331bb" name="EmailTemplateCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="127c1906-ffbf-419b-903d-08f05361353b" />
+        <targetEnds>
+          <association Id="794be365-b052-4ba6-b0dc-4555fbe77a0f" isDerived="false" sourceEndRoleName="EmailTemplateCreator" targetEndRoleName="EmailBank" isLeaf="false" isAbstract="false">
+            <classMoniker Id="739197f5-5602-4ca3-9124-95a17c773c53" LastKnownName="EmailBank" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a781d12-5cd7-49ec-9a5b-f3130d185b10" name="EmailTemplateCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a3a6e69-03f8-4c51-ac3c-770ba74dd2ee" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d7651150-a1f2-4d35-9522-21672b649001" name="EmailBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="134a7c7b-36ee-4ecf-97cb-bece355359bf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="62ae4c63-09b6-464d-9f0e-35bb1e4b9c24" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e83cab6e-946f-4623-b245-6c031c2c0d07" name="EmailCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4e12f757-93ec-45fe-8421-711cd8e886d6" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2045ad76-6023-4e4f-990d-9b18cfa48c07" name="VacancyBank" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a8951c84-fa4e-492e-bc89-15396017f5d4" />
+        <targetEnds>
+          <association Id="2a57cf8f-6671-4b2f-ac70-fb4bcf833b8c" isDerived="false" sourceEndRoleName="VacancyBank" targetEndRoleName="Vacancy" isLeaf="false" isAbstract="false">
+            <classMoniker Id="13430f38-8749-486d-864e-06e081c359bb" LastKnownName="Vacancy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4d2d1a3f-4a5c-4c94-ad02-9778d63cfdb6" name="VacancyBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e813bdeb-74dd-449a-930e-3a27219bf346" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="540d98b5-968d-4846-9525-b4a9e8d51643" name="Vacancy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="1be8e468-a362-4cf7-b7c5-3749105c4c2a" name="Lower" value="∞">
+                      <elementDefinition Id="fe119ad7-dde8-44d8-8c23-334624979bc1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6f6729a1-7e4d-49db-bd11-bb5dfdf28d2e" name="Upper" value="∞">
+                      <elementDefinition Id="f3c12629-0b31-4be0-87aa-c1c28e9ff6c3" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1b4a62c8-2c0a-4d5a-82e8-c0ac6f7bf381" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6ac350dd-c6a8-45e1-b045-1dc5d4e3703d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ba0f194b-e40d-4f53-82a2-a89e16769ea8" name="VacancyCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="60a5c573-d4ae-4d35-959c-52f2f1b14dbe" />
+        <targetEnds>
+          <association Id="3b84252c-60f7-4132-99f5-7292b19d24df" isDerived="false" sourceEndRoleName="VacancyCreator" targetEndRoleName="VacancyBank" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2045ad76-6023-4e4f-990d-9b18cfa48c07" LastKnownName="VacancyBank" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7acb8c0e-d232-415b-9506-59ecac491614" name="VacancyCreator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b89bfd15-10ee-416d-b3f3-d825be2b395d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52ee57c9-50e3-42c0-ac20-8f384b9b6678" name="VacancyBank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f45b42d7-da62-45e7-913c-24dd73d7a79d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dae0edab-f48e-46ad-97c7-b8effe8acbce" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6ac1eab6-79e4-4f31-b30b-43578c467e56" name="EmailSender" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4262d19-3376-46ee-9bb8-f9015b8d1a1b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="9f016042-c2f3-493a-8aff-5c148e7b98f3" name="UML">
     <elementDefinition Id="d1aab9d5-3d65-4a80-9eb1-e7157b61c69a" />
