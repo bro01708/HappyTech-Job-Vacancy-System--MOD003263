@@ -12,7 +12,7 @@ namespace HappyTechSystem.Core
     public class QuestionBank
     {
         //Holds the list of available quesiton objects for access by any other class
-        private List<Question> questionList = new List<Question>();
+        private List<Question> questionList;
 
         //Flag to confirm DB load Correctly
         private bool dbLoaded;

@@ -80,9 +80,22 @@ namespace HappyTechSystem.Core
             }
         }
 
+        public List<Question> QuestionsToBeUsed
+        {
+            get
+            {
+                return questionsToBeUsed;
+            }
+
+            set
+            {
+                questionsToBeUsed = value;
+            }
+        }
+
         public void Rankings() //Ranks every users' final score to find the chosen applicant
         {
-            RefreshRankings
+
         }
 
         

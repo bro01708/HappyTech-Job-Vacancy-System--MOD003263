@@ -9,13 +9,15 @@ namespace HappyTechSystem.Core
     class VacancyCreator
     {
 
-        public void CreateVacancy(int m_VacancyID, string m_vacancyName, int m_minimumScore, string m_positionsAvailable , List<int>m_Questions)
+        public void CreateVacancy(int m_vacancyID, string m_vacancyName, int m_minimumScore, int m_positionsAvailable , List<int>m_Questions)
     {
             Vacancy V = new Vacancy();
+            V.Vacancyid = m_vacancyID;
+            V.VacancyName = m_vacancyName;
+            V.MinumumScore = m_minimumScore;
+            V.PositionsAvailable = m_positionsAvailable;
             
     }
-
-
 
     }
     
