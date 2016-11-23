@@ -4,8 +4,10 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data;
 using System.Data.Common;
+using HappyTechSystem;
 
-namespace HappyTechSystem
+
+namespace HappyTechSystem.DB
 {
     class OLEDBConnection : DbConection
     {

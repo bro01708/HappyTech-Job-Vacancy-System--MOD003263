@@ -46,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Email.cs" />
-    <Compile Include="EmailFactory.cs" />
-    <Compile Include="EmailTemplate.cs" />
-    <Compile Include="DBFactory.cs" />
+    <Compile Include="Core\Email.cs" />
+    <Compile Include="Core\EmailFactory.cs" />
+    <Compile Include="Core\EmailTemplate.cs" />
+    <Compile Include="DataBase\DBFactory.cs" />
     <Compile Include="DBTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBTest.Designer.cs">
       <DependentUpon>DBTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interview.cs" />
-    <Compile Include="MetaLayer.cs" />
-    <Compile Include="OLEDBConnection.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Core\Interview.cs" />
+    <Compile Include="DataBase\MetaLayer.cs" />
+    <Compile Include="DataBase\OLEDBConnection.cs" />
+    <Compile Include="Core\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuestionBank.cs" />
-    <Compile Include="QuestionCreator.cs" />
-    <Compile Include="Vacancy.cs" />
-    <Compile Include="Question.cs" />
+    <Compile Include="Core\QuestionBank.cs" />
+    <Compile Include="Core\QuestionCreator.cs" />
+    <Compile Include="Core\Vacancy.cs" />
+    <Compile Include="Core\Question.cs" />
     <EmbeddedResource Include="DBTest.resx">
       <DependentUpon>DBTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,7 +92,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Happytech.accdb">
+    <Content Include="DataBase\Happytech.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

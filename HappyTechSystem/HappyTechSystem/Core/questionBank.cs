@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.DB;
 
 
-namespace HappyTechSystem
+namespace HappyTechSystem.Core
 {
     public class QuestionBank
     {

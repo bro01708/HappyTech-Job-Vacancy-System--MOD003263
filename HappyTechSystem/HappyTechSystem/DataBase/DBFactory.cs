@@ -4,8 +4,9 @@ using System.Data;
 using System.Data.Common;
 using System.Diagnostics;
 using System.IO;
+using HappyTechSystem;
 
-namespace HappyTechSystem
+namespace HappyTechSystem.DB
 {
     class DBFactory
     {
