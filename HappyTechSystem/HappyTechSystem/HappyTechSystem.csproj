@@ -49,6 +49,8 @@
     <Compile Include="Core\Email.cs" />
     <Compile Include="Core\EmailBank.cs" />
     <Compile Include="Core\EmailTemplate.cs" />
+    <Compile Include="Core\VacancyBank.cs" />
+    <Compile Include="Core\VacancyCreator.cs" />
     <Compile Include="DataBase\DBFactory.cs" />
     <Compile Include="DBTest.cs">
       <SubType>Form</SubType>

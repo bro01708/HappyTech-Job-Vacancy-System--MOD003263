@@ -8,27 +8,83 @@ namespace HappyTechSystem.Core
 {
     class Vacancy
     {
+        private int vacancyid;
         private List<Interview> interviews = new List<Interview>();
         private List<Question> questionsToBeUsed = new List<Question>(); //Stores questions for the interview
-        private int requiredScore;
-        private string vacancyCode;
+        private int minumumScore;
+        private int positionsAvailable;
+        private string vacancyName;
 
-        public void CreateInterview()
+        public string VacancyName
         {
+            get
+            {
+                return vacancyName;
+            }
 
+            set
+            {
+                vacancyName = value;
+            }
         }
 
-        public void FormatEmails()
+        public int PositionsAvailable
         {
+            get
+            {
+                return positionsAvailable;
+            }
 
-
+            set
+            {
+                positionsAvailable = value;
+            }
         }
 
+        public int MinumumScore
+        {
+            get
+            {
+                return minumumScore;
+            }
+
+            set
+            {
+                minumumScore = value;
+            }
+        }
+
+        public int Vacancyid
+        {
+            get
+            {
+                return vacancyid;
+            }
+
+            set
+            {
+                vacancyid = value;
+            }
+        }
+
+        internal List<Interview> Interviews
+        {
+            get
+            {
+                return interviews;
+            }
+
+            set
+            {
+                interviews = value;
+            }
+        }
 
         public void Rankings() //Ranks every users' final score to find the chosen applicant
         {
-
-
+            RefreshRankings
         }
+
+        
     }
 }
