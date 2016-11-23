@@ -47,11 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConductInterview.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ConductInterview.Designer.cs">
       <DependentUpon>ConductInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ConductInterview.cs">
+      <Link>ConductInterview.cs</Link>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateTemplate.cs">
       <SubType>Form</SubType>
@@ -91,17 +92,21 @@
     <Compile Include="ViewInterview.Designer.cs">
       <DependentUpon>ViewInterview.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewQuestionBank.cs">
+    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.cs">
+      <Link>ViewQuestionBank.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewQuestionBank.Designer.cs">
+    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.Designer.cs">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
+      <Link>ViewQuestionBank.Designer.cs</Link>
     </Compile>
-    <Compile Include="ViewTemplates.cs">
+    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.cs">
+      <Link>ViewTemplates.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewTemplates.Designer.cs">
+    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.Designer.cs">
       <DependentUpon>ViewTemplates.cs</DependentUpon>
+      <Link>ViewTemplates.Designer.cs</Link>
     </Compile>
     <Compile Include="ViewVacancies.cs">
       <SubType>Form</SubType>
@@ -109,8 +114,9 @@
     <Compile Include="ViewVacancies.Designer.cs">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ConductInterview.resx">
+    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ConductInterview.resx">
       <DependentUpon>ConductInterview.cs</DependentUpon>
+      <Link>ConductInterview.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTemplate.resx">
       <DependentUpon>CreateTemplate.cs</DependentUpon>
@@ -140,11 +146,13 @@
     <EmbeddedResource Include="ViewInterview.resx">
       <DependentUpon>ViewInterview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewQuestionBank.resx">
+    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.resx">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
+      <Link>ViewQuestionBank.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewTemplates.resx">
+    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.resx">
       <DependentUpon>ViewTemplates.cs</DependentUpon>
+      <Link>ViewTemplates.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewVacancies.resx">
       <DependentUpon>ViewVacancies.cs</DependentUpon>

@@ -142,7 +142,6 @@ namespace HappyTechSystem
                 }
                 catch (InvalidCastException exe)
                 {
-
                 }
             }
         }

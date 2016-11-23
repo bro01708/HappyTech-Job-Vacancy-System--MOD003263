@@ -43,6 +43,8 @@
             this.nud_acceptanceScore = new System.Windows.Forms.NumericUpDown();
             this.lbl_slots = new System.Windows.Forms.Label();
             this.nud_interviewSlots = new System.Windows.Forms.NumericUpDown();
+            this.lbl_vacancyID = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptanceScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_interviewSlots)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(43, 22);
+            this.lbl_name.Location = new System.Drawing.Point(42, 37);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(100, 13);
             this.lbl_name.TabIndex = 1;
@@ -94,7 +96,7 @@
             // 
             // tb_vacancyName
             // 
-            this.tb_vacancyName.Location = new System.Drawing.Point(24, 38);
+            this.tb_vacancyName.Location = new System.Drawing.Point(23, 53);
             this.tb_vacancyName.Name = "tb_vacancyName";
             this.tb_vacancyName.Size = new System.Drawing.Size(132, 20);
             this.tb_vacancyName.TabIndex = 5;
@@ -173,9 +175,9 @@
             this.lbl_slots.AutoSize = true;
             this.lbl_slots.Location = new System.Drawing.Point(195, 50);
             this.lbl_slots.Name = "lbl_slots";
-            this.lbl_slots.Size = new System.Drawing.Size(172, 13);
+            this.lbl_slots.Size = new System.Drawing.Size(161, 13);
             this.lbl_slots.TabIndex = 15;
-            this.lbl_slots.Text = "Enter the amount of interview slots:";
+            this.lbl_slots.Text = "Enter the amount of hirable slots:";
             // 
             // nud_interviewSlots
             // 
@@ -184,11 +186,30 @@
             this.nud_interviewSlots.Size = new System.Drawing.Size(68, 20);
             this.nud_interviewSlots.TabIndex = 16;
             // 
+            // lbl_vacancyID
+            // 
+            this.lbl_vacancyID.AutoSize = true;
+            this.lbl_vacancyID.Location = new System.Drawing.Point(12, 13);
+            this.lbl_vacancyID.Name = "lbl_vacancyID";
+            this.lbl_vacancyID.Size = new System.Drawing.Size(66, 13);
+            this.lbl_vacancyID.TabIndex = 17;
+            this.lbl_vacancyID.Text = "Vacancy ID:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(30, 20);
+            this.textBox1.TabIndex = 18;
+            // 
             // CreateVacancy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 337);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl_vacancyID);
             this.Controls.Add(this.nud_interviewSlots);
             this.Controls.Add(this.lbl_slots);
             this.Controls.Add(this.nud_acceptanceScore);
@@ -230,5 +251,7 @@
         private System.Windows.Forms.NumericUpDown nud_acceptanceScore;
         private System.Windows.Forms.Label lbl_slots;
         private System.Windows.Forms.NumericUpDown nud_interviewSlots;
+        private System.Windows.Forms.Label lbl_vacancyID;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

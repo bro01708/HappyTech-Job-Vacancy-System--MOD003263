@@ -59,23 +59,23 @@
             this.btn_browseCV = new System.Windows.Forms.Button();
             this.btn_beginHelp = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.p_setup = new System.Windows.Forms.Panel();
             this.p_questions.SuspendLayout();
+            this.p_setup.SuspendLayout();
             this.SuspendLayout();
             // 
             // cb_vacancy
             // 
-            this.cb_vacancy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_vacancy.FormattingEnabled = true;
-            this.cb_vacancy.Location = new System.Drawing.Point(229, 12);
+            this.cb_vacancy.Location = new System.Drawing.Point(232, 7);
             this.cb_vacancy.Name = "cb_vacancy";
             this.cb_vacancy.Size = new System.Drawing.Size(121, 21);
             this.cb_vacancy.TabIndex = 0;
             // 
             // lbl_vacancy
             // 
-            this.lbl_vacancy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_vacancy.AutoSize = true;
-            this.lbl_vacancy.Location = new System.Drawing.Point(13, 19);
+            this.lbl_vacancy.Location = new System.Drawing.Point(16, 14);
             this.lbl_vacancy.Name = "lbl_vacancy";
             this.lbl_vacancy.Size = new System.Drawing.Size(210, 13);
             this.lbl_vacancy.TabIndex = 1;
@@ -102,7 +102,7 @@
             this.p_questions.Controls.Add(this.btn_previousQuestion);
             this.p_questions.Controls.Add(this.tb_questionText);
             this.p_questions.Enabled = false;
-            this.p_questions.Location = new System.Drawing.Point(33, 144);
+            this.p_questions.Location = new System.Drawing.Point(33, 150);
             this.p_questions.Name = "p_questions";
             this.p_questions.Size = new System.Drawing.Size(755, 357);
             this.p_questions.TabIndex = 2;
@@ -261,7 +261,7 @@
             // 
             this.btn_complete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_complete.Enabled = false;
-            this.btn_complete.Location = new System.Drawing.Point(277, 507);
+            this.btn_complete.Location = new System.Drawing.Point(275, 518);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(255, 42);
             this.btn_complete.TabIndex = 3;
@@ -270,9 +270,8 @@
             // 
             // lbl_applicantName
             // 
-            this.lbl_applicantName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_applicantName.AutoSize = true;
-            this.lbl_applicantName.Location = new System.Drawing.Point(13, 48);
+            this.lbl_applicantName.Location = new System.Drawing.Point(16, 43);
             this.lbl_applicantName.Name = "lbl_applicantName";
             this.lbl_applicantName.Size = new System.Drawing.Size(110, 13);
             this.lbl_applicantName.TabIndex = 4;
@@ -280,20 +279,19 @@
             // 
             // btn_beginInterview
             // 
-            this.btn_beginInterview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_beginInterview.Enabled = false;
-            this.btn_beginInterview.Location = new System.Drawing.Point(277, 114);
+            this.btn_beginInterview.Location = new System.Drawing.Point(242, 108);
             this.btn_beginInterview.Name = "btn_beginInterview";
             this.btn_beginInterview.Size = new System.Drawing.Size(255, 24);
             this.btn_beginInterview.TabIndex = 16;
             this.btn_beginInterview.Text = "Begin Interview";
             this.btn_beginInterview.UseVisualStyleBackColor = true;
+            this.btn_beginInterview.Click += new System.EventHandler(this.btn_beginInterview_Click);
             // 
             // lbl_interviewerName
             // 
-            this.lbl_interviewerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_interviewerName.AutoSize = true;
-            this.lbl_interviewerName.Location = new System.Drawing.Point(13, 82);
+            this.lbl_interviewerName.Location = new System.Drawing.Point(16, 77);
             this.lbl_interviewerName.Name = "lbl_interviewerName";
             this.lbl_interviewerName.Size = new System.Drawing.Size(143, 13);
             this.lbl_interviewerName.TabIndex = 17;
@@ -301,25 +299,22 @@
             // 
             // tb_interviewerName
             // 
-            this.tb_interviewerName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_interviewerName.Location = new System.Drawing.Point(162, 79);
+            this.tb_interviewerName.Location = new System.Drawing.Point(165, 74);
             this.tb_interviewerName.Name = "tb_interviewerName";
             this.tb_interviewerName.Size = new System.Drawing.Size(188, 20);
             this.tb_interviewerName.TabIndex = 18;
             // 
             // tb_applicantName
             // 
-            this.tb_applicantName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_applicantName.Location = new System.Drawing.Point(162, 45);
+            this.tb_applicantName.Location = new System.Drawing.Point(165, 40);
             this.tb_applicantName.Name = "tb_applicantName";
             this.tb_applicantName.Size = new System.Drawing.Size(188, 20);
             this.tb_applicantName.TabIndex = 19;
             // 
             // lbl_attachCV
             // 
-            this.lbl_attachCV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_attachCV.AutoSize = true;
-            this.lbl_attachCV.Location = new System.Drawing.Point(366, 48);
+            this.lbl_attachCV.Location = new System.Drawing.Point(369, 43);
             this.lbl_attachCV.Name = "lbl_attachCV";
             this.lbl_attachCV.Size = new System.Drawing.Size(58, 13);
             this.lbl_attachCV.TabIndex = 20;
@@ -327,16 +322,14 @@
             // 
             // tb_cvPath
             // 
-            this.tb_cvPath.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_cvPath.Location = new System.Drawing.Point(430, 44);
+            this.tb_cvPath.Location = new System.Drawing.Point(433, 39);
             this.tb_cvPath.Name = "tb_cvPath";
             this.tb_cvPath.Size = new System.Drawing.Size(224, 20);
             this.tb_cvPath.TabIndex = 21;
             // 
             // btn_browseCV
             // 
-            this.btn_browseCV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_browseCV.Location = new System.Drawing.Point(660, 42);
+            this.btn_browseCV.Location = new System.Drawing.Point(663, 37);
             this.btn_browseCV.Name = "btn_browseCV";
             this.btn_browseCV.Size = new System.Drawing.Size(38, 23);
             this.btn_browseCV.TabIndex = 22;
@@ -346,8 +339,7 @@
             // 
             // btn_beginHelp
             // 
-            this.btn_beginHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_beginHelp.Location = new System.Drawing.Point(538, 114);
+            this.btn_beginHelp.Location = new System.Drawing.Point(503, 108);
             this.btn_beginHelp.Name = "btn_beginHelp";
             this.btn_beginHelp.Size = new System.Drawing.Size(27, 24);
             this.btn_beginHelp.TabIndex = 23;
@@ -358,30 +350,39 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // p_setup
+            // 
+            this.p_setup.Controls.Add(this.btn_beginHelp);
+            this.p_setup.Controls.Add(this.lbl_vacancy);
+            this.p_setup.Controls.Add(this.btn_browseCV);
+            this.p_setup.Controls.Add(this.cb_vacancy);
+            this.p_setup.Controls.Add(this.tb_cvPath);
+            this.p_setup.Controls.Add(this.lbl_applicantName);
+            this.p_setup.Controls.Add(this.lbl_attachCV);
+            this.p_setup.Controls.Add(this.btn_beginInterview);
+            this.p_setup.Controls.Add(this.tb_applicantName);
+            this.p_setup.Controls.Add(this.lbl_interviewerName);
+            this.p_setup.Controls.Add(this.tb_interviewerName);
+            this.p_setup.Location = new System.Drawing.Point(33, 12);
+            this.p_setup.Name = "p_setup";
+            this.p_setup.Size = new System.Drawing.Size(755, 139);
+            this.p_setup.TabIndex = 24;
+            // 
             // ConductInterview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 561);
-            this.Controls.Add(this.btn_beginHelp);
-            this.Controls.Add(this.btn_browseCV);
-            this.Controls.Add(this.tb_cvPath);
-            this.Controls.Add(this.lbl_attachCV);
-            this.Controls.Add(this.tb_applicantName);
+            this.ClientSize = new System.Drawing.Size(810, 572);
+            this.Controls.Add(this.p_setup);
             this.Controls.Add(this.btn_complete);
-            this.Controls.Add(this.tb_interviewerName);
-            this.Controls.Add(this.lbl_interviewerName);
-            this.Controls.Add(this.btn_beginInterview);
-            this.Controls.Add(this.lbl_applicantName);
             this.Controls.Add(this.p_questions);
-            this.Controls.Add(this.lbl_vacancy);
-            this.Controls.Add(this.cb_vacancy);
             this.Name = "ConductInterview";
             this.Text = "Conduct an Interview";
             this.p_questions.ResumeLayout(false);
             this.p_questions.PerformLayout();
+            this.p_setup.ResumeLayout(false);
+            this.p_setup.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -418,5 +419,6 @@
         private System.Windows.Forms.Button btn_browseCV;
         private System.Windows.Forms.Button btn_beginHelp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel p_setup;
     }
 }

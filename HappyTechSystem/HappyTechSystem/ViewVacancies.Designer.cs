@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_vacancy = new System.Windows.Forms.ListBox();
             this.lbl_selectVacancy = new System.Windows.Forms.Label();
             this.lbl_minScore = new System.Windows.Forms.Label();
             this.nud_acceptance = new System.Windows.Forms.NumericUpDown();
@@ -37,23 +37,27 @@
             this.lb_questionsUsed = new System.Windows.Forms.ListBox();
             this.lbl_usedQuestions = new System.Windows.Forms.Label();
             this.gb_editViewVacancy = new System.Windows.Forms.GroupBox();
-            this.btn_edit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl_vacancyName = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.lbl_questionBank = new System.Windows.Forms.Label();
+            this.lb_questionBank = new System.Windows.Forms.ListBox();
+            this.lbl_vacancyName = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.p_editToolbox = new System.Windows.Forms.Panel();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).BeginInit();
             this.gb_editViewVacancy.SuspendLayout();
+            this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lb_vacancy
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 264);
-            this.listBox1.TabIndex = 0;
+            this.lb_vacancy.FormattingEnabled = true;
+            this.lb_vacancy.Location = new System.Drawing.Point(12, 25);
+            this.lb_vacancy.Name = "lb_vacancy";
+            this.lb_vacancy.Size = new System.Drawing.Size(120, 264);
+            this.lb_vacancy.TabIndex = 0;
             // 
             // lbl_selectVacancy
             // 
@@ -86,9 +90,9 @@
             this.lbl_slots.AutoSize = true;
             this.lbl_slots.Location = new System.Drawing.Point(182, 48);
             this.lbl_slots.Name = "lbl_slots";
-            this.lbl_slots.Size = new System.Drawing.Size(79, 13);
+            this.lbl_slots.Size = new System.Drawing.Size(73, 13);
             this.lbl_slots.TabIndex = 4;
-            this.lbl_slots.Text = "Interview Slots:";
+            this.lbl_slots.Text = "Position Slots:";
             // 
             // nud_slots
             // 
@@ -118,7 +122,7 @@
             // gb_editViewVacancy
             // 
             this.gb_editViewVacancy.Controls.Add(this.lbl_questionBank);
-            this.gb_editViewVacancy.Controls.Add(this.listBox2);
+            this.gb_editViewVacancy.Controls.Add(this.lb_questionBank);
             this.gb_editViewVacancy.Controls.Add(this.lbl_vacancyName);
             this.gb_editViewVacancy.Controls.Add(this.textBox1);
             this.gb_editViewVacancy.Controls.Add(this.nud_slots);
@@ -134,21 +138,22 @@
             this.gb_editViewVacancy.TabStop = false;
             this.gb_editViewVacancy.Text = "Edit and View Vacancies";
             // 
-            // btn_edit
+            // lbl_questionBank
             // 
-            this.btn_edit.Location = new System.Drawing.Point(585, 35);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(52, 51);
-            this.btn_edit.TabIndex = 9;
-            this.btn_edit.Text = "Edit Mode";
-            this.btn_edit.UseVisualStyleBackColor = true;
+            this.lbl_questionBank.AutoSize = true;
+            this.lbl_questionBank.Location = new System.Drawing.Point(75, 108);
+            this.lbl_questionBank.Name = "lbl_questionBank";
+            this.lbl_questionBank.Size = new System.Drawing.Size(77, 13);
+            this.lbl_questionBank.TabIndex = 11;
+            this.lbl_questionBank.Text = "Question Bank";
             // 
-            // textBox1
+            // lb_questionBank
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.lb_questionBank.FormattingEnabled = true;
+            this.lb_questionBank.Location = new System.Drawing.Point(7, 124);
+            this.lb_questionBank.Name = "lb_questionBank";
+            this.lb_questionBank.Size = new System.Drawing.Size(211, 134);
+            this.lb_questionBank.TabIndex = 10;
             // 
             // lbl_vacancyName
             // 
@@ -159,38 +164,68 @@
             this.lbl_vacancyName.TabIndex = 9;
             this.lbl_vacancyName.Text = "Vacancy Name";
             // 
-            // listBox2
+            // textBox1
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(7, 124);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(211, 134);
-            this.listBox2.TabIndex = 10;
+            this.textBox1.Location = new System.Drawing.Point(28, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
             // 
-            // lbl_questionBank
+            // btn_edit
             // 
-            this.lbl_questionBank.AutoSize = true;
-            this.lbl_questionBank.Location = new System.Drawing.Point(75, 108);
-            this.lbl_questionBank.Name = "lbl_questionBank";
-            this.lbl_questionBank.Size = new System.Drawing.Size(77, 13);
-            this.lbl_questionBank.TabIndex = 11;
-            this.lbl_questionBank.Text = "Question Bank";
+            this.btn_edit.Location = new System.Drawing.Point(595, 16);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(63, 48);
+            this.btn_edit.TabIndex = 57;
+            this.btn_edit.Text = "Toggle Edit Mode";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // p_editToolbox
+            // 
+            this.p_editToolbox.Controls.Add(this.btn_delete);
+            this.p_editToolbox.Controls.Add(this.btn_save);
+            this.p_editToolbox.Location = new System.Drawing.Point(595, 70);
+            this.p_editToolbox.Name = "p_editToolbox";
+            this.p_editToolbox.Size = new System.Drawing.Size(63, 100);
+            this.p_editToolbox.TabIndex = 58;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.ForeColor = System.Drawing.Color.Red;
+            this.btn_delete.Location = new System.Drawing.Point(0, 51);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(63, 48);
+            this.btn_delete.TabIndex = 50;
+            this.btn_delete.Text = "Delete Vacancy";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(0, 0);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(63, 48);
+            this.btn_save.TabIndex = 53;
+            this.btn_save.Text = "Save Changes";
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
             // ViewVacancies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 301);
+            this.ClientSize = new System.Drawing.Size(674, 301);
             this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.gb_editViewVacancy);
             this.Controls.Add(this.lbl_selectVacancy);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lb_vacancy);
             this.Name = "ViewVacancies";
             this.Text = "Modify and View Vacancies";
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).EndInit();
             this.gb_editViewVacancy.ResumeLayout(false);
             this.gb_editViewVacancy.PerformLayout();
+            this.p_editToolbox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,7 +233,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lb_vacancy;
         private System.Windows.Forms.Label lbl_selectVacancy;
         private System.Windows.Forms.Label lbl_minScore;
         private System.Windows.Forms.NumericUpDown nud_acceptance;
@@ -209,8 +244,11 @@
         private System.Windows.Forms.GroupBox gb_editViewVacancy;
         private System.Windows.Forms.Label lbl_vacancyName;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Label lbl_questionBank;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lb_questionBank;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Panel p_editToolbox;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_save;
     }
 }

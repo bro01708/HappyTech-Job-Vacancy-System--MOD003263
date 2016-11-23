@@ -35,5 +35,17 @@ namespace HappyTechSystem
         {
             //if selection is "base", dont allow deletion!
         }
+
+        private void btn_manageCategories_Click(object sender, EventArgs e)
+        {
+            gb_question.Enabled = false;
+            gb_category.Enabled = true;
+        }
+
+        private void btn_categoryDone_Click(object sender, EventArgs e)
+        {
+            gb_category.Enabled = false;
+            gb_question.Enabled = true;
+        }
     }
 }

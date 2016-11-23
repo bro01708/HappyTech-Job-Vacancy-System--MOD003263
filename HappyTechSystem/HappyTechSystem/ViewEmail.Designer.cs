@@ -31,9 +31,12 @@
             this.tb_emailPreview = new System.Windows.Forms.TextBox();
             this.lb_email = new System.Windows.Forms.ListBox();
             this.lbl_help = new System.Windows.Forms.Label();
+            this.gb_sendEmails = new System.Windows.Forms.GroupBox();
             this.btn_edit = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.p_editToolbox = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tb_emailPreview
@@ -62,47 +65,68 @@
             this.lbl_help.TabIndex = 4;
             this.lbl_help.Text = "Choose an email from the list below:";
             // 
+            // gb_sendEmails
+            // 
+            this.gb_sendEmails.Enabled = false;
+            this.gb_sendEmails.Location = new System.Drawing.Point(677, 13);
+            this.gb_sendEmails.Name = "gb_sendEmails";
+            this.gb_sendEmails.Size = new System.Drawing.Size(198, 300);
+            this.gb_sendEmails.TabIndex = 8;
+            this.gb_sendEmails.TabStop = false;
+            this.gb_sendEmails.Text = "Send Emails";
+            // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(569, 12);
+            this.btn_edit.Location = new System.Drawing.Point(569, 13);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(53, 39);
-            this.btn_edit.TabIndex = 5;
-            this.btn_edit.Text = "Edit Mode";
+            this.btn_edit.Size = new System.Drawing.Size(63, 48);
+            this.btn_edit.TabIndex = 55;
+            this.btn_edit.Text = "Toggle Edit Mode";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // btn_save
+            // p_editToolbox
             // 
-            this.btn_save.Location = new System.Drawing.Point(569, 100);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(53, 39);
-            this.btn_save.TabIndex = 6;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.p_editToolbox.Controls.Add(this.btn_delete);
+            this.p_editToolbox.Controls.Add(this.btn_save);
+            this.p_editToolbox.Location = new System.Drawing.Point(569, 67);
+            this.p_editToolbox.Name = "p_editToolbox";
+            this.p_editToolbox.Size = new System.Drawing.Size(63, 100);
+            this.p_editToolbox.TabIndex = 56;
             // 
             // btn_delete
             // 
             this.btn_delete.ForeColor = System.Drawing.Color.Red;
-            this.btn_delete.Location = new System.Drawing.Point(569, 145);
+            this.btn_delete.Location = new System.Drawing.Point(0, 51);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(53, 39);
-            this.btn_delete.TabIndex = 7;
-            this.btn_delete.Text = "Delete";
+            this.btn_delete.Size = new System.Drawing.Size(63, 48);
+            this.btn_delete.TabIndex = 50;
+            this.btn_delete.Text = "Delete Question";
             this.btn_delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(0, 0);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(63, 48);
+            this.btn_save.TabIndex = 53;
+            this.btn_save.Text = "Save Changes";
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
             // ViewEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 324);
-            this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_save);
+            this.ClientSize = new System.Drawing.Size(887, 324);
             this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.p_editToolbox);
+            this.Controls.Add(this.gb_sendEmails);
             this.Controls.Add(this.lbl_help);
             this.Controls.Add(this.lb_email);
             this.Controls.Add(this.tb_emailPreview);
             this.Name = "ViewEmail";
             this.Text = "Modify and View Emails";
+            this.p_editToolbox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,8 +137,10 @@
         private System.Windows.Forms.TextBox tb_emailPreview;
         private System.Windows.Forms.ListBox lb_email;
         private System.Windows.Forms.Label lbl_help;
+        private System.Windows.Forms.GroupBox gb_sendEmails;
         private System.Windows.Forms.Button btn_edit;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Panel p_editToolbox;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_save;
     }
 }

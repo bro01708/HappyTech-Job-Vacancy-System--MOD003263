@@ -42,5 +42,11 @@ namespace HappyTechSystem
             }
 ;
         }
+
+        private void btn_beginInterview_Click(object sender, EventArgs e)
+        {
+            p_setup.Enabled = false;
+            p_questions.Enabled = true;
+        }
     }
 }
