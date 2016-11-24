@@ -11,14 +11,22 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI form to help the user conduct an interview.
+    /// </summary>
     public partial class ConductInterview : Form
     {
         public ConductInterview()
         {
             InitializeComponent();
         }
-
-        //browse for the CV file and paste the file path to the relevant textbox (tb_cvPath)
+        /// <summary>
+        /// Created by Dan.
+        /// allows the user to browse for a CV file and paste the file path to the relevant textbox (tb_cvPath).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_browseCV_Click(object sender, EventArgs e)
         {
             int size;
@@ -43,12 +51,24 @@ namespace HappyTechSystem
 ;
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// A button to begin the interview. Disables the first panel of controls, and enables the second.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_beginInterview_Click(object sender, EventArgs e)
         {
             p_setup.Enabled = false;
             p_questions.Enabled = true;
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// Helpful infomation for the user regading interview setup.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_beginHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To begin the interivew process, you will need to first set-up some interviewee information.\n" +
@@ -56,6 +76,12 @@ namespace HappyTechSystem
                 MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// Helpful infomation for the user regarding the interview process.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_interviewHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("The interview process covers the questions set within the vacancy, beginning with Question 1.\n" +

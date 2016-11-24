@@ -10,14 +10,26 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI form that allows the user to view emails from the database.
+    /// </summary>
     public partial class ViewEmail : Form
     {
+        //variable to enable toggling. (should be a boolean?)
         private byte flag;
         public ViewEmail()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// Button event handler that toggles the active form controls.
+        /// A flag is used to act as a button toggle.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
         {
             if (flag == 0)

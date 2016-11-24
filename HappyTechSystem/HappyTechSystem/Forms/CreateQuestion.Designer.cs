@@ -466,7 +466,6 @@
             this.Controls.Add(this.btn_createQuestion);
             this.Name = "CreateQuestion";
             this.Text = "Create a Question";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateQuestion_FormClosed);
             this.gb_category.ResumeLayout(false);
             this.gb_category.PerformLayout();
             this.gb_question.ResumeLayout(false);

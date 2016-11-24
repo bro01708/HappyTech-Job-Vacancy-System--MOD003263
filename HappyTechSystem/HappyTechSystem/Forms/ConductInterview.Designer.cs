@@ -286,6 +286,7 @@
             // 
             // btn_beginInterview
             // 
+            this.btn_beginInterview.Enabled = false;
             this.btn_beginInterview.Location = new System.Drawing.Point(242, 108);
             this.btn_beginInterview.Name = "btn_beginInterview";
             this.btn_beginInterview.Size = new System.Drawing.Size(255, 24);

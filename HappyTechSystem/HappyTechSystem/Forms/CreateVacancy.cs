@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI form to help users create vacancies, to be used by interviews.
+    /// </summary>
     public partial class CreateVacancy : Form
     {
         public CreateVacancy()
@@ -17,6 +21,12 @@ namespace HappyTechSystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// General help regarding form functions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_help_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You will need at least five questions to create a vacancy.\n" +

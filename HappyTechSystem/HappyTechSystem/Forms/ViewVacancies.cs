@@ -10,14 +10,26 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI form that displays all vacancies from the database.
+    /// </summary>
     public partial class ViewVacancies : Form
     {
+        //variable that acts as a toggle. used by the edit button event handler
         private byte flag;
         public ViewVacancies()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// Enables fields on the form for edits to take place.
+        /// A flag is in place to toggle the enabled and disabled states.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
         {
             if (flag == 0)

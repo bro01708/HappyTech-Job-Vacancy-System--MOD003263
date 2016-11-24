@@ -11,6 +11,10 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// The main UI form for the system. All other forms will be displayed from within this form.
+    /// </summary>
     public partial class MainForm : Form
     {
         public MainForm()
@@ -37,7 +41,13 @@ namespace HappyTechSystem
                 p_databaseStatus.BringToFront();
             }
         }
-
+        /// <summary>
+        /// Created by Dan.
+        /// All methods below here allow the MDI parent form to call each child form correctly.
+        /// There are regions in place to help group these methods, creation and modify.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #region Creation Menu Items
 
         private void newQuestionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,8 +133,8 @@ namespace HappyTechSystem
             newForm.Show();
         }
         /// <summary>
-        /// Created by Dan
-        /// On MDI Parent Load, allow the background color to be editable.
+        /// Created by Dan.
+        /// When the MDI Parent (Main Form) loads, this allows the background color to be changed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

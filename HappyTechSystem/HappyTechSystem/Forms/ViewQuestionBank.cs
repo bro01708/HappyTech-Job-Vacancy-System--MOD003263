@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem
 {
+    /// <summary>
+    /// Created by Dan.
+    /// UI form to allow the user to view all questions stored in the database.
+    /// </summary>
     public partial class ViewQuestionBank : Form
     {
+        //private variable used to aid toggling
         private byte flag;
 
         public ViewQuestionBank()
@@ -19,9 +24,15 @@ namespace HappyTechSystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// button event handler that saves any edited question to the database by altering the records.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_save_Click(object sender, EventArgs e)
         {
-            //alter tables within the database
+
         }
 
         /// <summary>
@@ -74,12 +85,23 @@ namespace HappyTechSystem
             }
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// When the form loads, the edit tool box is disabled
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
-            //disables the edit tool box on form load
             p_editToolbox.Enabled = false;
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// Button event handler to close the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
