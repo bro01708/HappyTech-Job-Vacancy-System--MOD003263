@@ -226,7 +226,6 @@
             // pb_logo
             // 
             this.pb_logo.BackColor = System.Drawing.Color.Transparent;
-            this.pb_logo.Image = global::HappyTechSystem.Properties.Resources.logo3;
             this.pb_logo.Location = new System.Drawing.Point(257, 3);
             this.pb_logo.Name = "pb_logo";
             this.pb_logo.Size = new System.Drawing.Size(131, 137);

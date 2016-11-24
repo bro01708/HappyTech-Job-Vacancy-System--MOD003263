@@ -47,23 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConductInterview.Designer.cs">
+    <Compile Include="Forms\ConductInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConductInterview.Designer.cs">
       <DependentUpon>ConductInterview.cs</DependentUpon>
     </Compile>
-    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ConductInterview.cs">
-      <Link>ConductInterview.cs</Link>
+    <Compile Include="Forms\CreateTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateTemplate.Designer.cs">
+    <Compile Include="Forms\CreateTemplate.Designer.cs">
       <DependentUpon>CreateTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateVacancy.cs">
+    <Compile Include="Forms\CreateVacancy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateVacancy.Designer.cs">
+    <Compile Include="Forms\CreateVacancy.Designer.cs">
       <DependentUpon>CreateVacancy.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -74,54 +73,49 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CreateQuestion.cs">
+    <Compile Include="Forms\CreateQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateQuestion.Designer.cs">
+    <Compile Include="Forms\CreateQuestion.Designer.cs">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewEmail.cs">
+    <Compile Include="Forms\ViewEmail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewEmail.Designer.cs">
+    <Compile Include="Forms\ViewEmail.Designer.cs">
       <DependentUpon>ViewEmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewInterview.cs">
+    <Compile Include="Forms\ViewInterview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewInterview.Designer.cs">
+    <Compile Include="Forms\ViewInterview.Designer.cs">
       <DependentUpon>ViewInterview.cs</DependentUpon>
     </Compile>
-    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.cs">
-      <Link>ViewQuestionBank.cs</Link>
+    <Compile Include="Forms\ViewQuestionBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.Designer.cs">
+    <Compile Include="Forms\ViewQuestionBank.Designer.cs">
       <DependentUpon>ViewQuestionBank.cs</DependentUpon>
-      <Link>ViewQuestionBank.Designer.cs</Link>
     </Compile>
-    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.cs">
-      <Link>ViewTemplates.cs</Link>
+    <Compile Include="Forms\ViewTemplates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.Designer.cs">
+    <Compile Include="Forms\ViewTemplates.Designer.cs">
       <DependentUpon>ViewTemplates.cs</DependentUpon>
-      <Link>ViewTemplates.Designer.cs</Link>
     </Compile>
-    <Compile Include="ViewVacancies.cs">
+    <Compile Include="Forms\ViewVacancies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewVacancies.Designer.cs">
+    <Compile Include="Forms\ViewVacancies.Designer.cs">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ConductInterview.resx">
+    <EmbeddedResource Include="Forms\ConductInterview.resx">
       <DependentUpon>ConductInterview.cs</DependentUpon>
-      <Link>ConductInterview.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTemplate.resx">
+    <EmbeddedResource Include="Forms\CreateTemplate.resx">
       <DependentUpon>CreateTemplate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateVacancy.resx">
+    <EmbeddedResource Include="Forms\CreateVacancy.resx">
       <DependentUpon>CreateVacancy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -137,24 +131,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="CreateQuestion.resx">
+    <EmbeddedResource Include="Forms\CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewEmail.resx">
+    <EmbeddedResource Include="Forms\ViewEmail.resx">
       <DependentUpon>ViewEmail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewInterview.resx">
+    <EmbeddedResource Include="Forms\ViewInterview.resx">
       <DependentUpon>ViewInterview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewQuestionBank.resx">
-      <DependentUpon>ViewQuestionBank.cs</DependentUpon>
-      <Link>ViewQuestionBank.resx</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="E:\Degree 2nd Year\Software Engineering\Ass\Local Repo\HappyTechSystem\HappyTechSystem\ViewTemplates.resx">
-      <DependentUpon>ViewTemplates.cs</DependentUpon>
-      <Link>ViewTemplates.resx</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewVacancies.resx">
+    <EmbeddedResource Include="Forms\ViewVacancies.resx">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -170,9 +156,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\logo3.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

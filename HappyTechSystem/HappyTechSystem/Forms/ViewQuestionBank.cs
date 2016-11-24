@@ -24,6 +24,12 @@ namespace HappyTechSystem
             //alter tables within the database
         }
 
+        /// <summary>
+        /// Created by Dan.
+        /// This button event handler enables most of the read-only fields, allowing them to be editing temporarily.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
         { 
 
@@ -65,8 +71,6 @@ namespace HappyTechSystem
                 tb_response5.ReadOnly = true;
                 flag = 0;
             }
-            //allow all fields bar questionID to be edited.
-            
         }
 
         private void ViewQuestionBank_Load(object sender, EventArgs e)

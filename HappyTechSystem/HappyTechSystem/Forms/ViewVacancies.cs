@@ -20,6 +20,8 @@ namespace HappyTechSystem
         private void btn_edit_Click(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = true;
+            btn_moveQuestion.Enabled = true;
+            btn_removeQuestion.Enabled = true;
         }
     }
 }
