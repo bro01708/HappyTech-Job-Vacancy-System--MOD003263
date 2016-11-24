@@ -12,6 +12,7 @@ namespace HappyTechSystem
 {
     public partial class ViewEmail : Form
     {
+        private byte flag;
         public ViewEmail()
         {
             InitializeComponent();
@@ -19,7 +20,18 @@ namespace HappyTechSystem
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            p_editToolbox.Enabled = true;
+            if (flag == 0)
+            {
+                p_editToolbox.Enabled = true;
+                tb_emailPreview.ReadOnly = false;
+                flag++;
+            }
+            else
+            {
+                p_editToolbox.Enabled = false;
+                tb_emailPreview.ReadOnly = true;
+                flag--;
+            }
         }
     }
 }

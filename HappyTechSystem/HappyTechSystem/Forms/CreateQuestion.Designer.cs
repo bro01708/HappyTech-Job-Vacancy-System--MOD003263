@@ -65,6 +65,7 @@
             this.btn_addCategory = new System.Windows.Forms.Button();
             this.btn_manageCategories = new System.Windows.Forms.Button();
             this.gb_question = new System.Windows.Forms.GroupBox();
+            this.btn_categoryManagerHelp = new System.Windows.Forms.Button();
             this.gb_category.SuspendLayout();
             this.gb_question.SuspendLayout();
             this.SuspendLayout();
@@ -298,6 +299,7 @@
             this.btn_createQuestionHelp.TabIndex = 25;
             this.btn_createQuestionHelp.Text = "?";
             this.btn_createQuestionHelp.UseVisualStyleBackColor = true;
+            this.btn_createQuestionHelp.Click += new System.EventHandler(this.btn_createQuestionHelp_Click);
             // 
             // gb_category
             // 
@@ -402,7 +404,7 @@
             // 
             this.btn_manageCategories.Location = new System.Drawing.Point(349, 29);
             this.btn_manageCategories.Name = "btn_manageCategories";
-            this.btn_manageCategories.Size = new System.Drawing.Size(185, 35);
+            this.btn_manageCategories.Size = new System.Drawing.Size(144, 35);
             this.btn_manageCategories.TabIndex = 27;
             this.btn_manageCategories.Text = "Manage Categories";
             this.btn_manageCategories.UseVisualStyleBackColor = true;
@@ -410,6 +412,7 @@
             // 
             // gb_question
             // 
+            this.gb_question.Controls.Add(this.btn_categoryManagerHelp);
             this.gb_question.Controls.Add(this.tb_questionID);
             this.gb_question.Controls.Add(this.btn_manageCategories);
             this.gb_question.Controls.Add(this.lbl_questionID);
@@ -440,6 +443,17 @@
             this.gb_question.TabIndex = 28;
             this.gb_question.TabStop = false;
             this.gb_question.Text = "Question Creation";
+            // 
+            // btn_categoryManagerHelp
+            // 
+            this.btn_categoryManagerHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_categoryManagerHelp.Location = new System.Drawing.Point(495, 29);
+            this.btn_categoryManagerHelp.Name = "btn_categoryManagerHelp";
+            this.btn_categoryManagerHelp.Size = new System.Drawing.Size(35, 35);
+            this.btn_categoryManagerHelp.TabIndex = 29;
+            this.btn_categoryManagerHelp.Text = "?";
+            this.btn_categoryManagerHelp.UseVisualStyleBackColor = true;
+            this.btn_categoryManagerHelp.Click += new System.EventHandler(this.btn_categoryManagerHelp_Click);
             // 
             // CreateQuestion
             // 
@@ -500,5 +514,6 @@
         private System.Windows.Forms.Label lbl_deleteConfirmation;
         private System.Windows.Forms.Button btn_categoryDone;
         private System.Windows.Forms.GroupBox gb_question;
+        private System.Windows.Forms.Button btn_categoryManagerHelp;
     }
 }

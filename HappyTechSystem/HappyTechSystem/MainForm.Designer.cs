@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,6 +227,7 @@
             // pb_logo
             // 
             this.pb_logo.BackColor = System.Drawing.Color.Transparent;
+            this.pb_logo.Image = ((System.Drawing.Image)(resources.GetObject("pb_logo.Image")));
             this.pb_logo.Location = new System.Drawing.Point(257, 3);
             this.pb_logo.Name = "pb_logo";
             this.pb_logo.Size = new System.Drawing.Size(131, 137);

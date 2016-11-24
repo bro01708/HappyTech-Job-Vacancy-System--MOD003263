@@ -68,9 +68,9 @@
             // gb_sendEmails
             // 
             this.gb_sendEmails.Enabled = false;
-            this.gb_sendEmails.Location = new System.Drawing.Point(677, 13);
+            this.gb_sendEmails.Location = new System.Drawing.Point(638, 13);
             this.gb_sendEmails.Name = "gb_sendEmails";
-            this.gb_sendEmails.Size = new System.Drawing.Size(198, 300);
+            this.gb_sendEmails.Size = new System.Drawing.Size(237, 300);
             this.gb_sendEmails.TabIndex = 8;
             this.gb_sendEmails.TabStop = false;
             this.gb_sendEmails.Text = "Send Emails";

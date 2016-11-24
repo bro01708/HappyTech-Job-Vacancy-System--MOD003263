@@ -12,6 +12,7 @@ namespace HappyTechSystem
 {
     public partial class ViewVacancies : Form
     {
+        private byte flag;
         public ViewVacancies()
         {
             InitializeComponent();
@@ -19,9 +20,28 @@ namespace HappyTechSystem
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            p_editToolbox.Enabled = true;
-            btn_moveQuestion.Enabled = true;
-            btn_removeQuestion.Enabled = true;
+            if (flag == 0)
+            {
+                p_editToolbox.Enabled = true;
+                tb_vacancyName.ReadOnly = false;
+                nud_acceptance.ReadOnly = false;
+                nud_slots.ReadOnly = false;
+                btn_moveQuestion.Enabled = true;
+                btn_removeQuestion.Enabled = true;
+                flag++;
+
+            }
+            else
+            {
+                p_editToolbox.Enabled = false;
+                tb_vacancyName.ReadOnly = true;
+                nud_acceptance.ReadOnly = true;
+                nud_slots.ReadOnly = true;
+                btn_moveQuestion.Enabled = false;
+                btn_removeQuestion.Enabled = false;
+                flag--;
+            }
+
         }
     }
 }

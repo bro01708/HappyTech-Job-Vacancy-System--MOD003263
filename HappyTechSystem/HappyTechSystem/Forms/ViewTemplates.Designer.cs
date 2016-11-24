@@ -37,14 +37,15 @@
             this.lbl_greeting = new System.Windows.Forms.Label();
             this.tb_greeting = new System.Windows.Forms.TextBox();
             this.g_modifyViewTemplates = new System.Windows.Forms.GroupBox();
-            this.lbl_body = new System.Windows.Forms.Label();
-            this.tb_body = new System.Windows.Forms.TextBox();
-            this.lbl_signOff = new System.Windows.Forms.Label();
             this.tb_signOff = new System.Windows.Forms.TextBox();
+            this.lbl_signOff = new System.Windows.Forms.Label();
+            this.tb_body = new System.Windows.Forms.TextBox();
+            this.lbl_body = new System.Windows.Forms.Label();
             this.btn_edit = new System.Windows.Forms.Button();
             this.p_editToolbox = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.g_modifyViewTemplates.SuspendLayout();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // lbl_select
             // 
             this.lbl_select.AutoSize = true;
-            this.lbl_select.Location = new System.Drawing.Point(12, 70);
+            this.lbl_select.Location = new System.Drawing.Point(12, 12);
             this.lbl_select.Name = "lbl_select";
             this.lbl_select.Size = new System.Drawing.Size(130, 13);
             this.lbl_select.TabIndex = 0;
@@ -61,9 +62,9 @@
             // lb_templates
             // 
             this.lb_templates.FormattingEnabled = true;
-            this.lb_templates.Location = new System.Drawing.Point(12, 87);
+            this.lb_templates.Location = new System.Drawing.Point(12, 35);
             this.lb_templates.Name = "lb_templates";
-            this.lb_templates.Size = new System.Drawing.Size(130, 95);
+            this.lb_templates.Size = new System.Drawing.Size(130, 225);
             this.lb_templates.TabIndex = 1;
             // 
             // lbl_templateName
@@ -129,30 +130,20 @@
             this.g_modifyViewTemplates.Controls.Add(this.lbl_subject);
             this.g_modifyViewTemplates.Controls.Add(this.tb_templateName);
             this.g_modifyViewTemplates.Controls.Add(this.lbl_greeting);
-            this.g_modifyViewTemplates.Enabled = false;
             this.g_modifyViewTemplates.Location = new System.Drawing.Point(148, 12);
             this.g_modifyViewTemplates.Name = "g_modifyViewTemplates";
-            this.g_modifyViewTemplates.Size = new System.Drawing.Size(452, 317);
+            this.g_modifyViewTemplates.Size = new System.Drawing.Size(452, 284);
             this.g_modifyViewTemplates.TabIndex = 10;
             this.g_modifyViewTemplates.TabStop = false;
             this.g_modifyViewTemplates.Text = "Modify and View Template";
             // 
-            // lbl_body
+            // tb_signOff
             // 
-            this.lbl_body.AutoSize = true;
-            this.lbl_body.Location = new System.Drawing.Point(18, 111);
-            this.lbl_body.Name = "lbl_body";
-            this.lbl_body.Size = new System.Drawing.Size(34, 13);
-            this.lbl_body.TabIndex = 10;
-            this.lbl_body.Text = "Body:";
-            // 
-            // tb_body
-            // 
-            this.tb_body.Location = new System.Drawing.Point(118, 111);
-            this.tb_body.Multiline = true;
-            this.tb_body.Name = "tb_body";
-            this.tb_body.Size = new System.Drawing.Size(289, 130);
-            this.tb_body.TabIndex = 11;
+            this.tb_signOff.Location = new System.Drawing.Point(118, 249);
+            this.tb_signOff.Name = "tb_signOff";
+            this.tb_signOff.ReadOnly = true;
+            this.tb_signOff.Size = new System.Drawing.Size(289, 20);
+            this.tb_signOff.TabIndex = 13;
             // 
             // lbl_signOff
             // 
@@ -163,12 +154,23 @@
             this.lbl_signOff.TabIndex = 12;
             this.lbl_signOff.Text = "Sign Off:";
             // 
-            // tb_signOff
+            // tb_body
             // 
-            this.tb_signOff.Location = new System.Drawing.Point(118, 249);
-            this.tb_signOff.Name = "tb_signOff";
-            this.tb_signOff.Size = new System.Drawing.Size(289, 20);
-            this.tb_signOff.TabIndex = 13;
+            this.tb_body.Location = new System.Drawing.Point(118, 111);
+            this.tb_body.Multiline = true;
+            this.tb_body.Name = "tb_body";
+            this.tb_body.ReadOnly = true;
+            this.tb_body.Size = new System.Drawing.Size(289, 130);
+            this.tb_body.TabIndex = 11;
+            // 
+            // lbl_body
+            // 
+            this.lbl_body.AutoSize = true;
+            this.lbl_body.Location = new System.Drawing.Point(18, 111);
+            this.lbl_body.Name = "lbl_body";
+            this.lbl_body.Size = new System.Drawing.Size(34, 13);
+            this.lbl_body.TabIndex = 10;
+            this.lbl_body.Text = "Body:";
             // 
             // btn_edit
             // 
@@ -208,11 +210,23 @@
             this.btn_save.Text = "Save Changes";
             this.btn_save.UseVisualStyleBackColor = true;
             // 
+            // btn_close
+            // 
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Location = new System.Drawing.Point(12, 266);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(130, 32);
+            this.btn_close.TabIndex = 57;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // ViewTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 356);
+            this.ClientSize = new System.Drawing.Size(697, 306);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.g_modifyViewTemplates);
@@ -247,5 +261,6 @@
         private System.Windows.Forms.Panel p_editToolbox;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_close;
     }
 }

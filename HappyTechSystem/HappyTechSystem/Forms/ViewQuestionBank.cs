@@ -12,7 +12,7 @@ namespace HappyTechSystem
 {
     public partial class ViewQuestionBank : Form
     {
-        private byte flag = 0;
+        private byte flag;
 
         public ViewQuestionBank()
         {
@@ -27,6 +27,7 @@ namespace HappyTechSystem
         /// <summary>
         /// Created by Dan.
         /// This button event handler enables most of the read-only fields, allowing them to be editing temporarily.
+        /// A flag is used to act as a button toggle.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -50,7 +51,7 @@ namespace HappyTechSystem
                 tb_response3.ReadOnly = false;
                 tb_response4.ReadOnly = false;
                 tb_response5.ReadOnly = false;
-                flag = 1;
+                flag++;
             }
             else
             {
@@ -69,13 +70,19 @@ namespace HappyTechSystem
                 tb_response3.ReadOnly = true;
                 tb_response4.ReadOnly = true;
                 tb_response5.ReadOnly = true;
-                flag = 0;
+                flag--;
             }
         }
 
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
+            //disables the edit tool box on form load
             p_editToolbox.Enabled = false;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

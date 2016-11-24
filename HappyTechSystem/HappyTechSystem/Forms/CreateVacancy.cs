@@ -19,7 +19,9 @@ namespace HappyTechSystem
 
         private void btn_help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You will need at least five questions to create a vacancy.\nChoose from the question bank and click 'Create Vacancy' when you're done");
+            MessageBox.Show("You will need at least five questions to create a vacancy.\n" +
+                            "Choose from the question bank and click 'Create Vacancy' when you're done.\n" +
+                            "Remember that all fields should be filled out before a Vacancy can be made.", "Why is the 'Create Vacancy' button greyed out?", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }

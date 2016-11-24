@@ -60,6 +60,7 @@
             this.btn_beginHelp = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.p_setup = new System.Windows.Forms.Panel();
+            this.btn_interviewHelp = new System.Windows.Forms.Button();
             this.p_questions.SuspendLayout();
             this.p_setup.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +84,7 @@
             // 
             // p_questions
             // 
-            this.p_questions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p_questions.Controls.Add(this.btn_interviewHelp);
             this.p_questions.Controls.Add(this.lbl_extraNotes);
             this.p_questions.Controls.Add(this.tb_notes);
             this.p_questions.Controls.Add(this.cb_rank5);
@@ -102,15 +103,15 @@
             this.p_questions.Controls.Add(this.btn_previousQuestion);
             this.p_questions.Controls.Add(this.tb_questionText);
             this.p_questions.Enabled = false;
-            this.p_questions.Location = new System.Drawing.Point(33, 150);
+            this.p_questions.Location = new System.Drawing.Point(33, 157);
             this.p_questions.Name = "p_questions";
-            this.p_questions.Size = new System.Drawing.Size(755, 357);
+            this.p_questions.Size = new System.Drawing.Size(755, 347);
             this.p_questions.TabIndex = 2;
             // 
             // lbl_extraNotes
             // 
             this.lbl_extraNotes.AutoSize = true;
-            this.lbl_extraNotes.Location = new System.Drawing.Point(248, 269);
+            this.lbl_extraNotes.Location = new System.Drawing.Point(248, 261);
             this.lbl_extraNotes.Name = "lbl_extraNotes";
             this.lbl_extraNotes.Size = new System.Drawing.Size(262, 13);
             this.lbl_extraNotes.TabIndex = 17;
@@ -118,7 +119,7 @@
             // 
             // tb_notes
             // 
-            this.tb_notes.Location = new System.Drawing.Point(184, 288);
+            this.tb_notes.Location = new System.Drawing.Point(184, 280);
             this.tb_notes.Multiline = true;
             this.tb_notes.Name = "tb_notes";
             this.tb_notes.Size = new System.Drawing.Size(386, 56);
@@ -139,6 +140,7 @@
             this.textBox5.Location = new System.Drawing.Point(603, 172);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(143, 66);
             this.textBox5.TabIndex = 14;
             // 
@@ -157,6 +159,7 @@
             this.textBox4.Location = new System.Drawing.Point(454, 172);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(143, 66);
             this.textBox4.TabIndex = 12;
             // 
@@ -175,6 +178,7 @@
             this.textBox3.Location = new System.Drawing.Point(305, 172);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(143, 66);
             this.textBox3.TabIndex = 10;
             // 
@@ -193,6 +197,7 @@
             this.textBox2.Location = new System.Drawing.Point(156, 172);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(143, 66);
             this.textBox2.TabIndex = 8;
             // 
@@ -228,12 +233,13 @@
             this.tb_rank1.Location = new System.Drawing.Point(7, 172);
             this.tb_rank1.Multiline = true;
             this.tb_rank1.Name = "tb_rank1";
+            this.tb_rank1.ReadOnly = true;
             this.tb_rank1.Size = new System.Drawing.Size(143, 66);
             this.tb_rank1.TabIndex = 4;
             // 
             // btn_nextQuestion
             // 
-            this.btn_nextQuestion.Location = new System.Drawing.Point(603, 55);
+            this.btn_nextQuestion.Location = new System.Drawing.Point(576, 55);
             this.btn_nextQuestion.Name = "btn_nextQuestion";
             this.btn_nextQuestion.Size = new System.Drawing.Size(94, 54);
             this.btn_nextQuestion.TabIndex = 2;
@@ -242,7 +248,7 @@
             // 
             // btn_previousQuestion
             // 
-            this.btn_previousQuestion.Location = new System.Drawing.Point(56, 55);
+            this.btn_previousQuestion.Location = new System.Drawing.Point(84, 55);
             this.btn_previousQuestion.Name = "btn_previousQuestion";
             this.btn_previousQuestion.Size = new System.Drawing.Size(94, 54);
             this.btn_previousQuestion.TabIndex = 1;
@@ -254,6 +260,7 @@
             this.tb_questionText.Location = new System.Drawing.Point(184, 31);
             this.tb_questionText.Multiline = true;
             this.tb_questionText.Name = "tb_questionText";
+            this.tb_questionText.ReadOnly = true;
             this.tb_questionText.Size = new System.Drawing.Size(386, 102);
             this.tb_questionText.TabIndex = 0;
             // 
@@ -261,9 +268,9 @@
             // 
             this.btn_complete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_complete.Enabled = false;
-            this.btn_complete.Location = new System.Drawing.Point(275, 518);
+            this.btn_complete.Location = new System.Drawing.Point(256, 508);
             this.btn_complete.Name = "btn_complete";
-            this.btn_complete.Size = new System.Drawing.Size(255, 42);
+            this.btn_complete.Size = new System.Drawing.Size(298, 49);
             this.btn_complete.TabIndex = 3;
             this.btn_complete.Text = "Complete Interview";
             this.btn_complete.UseVisualStyleBackColor = true;
@@ -279,7 +286,6 @@
             // 
             // btn_beginInterview
             // 
-            this.btn_beginInterview.Enabled = false;
             this.btn_beginInterview.Location = new System.Drawing.Point(242, 108);
             this.btn_beginInterview.Name = "btn_beginInterview";
             this.btn_beginInterview.Size = new System.Drawing.Size(255, 24);
@@ -345,6 +351,7 @@
             this.btn_beginHelp.TabIndex = 23;
             this.btn_beginHelp.Text = "?";
             this.btn_beginHelp.UseVisualStyleBackColor = true;
+            this.btn_beginHelp.Click += new System.EventHandler(this.btn_beginHelp_Click);
             // 
             // openFileDialog1
             // 
@@ -368,11 +375,22 @@
             this.p_setup.Size = new System.Drawing.Size(755, 139);
             this.p_setup.TabIndex = 24;
             // 
+            // btn_interviewHelp
+            // 
+            this.btn_interviewHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_interviewHelp.Location = new System.Drawing.Point(713, 10);
+            this.btn_interviewHelp.Name = "btn_interviewHelp";
+            this.btn_interviewHelp.Size = new System.Drawing.Size(33, 33);
+            this.btn_interviewHelp.TabIndex = 24;
+            this.btn_interviewHelp.Text = "?";
+            this.btn_interviewHelp.UseVisualStyleBackColor = true;
+            this.btn_interviewHelp.Click += new System.EventHandler(this.btn_interviewHelp_Click);
+            // 
             // ConductInterview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 572);
+            this.ClientSize = new System.Drawing.Size(810, 562);
             this.Controls.Add(this.p_setup);
             this.Controls.Add(this.btn_complete);
             this.Controls.Add(this.p_questions);
@@ -420,5 +438,6 @@
         private System.Windows.Forms.Button btn_beginHelp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel p_setup;
+        private System.Windows.Forms.Button btn_interviewHelp;
     }
 }

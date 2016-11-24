@@ -164,12 +164,13 @@
             // btn_help
             // 
             this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_help.Location = new System.Drawing.Point(450, 5);
+            this.btn_help.Location = new System.Drawing.Point(519, 5);
             this.btn_help.Name = "btn_help";
-            this.btn_help.Size = new System.Drawing.Size(152, 40);
+            this.btn_help.Size = new System.Drawing.Size(83, 40);
             this.btn_help.TabIndex = 13;
             this.btn_help.Text = "?";
             this.btn_help.UseVisualStyleBackColor = true;
+            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
             // lbl_help2
             // 
@@ -189,19 +190,20 @@
             this.btn_feedbackHelp.TabIndex = 15;
             this.btn_feedbackHelp.Text = "?";
             this.btn_feedbackHelp.UseVisualStyleBackColor = true;
+            this.btn_feedbackHelp.Click += new System.EventHandler(this.btn_feedbackHelp_Click);
             // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(12, 80);
+            this.lbl_name.Location = new System.Drawing.Point(35, 82);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(85, 13);
+            this.lbl_name.Size = new System.Drawing.Size(218, 13);
             this.lbl_name.TabIndex = 16;
-            this.lbl_name.Text = "Template Name:";
+            this.lbl_name.Text = "Name of Template (e.g. \"Accept\", \"Reject\"):";
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(103, 77);
+            this.tb_name.Location = new System.Drawing.Point(259, 79);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(116, 20);
             this.tb_name.TabIndex = 17;
