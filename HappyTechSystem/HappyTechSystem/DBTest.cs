@@ -28,7 +28,7 @@ namespace HappyTechSystem
         private void button1_Click(object sender, EventArgs e)
         {
             MetaLayer ml = MetaLayer.instance();
-            m_customers = ml.getQuestions();
+            m_customers = ml.GetQuestions();
             m_bs.DataSource = m_customers;
             m_bs.ResetBindings(false);
         }

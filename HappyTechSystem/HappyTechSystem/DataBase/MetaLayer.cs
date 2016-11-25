@@ -25,7 +25,7 @@ namespace HappyTechSystem.DB
         }
 
         // Could just have a set of static helper methods rather than a singleton!
-        public List<Question> getQuestions()
+        public List<Question> GetQuestions()
         {
             List<Question> Questions = new List<Question>();
 
@@ -51,7 +51,7 @@ namespace HappyTechSystem.DB
             return Questions;
         }
 
-        public List<EmailTemplate> getEmailTemplates()
+        public List<EmailTemplate> GetEmailTemplates()
         {
             List<EmailTemplate> ETs = new List<EmailTemplate>();
 
@@ -63,7 +63,7 @@ namespace HappyTechSystem.DB
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
-                    EmailTemplate ET  = new EmailTemplate();
+                    EmailTemplate ET = new EmailTemplate();
                     ET.GetID = dr.GetInt32(0);
                     ET.GetTemplateType = dr.GetString(1);
                     ET.GetBody = dr.GetString(2);
@@ -81,5 +81,36 @@ namespace HappyTechSystem.DB
 
             return ETs;
         }
+
+        public List<Vacancy> GetVacancies()
+        {
+            List<Vacancy> Vs = new List<Vacancy>();
+
+            DbConection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT VacancyID, VacancyName , Role, PositionsAvailable, MinimumScore FROM Vacancy;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    Vacancy V = new Vacancy();
+                    V.Vacancyid = dr.GetInt32(0);
+                    V.VacancyName = dr.GetString(1);
+                    V.Role = dr.GetString(2);
+                    V.PositionsAvailable = dr.GetInt32(3);
+                    V.MinumumScore = dr.GetInt32(4);
+
+                    Vs.Add(V);
+                }
+
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return Vs;
+        }
+
     }
 }

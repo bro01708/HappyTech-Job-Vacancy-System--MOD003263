@@ -40,8 +40,15 @@ namespace HappyTechSystem.Core
         public void addToList(Question m_q)
         {
             questionList.Add(m_q);
+
         }
         
+        /// <summary>
+        /// Created By Peter
+        /// Provide this method the ID of a question and it will find and remove it from the QuestionBank in ram
+        /// Yet to implement - remove from DB also.
+        /// </summary>
+        /// <param name="m_question_ID"></param>
         public void removeFromList(int m_question_ID)
         {
             foreach (Question q in questionList)
@@ -84,7 +91,7 @@ namespace HappyTechSystem.Core
             try
             {
                 MetaLayer ml = MetaLayer.instance();
-                questionList = ml.getQuestions();
+                questionList = ml.GetQuestions();
                 dbLoaded = true;
             }
             catch (Exception e)
