@@ -54,7 +54,6 @@
     <Compile Include="Core\VacancyBank.cs" />
     <Compile Include="Core\VacancyCreator.cs" />
     <Compile Include="DataBase\DBFactory.cs" />
-    <Compile Include="DBTest.cs">
     <Compile Include="Forms\ConductInterview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,7 +78,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Core\Interview.cs" />
     <Compile Include="DataBase\MetaLayer.cs" />
     <Compile Include="DataBase\OLEDBConnection.cs" />
@@ -143,9 +141,6 @@
     <Compile Include="Core\QuestionCreator.cs" />
     <Compile Include="Core\Vacancy.cs" />
     <Compile Include="Core\Question.cs" />
-    <EmbeddedResource Include="DBTest.resx">
-      <DependentUpon>DBTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

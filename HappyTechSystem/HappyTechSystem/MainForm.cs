@@ -152,6 +152,10 @@ namespace HappyTechSystem
                 }
                 catch (InvalidCastException exe)
                 {
+                    //DAN PLEASE FIX THIS, ANYTHING I DO HERE HAPPENS ABOUT 3 TIMES BEFORE THE FORM APPEARS,
+                    //UNCOMMENT THE FOLLOWING CODE TO SEE WHAT I MEAN
+
+                    //MessageBox.Show(exe.ToString());
                 }
             }
         }
