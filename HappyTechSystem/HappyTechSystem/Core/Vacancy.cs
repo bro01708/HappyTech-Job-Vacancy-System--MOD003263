@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class Vacancy
+    public class Vacancy
     {
         private int vacancyid;
         private List<Interview> interviews = new List<Interview>();
         private List<Question> questionsToBeUsed = new List<Question>(); //Stores questions for the interview
         private int minumumScore;
         private int positionsAvailable;
+        private string role;
         private string vacancyName;
 
         public string VacancyName
@@ -93,7 +94,20 @@ namespace HappyTechSystem.Core
             }
         }
 
-        public void Rankings() //Ranks every users' final score to find the chosen applicant
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+
+            set
+            {
+                role = value;
+            }
+        }
+
+        public void GetRankings() //Ranks every users' final score to find the chosen applicant
         {
 
         }

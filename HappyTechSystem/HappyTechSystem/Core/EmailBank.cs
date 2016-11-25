@@ -51,7 +51,7 @@ namespace HappyTechSystem.Core
             try
             {
                 MetaLayer ml = MetaLayer.instance();
-                templates = ml.getEmailTemplates();
+                templates = ml.GetEmailTemplates();
                 dbLoaded = true;
             }
             catch (Exception e)
