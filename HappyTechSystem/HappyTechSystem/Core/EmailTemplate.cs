@@ -12,7 +12,7 @@ namespace HappyTechSystem.Core
         /// 25/11/2016
         /// Returns email template values
 
-        private string  body, subject, name;
+        private string  body, subject, name, type;
         private int id;
 
         public int ID { get { return id; } set { id = value; } }
@@ -22,5 +22,18 @@ namespace HappyTechSystem.Core
         public String Subject { get { return subject; } set { subject = value; } }
 
         public String Name { get { return name; } set { name = value; } }
+
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+
+            set
+            {
+                type = value;
+            }
+        }
     }
 }

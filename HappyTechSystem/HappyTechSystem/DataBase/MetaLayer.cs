@@ -64,10 +64,10 @@ namespace HappyTechSystem.DB
                 while (dr.Read())
                 {
                     EmailTemplate ET = new EmailTemplate();
-                    ET.GetID = dr.GetInt32(0);
-                    ET.GetTemplateType = dr.GetString(1);
-                    ET.GetBody = dr.GetString(2);
-                    ET.GetSubject = dr.GetString(3);
+                    ET.ID = dr.GetInt32(0);
+                    ET.Type = dr.GetString(1);
+                    ET.Body = dr.GetString(2);
+                    ET.Subject = dr.GetString(3);
 
                     // etc.....
 
