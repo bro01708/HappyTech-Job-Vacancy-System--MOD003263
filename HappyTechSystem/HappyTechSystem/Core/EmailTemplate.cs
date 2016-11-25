@@ -8,15 +8,19 @@ namespace HappyTechSystem.Core
 {
     public class EmailTemplate
     {
-        private string  body, subject, type;
+        /// Created by Susan
+        /// 25/11/2016
+        /// Returns email template values
+
+        private string  body, subject, name;
         private int id;
 
-        public int GetID { get { return id; } set { id = value; } }
+        public int ID { get { return id; } set { id = value; } }
 
-        public String GetBody { get { return body; } set { body = value; } }
+        public String Body { get { return body; } set { body = value; } }
 
-        public String GetSubject { get { return subject; } set { subject = value; } }
+        public String Subject { get { return subject; } set { subject = value; } }
 
-        public String GetTemplateType { get { return type; } set { type = value; } }
+        public String Name { get { return name; } set { name = value; } }
     }
 }

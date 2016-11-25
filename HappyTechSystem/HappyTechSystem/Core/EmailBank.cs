@@ -9,6 +9,10 @@ namespace HappyTechSystem.Core
 {
     class EmailBank
     {
+        /// Created by Susan
+        /// 25/11/2016
+        /// Stores and manages emails and email templates
+
         private List<Email> emailRecords= new List<Email>(); //Stores all applicants email addresses
         private List<EmailTemplate> templates = new List<EmailTemplate>();
         private bool dbLoaded;
@@ -27,9 +31,9 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
 
-        public void AddTemplate() 
+        public void AddTemplate(EmailTemplate EB) 
         {
-
+            templates.Add(EB);
         }
 
         public void RemoveTemplate(int m_id)
