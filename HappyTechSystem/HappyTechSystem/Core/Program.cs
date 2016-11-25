@@ -16,8 +16,7 @@ namespace HappyTechSystem.Core
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new DBTest());
+            Application.Run(new MainForm());
         }
     }
 }
