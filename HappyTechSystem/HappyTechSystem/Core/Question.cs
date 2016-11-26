@@ -11,6 +11,8 @@ namespace HappyTechSystem.Core
         private string text;
         private int id;
         private string tag;
+        private string[] responses;
+        private string[] feedback;
 
         public String GetText {  get { return text; } set { text = value; }  }
 
@@ -18,9 +20,35 @@ namespace HappyTechSystem.Core
 
         public int GetID { get { return id; } set { id = value; } }
 
+        public string[] Responses
+        {
+            get
+            {
+                return responses;
+            }
+
+            set
+            {
+                responses = value;
+            }
+        }
+
+        public string[] Feedback
+        {
+            get
+            {
+                return feedback;
+            }
+
+            set
+            {
+                feedback = value;
+            }
+        }
+
         public override string ToString()
         {
-            return text;
+            return id.ToString() +" "+ text;
         }
     }
 }

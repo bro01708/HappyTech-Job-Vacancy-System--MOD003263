@@ -68,6 +68,7 @@
             this.lb_Q.Name = "lb_Q";
             this.lb_Q.Size = new System.Drawing.Size(170, 316);
             this.lb_Q.TabIndex = 0;
+            this.lb_Q.SelectedIndexChanged += new System.EventHandler(this.lb_Q_SelectedIndexChanged);
             // 
             // lbl_questionID
             // 

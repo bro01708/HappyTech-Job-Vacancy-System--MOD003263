@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -72,5 +73,52 @@ namespace HappyTechSystem
             MessageBox.Show("This button will unlock the category manager, which will allow you to create new categories that questions can use.\n" + 
                             "You can both create new categories and delete pre-existing categories from the toolbox. Click Done when you are finished.", "Managing Categories", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// Created By peter, Collects the information on the form and gives it to the questionCreator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_createQuestion_Click(object sender, EventArgs e)
+        {
+            string[] responses = { tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text, tb_response5.Text};
+            string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
+            QuestionCreator questionCreator = QuestionCreator.getInst();
+            questionCreator.CreateQuestion(Convert.ToInt32(tb_questionID.Text), cb_category.ToString(), tb_questionText.Text, responses, feedback);
+            this.Close();
+        }
+
+        private void CreateQuestion_Load(object sender, EventArgs e)
+        {
+            QuestionBank questionBank = QuestionBank.getInst();
+            int nextID = questionBank.getHighestQuestionID() + 1;
+            tb_questionID.Text = nextID.ToString();
+        }
+
+        private void TextChangedInTextboxes(object sender, EventArgs e)
+        {
+            if (
+                string.IsNullOrEmpty(tb_feedback1.Text) ||
+                string.IsNullOrEmpty(tb_feedback2.Text) ||
+                string.IsNullOrEmpty(tb_feedback3.Text) ||
+                string.IsNullOrEmpty(tb_feedback4.Text) ||
+                string.IsNullOrEmpty(tb_feedback5.Text) ||
+                string.IsNullOrEmpty(tb_response1.Text) ||
+                string.IsNullOrEmpty(tb_response2.Text) ||
+                string.IsNullOrEmpty(tb_response3.Text) ||
+                string.IsNullOrEmpty(tb_response4.Text) ||
+                string.IsNullOrEmpty(tb_response5.Text) ||
+                string.IsNullOrEmpty(tb_questionText.Text)
+                )
+            {
+                btn_createQuestion.Enabled = false;
+            }
+            else
+            {
+                btn_createQuestion.Enabled = true;
+            }
+
+        }
     }
-}
+    }
+

@@ -17,10 +17,10 @@ namespace UnitTests
         {
             QuestionBank QB = new QuestionBank();
             Question Q = new Question();
-            int expected = QB.getQ.Count;
+            int expected = QB.getQuestionList.Count;
             QB.addToList(Q);
 
-            Assert.AreEqual(QB.getQ[expected], Q);
+            Assert.AreEqual(QB.getQuestionList[expected], Q);
         }
 
         //[TestMethod]

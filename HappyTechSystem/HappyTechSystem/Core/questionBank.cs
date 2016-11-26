@@ -32,7 +32,7 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
 
-        public List<Question> getQ
+        public List<Question> getQuestionList
         {
             get { return questionList; }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -22,6 +23,10 @@ namespace HappyTechSystem
         public ViewQuestionBank()
         {
             InitializeComponent();
+            foreach (Question question in QuestionBank.getInst().getQuestionList)
+            {
+                lb_Q.Items.Add(question);
+            }
         }
 
         /// <summary>
@@ -105,6 +110,31 @@ namespace HappyTechSystem
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lb_Q_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Question q = (Question)lb_Q.SelectedItem;
+                tb_question.Text = q.GetText;
+                tb_questionID.Text = q.GetID.ToString();
+                tb_response1.Text = q.Responses[0];
+                tb_response2.Text = q.Responses[1];
+                tb_response3.Text = q.Responses[2];
+                tb_response4.Text = q.Responses[3];
+                tb_response5.Text = q.Responses[4];
+
+                tb_feedback1.Text = q.Feedback[0];
+                tb_feedback2.Text = q.Feedback[1];
+                tb_feedback3.Text = q.Feedback[2];
+                tb_feedback4.Text = q.Feedback[3];
+                tb_feedback5.Text = q.Feedback[4];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please click an entry in the textbox" + " " + ex.ToString());
+            }
         }
     }
 }

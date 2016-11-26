@@ -31,9 +31,9 @@
             this.lbl_questionID = new System.Windows.Forms.Label();
             this.tb_questionID = new System.Windows.Forms.TextBox();
             this.lbl_category = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_category = new System.Windows.Forms.ComboBox();
             this.lbl_questionText = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_questionText = new System.Windows.Forms.TextBox();
             this.tb_response1 = new System.Windows.Forms.TextBox();
             this.tb_feedback1 = new System.Windows.Forms.TextBox();
             this.tb_feedback2 = new System.Windows.Forms.TextBox();
@@ -96,10 +96,10 @@
             this.lbl_category.TabIndex = 3;
             this.lbl_category.Text = "Select a Category to tag this question with:";
             // 
-            // comboBox1
+            // cb_category
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_category.FormattingEnabled = true;
+            this.cb_category.Items.AddRange(new object[] {
             "Base",
             "Bonus",
             "Janitor",
@@ -108,11 +108,11 @@
             "Receptionist",
             "HR Manager",
             "Sales Rep"});
-            this.comboBox1.Location = new System.Drawing.Point(140, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Base";
+            this.cb_category.Location = new System.Drawing.Point(140, 37);
+            this.cb_category.Name = "cb_category";
+            this.cb_category.Size = new System.Drawing.Size(145, 21);
+            this.cb_category.TabIndex = 4;
+            this.cb_category.Text = "Base";
             // 
             // lbl_questionText
             // 
@@ -123,13 +123,13 @@
             this.lbl_questionText.TabIndex = 5;
             this.lbl_questionText.Text = "Enter the question here:";
             // 
-            // textBox1
+            // tb_questionText
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(394, 99);
-            this.textBox1.TabIndex = 6;
+            this.tb_questionText.Location = new System.Drawing.Point(140, 79);
+            this.tb_questionText.Multiline = true;
+            this.tb_questionText.Name = "tb_questionText";
+            this.tb_questionText.Size = new System.Drawing.Size(394, 99);
+            this.tb_questionText.TabIndex = 6;
             // 
             // tb_response1
             // 
@@ -138,6 +138,7 @@
             this.tb_response1.Name = "tb_response1";
             this.tb_response1.Size = new System.Drawing.Size(185, 41);
             this.tb_response1.TabIndex = 7;
+            this.tb_response1.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_feedback1
             // 
@@ -146,6 +147,7 @@
             this.tb_feedback1.Name = "tb_feedback1";
             this.tb_feedback1.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback1.TabIndex = 8;
+            this.tb_feedback1.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_feedback2
             // 
@@ -154,6 +156,7 @@
             this.tb_feedback2.Name = "tb_feedback2";
             this.tb_feedback2.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback2.TabIndex = 10;
+            this.tb_feedback2.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_response2
             // 
@@ -162,6 +165,7 @@
             this.tb_response2.Name = "tb_response2";
             this.tb_response2.Size = new System.Drawing.Size(185, 41);
             this.tb_response2.TabIndex = 9;
+            this.tb_response2.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_feedback3
             // 
@@ -170,6 +174,7 @@
             this.tb_feedback3.Name = "tb_feedback3";
             this.tb_feedback3.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback3.TabIndex = 12;
+            this.tb_feedback3.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_response3
             // 
@@ -178,6 +183,7 @@
             this.tb_response3.Name = "tb_response3";
             this.tb_response3.Size = new System.Drawing.Size(185, 41);
             this.tb_response3.TabIndex = 11;
+            this.tb_response3.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_feedback4
             // 
@@ -186,6 +192,7 @@
             this.tb_feedback4.Name = "tb_feedback4";
             this.tb_feedback4.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback4.TabIndex = 14;
+            this.tb_feedback4.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_response4
             // 
@@ -194,6 +201,7 @@
             this.tb_response4.Name = "tb_response4";
             this.tb_response4.Size = new System.Drawing.Size(185, 41);
             this.tb_response4.TabIndex = 13;
+            this.tb_response4.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_feedback5
             // 
@@ -202,6 +210,7 @@
             this.tb_feedback5.Name = "tb_feedback5";
             this.tb_feedback5.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback5.TabIndex = 16;
+            this.tb_feedback5.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // tb_response5
             // 
@@ -210,6 +219,7 @@
             this.tb_response5.Name = "tb_response5";
             this.tb_response5.Size = new System.Drawing.Size(185, 41);
             this.tb_response5.TabIndex = 15;
+            this.tb_response5.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
             // 
             // lbl_response
             // 
@@ -289,6 +299,7 @@
             this.btn_createQuestion.TabIndex = 24;
             this.btn_createQuestion.Text = "Create Question";
             this.btn_createQuestion.UseVisualStyleBackColor = true;
+            this.btn_createQuestion.Click += new System.EventHandler(this.btn_createQuestion_Click);
             // 
             // btn_createQuestionHelp
             // 
@@ -418,8 +429,8 @@
             this.gb_question.Controls.Add(this.lbl_questionID);
             this.gb_question.Controls.Add(this.lbl_category);
             this.gb_question.Controls.Add(this.lbl_questionText);
-            this.gb_question.Controls.Add(this.textBox1);
-            this.gb_question.Controls.Add(this.comboBox1);
+            this.gb_question.Controls.Add(this.tb_questionText);
+            this.gb_question.Controls.Add(this.cb_category);
             this.gb_question.Controls.Add(this.tb_response1);
             this.gb_question.Controls.Add(this.lbl_rank5);
             this.gb_question.Controls.Add(this.tb_feedback1);
@@ -466,6 +477,7 @@
             this.Controls.Add(this.btn_createQuestion);
             this.Name = "CreateQuestion";
             this.Text = "Create a Question";
+            this.Load += new System.EventHandler(this.CreateQuestion_Load);
             this.gb_category.ResumeLayout(false);
             this.gb_category.PerformLayout();
             this.gb_question.ResumeLayout(false);
@@ -479,9 +491,9 @@
         private System.Windows.Forms.Label lbl_questionID;
         private System.Windows.Forms.TextBox tb_questionID;
         private System.Windows.Forms.Label lbl_category;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_category;
         private System.Windows.Forms.Label lbl_questionText;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_questionText;
         private System.Windows.Forms.TextBox tb_response1;
         private System.Windows.Forms.TextBox tb_feedback1;
         private System.Windows.Forms.TextBox tb_feedback2;
