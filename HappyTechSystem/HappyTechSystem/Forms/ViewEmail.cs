@@ -45,5 +45,10 @@ namespace HappyTechSystem
                 flag--;
             }
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
