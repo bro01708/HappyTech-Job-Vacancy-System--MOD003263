@@ -220,9 +220,9 @@
             this.lbl_databaseLoad.ForeColor = System.Drawing.Color.Red;
             this.lbl_databaseLoad.Location = new System.Drawing.Point(110, 9);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
-            this.lbl_databaseLoad.Size = new System.Drawing.Size(79, 13);
+            this.lbl_databaseLoad.Size = new System.Drawing.Size(16, 13);
             this.lbl_databaseLoad.TabIndex = 12;
-            this.lbl_databaseLoad.Text = "File Not Found!";
+            this.lbl_databaseLoad.Text = "...";
             // 
             // pb_logo
             // 

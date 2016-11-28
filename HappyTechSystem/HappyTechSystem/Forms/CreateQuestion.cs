@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HappyTechSystem.Core;
+using HappyTechSystem.DB;
 
 namespace HappyTechSystem
 {
@@ -17,7 +18,7 @@ namespace HappyTechSystem
     /// </summary>
     public partial class CreateQuestion : Form
     {
-
+        private MetaLayer ml = MetaLayer.instance();
         private QuestionBank questionBank = QuestionBank.getInst();
         public CreateQuestion()
         {
@@ -26,8 +27,19 @@ namespace HappyTechSystem
 
         private void btn_deleteCategory_Click(object sender, EventArgs e)
         {
-            //if selection is "base", dont allow deletion!
+            try
+            {
+                questionBank.getCategoryList.Remove(cb_deleteCategory.Text);
+                lbl_deleteConfirmation.Text = "Deletion Successful!";
+                RefreshCategories();
+            }
+            catch (Exception)
+            {
+                lbl_deleteConfirmation.Text = "Deletion Failed!";
+                throw;
+            }
         }
+            
 
         /// <summary>
         /// Created by Dan.
@@ -88,6 +100,7 @@ namespace HappyTechSystem
             string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
             QuestionCreator questionCreator = QuestionCreator.getInst();
             questionCreator.CreateQuestion(Convert.ToInt32(tb_questionID.Text), cb_category.ToString(), tb_questionText.Text, responses, feedback);
+            MessageBox.Show("Question Created Successfully!\n\nTo view your question, check the 'View Question Bank' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -138,16 +151,32 @@ namespace HappyTechSystem
 
         private void btn_addCategory_Click(object sender, EventArgs e)
         {
-            //QuestionBank questionBank = QuestionBank.getInst();
             questionBank.getCategoryList.Add(tb_addCategory.Text);
+            tb_addCategory.Text = "";
             lbl_addConfimation.Text = "Added Successfully!";
+            RefreshCategories();
         }
 
-        public void RefreshCategories()
+        private void RefreshCategories()
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = questionBank.getCategoryList;
             cb_category.DataSource = bs;
+            cb_deleteCategory.DataSource = bs;
+        }
+
+        private void categoryCheck(object sender, EventArgs e)
+        {
+
+            if (cb_deleteCategory.Text != "General" && (ml.CheckCategories(cb_deleteCategory.Text) == 0))
+            {
+                btn_deleteCategory.Enabled = true;
+            }
+            else
+            {
+                btn_deleteCategory.Enabled = false;
+            }
+
         }
     }
     }

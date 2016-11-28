@@ -23,11 +23,7 @@ namespace HappyTechSystem.Core
         {
             categoriesList = new List<string>();
             RefreshDBConnection();
-            categoriesList.Add("Base");
-            //foreach (String s in ???)
-            //{
-            //    categoriesList.Add(s);
-            //}
+            categoriesList.Add("General");
         }
 
         private static QuestionBank uniqueInst = null;

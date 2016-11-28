@@ -112,5 +112,31 @@ namespace HappyTechSystem.DB
             return Vs;
         }
 
+        public int CheckCategories(string m_categoryName)
+        {
+            List<Question> Questions = new List<Question>();
+
+            DbConection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT QuestionID, QuestionText, QuestionTag FROM Question WHERE QuestionTag = '" + m_categoryName + "' ;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    Question Question = new Question();
+                    Question.GetID = dr.GetInt32(0);
+                    Question.GetText = dr.GetString(1);
+                    Question.GetTag = dr.GetString(2);
+                    Questions.Add(Question);
+                }
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return Questions.Count;
+        }
+
     }
 }

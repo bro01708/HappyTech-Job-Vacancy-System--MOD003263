@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -158,6 +159,16 @@ namespace HappyTechSystem
             }
 
             //handle database loading here!
+            if (File.Exists("Happytech.accdb"))
+            {
+                lbl_databaseLoad.ForeColor = Color.Green;
+                lbl_databaseLoad.Text = "Loaded!";
+            }
+            else
+            {
+                lbl_databaseLoad.ForeColor = Color.Red;
+                lbl_databaseLoad.Text = "DB File Not Found!";
+            }
         }
     }
 }

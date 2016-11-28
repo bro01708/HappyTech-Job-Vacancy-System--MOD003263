@@ -384,6 +384,7 @@
             this.cb_deleteCategory.Name = "cb_deleteCategory";
             this.cb_deleteCategory.Size = new System.Drawing.Size(145, 21);
             this.cb_deleteCategory.TabIndex = 3;
+            this.cb_deleteCategory.SelectedIndexChanged += new System.EventHandler(this.categoryCheck);
             // 
             // lbl_addConfimation
             // 
