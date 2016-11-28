@@ -49,6 +49,7 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_categoryDone_Click(object sender, EventArgs e)
         {
+            RefreshCategories();
             gb_category.Enabled = false;
             gb_question.Enabled = true;
         }
@@ -95,9 +96,7 @@ namespace HappyTechSystem
             
             int nextID = questionBank.getHighestQuestionID() + 1;
             tb_questionID.Text = nextID.ToString();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = questionBank.getCatergoryList;
-            cb_category.DataSource = bs;
+            RefreshCategories();
         }
 
         private void CreateQuestionUnlocker(object sender, EventArgs e)
@@ -140,8 +139,15 @@ namespace HappyTechSystem
         private void btn_addCategory_Click(object sender, EventArgs e)
         {
             //QuestionBank questionBank = QuestionBank.getInst();
-            questionBank.getCatergoryList.Add(tb_addCategory.Text);
+            questionBank.getCategoryList.Add(tb_addCategory.Text);
             lbl_addConfimation.Text = "Added Successfully!";
+        }
+
+        public void RefreshCategories()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = questionBank.getCategoryList;
+            cb_category.DataSource = bs;
         }
     }
     }

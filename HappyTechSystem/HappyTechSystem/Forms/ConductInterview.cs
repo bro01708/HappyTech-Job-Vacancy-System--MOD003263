@@ -90,18 +90,19 @@ namespace HappyTechSystem
                             "Add additional notes if need be, and click 'Complete Interview' when you are finished.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ConductInterviewUnlocker()
+        public void ConductInterviewUnlocker(object sender, EventArgs e)
         {
             if(
+                string.IsNullOrEmpty(cb_vacancy.Text) ||
                 string.IsNullOrEmpty(tb_applicantName.Text) ||
                 string.IsNullOrEmpty(tb_interviewerName.Text) ||
                 string.IsNullOrEmpty(tb_cvPath.Text))
             {
-
+                btn_beginInterview.Enabled = false;
             }
             else
             {
-
+                btn_beginInterview.Enabled = true;
             }
         }
     }

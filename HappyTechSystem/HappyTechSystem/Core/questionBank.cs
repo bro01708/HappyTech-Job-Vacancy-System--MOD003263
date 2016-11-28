@@ -21,6 +21,7 @@ namespace HappyTechSystem.Core
 
         public QuestionBank()
         {
+            categoriesList = new List<string>();
             RefreshDBConnection();
             categoriesList.Add("Base");
             //foreach (String s in ???)
@@ -44,7 +45,7 @@ namespace HappyTechSystem.Core
             get { return questionList; }
         }
 
-        public List<String> getCatergoryList
+        public List<String> getCategoryList
         {
             get { return categoriesList; }
         }

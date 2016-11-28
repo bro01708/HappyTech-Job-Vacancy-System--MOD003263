@@ -74,6 +74,7 @@
             this.cb_vacancy.Name = "cb_vacancy";
             this.cb_vacancy.Size = new System.Drawing.Size(121, 21);
             this.cb_vacancy.TabIndex = 0;
+            this.cb_vacancy.SelectedIndexChanged += new System.EventHandler(this.ConductInterviewUnlocker);
             // 
             // lbl_vacancy
             // 
@@ -323,6 +324,7 @@
             this.tb_interviewerName.Name = "tb_interviewerName";
             this.tb_interviewerName.Size = new System.Drawing.Size(188, 20);
             this.tb_interviewerName.TabIndex = 18;
+            this.tb_interviewerName.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);
             // 
             // tb_applicantName
             // 
@@ -330,6 +332,7 @@
             this.tb_applicantName.Name = "tb_applicantName";
             this.tb_applicantName.Size = new System.Drawing.Size(188, 20);
             this.tb_applicantName.TabIndex = 19;
+            this.tb_applicantName.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);
             // 
             // lbl_attachCV
             // 
@@ -346,6 +349,7 @@
             this.tb_cvPath.Name = "tb_cvPath";
             this.tb_cvPath.Size = new System.Drawing.Size(224, 20);
             this.tb_cvPath.TabIndex = 21;
+            this.tb_cvPath.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);
             // 
             // btn_browseCV
             // 
