@@ -10,11 +10,16 @@ namespace HappyTechSystem.Core
     class VacancyBank
     {
         private List<Vacancy> vacancyList;
-        bool dbLoaded;
+        private bool dbLoaded;
 
         public VacancyBank()
         {
             RefreshDBConnection();
+        }
+
+        public bool getDBLoaded
+        {
+            get { return dbLoaded; }
         }
         private static VacancyBank uniqueInst = null;
 

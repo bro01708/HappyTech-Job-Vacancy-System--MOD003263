@@ -347,6 +347,7 @@
             // 
             this.tb_cvPath.Location = new System.Drawing.Point(433, 39);
             this.tb_cvPath.Name = "tb_cvPath";
+            this.tb_cvPath.ReadOnly = true;
             this.tb_cvPath.Size = new System.Drawing.Size(224, 20);
             this.tb_cvPath.TabIndex = 21;
             this.tb_cvPath.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);

@@ -15,25 +15,17 @@ namespace HappyTechSystem.Core
         private string  body, subject, name, type;
         private int id;
 
-        public int ID { get { return id; } set { id = value; } }
+        public int getID { get { return id; } set { id = value; } }
 
-        public String Body { get { return body; } set { body = value; } }
+        public String getBody { get { return body; } set { body = value; } }
 
-        public String Subject { get { return subject; } set { subject = value; } }
+        public String getSubject { get { return subject; } set { subject = value; } }
 
-        public String Name { get { return name; } set { name = value; } }
+        public String getName { get { return name; } set { name = value; } }
 
-        public string Type
+        public override string ToString()
         {
-            get
-            {
-                return type;
-            }
-
-            set
-            {
-                type = value;
-            }
+            return "(" + id.ToString() + ") - " + name;
         }
     }
 }

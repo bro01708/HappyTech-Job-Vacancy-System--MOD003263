@@ -29,18 +29,18 @@ namespace HappyTechSystem.DB
         {
             List<Question> Questions = new List<Question>();
 
-            DbConection con = DBFactory.instance();
+            DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT QuestionID, QuestionText , QuestionTag FROM Question;");
+                DbDataReader dr = con.Select("SELECT QuestionID, QuestionTag, QuestionText FROM Question;");
 
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
                     Question Question = new Question();
                     Question.GetID = dr.GetInt32(0);
-                    Question.GetText = dr.GetString(1);
-                    Question.GetTag = dr.GetString(2);
+                    Question.GetTag = dr.GetString(1);
+                    Question.GetText = dr.GetString(2);
                     Questions.Add(Question);
                 }
                 //close Data Reader
@@ -51,23 +51,25 @@ namespace HappyTechSystem.DB
             return Questions;
         }
 
+        //public Question
+
         public List<EmailTemplate> GetEmailTemplates()
         {
             List<EmailTemplate> ETs = new List<EmailTemplate>();
 
-            DbConection con = DBFactory.instance();
+            DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT TemplateID, TemplateType , TemplateBody, TemplateSubject FROM EmailTemplate;");
+                DbDataReader dr = con.Select("SELECT TemplateID, TemplateName, TemplateSubject, TemplateBody FROM EmailTemplate;");
 
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
                     EmailTemplate ET = new EmailTemplate();
-                    ET.ID = dr.GetInt32(0);
-                    ET.Type = dr.GetString(1);
-                    ET.Body = dr.GetString(2);
-                    ET.Subject = dr.GetString(3);
+                    ET.getID = dr.GetInt32(0);
+                    ET.getName = dr.GetString(1);
+                    ET.getSubject = dr.GetString(2);
+                    ET.getBody = dr.GetString(3);
 
                     // etc.....
 
@@ -86,7 +88,7 @@ namespace HappyTechSystem.DB
         {
             List<Vacancy> Vs = new List<Vacancy>();
 
-            DbConection con = DBFactory.instance();
+            DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
                 DbDataReader dr = con.Select("SELECT VacancyID, VacancyName , Role, PositionsAvailable, MinimumScore FROM Vacancy;");
@@ -116,7 +118,7 @@ namespace HappyTechSystem.DB
         {
             List<Question> Questions = new List<Question>();
 
-            DbConection con = DBFactory.instance();
+            DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
                 DbDataReader dr = con.Select("SELECT QuestionID, QuestionText, QuestionTag FROM Question WHERE QuestionTag = '" + m_categoryName + "' ;");
@@ -136,6 +138,27 @@ namespace HappyTechSystem.DB
             }
 
             return Questions.Count;
+        }
+
+        /// <summary>
+        /// Created by Peter
+        /// Recieves a question, splits it down into its attributes, and plugs those into an SQL query that is run by the "RunSQL" method
+        /// </summary>
+        /// <param name="m_question"></param>
+        public void SaveQuestionToDB(Question m_question)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int questionID = m_question.GetID;
+            string questionTag = m_question.GetTag;
+            string questionText = m_question.GetText;
+
+            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
+                             "','" + questionTag + "','" + questionText + "')";
+            
+            con.RunSQL(myQuery);
+            con.CloseConnection();
         }
 
     }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -18,6 +19,9 @@ namespace HappyTechSystem
     /// </summary>
     public partial class MainForm : Form
     {
+        private EmailBank emailBank = EmailBank.getInst();
+        private QuestionBank questionBank = QuestionBank.getInst();
+        private VacancyBank vacancyBank = VacancyBank.getInst();
         public MainForm()
         {
             InitializeComponent();
@@ -141,13 +145,14 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             MdiClient chld;
 
             try
             {
                 foreach (Control ctrl in this.Controls)
                 {
-
                     chld = (MdiClient)ctrl;
 
                     chld.BackColor = this.BackColor;
@@ -162,12 +167,23 @@ namespace HappyTechSystem
             if (File.Exists("Happytech.accdb"))
             {
                 lbl_databaseLoad.ForeColor = Color.Green;
-                lbl_databaseLoad.Text = "Loaded!";
+                lbl_databaseLoad.Text = "File Found!";
             }
-            else
+
+            if (questionBank.getDBLoaded)
             {
-                lbl_databaseLoad.ForeColor = Color.Red;
-                lbl_databaseLoad.Text = "DB File Not Found!";
+                lbl_qbLoad.ForeColor = Color.Green;
+                lbl_qbLoad.Text = "Loaded!";
+            }
+            if (emailBank.getDBLoaded)
+            {
+                lbl_emailLoad.ForeColor = Color.Green;
+                lbl_emailLoad.Text = "Loaded!";
+            }
+            if (vacancyBank.getDBLoaded)
+            {
+                lbl_vacancyLoad.ForeColor = Color.Green;
+                lbl_vacancyLoad.Text = "Loaded!";
             }
         }
     }

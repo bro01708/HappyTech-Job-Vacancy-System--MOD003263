@@ -12,6 +12,7 @@ namespace HappyTechSystem.Core
     public class QuestionBank
     {
         //Holds the list of available quesiton objects for access by any other class
+        private MetaLayer ml = MetaLayer.instance();
         private List<Question> questionList;
         private List<string> categoriesList;
         
@@ -24,6 +25,11 @@ namespace HappyTechSystem.Core
             categoriesList = new List<string>();
             RefreshDBConnection();
             categoriesList.Add("General");
+        }
+
+        public bool getDBLoaded
+        {
+            get { return dbLoaded; }
         }
 
         private static QuestionBank uniqueInst = null;
@@ -49,6 +55,7 @@ namespace HappyTechSystem.Core
         public void addToList(Question m_q)
         {
             questionList.Add(m_q);
+            ml.SaveQuestionToDB(m_q);
         }
         
         /// <summary>

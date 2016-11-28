@@ -32,9 +32,9 @@ namespace UnitTests
             QB.addToList(Q);
 
 
-            int expected = QB.getQ.Count - 1;
+            int expected = QB.getQuestionList.Count - 1;
             QB.removeFromList(999);
-            int after = QB.getQ.Count;
+            int after = QB.getQuestionList.Count;
             Assert.AreEqual(expected, after);
 
         }

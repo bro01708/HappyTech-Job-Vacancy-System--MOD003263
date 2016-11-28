@@ -22,6 +22,25 @@ namespace HappyTechSystem.Core
         {
             RefreshDBConnection();
         }
+
+        public int getHighestTemplateID()
+        {
+            try
+            {
+                int templateCount = templates.Count();
+                return templates[templateCount - 1].getID;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public bool getDBLoaded
+        {
+            get { return dbLoaded; }
+        }
+
         public static EmailBank getInst()
         {
             if (uniqueInst == null)
@@ -29,6 +48,11 @@ namespace HappyTechSystem.Core
                 uniqueInst = new EmailBank();
             }
             return uniqueInst;
+        }
+
+        public List<EmailTemplate> getTemplateList
+        {
+            get { return templates;}
         }
 
         public void AddTemplate(EmailTemplate EB) 

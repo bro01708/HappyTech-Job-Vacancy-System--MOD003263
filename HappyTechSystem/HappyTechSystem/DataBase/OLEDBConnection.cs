@@ -4,22 +4,24 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data;
 using System.Data.Common;
+using System.Reflection.Emit;
 using HappyTechSystem;
 
 
 namespace HappyTechSystem.DB
 {
-    class OLEDBConnection : DbConection
+    class OLEDBConnection : DbConnection
     {
         private Dictionary<string, string> m_properties;
         private OleDbConnection connection;
+
         public OLEDBConnection(Dictionary<string, string> properties)
         {
             m_properties = properties;
             initialize();
         }
 
-        
+
         private void initialize()
         {
             try
@@ -82,7 +84,7 @@ namespace HappyTechSystem.DB
             try
             {
                 OleDbCommand command = new OleDbCommand(query);
-                command.Connection = (OleDbConnection)connection;
+                command.Connection = (OleDbConnection) connection;
                 reader = command.ExecuteReader();
             }
             catch (Exception e)
@@ -106,6 +108,23 @@ namespace HappyTechSystem.DB
             //return the dataSet
             return dataSet;
         }
+        /// <summary>
+        /// Created by Peter
+        /// Runs non-query SQL statements
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        public void RunSQL(string sqlStatement)
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand(sqlStatement, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
-    }
+}
 

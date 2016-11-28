@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -18,9 +19,14 @@ namespace HappyTechSystem
     {
         //variable that acts as a toggle within the edit button
         private byte flag;
+
         public ViewTemplates()
         {
             InitializeComponent();
+            foreach (EmailTemplate emailTemplate in EmailBank.getInst().getTemplateList)
+            {
+                lb_templates.Items.Add(emailTemplate);
+            }
         }
 
         /// <summary>
@@ -37,10 +43,8 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = true;
                 lb_templates.Enabled = false;
                 tb_templateName.ReadOnly = false;
-                tb_greeting.ReadOnly = false;
                 tb_subject.ReadOnly = false;
                 tb_body.ReadOnly = false;
-                tb_signOff.ReadOnly = false;
                 flag++;
             }
             else
@@ -48,10 +52,8 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = false;
                 lb_templates.Enabled = true;
                 tb_templateName.ReadOnly = true;
-                tb_greeting.ReadOnly = true;
                 tb_subject.ReadOnly = true;
                 tb_body.ReadOnly = true;
-                tb_signOff.ReadOnly = true;
                 flag--;
             }
         }
@@ -65,6 +67,27 @@ namespace HappyTechSystem
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ViewTemplates_Load(object sender, EventArgs e)
+        {
+            p_editToolbox.Enabled = false;
+        }
+
+        private void lb_templates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                EmailTemplate et = (EmailTemplate) lb_templates.SelectedItem;
+                tb_templateID.Text = et.getID.ToString();
+                tb_templateName.Text = et.getName;
+                tb_subject.Text = et.getSubject;
+                tb_body.Text = et.getBody;
+            }
+            catch (Exception)
+            {
+                
+            }
         }
     }
 }

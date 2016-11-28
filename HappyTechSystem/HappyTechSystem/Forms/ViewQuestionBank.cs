@@ -119,6 +119,7 @@ namespace HappyTechSystem
                 Question q = (Question)lb_Q.SelectedItem;
                 tb_question.Text = q.GetText;
                 tb_questionID.Text = q.GetID.ToString();
+                tb_categoryTag.Text = q.GetTag;
                 tb_response1.Text = q.Responses[0];
                 tb_response2.Text = q.Responses[1];
                 tb_response3.Text = q.Responses[2];
@@ -131,9 +132,9 @@ namespace HappyTechSystem
                 tb_feedback4.Text = q.Feedback[3];
                 tb_feedback5.Text = q.Feedback[4];
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Please click an entry in the textbox" + " " + ex.ToString());
+                //MessageBox.Show("Please click an entry in the textbox" + " " + ex.ToString());
             }
         }
     }

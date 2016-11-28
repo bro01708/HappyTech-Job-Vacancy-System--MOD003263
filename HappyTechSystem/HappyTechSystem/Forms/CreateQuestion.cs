@@ -24,23 +24,6 @@ namespace HappyTechSystem
         {
             InitializeComponent();
         }
-
-        private void btn_deleteCategory_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                questionBank.getCategoryList.Remove(cb_deleteCategory.Text);
-                lbl_deleteConfirmation.Text = "Deletion Successful!";
-                RefreshCategories();
-            }
-            catch (Exception)
-            {
-                lbl_deleteConfirmation.Text = "Deletion Failed!";
-                throw;
-            }
-        }
-            
-
         /// <summary>
         /// Created by Dan.
         /// Enables the category management controls, disabling the primary form controls.
@@ -99,7 +82,7 @@ namespace HappyTechSystem
             string[] responses = { tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text, tb_response5.Text};
             string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
             QuestionCreator questionCreator = QuestionCreator.getInst();
-            questionCreator.CreateQuestion(Convert.ToInt32(tb_questionID.Text), cb_category.ToString(), tb_questionText.Text, responses, feedback);
+            questionCreator.CreateQuestion(Convert.ToInt32(tb_questionID.Text), cb_category.Text, tb_questionText.Text, responses, feedback);
             MessageBox.Show("Question Created Successfully!\n\nTo view your question, check the 'View Question Bank' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -155,6 +138,21 @@ namespace HappyTechSystem
             tb_addCategory.Text = "";
             lbl_addConfimation.Text = "Added Successfully!";
             RefreshCategories();
+        }
+
+        private void btn_deleteCategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                questionBank.getCategoryList.Remove(cb_deleteCategory.Text);
+                lbl_deleteConfirmation.Text = "Deletion Successful!";
+                RefreshCategories();
+            }
+            catch (Exception)
+            {
+                lbl_deleteConfirmation.Text = "Deletion Failed!";
+                throw;
+            }
         }
 
         private void RefreshCategories()

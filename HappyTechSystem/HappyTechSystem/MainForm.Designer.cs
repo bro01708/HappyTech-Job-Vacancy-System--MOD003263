@@ -49,6 +49,12 @@
             this.pb_logo = new System.Windows.Forms.PictureBox();
             this.p_splash = new System.Windows.Forms.Panel();
             this.p_databaseStatus = new System.Windows.Forms.Panel();
+            this.lbl_qbStatus = new System.Windows.Forms.Label();
+            this.lbl_emailStatus = new System.Windows.Forms.Label();
+            this.lbl_vacancyBank = new System.Windows.Forms.Label();
+            this.lbl_qbLoad = new System.Windows.Forms.Label();
+            this.lbl_emailLoad = new System.Windows.Forms.Label();
+            this.lbl_vacancyLoad = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.p_splash.SuspendLayout();
@@ -82,21 +88,21 @@
             // newQuestionToolStripMenuItem
             // 
             this.newQuestionToolStripMenuItem.Name = "newQuestionToolStripMenuItem";
-            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newQuestionToolStripMenuItem.Text = "New Question";
             this.newQuestionToolStripMenuItem.Click += new System.EventHandler(this.newQuestionToolStripMenuItem_Click);
             // 
             // newEmailTempleToolStripMenuItem
             // 
             this.newEmailTempleToolStripMenuItem.Name = "newEmailTempleToolStripMenuItem";
-            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newEmailTempleToolStripMenuItem.Text = "New Email Template";
             this.newEmailTempleToolStripMenuItem.Click += new System.EventHandler(this.newEmailTempleToolStripMenuItem_Click);
             // 
             // newVacancyToolStripMenuItem
             // 
             this.newVacancyToolStripMenuItem.Name = "newVacancyToolStripMenuItem";
-            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newVacancyToolStripMenuItem.Text = "New Vacancy";
             this.newVacancyToolStripMenuItem.Click += new System.EventHandler(this.newVacancyToolStripMenuItem_Click);
             // 
@@ -125,35 +131,35 @@
             // modifyViewQuestionBankToolStripMenuItem
             // 
             this.modifyViewQuestionBankToolStripMenuItem.Name = "modifyViewQuestionBankToolStripMenuItem";
-            this.modifyViewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.modifyViewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.modifyViewQuestionBankToolStripMenuItem.Text = "Question Bank";
             this.modifyViewQuestionBankToolStripMenuItem.Click += new System.EventHandler(this.modifyViewQuestionBankToolStripMenuItemClick);
             // 
             // modifyViewEmailTemplatesToolStripMenuItem
             // 
             this.modifyViewEmailTemplatesToolStripMenuItem.Name = "modifyViewEmailTemplatesToolStripMenuItem";
-            this.modifyViewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.modifyViewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.modifyViewEmailTemplatesToolStripMenuItem.Text = "Email Templates";
             this.modifyViewEmailTemplatesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailTemplatesToolStripMenuItem_Click);
             // 
             // modifyViewVacanciesToolStripMenuItem
             // 
             this.modifyViewVacanciesToolStripMenuItem.Name = "modifyViewVacanciesToolStripMenuItem";
-            this.modifyViewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.modifyViewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.modifyViewVacanciesToolStripMenuItem.Text = "Vacancies";
             this.modifyViewVacanciesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewVacanciesToolStripMenuItem_Click);
             // 
             // modifyViewInterviewsToolStripMenuItem
             // 
             this.modifyViewInterviewsToolStripMenuItem.Name = "modifyViewInterviewsToolStripMenuItem";
-            this.modifyViewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.modifyViewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.modifyViewInterviewsToolStripMenuItem.Text = "Interviews";
             this.modifyViewInterviewsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewInterviewsToolStripMenuItem_Click);
             // 
             // modifyViewEmailsToolStripMenuItem
             // 
             this.modifyViewEmailsToolStripMenuItem.Name = "modifyViewEmailsToolStripMenuItem";
-            this.modifyViewEmailsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.modifyViewEmailsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.modifyViewEmailsToolStripMenuItem.Text = "Emails";
             this.modifyViewEmailsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailsToolStripMenuItem_Click);
             // 
@@ -220,9 +226,9 @@
             this.lbl_databaseLoad.ForeColor = System.Drawing.Color.Red;
             this.lbl_databaseLoad.Location = new System.Drawing.Point(110, 9);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
-            this.lbl_databaseLoad.Size = new System.Drawing.Size(16, 13);
+            this.lbl_databaseLoad.Size = new System.Drawing.Size(97, 13);
             this.lbl_databaseLoad.TabIndex = 12;
-            this.lbl_databaseLoad.Text = "...";
+            this.lbl_databaseLoad.Text = "DB File Not Found!";
             // 
             // pb_logo
             // 
@@ -252,12 +258,84 @@
             // 
             this.p_databaseStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.p_databaseStatus.BackColor = System.Drawing.Color.DarkGray;
+            this.p_databaseStatus.Controls.Add(this.lbl_vacancyLoad);
+            this.p_databaseStatus.Controls.Add(this.lbl_emailLoad);
+            this.p_databaseStatus.Controls.Add(this.lbl_qbLoad);
+            this.p_databaseStatus.Controls.Add(this.lbl_vacancyBank);
+            this.p_databaseStatus.Controls.Add(this.lbl_emailStatus);
+            this.p_databaseStatus.Controls.Add(this.lbl_qbStatus);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseLoad);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseStatus);
             this.p_databaseStatus.Location = new System.Drawing.Point(796, 27);
             this.p_databaseStatus.Name = "p_databaseStatus";
-            this.p_databaseStatus.Size = new System.Drawing.Size(200, 85);
+            this.p_databaseStatus.Size = new System.Drawing.Size(212, 85);
             this.p_databaseStatus.TabIndex = 15;
+            // 
+            // lbl_qbStatus
+            // 
+            this.lbl_qbStatus.AutoSize = true;
+            this.lbl_qbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_qbStatus.ForeColor = System.Drawing.Color.Teal;
+            this.lbl_qbStatus.Location = new System.Drawing.Point(15, 31);
+            this.lbl_qbStatus.Name = "lbl_qbStatus";
+            this.lbl_qbStatus.Size = new System.Drawing.Size(80, 13);
+            this.lbl_qbStatus.TabIndex = 13;
+            this.lbl_qbStatus.Text = "Question Bank:";
+            // 
+            // lbl_emailStatus
+            // 
+            this.lbl_emailStatus.AutoSize = true;
+            this.lbl_emailStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_emailStatus.ForeColor = System.Drawing.Color.Teal;
+            this.lbl_emailStatus.Location = new System.Drawing.Point(15, 44);
+            this.lbl_emailStatus.Name = "lbl_emailStatus";
+            this.lbl_emailStatus.Size = new System.Drawing.Size(63, 13);
+            this.lbl_emailStatus.TabIndex = 14;
+            this.lbl_emailStatus.Text = "Email Bank:";
+            // 
+            // lbl_vacancyBank
+            // 
+            this.lbl_vacancyBank.AutoSize = true;
+            this.lbl_vacancyBank.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_vacancyBank.ForeColor = System.Drawing.Color.Teal;
+            this.lbl_vacancyBank.Location = new System.Drawing.Point(15, 57);
+            this.lbl_vacancyBank.Name = "lbl_vacancyBank";
+            this.lbl_vacancyBank.Size = new System.Drawing.Size(80, 13);
+            this.lbl_vacancyBank.TabIndex = 15;
+            this.lbl_vacancyBank.Text = "Vacancy Bank:";
+            // 
+            // lbl_qbLoad
+            // 
+            this.lbl_qbLoad.AutoSize = true;
+            this.lbl_qbLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_qbLoad.ForeColor = System.Drawing.Color.Red;
+            this.lbl_qbLoad.Location = new System.Drawing.Point(110, 31);
+            this.lbl_qbLoad.Name = "lbl_qbLoad";
+            this.lbl_qbLoad.Size = new System.Drawing.Size(66, 13);
+            this.lbl_qbLoad.TabIndex = 16;
+            this.lbl_qbLoad.Text = "Not Loaded!";
+            // 
+            // lbl_emailLoad
+            // 
+            this.lbl_emailLoad.AutoSize = true;
+            this.lbl_emailLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_emailLoad.ForeColor = System.Drawing.Color.Red;
+            this.lbl_emailLoad.Location = new System.Drawing.Point(110, 44);
+            this.lbl_emailLoad.Name = "lbl_emailLoad";
+            this.lbl_emailLoad.Size = new System.Drawing.Size(66, 13);
+            this.lbl_emailLoad.TabIndex = 17;
+            this.lbl_emailLoad.Text = "Not Loaded!";
+            // 
+            // lbl_vacancyLoad
+            // 
+            this.lbl_vacancyLoad.AutoSize = true;
+            this.lbl_vacancyLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_vacancyLoad.ForeColor = System.Drawing.Color.Red;
+            this.lbl_vacancyLoad.Location = new System.Drawing.Point(110, 57);
+            this.lbl_vacancyLoad.Name = "lbl_vacancyLoad";
+            this.lbl_vacancyLoad.Size = new System.Drawing.Size(66, 13);
+            this.lbl_vacancyLoad.TabIndex = 18;
+            this.lbl_vacancyLoad.Text = "Not Loaded!";
             // 
             // MainForm
             // 
@@ -309,5 +387,11 @@
         private System.Windows.Forms.ToolStripMenuItem modifyViewEmailsToolStripMenuItem;
         private System.Windows.Forms.Panel p_splash;
         private System.Windows.Forms.Panel p_databaseStatus;
+        private System.Windows.Forms.Label lbl_vacancyLoad;
+        private System.Windows.Forms.Label lbl_emailLoad;
+        private System.Windows.Forms.Label lbl_qbLoad;
+        private System.Windows.Forms.Label lbl_vacancyBank;
+        private System.Windows.Forms.Label lbl_emailStatus;
+        private System.Windows.Forms.Label lbl_qbStatus;
     }
 }

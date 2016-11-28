@@ -48,7 +48,7 @@ namespace HappyTechSystem.Core
 
         public override string ToString()
         {
-            return id.ToString() +" "+ text;
+            return "(" + id.ToString() + ") - [" + tag + "] - " + text;
         }
     }
 }
