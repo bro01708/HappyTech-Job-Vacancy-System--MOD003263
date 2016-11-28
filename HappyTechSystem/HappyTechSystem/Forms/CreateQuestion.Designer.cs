@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_questionID = new System.Windows.Forms.Label();
             this.tb_questionID = new System.Windows.Forms.TextBox();
             this.lbl_category = new System.Windows.Forms.Label();
             this.cb_category = new System.Windows.Forms.ComboBox();
+            this.questionBankBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_questionText = new System.Windows.Forms.Label();
             this.tb_questionText = new System.Windows.Forms.TextBox();
             this.tb_response1 = new System.Windows.Forms.TextBox();
@@ -66,6 +68,7 @@
             this.btn_manageCategories = new System.Windows.Forms.Button();
             this.gb_question = new System.Windows.Forms.GroupBox();
             this.btn_categoryManagerHelp = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBankBindingSource)).BeginInit();
             this.gb_category.SuspendLayout();
             this.gb_question.SuspendLayout();
             this.SuspendLayout();
@@ -98,21 +101,16 @@
             // 
             // cb_category
             // 
+            this.cb_category.DataSource = this.questionBankBindingSource;
             this.cb_category.FormattingEnabled = true;
-            this.cb_category.Items.AddRange(new object[] {
-            "Base",
-            "Bonus",
-            "Janitor",
-            "Manager",
-            "Line Manager",
-            "Receptionist",
-            "HR Manager",
-            "Sales Rep"});
             this.cb_category.Location = new System.Drawing.Point(140, 37);
             this.cb_category.Name = "cb_category";
             this.cb_category.Size = new System.Drawing.Size(145, 21);
             this.cb_category.TabIndex = 4;
-            this.cb_category.Text = "Base";
+            // 
+            // questionBankBindingSource
+            // 
+            this.questionBankBindingSource.DataSource = typeof(HappyTechSystem.Core.QuestionBank);
             // 
             // lbl_questionText
             // 
@@ -138,7 +136,7 @@
             this.tb_response1.Name = "tb_response1";
             this.tb_response1.Size = new System.Drawing.Size(185, 41);
             this.tb_response1.TabIndex = 7;
-            this.tb_response1.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_response1.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_feedback1
             // 
@@ -147,7 +145,7 @@
             this.tb_feedback1.Name = "tb_feedback1";
             this.tb_feedback1.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback1.TabIndex = 8;
-            this.tb_feedback1.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_feedback1.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_feedback2
             // 
@@ -156,7 +154,7 @@
             this.tb_feedback2.Name = "tb_feedback2";
             this.tb_feedback2.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback2.TabIndex = 10;
-            this.tb_feedback2.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_feedback2.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_response2
             // 
@@ -165,7 +163,7 @@
             this.tb_response2.Name = "tb_response2";
             this.tb_response2.Size = new System.Drawing.Size(185, 41);
             this.tb_response2.TabIndex = 9;
-            this.tb_response2.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_response2.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_feedback3
             // 
@@ -174,7 +172,7 @@
             this.tb_feedback3.Name = "tb_feedback3";
             this.tb_feedback3.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback3.TabIndex = 12;
-            this.tb_feedback3.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_feedback3.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_response3
             // 
@@ -183,7 +181,7 @@
             this.tb_response3.Name = "tb_response3";
             this.tb_response3.Size = new System.Drawing.Size(185, 41);
             this.tb_response3.TabIndex = 11;
-            this.tb_response3.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_response3.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_feedback4
             // 
@@ -192,7 +190,7 @@
             this.tb_feedback4.Name = "tb_feedback4";
             this.tb_feedback4.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback4.TabIndex = 14;
-            this.tb_feedback4.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_feedback4.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_response4
             // 
@@ -201,7 +199,7 @@
             this.tb_response4.Name = "tb_response4";
             this.tb_response4.Size = new System.Drawing.Size(185, 41);
             this.tb_response4.TabIndex = 13;
-            this.tb_response4.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_response4.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_feedback5
             // 
@@ -210,7 +208,7 @@
             this.tb_feedback5.Name = "tb_feedback5";
             this.tb_feedback5.Size = new System.Drawing.Size(185, 41);
             this.tb_feedback5.TabIndex = 16;
-            this.tb_feedback5.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_feedback5.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_response5
             // 
@@ -219,7 +217,7 @@
             this.tb_response5.Name = "tb_response5";
             this.tb_response5.Size = new System.Drawing.Size(185, 41);
             this.tb_response5.TabIndex = 15;
-            this.tb_response5.TextChanged += new System.EventHandler(this.TextChangedInTextboxes);
+            this.tb_response5.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // lbl_response
             // 
@@ -361,6 +359,7 @@
             // 
             // btn_deleteCategory
             // 
+            this.btn_deleteCategory.Enabled = false;
             this.btn_deleteCategory.Location = new System.Drawing.Point(165, 121);
             this.btn_deleteCategory.Name = "btn_deleteCategory";
             this.btn_deleteCategory.Size = new System.Drawing.Size(48, 23);
@@ -401,15 +400,18 @@
             this.tb_addCategory.Name = "tb_addCategory";
             this.tb_addCategory.Size = new System.Drawing.Size(145, 20);
             this.tb_addCategory.TabIndex = 1;
+            this.tb_addCategory.TextChanged += new System.EventHandler(this.CatergoryAddUnlocker);
             // 
             // btn_addCategory
             // 
+            this.btn_addCategory.Enabled = false;
             this.btn_addCategory.Location = new System.Drawing.Point(165, 47);
             this.btn_addCategory.Name = "btn_addCategory";
             this.btn_addCategory.Size = new System.Drawing.Size(48, 23);
             this.btn_addCategory.TabIndex = 0;
             this.btn_addCategory.Text = "Add";
             this.btn_addCategory.UseVisualStyleBackColor = true;
+            this.btn_addCategory.Click += new System.EventHandler(this.btn_addCategory_Click);
             // 
             // btn_manageCategories
             // 
@@ -478,6 +480,7 @@
             this.Name = "CreateQuestion";
             this.Text = "Create a Question";
             this.Load += new System.EventHandler(this.CreateQuestion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.questionBankBindingSource)).EndInit();
             this.gb_category.ResumeLayout(false);
             this.gb_category.PerformLayout();
             this.gb_question.ResumeLayout(false);
@@ -526,5 +529,6 @@
         private System.Windows.Forms.Button btn_categoryDone;
         private System.Windows.Forms.GroupBox gb_question;
         private System.Windows.Forms.Button btn_categoryManagerHelp;
+        private System.Windows.Forms.BindingSource questionBankBindingSource;
     }
 }

@@ -164,6 +164,7 @@
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="properties.dat" />
+    <None Include="Properties\DataSources\HappyTechSystem.Core.QuestionBank.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

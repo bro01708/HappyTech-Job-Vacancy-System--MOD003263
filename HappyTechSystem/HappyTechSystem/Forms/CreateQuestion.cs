@@ -17,6 +17,8 @@ namespace HappyTechSystem
     /// </summary>
     public partial class CreateQuestion : Form
     {
+
+        private QuestionBank questionBank = QuestionBank.getInst();
         public CreateQuestion()
         {
             InitializeComponent();
@@ -90,12 +92,15 @@ namespace HappyTechSystem
 
         private void CreateQuestion_Load(object sender, EventArgs e)
         {
-            QuestionBank questionBank = QuestionBank.getInst();
+            
             int nextID = questionBank.getHighestQuestionID() + 1;
             tb_questionID.Text = nextID.ToString();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = questionBank.getCatergoryList;
+            cb_category.DataSource = bs;
         }
 
-        private void TextChangedInTextboxes(object sender, EventArgs e)
+        private void CreateQuestionUnlocker(object sender, EventArgs e)
         {
             if (
                 string.IsNullOrEmpty(tb_feedback1.Text) ||
@@ -118,6 +123,25 @@ namespace HappyTechSystem
                 btn_createQuestion.Enabled = true;
             }
 
+        }
+
+        private void CatergoryAddUnlocker(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tb_addCategory.Text))
+            {
+                btn_addCategory.Enabled = false;
+            }
+            else
+            {
+                btn_addCategory.Enabled = true;
+            }
+        }
+
+        private void btn_addCategory_Click(object sender, EventArgs e)
+        {
+            //QuestionBank questionBank = QuestionBank.getInst();
+            questionBank.getCatergoryList.Add(tb_addCategory.Text);
+            lbl_addConfimation.Text = "Added Successfully!";
         }
     }
     }

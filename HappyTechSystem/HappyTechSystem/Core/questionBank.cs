@@ -13,6 +13,8 @@ namespace HappyTechSystem.Core
     {
         //Holds the list of available quesiton objects for access by any other class
         private List<Question> questionList;
+        private List<string> categoriesList;
+        
 
         //Flag to confirm DB load Correctly
         private bool dbLoaded;
@@ -20,6 +22,11 @@ namespace HappyTechSystem.Core
         public QuestionBank()
         {
             RefreshDBConnection();
+            categoriesList.Add("Base");
+            //foreach (String s in ???)
+            //{
+            //    categoriesList.Add(s);
+            //}
         }
 
         private static QuestionBank uniqueInst = null;
@@ -37,10 +44,14 @@ namespace HappyTechSystem.Core
             get { return questionList; }
         }
 
+        public List<String> getCatergoryList
+        {
+            get { return categoriesList; }
+        }
+
         public void addToList(Question m_q)
         {
             questionList.Add(m_q);
-
         }
         
         /// <summary>

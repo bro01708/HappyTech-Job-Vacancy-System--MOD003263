@@ -89,5 +89,20 @@ namespace HappyTechSystem
                             "Move through the questions at your own pace, using the 'Previous' and 'Next' buttons.\n" +
                             "Add additional notes if need be, and click 'Complete Interview' when you are finished.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ConductInterviewUnlocker()
+        {
+            if(
+                string.IsNullOrEmpty(tb_applicantName.Text) ||
+                string.IsNullOrEmpty(tb_interviewerName.Text) ||
+                string.IsNullOrEmpty(tb_cvPath.Text))
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
