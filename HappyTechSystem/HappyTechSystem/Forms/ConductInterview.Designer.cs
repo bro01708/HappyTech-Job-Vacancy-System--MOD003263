@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cb_vacancy = new System.Windows.Forms.ComboBox();
             this.lbl_vacancy = new System.Windows.Forms.Label();
             this.p_questions = new System.Windows.Forms.Panel();
+            this.btn_interviewHelp = new System.Windows.Forms.Button();
             this.lbl_extraNotes = new System.Windows.Forms.Label();
             this.tb_notes = new System.Windows.Forms.TextBox();
             this.cb_rank5 = new System.Windows.Forms.CheckBox();
@@ -60,7 +62,7 @@
             this.btn_beginHelp = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.p_setup = new System.Windows.Forms.Panel();
-            this.btn_interviewHelp = new System.Windows.Forms.Button();
+            this.beginInterviewCheck = new System.Windows.Forms.Timer(this.components);
             this.p_questions.SuspendLayout();
             this.p_setup.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +109,17 @@
             this.p_questions.Name = "p_questions";
             this.p_questions.Size = new System.Drawing.Size(755, 347);
             this.p_questions.TabIndex = 2;
+            // 
+            // btn_interviewHelp
+            // 
+            this.btn_interviewHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_interviewHelp.Location = new System.Drawing.Point(713, 10);
+            this.btn_interviewHelp.Name = "btn_interviewHelp";
+            this.btn_interviewHelp.Size = new System.Drawing.Size(33, 33);
+            this.btn_interviewHelp.TabIndex = 24;
+            this.btn_interviewHelp.Text = "?";
+            this.btn_interviewHelp.UseVisualStyleBackColor = true;
+            this.btn_interviewHelp.Click += new System.EventHandler(this.btn_interviewHelp_Click);
             // 
             // lbl_extraNotes
             // 
@@ -376,16 +389,9 @@
             this.p_setup.Size = new System.Drawing.Size(755, 139);
             this.p_setup.TabIndex = 24;
             // 
-            // btn_interviewHelp
+            // beginInterviewCheck
             // 
-            this.btn_interviewHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_interviewHelp.Location = new System.Drawing.Point(713, 10);
-            this.btn_interviewHelp.Name = "btn_interviewHelp";
-            this.btn_interviewHelp.Size = new System.Drawing.Size(33, 33);
-            this.btn_interviewHelp.TabIndex = 24;
-            this.btn_interviewHelp.Text = "?";
-            this.btn_interviewHelp.UseVisualStyleBackColor = true;
-            this.btn_interviewHelp.Click += new System.EventHandler(this.btn_interviewHelp_Click);
+            this.beginInterviewCheck.Enabled = true;
             // 
             // ConductInterview
             // 
@@ -440,5 +446,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel p_setup;
         private System.Windows.Forms.Button btn_interviewHelp;
+        private System.Windows.Forms.Timer beginInterviewCheck;
     }
 }

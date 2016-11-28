@@ -142,22 +142,22 @@ namespace HappyTechSystem
         {
             MdiClient chld;
 
-            foreach (Control ctrl in this.Controls)
+            try
             {
-                try
+                foreach (Control ctrl in this.Controls)
                 {
+
                     chld = (MdiClient)ctrl;
 
                     chld.BackColor = this.BackColor;
                 }
-                catch (InvalidCastException exe)
-                {
-                    //DAN PLEASE FIX THIS, ANYTHING I DO HERE HAPPENS ABOUT 3 TIMES BEFORE THE FORM APPEARS,
-                    //UNCOMMENT THE FOLLOWING CODE TO SEE WHAT I MEAN
-
-                    //MessageBox.Show(exe.ToString());
-                }
             }
+            catch (InvalidCastException)
+            {
+
+            }
+
+            //handle database loading here!
         }
     }
 }
