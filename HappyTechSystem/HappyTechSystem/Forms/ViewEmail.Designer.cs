@@ -31,11 +31,11 @@
             this.tb_emailPreview = new System.Windows.Forms.TextBox();
             this.lb_email = new System.Windows.Forms.ListBox();
             this.lbl_help = new System.Windows.Forms.Label();
-            this.gb_sendEmails = new System.Windows.Forms.GroupBox();
             this.btn_edit = new System.Windows.Forms.Button();
             this.p_editToolbox = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.lb_email.FormattingEnabled = true;
             this.lb_email.Location = new System.Drawing.Point(6, 36);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(180, 277);
+            this.lb_email.Size = new System.Drawing.Size(180, 238);
             this.lb_email.TabIndex = 1;
             // 
             // lbl_help
@@ -64,16 +64,6 @@
             this.lbl_help.Size = new System.Drawing.Size(175, 13);
             this.lbl_help.TabIndex = 4;
             this.lbl_help.Text = "Choose an email from the list below:";
-            // 
-            // gb_sendEmails
-            // 
-            this.gb_sendEmails.Enabled = false;
-            this.gb_sendEmails.Location = new System.Drawing.Point(638, 13);
-            this.gb_sendEmails.Name = "gb_sendEmails";
-            this.gb_sendEmails.Size = new System.Drawing.Size(237, 300);
-            this.gb_sendEmails.TabIndex = 8;
-            this.gb_sendEmails.TabStop = false;
-            this.gb_sendEmails.Text = "Send Emails";
             // 
             // btn_edit
             // 
@@ -101,7 +91,7 @@
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(63, 48);
             this.btn_delete.TabIndex = 50;
-            this.btn_delete.Text = "Delete Question";
+            this.btn_delete.Text = "Delete Email";
             this.btn_delete.UseVisualStyleBackColor = true;
             // 
             // btn_save
@@ -113,14 +103,25 @@
             this.btn_save.Text = "Save Changes";
             this.btn_save.UseVisualStyleBackColor = true;
             // 
+            // btn_close
+            // 
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Location = new System.Drawing.Point(7, 280);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(179, 33);
+            this.btn_close.TabIndex = 57;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // ViewEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 324);
+            this.ClientSize = new System.Drawing.Size(640, 324);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
-            this.Controls.Add(this.gb_sendEmails);
             this.Controls.Add(this.lbl_help);
             this.Controls.Add(this.lb_email);
             this.Controls.Add(this.tb_emailPreview);
@@ -137,10 +138,10 @@
         private System.Windows.Forms.TextBox tb_emailPreview;
         private System.Windows.Forms.ListBox lb_email;
         private System.Windows.Forms.Label lbl_help;
-        private System.Windows.Forms.GroupBox gb_sendEmails;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Panel p_editToolbox;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_close;
     }
 }

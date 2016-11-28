@@ -198,7 +198,7 @@
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(63, 48);
             this.btn_delete.TabIndex = 50;
-            this.btn_delete.Text = "Delete Question";
+            this.btn_delete.Text = "Delete Template";
             this.btn_delete.UseVisualStyleBackColor = true;
             // 
             // btn_save
