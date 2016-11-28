@@ -23,20 +23,20 @@ namespace UnitTests
             Assert.AreEqual(QB.getQuestionList[expected], Q);
         }
 
-        //[TestMethod]
-        //public void Test_RemoveFromList()
-        //{
-        //    QuestionBank QB = new QuestionBank();
-        //    Question Q = new Question();
-        //    Q.GetID = 999;
-        //    QB.addToList(Q);
+        [TestMethod]
+        public void Test_RemoveFromList()
+        {
+            QuestionBank QB = new QuestionBank();
+            Question Q = new Question();
+            Q.GetID = 999;
+            QB.addToList(Q);
 
 
-        //    int expected = QB.getQ.Count - 1;
-        //    QB.removeFromList(999);
-        //    int after = QB.getQ.Count;
-        //    Assert.AreEqual(expected, after);
-            
-        //}
+            int expected = QB.getQ.Count - 1;
+            QB.removeFromList(999);
+            int after = QB.getQ.Count;
+            Assert.AreEqual(expected, after);
+
+        }
     }
 }
