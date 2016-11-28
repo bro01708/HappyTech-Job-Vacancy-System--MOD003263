@@ -67,6 +67,7 @@ namespace HappyTechSystem.Core
                 if (q.GetID == m_question_ID)
                 {
                     questionList.Remove(q);
+                    break;
                 }
             }
         }
