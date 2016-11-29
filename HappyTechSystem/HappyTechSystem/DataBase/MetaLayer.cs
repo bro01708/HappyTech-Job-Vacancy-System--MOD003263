@@ -156,10 +156,83 @@ namespace HappyTechSystem.DB
 
             String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
                              "','" + questionTag + "','" + questionText + "')";
-            
             con.RunSQL(myQuery);
+            //Following sections loop through ranks 1-5 and writes the assosiated response and feeback at that rank for the question being loaded.
+            for (int i = 0; i < 5; i++)
+            {
+                int rank = i + 1;
+                string rankstring = rank.ToString();
+                con.RunSQL("INSERT INTO Criteria(Rank, CriteriaText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Responses[i]+"','" + questionID +"')");
+                con.RunSQL("INSERT INTO Feedback(Rank, FeedbackText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Feedback[i] + "','" + questionID + "')");
+            }
+
             con.CloseConnection();
         }
 
+        /// <summary>
+        /// Created By Peter
+        /// Recieves an integer of questionID , converts it to string and uses it as an 
+        /// identifier in a delete query which makes use of the Cascade Delete function of the access db.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void RemoveQuestionFromDB(int m_questionID)
+        {
+            DbConnection con = DBFactory.instance();
+            string id = m_questionID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Question WHERE QuestionID = " + id + ";");
+            con.CloseConnection();
+        }
+
+        public string[] GetResponses(int m_questionID)
+        {
+            List<string> tempResponses = new List<string>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT CriteriaText FROM Criteria WHERE QuestionID = " + m_questionID + " ORDER BY Rank;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    string tempText = dr.GetString(0);
+
+
+                    tempResponses.Add(tempText);
+                }
+
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return tempResponses.ToArray();
+        }
+        public string[] GetFeedback(int m_questionID)
+        {
+            List<string> tempFeedback= new List<string>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT FeedbackText FROM Feedback WHERE QuestionID = " + m_questionID + " ORDER BY Rank;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    string tempText = dr.GetString(0);
+
+
+                    tempFeedback.Add(tempText);
+                }
+
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return tempFeedback.ToArray();
+        }
     }
 }

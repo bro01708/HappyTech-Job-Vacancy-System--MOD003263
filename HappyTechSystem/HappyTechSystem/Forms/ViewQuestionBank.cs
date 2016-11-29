@@ -17,16 +17,19 @@ namespace HappyTechSystem
     /// </summary>
     public partial class ViewQuestionBank : Form
     {
+        private QuestionBank questionBank = QuestionBank.getInst();
         //private variable used to aid toggling
         private byte flag;
 
         public ViewQuestionBank()
         {
             InitializeComponent();
-            foreach (Question question in QuestionBank.getInst().getQuestionList)
-            {
-                lb_Q.Items.Add(question);
-            }
+            lb_Q.DataSource = questionBank.getQuestionList;
+
+            //foreach (Question question in QuestionBank.getInst().getQuestionList)
+            //{
+            //    lb_Q.Items.Add(question);
+            //}
         }
 
         /// <summary>
@@ -135,6 +138,46 @@ namespace HappyTechSystem
             catch (Exception)
             {
                 //MessageBox.Show("Please click an entry in the textbox" + " " + ex.ToString());
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
+                lb_Q.DataSource= null;
+                lb_Q.DataSource = questionBank.getQuestionList;
+                try
+                {
+                    
+                    btn_edit.PerformClick();
+                    lb_Q.SelectedIndex = 0;
+                }
+                catch (Exception)
+                {
+
+                    tb_question.Text = "";
+                    tb_questionID.Text = "";
+                    tb_categoryTag.Text = "";
+                    tb_response1.Text = "";
+                    tb_response2.Text = "";
+                    tb_response3.Text = "";
+                    tb_response4.Text = "";
+                    tb_response5.Text = "";
+                    tb_feedback1.Text = "";
+                    tb_feedback2.Text = "";
+                    tb_feedback3.Text = "";
+                    tb_feedback4.Text = "";
+                    tb_feedback5.Text = "";
+                }
+                
+
+            }
+            catch (Exception Exception)
+            {
+
+                throw Exception;
             }
         }
     }

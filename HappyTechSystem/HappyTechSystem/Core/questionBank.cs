@@ -71,6 +71,7 @@ namespace HappyTechSystem.Core
                 if (q.GetID == m_question_ID)
                 {
                     questionList.Remove(q);
+                    ml.RemoveQuestionFromDB(m_question_ID);
                     break;
                 }
             }
@@ -109,6 +110,11 @@ namespace HappyTechSystem.Core
                 MetaLayer ml = MetaLayer.instance();
                 questionList = ml.GetQuestions();
                 dbLoaded = true;
+                foreach (Question q in questionList)
+                {
+                    q.Feedback = ml.GetFeedback(q.GetID);
+                    q.Responses = ml.GetResponses(q.GetID);
+                }
             }
             catch (Exception e)
             {
