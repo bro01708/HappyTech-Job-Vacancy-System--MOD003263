@@ -24,7 +24,6 @@ namespace HappyTechSystem.Core
         {
             categoriesList = new List<string>();
             RefreshDBConnection();
-            categoriesList.Add("General");
         }
 
         public bool getDBLoaded
@@ -109,6 +108,7 @@ namespace HappyTechSystem.Core
             {
                 MetaLayer ml = MetaLayer.instance();
                 questionList = ml.GetQuestions();
+                categoriesList = ml.GetCategories();
                 dbLoaded = true;
                 foreach (Question q in questionList)
                 {

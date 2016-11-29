@@ -25,11 +25,7 @@ namespace HappyTechSystem
         {
             InitializeComponent();
             lb_Q.DataSource = questionBank.getQuestionList;
-
-            //foreach (Question question in QuestionBank.getInst().getQuestionList)
-            //{
-            //    lb_Q.Items.Add(question);
-            //}
+            RefreshFilters();
         }
 
         /// <summary>
@@ -102,6 +98,7 @@ namespace HappyTechSystem
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
+            
         }
 
         /// <summary>
@@ -150,7 +147,6 @@ namespace HappyTechSystem
                 lb_Q.DataSource = questionBank.getQuestionList;
                 try
                 {
-                    
                     btn_edit.PerformClick();
                     lb_Q.SelectedIndex = 0;
                 }
@@ -179,6 +175,25 @@ namespace HappyTechSystem
 
                 throw Exception;
             }
+        }
+
+        private void cb_filterCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_filterCategories.Text == "All")
+            {
+                lb_Q.DataSource = questionBank.getQuestionList;
+            }
+            else
+            {
+                lb_Q.DataSource = questionBank.getQuestionList.Where(q => q.GetTag == cb_filterCategories.Text).ToList();
+            }
+        }
+        private void RefreshFilters()
+        {
+            List<string> filters = new List<string>();
+            filters.Insert(0, "All");
+            filters.AddRange(questionBank.getCategoryList);
+            cb_filterCategories.DataSource = filters;
         }
     }
 }

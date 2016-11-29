@@ -349,6 +349,7 @@
             this.cb_filterCategories.Name = "cb_filterCategories";
             this.cb_filterCategories.Size = new System.Drawing.Size(121, 21);
             this.cb_filterCategories.TabIndex = 79;
+            this.cb_filterCategories.SelectedIndexChanged += new System.EventHandler(this.cb_filterCategories_SelectedIndexChanged);
             // 
             // lbl_questionFilter
             // 

@@ -140,6 +140,28 @@ namespace HappyTechSystem.DB
             return Questions.Count;
         }
 
+        public List<string> GetCategories()
+        {
+            List<string> categories = new List<string>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT DISTINCT QuestionTag FROM Question;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    string tag = dr.GetString(0);
+                    categories.Add(tag);
+                }
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+            
+            return categories;
+        }
         /// <summary>
         /// Created by Peter
         /// Recieves a question, splits it down into its attributes, and plugs those into an SQL query that is run by the "RunSQL" method
