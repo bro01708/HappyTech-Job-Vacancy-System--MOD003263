@@ -42,7 +42,6 @@ namespace HappyTechSystem.DB
                         sb.Append("\"");
                     }
                 }
-                MessageBox.Show(sb.ToString());
                 connection = new OleDbConnection(sb.ToString());
             }
             catch (Exception e)
