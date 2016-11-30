@@ -112,7 +112,7 @@ namespace HappyTechSystem.DB
                         questionIDs.Add(dr2.GetInt32(0));
 
                     }
-                    V.QuestionsToBeUsed = questionIDs;
+                    V.getQuestionsToBeUsed = questionIDs;
                     Vs.Add(V);
                 }
 
@@ -277,7 +277,7 @@ namespace HappyTechSystem.DB
             string role = m_vacancy.Role;
             int minScore = m_vacancy.MinumumScore;
             int positionsAvailable = m_vacancy.PositionsAvailable;
-            List<int> questionIDs = m_vacancy.QuestionsToBeUsed;
+            List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
 
             String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID +
                              "','" + vacancyName + "','" + role + "','" + positionsAvailable + "','" + minScore + "')";
