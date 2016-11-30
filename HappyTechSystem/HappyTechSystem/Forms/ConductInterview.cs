@@ -23,7 +23,20 @@ namespace HappyTechSystem
         private QuestionBank questionBank;
         private MetaLayer ml;
         private List<int> questionsToBeUsed;
-        private List<int> responses;
+        private int[] responses;
+
+        public int[] Responses
+        {
+            get
+            {
+                return responses;
+            }
+
+            set
+            {
+                responses = value;
+            }
+        }
 
         public ConductInterview()
         {
@@ -32,7 +45,6 @@ namespace HappyTechSystem
             vacancyBank = VacancyBank.getInst();
             ml = MetaLayer.instance();
             questionsToBeUsed = new List<int>();
-            responses = new List<int>();
 
         }
         /// <summary>
@@ -79,6 +91,7 @@ namespace HappyTechSystem
 
             Vacancy v = (Vacancy)cb_vacancy.SelectedItem;
             questionsToBeUsed = v.getQuestionsToBeUsed;
+            responses = new int[questionsToBeUsed.Count];
             tb_questionCount.Text = questionsToBeUsed.Count.ToString();
             tb_questionIndex.Text = "1";
             displayQuestionDetails();
@@ -154,13 +167,137 @@ namespace HappyTechSystem
             tb_rank4.Text = question.Responses[3];
             tb_rank5.Text = question.Responses[4];
 
-
+            if (tb_questionIndex.Text == tb_questionCount.Text)
+            {
+                btn_nextQuestion.Enabled = false;
+            }
+            else if (tb_questionIndex.Text == "1")
+            {
+                btn_previousQuestion.Enabled = false;
+            }
+            else
+            {
+                btn_previousQuestion.Enabled = true;
+                btn_nextQuestion.Enabled = true;
+            }
+            updateRadioButtons(questionListIndex);
         }
 
         private void btn_nextQuestion_Click(object sender, EventArgs e)
         {
-            tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) + 1).ToString();
+            if (rb_rank1.Checked == true || rb_rank2.Checked == true || rb_rank3.Checked == true || rb_rank4.Checked == true || rb_rank5.Checked == true)
+            {
+                tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) + 1).ToString();
+                displayQuestionDetails();
+            }
+            else { MessageBox.Show("Select a response before proceeding"); }
+        }
+
+        private void btn_previousQuestion_Click(object sender, EventArgs e)
+        {
+            tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) - 1).ToString();
             displayQuestionDetails();
         }
+
+        private void setResponseInResponseList(Object sender)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+            int selectedRank = 0;
+            int currentQuestion = Convert.ToInt32(tb_questionIndex.Text) - 1;
+            switch (radioButton.Name)
+            {
+                case "rb_rank1":
+                    selectedRank = 1;
+                    break;
+                case "rb_rank2":
+                    selectedRank = 2;
+                    break;
+                case "rb_rank3":
+                    selectedRank = 3;
+                    break;
+                case "rb_rank4":
+                    selectedRank = 4;
+                    break;
+                case "rb_rank5":
+                    selectedRank = 5;
+                    break;
+                default:
+                    break;
+            }
+            responses[currentQuestion] = selectedRank;
+            if (tb_questionIndex.Text == tb_questionCount.Text)
+            {
+                btn_complete.Enabled = true;
+            }
+        }
+
+        private void rb_rank1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_rank1.Checked == true)
+            {
+                setResponseInResponseList(sender);
+            }
+        }
+
+        private void rb_rank2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_rank2.Checked == true)
+            {
+                setResponseInResponseList(sender);
+            }
+        }
+
+        private void rb_rank3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_rank3.Checked == true)
+            {
+                setResponseInResponseList(sender);
+            }
+        }
+
+        private void rb_rank4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_rank4.Checked == true)
+            {
+                setResponseInResponseList(sender);
+            }
+        }
+
+        private void rb_rank5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_rank5.Checked == true)
+            {
+                setResponseInResponseList(sender);
+            }
+        }
+
+        private void updateRadioButtons(int m_currentQuestion)
+        {
+            if (responses[m_currentQuestion] != 0)
+            {
+                switch (responses[m_currentQuestion])
+                {
+                    case 1:
+                        rb_rank1.PerformClick();
+                        break;
+                    case 2:
+                        rb_rank2.PerformClick();
+                        break;
+                    case 3:
+                        rb_rank3.PerformClick();
+                        break;
+                    case 4:
+                        rb_rank4.PerformClick();
+                        break;
+                    case 5:
+                        rb_rank5.PerformClick();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else { rb_rank1.Checked = false; rb_rank2.Checked = false; rb_rank3.Checked = false; rb_rank4.Checked = false; rb_rank5.Checked = false; }
+        }
+
     }
 }

@@ -33,22 +33,22 @@
             this.vacancyBankBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_vacancy = new System.Windows.Forms.Label();
             this.p_questions = new System.Windows.Forms.Panel();
+            this.rb_rank5 = new System.Windows.Forms.RadioButton();
+            this.rb_rank4 = new System.Windows.Forms.RadioButton();
+            this.rb_rank3 = new System.Windows.Forms.RadioButton();
+            this.rb_rank2 = new System.Windows.Forms.RadioButton();
+            this.rb_rank1 = new System.Windows.Forms.RadioButton();
             this.tb_questionCount = new System.Windows.Forms.TextBox();
             this.lbl_outof = new System.Windows.Forms.Label();
             this.btn_interviewHelp = new System.Windows.Forms.Button();
             this.lbl_extraNotes = new System.Windows.Forms.Label();
             this.tb_notes = new System.Windows.Forms.TextBox();
-            this.cb_rank5 = new System.Windows.Forms.CheckBox();
             this.tb_rank5 = new System.Windows.Forms.TextBox();
-            this.cb_rank4 = new System.Windows.Forms.CheckBox();
             this.tb_rank4 = new System.Windows.Forms.TextBox();
-            this.cb_rank3 = new System.Windows.Forms.CheckBox();
             this.tb_rank3 = new System.Windows.Forms.TextBox();
-            this.cb_rank2 = new System.Windows.Forms.CheckBox();
             this.tb_rank2 = new System.Windows.Forms.TextBox();
             this.tb_questionIndex = new System.Windows.Forms.TextBox();
             this.lbl_questionID = new System.Windows.Forms.Label();
-            this.cb_rank1 = new System.Windows.Forms.CheckBox();
             this.tb_rank1 = new System.Windows.Forms.TextBox();
             this.btn_nextQuestion = new System.Windows.Forms.Button();
             this.btn_previousQuestion = new System.Windows.Forms.Button();
@@ -95,22 +95,22 @@
             // 
             // p_questions
             // 
+            this.p_questions.Controls.Add(this.rb_rank5);
+            this.p_questions.Controls.Add(this.rb_rank4);
+            this.p_questions.Controls.Add(this.rb_rank3);
+            this.p_questions.Controls.Add(this.rb_rank2);
+            this.p_questions.Controls.Add(this.rb_rank1);
             this.p_questions.Controls.Add(this.tb_questionCount);
             this.p_questions.Controls.Add(this.lbl_outof);
             this.p_questions.Controls.Add(this.btn_interviewHelp);
             this.p_questions.Controls.Add(this.lbl_extraNotes);
             this.p_questions.Controls.Add(this.tb_notes);
-            this.p_questions.Controls.Add(this.cb_rank5);
             this.p_questions.Controls.Add(this.tb_rank5);
-            this.p_questions.Controls.Add(this.cb_rank4);
             this.p_questions.Controls.Add(this.tb_rank4);
-            this.p_questions.Controls.Add(this.cb_rank3);
             this.p_questions.Controls.Add(this.tb_rank3);
-            this.p_questions.Controls.Add(this.cb_rank2);
             this.p_questions.Controls.Add(this.tb_rank2);
             this.p_questions.Controls.Add(this.tb_questionIndex);
             this.p_questions.Controls.Add(this.lbl_questionID);
-            this.p_questions.Controls.Add(this.cb_rank1);
             this.p_questions.Controls.Add(this.tb_rank1);
             this.p_questions.Controls.Add(this.btn_nextQuestion);
             this.p_questions.Controls.Add(this.btn_previousQuestion);
@@ -121,9 +121,68 @@
             this.p_questions.Size = new System.Drawing.Size(755, 347);
             this.p_questions.TabIndex = 2;
             // 
+            // rb_rank5
+            // 
+            this.rb_rank5.AutoSize = true;
+            this.rb_rank5.Location = new System.Drawing.Point(624, 149);
+            this.rb_rank5.Name = "rb_rank5";
+            this.rb_rank5.Size = new System.Drawing.Size(90, 17);
+            this.rb_rank5.TabIndex = 31;
+            this.rb_rank5.TabStop = true;
+            this.rb_rank5.Text = "Rank 5 (Best)";
+            this.rb_rank5.UseVisualStyleBackColor = true;
+            this.rb_rank5.CheckedChanged += new System.EventHandler(this.rb_rank5_CheckedChanged);
+            // 
+            // rb_rank4
+            // 
+            this.rb_rank4.AutoSize = true;
+            this.rb_rank4.Location = new System.Drawing.Point(465, 149);
+            this.rb_rank4.Name = "rb_rank4";
+            this.rb_rank4.Size = new System.Drawing.Size(95, 17);
+            this.rb_rank4.TabIndex = 30;
+            this.rb_rank4.TabStop = true;
+            this.rb_rank4.Text = "Rank 4 (Good)";
+            this.rb_rank4.UseVisualStyleBackColor = true;
+            this.rb_rank4.CheckedChanged += new System.EventHandler(this.rb_rank4_CheckedChanged);
+            // 
+            // rb_rank3
+            // 
+            this.rb_rank3.AutoSize = true;
+            this.rb_rank3.Location = new System.Drawing.Point(324, 149);
+            this.rb_rank3.Name = "rb_rank3";
+            this.rb_rank3.Size = new System.Drawing.Size(113, 17);
+            this.rb_rank3.TabIndex = 29;
+            this.rb_rank3.TabStop = true;
+            this.rb_rank3.Text = "Rank 3 (Mediocre)";
+            this.rb_rank3.UseVisualStyleBackColor = true;
+            this.rb_rank3.CheckedChanged += new System.EventHandler(this.rb_rank3_CheckedChanged);
+            // 
+            // rb_rank2
+            // 
+            this.rb_rank2.AutoSize = true;
+            this.rb_rank2.Location = new System.Drawing.Point(175, 149);
+            this.rb_rank2.Name = "rb_rank2";
+            this.rb_rank2.Size = new System.Drawing.Size(91, 17);
+            this.rb_rank2.TabIndex = 28;
+            this.rb_rank2.TabStop = true;
+            this.rb_rank2.Text = "Rank 2 (Poor)";
+            this.rb_rank2.UseVisualStyleBackColor = true;
+            this.rb_rank2.CheckedChanged += new System.EventHandler(this.rb_rank2_CheckedChanged);
+            // 
+            // rb_rank1
+            // 
+            this.rb_rank1.AutoSize = true;
+            this.rb_rank1.Location = new System.Drawing.Point(24, 149);
+            this.rb_rank1.Name = "rb_rank1";
+            this.rb_rank1.Size = new System.Drawing.Size(97, 17);
+            this.rb_rank1.TabIndex = 27;
+            this.rb_rank1.TabStop = true;
+            this.rb_rank1.Text = "Rank 1 (Worst)";
+            this.rb_rank1.UseVisualStyleBackColor = true;
+            this.rb_rank1.CheckedChanged += new System.EventHandler(this.rb_rank1_CheckedChanged);
+            // 
             // tb_questionCount
             // 
-            this.tb_questionCount.Enabled = false;
             this.tb_questionCount.Location = new System.Drawing.Point(153, 7);
             this.tb_questionCount.Name = "tb_questionCount";
             this.tb_questionCount.ReadOnly = true;
@@ -167,16 +226,6 @@
             this.tb_notes.Size = new System.Drawing.Size(386, 56);
             this.tb_notes.TabIndex = 16;
             // 
-            // cb_rank5
-            // 
-            this.cb_rank5.AutoSize = true;
-            this.cb_rank5.Location = new System.Drawing.Point(627, 149);
-            this.cb_rank5.Name = "cb_rank5";
-            this.cb_rank5.Size = new System.Drawing.Size(91, 17);
-            this.cb_rank5.TabIndex = 15;
-            this.cb_rank5.Text = "Rank 5 (Best)";
-            this.cb_rank5.UseVisualStyleBackColor = true;
-            // 
             // tb_rank5
             // 
             this.tb_rank5.Location = new System.Drawing.Point(603, 172);
@@ -185,16 +234,6 @@
             this.tb_rank5.ReadOnly = true;
             this.tb_rank5.Size = new System.Drawing.Size(143, 66);
             this.tb_rank5.TabIndex = 14;
-            // 
-            // cb_rank4
-            // 
-            this.cb_rank4.AutoSize = true;
-            this.cb_rank4.Location = new System.Drawing.Point(474, 149);
-            this.cb_rank4.Name = "cb_rank4";
-            this.cb_rank4.Size = new System.Drawing.Size(96, 17);
-            this.cb_rank4.TabIndex = 13;
-            this.cb_rank4.Text = "Rank 4 (Great)";
-            this.cb_rank4.UseVisualStyleBackColor = true;
             // 
             // tb_rank4
             // 
@@ -205,16 +244,6 @@
             this.tb_rank4.Size = new System.Drawing.Size(143, 66);
             this.tb_rank4.TabIndex = 12;
             // 
-            // cb_rank3
-            // 
-            this.cb_rank3.AutoSize = true;
-            this.cb_rank3.Location = new System.Drawing.Point(316, 149);
-            this.cb_rank3.Name = "cb_rank3";
-            this.cb_rank3.Size = new System.Drawing.Size(116, 17);
-            this.cb_rank3.TabIndex = 11;
-            this.cb_rank3.Text = "Rank 3 (Adequete)";
-            this.cb_rank3.UseVisualStyleBackColor = true;
-            // 
             // tb_rank3
             // 
             this.tb_rank3.Location = new System.Drawing.Point(305, 172);
@@ -223,16 +252,6 @@
             this.tb_rank3.ReadOnly = true;
             this.tb_rank3.Size = new System.Drawing.Size(143, 66);
             this.tb_rank3.TabIndex = 10;
-            // 
-            // cb_rank2
-            // 
-            this.cb_rank2.AutoSize = true;
-            this.cb_rank2.Location = new System.Drawing.Point(170, 149);
-            this.cb_rank2.Name = "cb_rank2";
-            this.cb_rank2.Size = new System.Drawing.Size(114, 17);
-            this.cb_rank2.TabIndex = 9;
-            this.cb_rank2.Text = "Rank 2 (Mediocre)";
-            this.cb_rank2.UseVisualStyleBackColor = true;
             // 
             // tb_rank2
             // 
@@ -250,6 +269,7 @@
             this.tb_questionIndex.ReadOnly = true;
             this.tb_questionIndex.Size = new System.Drawing.Size(25, 20);
             this.tb_questionIndex.TabIndex = 7;
+            this.tb_questionIndex.UseWaitCursor = true;
             // 
             // lbl_questionID
             // 
@@ -259,16 +279,6 @@
             this.lbl_questionID.Size = new System.Drawing.Size(96, 13);
             this.lbl_questionID.TabIndex = 6;
             this.lbl_questionID.Text = "Current Question #";
-            // 
-            // cb_rank1
-            // 
-            this.cb_rank1.AutoSize = true;
-            this.cb_rank1.Location = new System.Drawing.Point(33, 149);
-            this.cb_rank1.Name = "cb_rank1";
-            this.cb_rank1.Size = new System.Drawing.Size(98, 17);
-            this.cb_rank1.TabIndex = 5;
-            this.cb_rank1.Text = "Rank 1 (Worst)";
-            this.cb_rank1.UseVisualStyleBackColor = true;
             // 
             // tb_rank1
             // 
@@ -297,6 +307,7 @@
             this.btn_previousQuestion.TabIndex = 1;
             this.btn_previousQuestion.Text = "Previous Question";
             this.btn_previousQuestion.UseVisualStyleBackColor = true;
+            this.btn_previousQuestion.Click += new System.EventHandler(this.btn_previousQuestion_Click);
             // 
             // tb_questionText
             // 
@@ -448,20 +459,15 @@
         private System.Windows.Forms.ComboBox cb_vacancy;
         private System.Windows.Forms.Label lbl_vacancy;
         private System.Windows.Forms.Panel p_questions;
-        private System.Windows.Forms.CheckBox cb_rank1;
         private System.Windows.Forms.TextBox tb_rank1;
         private System.Windows.Forms.Button btn_nextQuestion;
         private System.Windows.Forms.Button btn_previousQuestion;
         private System.Windows.Forms.TextBox tb_questionText;
         private System.Windows.Forms.TextBox tb_questionIndex;
         private System.Windows.Forms.Label lbl_questionID;
-        private System.Windows.Forms.CheckBox cb_rank5;
         private System.Windows.Forms.TextBox tb_rank5;
-        private System.Windows.Forms.CheckBox cb_rank4;
         private System.Windows.Forms.TextBox tb_rank4;
-        private System.Windows.Forms.CheckBox cb_rank3;
         private System.Windows.Forms.TextBox tb_rank3;
-        private System.Windows.Forms.CheckBox cb_rank2;
         private System.Windows.Forms.TextBox tb_rank2;
         private System.Windows.Forms.Button btn_complete;
         private System.Windows.Forms.Label lbl_applicantName;
@@ -481,5 +487,10 @@
         private System.Windows.Forms.BindingSource vacancyBankBindingSource;
         private System.Windows.Forms.TextBox tb_questionCount;
         private System.Windows.Forms.Label lbl_outof;
+        private System.Windows.Forms.RadioButton rb_rank5;
+        private System.Windows.Forms.RadioButton rb_rank4;
+        private System.Windows.Forms.RadioButton rb_rank3;
+        private System.Windows.Forms.RadioButton rb_rank2;
+        private System.Windows.Forms.RadioButton rb_rank1;
     }
 }
