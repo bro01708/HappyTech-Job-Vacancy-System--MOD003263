@@ -33,18 +33,20 @@
             this.vacancyBankBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_vacancy = new System.Windows.Forms.Label();
             this.p_questions = new System.Windows.Forms.Panel();
+            this.tb_questionCount = new System.Windows.Forms.TextBox();
+            this.lbl_outof = new System.Windows.Forms.Label();
             this.btn_interviewHelp = new System.Windows.Forms.Button();
             this.lbl_extraNotes = new System.Windows.Forms.Label();
             this.tb_notes = new System.Windows.Forms.TextBox();
             this.cb_rank5 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tb_rank5 = new System.Windows.Forms.TextBox();
             this.cb_rank4 = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_rank4 = new System.Windows.Forms.TextBox();
             this.cb_rank3 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_rank3 = new System.Windows.Forms.TextBox();
             this.cb_rank2 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tb_questionID = new System.Windows.Forms.TextBox();
+            this.tb_rank2 = new System.Windows.Forms.TextBox();
+            this.tb_questionIndex = new System.Windows.Forms.TextBox();
             this.lbl_questionID = new System.Windows.Forms.Label();
             this.cb_rank1 = new System.Windows.Forms.CheckBox();
             this.tb_rank1 = new System.Windows.Forms.TextBox();
@@ -93,18 +95,20 @@
             // 
             // p_questions
             // 
+            this.p_questions.Controls.Add(this.tb_questionCount);
+            this.p_questions.Controls.Add(this.lbl_outof);
             this.p_questions.Controls.Add(this.btn_interviewHelp);
             this.p_questions.Controls.Add(this.lbl_extraNotes);
             this.p_questions.Controls.Add(this.tb_notes);
             this.p_questions.Controls.Add(this.cb_rank5);
-            this.p_questions.Controls.Add(this.textBox5);
+            this.p_questions.Controls.Add(this.tb_rank5);
             this.p_questions.Controls.Add(this.cb_rank4);
-            this.p_questions.Controls.Add(this.textBox4);
+            this.p_questions.Controls.Add(this.tb_rank4);
             this.p_questions.Controls.Add(this.cb_rank3);
-            this.p_questions.Controls.Add(this.textBox3);
+            this.p_questions.Controls.Add(this.tb_rank3);
             this.p_questions.Controls.Add(this.cb_rank2);
-            this.p_questions.Controls.Add(this.textBox2);
-            this.p_questions.Controls.Add(this.tb_questionID);
+            this.p_questions.Controls.Add(this.tb_rank2);
+            this.p_questions.Controls.Add(this.tb_questionIndex);
             this.p_questions.Controls.Add(this.lbl_questionID);
             this.p_questions.Controls.Add(this.cb_rank1);
             this.p_questions.Controls.Add(this.tb_rank1);
@@ -116,6 +120,24 @@
             this.p_questions.Name = "p_questions";
             this.p_questions.Size = new System.Drawing.Size(755, 347);
             this.p_questions.TabIndex = 2;
+            // 
+            // tb_questionCount
+            // 
+            this.tb_questionCount.Enabled = false;
+            this.tb_questionCount.Location = new System.Drawing.Point(153, 7);
+            this.tb_questionCount.Name = "tb_questionCount";
+            this.tb_questionCount.ReadOnly = true;
+            this.tb_questionCount.Size = new System.Drawing.Size(25, 20);
+            this.tb_questionCount.TabIndex = 26;
+            // 
+            // lbl_outof
+            // 
+            this.lbl_outof.AutoSize = true;
+            this.lbl_outof.Location = new System.Drawing.Point(134, 10);
+            this.lbl_outof.Name = "lbl_outof";
+            this.lbl_outof.Size = new System.Drawing.Size(16, 13);
+            this.lbl_outof.TabIndex = 25;
+            this.lbl_outof.Text = "of";
             // 
             // btn_interviewHelp
             // 
@@ -155,14 +177,14 @@
             this.cb_rank5.Text = "Rank 5 (Best)";
             this.cb_rank5.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // tb_rank5
             // 
-            this.textBox5.Location = new System.Drawing.Point(603, 172);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(143, 66);
-            this.textBox5.TabIndex = 14;
+            this.tb_rank5.Location = new System.Drawing.Point(603, 172);
+            this.tb_rank5.Multiline = true;
+            this.tb_rank5.Name = "tb_rank5";
+            this.tb_rank5.ReadOnly = true;
+            this.tb_rank5.Size = new System.Drawing.Size(143, 66);
+            this.tb_rank5.TabIndex = 14;
             // 
             // cb_rank4
             // 
@@ -174,14 +196,14 @@
             this.cb_rank4.Text = "Rank 4 (Great)";
             this.cb_rank4.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tb_rank4
             // 
-            this.textBox4.Location = new System.Drawing.Point(454, 172);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(143, 66);
-            this.textBox4.TabIndex = 12;
+            this.tb_rank4.Location = new System.Drawing.Point(454, 172);
+            this.tb_rank4.Multiline = true;
+            this.tb_rank4.Name = "tb_rank4";
+            this.tb_rank4.ReadOnly = true;
+            this.tb_rank4.Size = new System.Drawing.Size(143, 66);
+            this.tb_rank4.TabIndex = 12;
             // 
             // cb_rank3
             // 
@@ -193,14 +215,14 @@
             this.cb_rank3.Text = "Rank 3 (Adequete)";
             this.cb_rank3.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tb_rank3
             // 
-            this.textBox3.Location = new System.Drawing.Point(305, 172);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(143, 66);
-            this.textBox3.TabIndex = 10;
+            this.tb_rank3.Location = new System.Drawing.Point(305, 172);
+            this.tb_rank3.Multiline = true;
+            this.tb_rank3.Name = "tb_rank3";
+            this.tb_rank3.ReadOnly = true;
+            this.tb_rank3.Size = new System.Drawing.Size(143, 66);
+            this.tb_rank3.TabIndex = 10;
             // 
             // cb_rank2
             // 
@@ -212,22 +234,22 @@
             this.cb_rank2.Text = "Rank 2 (Mediocre)";
             this.cb_rank2.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tb_rank2
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 172);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(143, 66);
-            this.textBox2.TabIndex = 8;
+            this.tb_rank2.Location = new System.Drawing.Point(156, 172);
+            this.tb_rank2.Multiline = true;
+            this.tb_rank2.Name = "tb_rank2";
+            this.tb_rank2.ReadOnly = true;
+            this.tb_rank2.Size = new System.Drawing.Size(143, 66);
+            this.tb_rank2.TabIndex = 8;
             // 
-            // tb_questionID
+            // tb_questionIndex
             // 
-            this.tb_questionID.Location = new System.Drawing.Point(106, 7);
-            this.tb_questionID.Name = "tb_questionID";
-            this.tb_questionID.ReadOnly = true;
-            this.tb_questionID.Size = new System.Drawing.Size(25, 20);
-            this.tb_questionID.TabIndex = 7;
+            this.tb_questionIndex.Location = new System.Drawing.Point(106, 7);
+            this.tb_questionIndex.Name = "tb_questionIndex";
+            this.tb_questionIndex.ReadOnly = true;
+            this.tb_questionIndex.Size = new System.Drawing.Size(25, 20);
+            this.tb_questionIndex.TabIndex = 7;
             // 
             // lbl_questionID
             // 
@@ -430,16 +452,16 @@
         private System.Windows.Forms.Button btn_nextQuestion;
         private System.Windows.Forms.Button btn_previousQuestion;
         private System.Windows.Forms.TextBox tb_questionText;
-        private System.Windows.Forms.TextBox tb_questionID;
+        private System.Windows.Forms.TextBox tb_questionIndex;
         private System.Windows.Forms.Label lbl_questionID;
         private System.Windows.Forms.CheckBox cb_rank5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tb_rank5;
         private System.Windows.Forms.CheckBox cb_rank4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_rank4;
         private System.Windows.Forms.CheckBox cb_rank3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_rank3;
         private System.Windows.Forms.CheckBox cb_rank2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_rank2;
         private System.Windows.Forms.Button btn_complete;
         private System.Windows.Forms.Label lbl_applicantName;
         private System.Windows.Forms.Button btn_beginInterview;
@@ -456,5 +478,7 @@
         private System.Windows.Forms.Panel p_setup;
         private System.Windows.Forms.Button btn_interviewHelp;
         private System.Windows.Forms.BindingSource vacancyBankBindingSource;
+        private System.Windows.Forms.TextBox tb_questionCount;
+        private System.Windows.Forms.Label lbl_outof;
     }
 }

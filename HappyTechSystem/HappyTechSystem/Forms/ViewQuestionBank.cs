@@ -169,10 +169,9 @@ namespace HappyTechSystem
                 
 
             }
-            catch (Exception Exception)
+            catch (Exception )
             {
 
-                throw Exception;
             }
         }
 

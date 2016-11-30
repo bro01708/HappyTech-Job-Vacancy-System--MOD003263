@@ -39,7 +39,7 @@ namespace HappyTechSystem.Core
             V.Role = m_role;
             V.MinumumScore = m_minimumScore;
             V.PositionsAvailable = m_positionsAvailable;
-            V.QuestionsToBeUsed = m_questionIDs;
+            V.getQuestionsToBeUsed = m_questionIDs;
             VacancyBank VB = VacancyBank.getInst();
             VB.AddToList(V);
             

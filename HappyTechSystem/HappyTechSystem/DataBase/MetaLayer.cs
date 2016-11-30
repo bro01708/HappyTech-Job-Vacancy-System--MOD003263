@@ -309,5 +309,27 @@ namespace HappyTechSystem.DB
 
             con.CloseConnection();
         }
+
+        public List<int> getQuestionsToBeUsed(Vacancy m_Vacancy)
+        {
+            List<int> questionsToBeUsed = new List<int>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT DISTINCT QuestionID FROM Vacancy_Question WHERE VacancyID = " + m_Vacancy.GetID + "ORDER BY QuestionOrderIndex;");
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    int id = dr.GetInt32(0);
+                    questionsToBeUsed.Add(id);
+                }
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return questionsToBeUsed;
+        }
     }
 }

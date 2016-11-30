@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HappyTechSystem.Core;
+using HappyTechSystem.DB;
 
 namespace HappyTechSystem
 {
@@ -18,10 +19,21 @@ namespace HappyTechSystem
     /// </summary>
     public partial class ConductInterview : Form
     {
-        private VacancyBank vacancyBank = VacancyBank.getInst();
+        private VacancyBank vacancyBank;
+        private QuestionBank questionBank;
+        private MetaLayer ml;
+        private List<int> questionsToBeUsed;
+        private List<int> responses;
+
         public ConductInterview()
         {
             InitializeComponent();
+            questionBank = QuestionBank.getInst();
+            vacancyBank = VacancyBank.getInst();
+            ml = MetaLayer.instance();
+            questionsToBeUsed = new List<int>();
+            responses = new List<int>();
+
         }
         /// <summary>
         /// Created by Dan.
@@ -44,13 +56,13 @@ namespace HappyTechSystem
                 catch (Exception)
                 {
                     {
-                        
+
                     }
                     throw;
                 }
                 tb_cvPath.Text = file;
             }
-;
+    ;
         }
 
         /// <summary>
@@ -61,11 +73,15 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_beginInterview_Click(object sender, EventArgs e)
         {
+
             p_setup.Enabled = false;
             p_questions.Enabled = true;
 
-            //fetch vacancy's question list and populate the controls one question at a time.
-            
+            Vacancy v = (Vacancy)cb_vacancy.SelectedItem;
+            questionsToBeUsed = v.getQuestionsToBeUsed;
+            tb_questionCount.Text = questionsToBeUsed.Count.ToString();
+            tb_questionIndex.Text = "1";
+            displayQuestionDetails();
         }
 
         /// <summary>
@@ -97,7 +113,7 @@ namespace HappyTechSystem
 
         public void ConductInterviewUnlocker(object sender, EventArgs e)
         {
-            if(
+            if (
                 string.IsNullOrEmpty(cb_vacancy.Text) ||
                 string.IsNullOrEmpty(tb_applicantName.Text) ||
                 string.IsNullOrEmpty(tb_interviewerName.Text) ||
@@ -116,6 +132,29 @@ namespace HappyTechSystem
             BindingSource bs = new BindingSource();
             bs.DataSource = vacancyBank.getVacancyList;
             cb_vacancy.DataSource = bs;
+        }
+
+        /// <summary>
+        /// created by peter
+        /// looks at the index of which question youre currently viewing and updates the boxes accordingly by looking up the index in the questions to be used.
+        /// and using that to look up the question ID in the question bank.
+        /// </summary>
+        private void displayQuestionDetails()
+        {
+            int questionDisplayIndex = Convert.ToInt32(tb_questionIndex.Text);
+            int questionListIndex = questionDisplayIndex - 1;
+            int questionID = questionsToBeUsed[questionListIndex];
+
+            Question question = questionBank.getQuestionList.FirstOrDefault(o => o.GetID == questionID);
+
+            tb_questionText.Text = question.GetText;
+            tb_rank1.Text = question.Responses[0];
+            tb_rank2.Text = question.Responses[1];
+            tb_rank3.Text = question.Responses[2];
+            tb_rank4.Text = question.Responses[3];
+            tb_rank5.Text = question.Responses[4];
+
+
         }
     }
 }
