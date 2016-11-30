@@ -7,8 +7,9 @@ using HappyTechSystem.DB;
 
 namespace HappyTechSystem.Core
 {
-    class EmailBank
+    public class EmailBank
     {
+        private MetaLayer ml = MetaLayer.instance();
         /// Created by Susan
         /// 25/11/2016
         /// Stores and manages emails and email templates
@@ -55,9 +56,10 @@ namespace HappyTechSystem.Core
             get { return templates;}
         }
 
-        public void AddTemplate(EmailTemplate EB) 
+        public void AddToList(EmailTemplate m_et) 
         {
-            templates.Add(EB);
+            templates.Add(m_et);
+            ml.SaveTemplateToDB(m_et);
         }
 
         public void RemoveTemplate(int m_id)
@@ -74,7 +76,6 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                MetaLayer ml = MetaLayer.instance();
                 templates = ml.GetEmailTemplates();
                 dbLoaded = true;
             }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cb_vacancy = new System.Windows.Forms.ComboBox();
+            this.vacancyBankBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_vacancy = new System.Windows.Forms.Label();
             this.p_questions = new System.Windows.Forms.Panel();
             this.btn_interviewHelp = new System.Windows.Forms.Button();
@@ -62,19 +63,24 @@
             this.btn_beginHelp = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.p_setup = new System.Windows.Forms.Panel();
-            this.beginInterviewCheck = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.vacancyBankBindingSource)).BeginInit();
             this.p_questions.SuspendLayout();
             this.p_setup.SuspendLayout();
             this.SuspendLayout();
             // 
             // cb_vacancy
             // 
+            this.cb_vacancy.DataSource = this.vacancyBankBindingSource;
             this.cb_vacancy.FormattingEnabled = true;
             this.cb_vacancy.Location = new System.Drawing.Point(232, 7);
             this.cb_vacancy.Name = "cb_vacancy";
-            this.cb_vacancy.Size = new System.Drawing.Size(121, 21);
+            this.cb_vacancy.Size = new System.Drawing.Size(200, 21);
             this.cb_vacancy.TabIndex = 0;
             this.cb_vacancy.SelectedIndexChanged += new System.EventHandler(this.ConductInterviewUnlocker);
+            // 
+            // vacancyBankBindingSource
+            // 
+            this.vacancyBankBindingSource.DataSource = typeof(HappyTechSystem.Core.VacancyBank);
             // 
             // lbl_vacancy
             // 
@@ -394,10 +400,6 @@
             this.p_setup.Size = new System.Drawing.Size(755, 139);
             this.p_setup.TabIndex = 24;
             // 
-            // beginInterviewCheck
-            // 
-            this.beginInterviewCheck.Enabled = true;
-            // 
             // ConductInterview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +410,8 @@
             this.Controls.Add(this.p_questions);
             this.Name = "ConductInterview";
             this.Text = "Conduct an Interview";
+            this.Load += new System.EventHandler(this.ConductInterview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vacancyBankBindingSource)).EndInit();
             this.p_questions.ResumeLayout(false);
             this.p_questions.PerformLayout();
             this.p_setup.ResumeLayout(false);
@@ -451,6 +455,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel p_setup;
         private System.Windows.Forms.Button btn_interviewHelp;
-        private System.Windows.Forms.Timer beginInterviewCheck;
+        private System.Windows.Forms.BindingSource vacancyBankBindingSource;
     }
 }

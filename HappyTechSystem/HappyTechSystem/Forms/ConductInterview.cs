@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -17,6 +18,7 @@ namespace HappyTechSystem
     /// </summary>
     public partial class ConductInterview : Form
     {
+        private VacancyBank vacancyBank = VacancyBank.getInst();
         public ConductInterview()
         {
             InitializeComponent();
@@ -61,6 +63,9 @@ namespace HappyTechSystem
         {
             p_setup.Enabled = false;
             p_questions.Enabled = true;
+
+            //fetch vacancy's question list and populate the controls one question at a time.
+            
         }
 
         /// <summary>
@@ -104,6 +109,13 @@ namespace HappyTechSystem
             {
                 btn_beginInterview.Enabled = true;
             }
+        }
+
+        private void ConductInterview_Load(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = vacancyBank.getVacancyList;
+            cb_vacancy.DataSource = bs;
         }
     }
 }

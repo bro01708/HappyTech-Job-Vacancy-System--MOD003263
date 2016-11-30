@@ -56,7 +56,7 @@
             this.lb_questionBank.FormattingEnabled = true;
             this.lb_questionBank.Location = new System.Drawing.Point(14, 144);
             this.lb_questionBank.Name = "lb_questionBank";
-            this.lb_questionBank.Size = new System.Drawing.Size(213, 147);
+            this.lb_questionBank.Size = new System.Drawing.Size(485, 147);
             this.lb_questionBank.TabIndex = 0;
             // 
             // lbl_name
@@ -71,30 +71,30 @@
             // lb_questionsToBeUsed
             // 
             this.lb_questionsToBeUsed.FormattingEnabled = true;
-            this.lb_questionsToBeUsed.Location = new System.Drawing.Point(295, 144);
+            this.lb_questionsToBeUsed.Location = new System.Drawing.Point(12, 367);
             this.lb_questionsToBeUsed.Name = "lb_questionsToBeUsed";
-            this.lb_questionsToBeUsed.Size = new System.Drawing.Size(213, 147);
+            this.lb_questionsToBeUsed.Size = new System.Drawing.Size(486, 147);
             this.lb_questionsToBeUsed.TabIndex = 2;
             // 
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(238, 161);
+            this.btn_add.Location = new System.Drawing.Point(171, 297);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(47, 43);
+            this.btn_add.Size = new System.Drawing.Size(78, 43);
             this.btn_add.TabIndex = 3;
-            this.btn_add.Text = "-->";
+            this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_remove
             // 
             this.btn_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_remove.Location = new System.Drawing.Point(238, 222);
+            this.btn_remove.Location = new System.Drawing.Point(261, 298);
             this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(47, 43);
+            this.btn_remove.Size = new System.Drawing.Size(78, 43);
             this.btn_remove.TabIndex = 4;
-            this.btn_remove.Text = "[R]";
+            this.btn_remove.Text = "Remove";
             this.btn_remove.UseVisualStyleBackColor = true;
             this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
@@ -110,7 +110,7 @@
             // 
             this.btn_create.Enabled = false;
             this.btn_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_create.Location = new System.Drawing.Point(13, 297);
+            this.btn_create.Location = new System.Drawing.Point(13, 520);
             this.btn_create.Name = "btn_create";
             this.btn_create.Size = new System.Drawing.Size(448, 40);
             this.btn_create.TabIndex = 8;
@@ -133,7 +133,7 @@
             // 
             this.lbl_questionBank.AutoSize = true;
             this.lbl_questionBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_questionBank.Location = new System.Drawing.Point(67, 128);
+            this.lbl_questionBank.Location = new System.Drawing.Point(206, 128);
             this.lbl_questionBank.Name = "lbl_questionBank";
             this.lbl_questionBank.Size = new System.Drawing.Size(90, 13);
             this.lbl_questionBank.TabIndex = 10;
@@ -143,7 +143,7 @@
             // 
             this.lbl_questionsToBeUsed.AutoSize = true;
             this.lbl_questionsToBeUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_questionsToBeUsed.Location = new System.Drawing.Point(334, 128);
+            this.lbl_questionsToBeUsed.Location = new System.Drawing.Point(197, 351);
             this.lbl_questionsToBeUsed.Name = "lbl_questionsToBeUsed";
             this.lbl_questionsToBeUsed.Size = new System.Drawing.Size(127, 13);
             this.lbl_questionsToBeUsed.TabIndex = 11;
@@ -152,7 +152,7 @@
             // btn_help
             // 
             this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_help.Location = new System.Drawing.Point(468, 298);
+            this.btn_help.Location = new System.Drawing.Point(468, 521);
             this.btn_help.Name = "btn_help";
             this.btn_help.Size = new System.Drawing.Size(40, 39);
             this.btn_help.TabIndex = 12;
@@ -230,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 352);
+            this.ClientSize = new System.Drawing.Size(520, 572);
             this.Controls.Add(this.lbl_role);
             this.Controls.Add(this.tb_role);
             this.Controls.Add(this.tb_VacancyID);

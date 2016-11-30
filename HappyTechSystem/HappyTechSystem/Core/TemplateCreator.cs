@@ -8,6 +8,17 @@ namespace HappyTechSystem.Core
 {
     class TemplateCreator
     {
+        private static TemplateCreator uniqueInst = null;
+
+        public static TemplateCreator getInst()
+        {
+            if (uniqueInst == null)
+            {
+                uniqueInst = new TemplateCreator();
+            }
+            return uniqueInst;
+        }
+
         /// <summary>
         /// Created by Susan on 25/11/2016
         /// Constructor which creates new email template
@@ -24,7 +35,8 @@ namespace HappyTechSystem.Core
             E.getSubject = m_subject;
             E.getBody = m_body;
 
-            EmailBank EB = new EmailBank();
+            EmailBank EB = EmailBank.getInst();
+            EB.AddToList(E);
 
         }
     }

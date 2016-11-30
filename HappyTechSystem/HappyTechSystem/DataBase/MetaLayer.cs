@@ -12,11 +12,11 @@ namespace HappyTechSystem.DB
 {
     public class MetaLayer
     {
-        static private MetaLayer m_instance = null;
+        private static MetaLayer m_instance = null;
 
         private MetaLayer() { }
 
-        static public MetaLayer instance()
+        public static MetaLayer instance()
         {
             if (null == m_instance)
             {
@@ -288,6 +288,24 @@ namespace HappyTechSystem.DB
                 String myQuery2 = "INSERT INTO Vacancy_Question( QuestionID, VacancyID,QuestionOrderIndex) VALUES ('" + questionIDs[i] + "','" + vacancyID + "','" + i + "')";
                 con.RunSQL(myQuery2);
             }
+
+            con.CloseConnection();
+        }
+
+        public void SaveTemplateToDB(EmailTemplate m_template)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int templateID = m_template.getID;
+            string templateName = m_template.getName;
+            string templateSubject = m_template.getSubject;
+            string templateBody = m_template.getBody;
+
+            string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID + 
+                "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
+
+            con.RunSQL(myQuery);
 
             con.CloseConnection();
         }

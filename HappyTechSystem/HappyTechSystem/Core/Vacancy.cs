@@ -81,7 +81,7 @@ namespace HappyTechSystem.Core
             }
         }
 
-        public List<int> QuestionsToBeUsed
+        public List<int> getQuestionsToBeUsed
         {
             get
             {
@@ -111,7 +111,10 @@ namespace HappyTechSystem.Core
         {
 
         }
+        public override string ToString()
+        {
+            return "(" + vacancyid.ToString() + ") - [" + role + "] - " + vacancyName;
+        }
 
-        
     }
 }

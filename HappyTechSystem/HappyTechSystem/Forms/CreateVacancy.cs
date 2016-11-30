@@ -96,6 +96,8 @@ namespace HappyTechSystem
                 questionIDs.Add(q.GetID);
             }
             vacancyCreator.CreateVacancy(Convert.ToInt32(tb_VacancyID.Text), tb_vacancyName.Text, tb_role.Text, Convert.ToInt32(nud_acceptanceScore.Value), Convert.ToInt32(nud_interviewSlots.Value), questionIDs);
+            MessageBox.Show("Vacancy Created Successfully!\n\nTo view your vacancy, check the 'View Vacancies' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

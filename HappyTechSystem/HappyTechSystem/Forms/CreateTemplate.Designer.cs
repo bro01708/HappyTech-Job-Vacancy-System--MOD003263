@@ -32,20 +32,23 @@
             this.tb_body = new System.Windows.Forms.TextBox();
             this.lbl_subject = new System.Windows.Forms.Label();
             this.tb_subject = new System.Windows.Forms.TextBox();
-            this.btn_addName = new System.Windows.Forms.Button();
-            this.btn_position = new System.Windows.Forms.Button();
-            this.btn_feedback = new System.Windows.Forms.Button();
             this.btn_create = new System.Windows.Forms.Button();
             this.btn_help = new System.Windows.Forms.Button();
-            this.btn_feedbackHelp = new System.Windows.Forms.Button();
             this.lbl_name = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
-            this.btn_insertGreeting = new System.Windows.Forms.Button();
-            this.btn_insertSignOff = new System.Windows.Forms.Button();
             this.lbl_templateID = new System.Windows.Forms.Label();
             this.tb_templateID = new System.Windows.Forms.TextBox();
-            this.btn_removeGreeting = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_addName = new System.Windows.Forms.Button();
+            this.lbl_intervieweesNameAdded = new System.Windows.Forms.Label();
+            this.lbl_reminder = new System.Windows.Forms.Label();
+            this.btn_addRole = new System.Windows.Forms.Button();
+            this.lbl_roleAdded = new System.Windows.Forms.Label();
+            this.btn_addFeedback = new System.Windows.Forms.Button();
+            this.lbl_feedbackAdded = new System.Windows.Forms.Label();
+            this.lbl_INStatus = new System.Windows.Forms.Label();
+            this.lbl_JRStatus = new System.Windows.Forms.Label();
+            this.lbl_FAStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +73,7 @@
             // lbl_subject
             // 
             this.lbl_subject.AutoSize = true;
-            this.lbl_subject.Location = new System.Drawing.Point(183, 77);
+            this.lbl_subject.Location = new System.Drawing.Point(181, 77);
             this.lbl_subject.Name = "lbl_subject";
             this.lbl_subject.Size = new System.Drawing.Size(46, 13);
             this.lbl_subject.TabIndex = 4;
@@ -84,67 +87,28 @@
             this.tb_subject.TabIndex = 5;
             this.tb_subject.TextChanged += new System.EventHandler(this.CreateTemplateUnlocker);
             // 
-            // btn_addName
-            // 
-            this.btn_addName.Location = new System.Drawing.Point(3, 42);
-            this.btn_addName.Name = "btn_addName";
-            this.btn_addName.Size = new System.Drawing.Size(153, 22);
-            this.btn_addName.TabIndex = 6;
-            this.btn_addName.Text = "Insert Interviewee\'s Name";
-            this.btn_addName.UseVisualStyleBackColor = true;
-            this.btn_addName.Click += new System.EventHandler(this.btn_addName_Click);
-            // 
-            // btn_position
-            // 
-            this.btn_position.Location = new System.Drawing.Point(3, 70);
-            this.btn_position.Name = "btn_position";
-            this.btn_position.Size = new System.Drawing.Size(153, 22);
-            this.btn_position.TabIndex = 7;
-            this.btn_position.Text = "Insert Position";
-            this.btn_position.UseVisualStyleBackColor = true;
-            this.btn_position.Click += new System.EventHandler(this.btn_position_Click);
-            // 
-            // btn_feedback
-            // 
-            this.btn_feedback.Location = new System.Drawing.Point(3, 98);
-            this.btn_feedback.Name = "btn_feedback";
-            this.btn_feedback.Size = new System.Drawing.Size(118, 22);
-            this.btn_feedback.TabIndex = 8;
-            this.btn_feedback.Text = "Insert Feedback Area";
-            this.btn_feedback.UseVisualStyleBackColor = true;
-            this.btn_feedback.Click += new System.EventHandler(this.btn_feedback_Click);
-            // 
             // btn_create
             // 
             this.btn_create.Enabled = false;
             this.btn_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_create.Location = new System.Drawing.Point(8, 442);
             this.btn_create.Name = "btn_create";
-            this.btn_create.Size = new System.Drawing.Size(646, 43);
+            this.btn_create.Size = new System.Drawing.Size(653, 43);
             this.btn_create.TabIndex = 11;
             this.btn_create.Text = "Create Email Template";
             this.btn_create.UseVisualStyleBackColor = true;
+            this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
             // btn_help
             // 
             this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_help.Location = new System.Drawing.Point(660, 445);
+            this.btn_help.Location = new System.Drawing.Point(666, 442);
             this.btn_help.Name = "btn_help";
-            this.btn_help.Size = new System.Drawing.Size(66, 40);
+            this.btn_help.Size = new System.Drawing.Size(66, 43);
             this.btn_help.TabIndex = 13;
             this.btn_help.Text = "?";
             this.btn_help.UseVisualStyleBackColor = true;
             this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
-            // 
-            // btn_feedbackHelp
-            // 
-            this.btn_feedbackHelp.Location = new System.Drawing.Point(127, 98);
-            this.btn_feedbackHelp.Name = "btn_feedbackHelp";
-            this.btn_feedbackHelp.Size = new System.Drawing.Size(29, 22);
-            this.btn_feedbackHelp.TabIndex = 15;
-            this.btn_feedbackHelp.Text = "?";
-            this.btn_feedbackHelp.UseVisualStyleBackColor = true;
-            this.btn_feedbackHelp.Click += new System.EventHandler(this.btn_feedbackHelp_Click);
             // 
             // lbl_name
             // 
@@ -163,26 +127,6 @@
             this.tb_name.TabIndex = 17;
             this.tb_name.TextChanged += new System.EventHandler(this.CreateTemplateUnlocker);
             // 
-            // btn_insertGreeting
-            // 
-            this.btn_insertGreeting.Location = new System.Drawing.Point(3, 14);
-            this.btn_insertGreeting.Name = "btn_insertGreeting";
-            this.btn_insertGreeting.Size = new System.Drawing.Size(153, 22);
-            this.btn_insertGreeting.TabIndex = 18;
-            this.btn_insertGreeting.Text = "Insert Greeting";
-            this.btn_insertGreeting.UseVisualStyleBackColor = true;
-            this.btn_insertGreeting.Click += new System.EventHandler(this.btn_insertGreeting_Click);
-            // 
-            // btn_insertSignOff
-            // 
-            this.btn_insertSignOff.Location = new System.Drawing.Point(3, 126);
-            this.btn_insertSignOff.Name = "btn_insertSignOff";
-            this.btn_insertSignOff.Size = new System.Drawing.Size(153, 22);
-            this.btn_insertSignOff.TabIndex = 19;
-            this.btn_insertSignOff.Text = "Insert Sign Off";
-            this.btn_insertSignOff.UseVisualStyleBackColor = true;
-            this.btn_insertSignOff.Click += new System.EventHandler(this.btn_insertSignOff_Click);
-            // 
             // lbl_templateID
             // 
             this.lbl_templateID.AutoSize = true;
@@ -200,35 +144,124 @@
             this.tb_templateID.Size = new System.Drawing.Size(34, 20);
             this.tb_templateID.TabIndex = 21;
             // 
-            // btn_removeGreeting
-            // 
-            this.btn_removeGreeting.Location = new System.Drawing.Point(162, 14);
-            this.btn_removeGreeting.Name = "btn_removeGreeting";
-            this.btn_removeGreeting.Size = new System.Drawing.Size(30, 22);
-            this.btn_removeGreeting.TabIndex = 22;
-            this.btn_removeGreeting.Text = "[R]";
-            this.btn_removeGreeting.UseVisualStyleBackColor = true;
-            this.btn_removeGreeting.Click += new System.EventHandler(this.btn_removeGreeting_Click);
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_insertGreeting);
-            this.panel1.Controls.Add(this.btn_removeGreeting);
+            this.panel1.Controls.Add(this.lbl_FAStatus);
+            this.panel1.Controls.Add(this.lbl_JRStatus);
+            this.panel1.Controls.Add(this.lbl_INStatus);
+            this.panel1.Controls.Add(this.lbl_feedbackAdded);
+            this.panel1.Controls.Add(this.btn_addFeedback);
+            this.panel1.Controls.Add(this.lbl_roleAdded);
+            this.panel1.Controls.Add(this.btn_addRole);
             this.panel1.Controls.Add(this.btn_addName);
-            this.panel1.Controls.Add(this.btn_position);
-            this.panel1.Controls.Add(this.btn_feedback);
-            this.panel1.Controls.Add(this.btn_insertSignOff);
-            this.panel1.Controls.Add(this.btn_feedbackHelp);
+            this.panel1.Controls.Add(this.lbl_intervieweesNameAdded);
+            this.panel1.Controls.Add(this.lbl_reminder);
             this.panel1.Location = new System.Drawing.Point(534, 148);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(193, 151);
+            this.panel1.Size = new System.Drawing.Size(198, 159);
             this.panel1.TabIndex = 23;
+            // 
+            // btn_addName
+            // 
+            this.btn_addName.Location = new System.Drawing.Point(7, 21);
+            this.btn_addName.Name = "btn_addName";
+            this.btn_addName.Size = new System.Drawing.Size(187, 23);
+            this.btn_addName.TabIndex = 2;
+            this.btn_addName.Text = "Insert Interviewee\'s Name";
+            this.btn_addName.UseVisualStyleBackColor = true;
+            this.btn_addName.Click += new System.EventHandler(this.btn_addName_Click);
+            // 
+            // lbl_intervieweesNameAdded
+            // 
+            this.lbl_intervieweesNameAdded.AutoSize = true;
+            this.lbl_intervieweesNameAdded.Location = new System.Drawing.Point(4, 45);
+            this.lbl_intervieweesNameAdded.Name = "lbl_intervieweesNameAdded";
+            this.lbl_intervieweesNameAdded.Size = new System.Drawing.Size(123, 13);
+            this.lbl_intervieweesNameAdded.TabIndex = 1;
+            this.lbl_intervieweesNameAdded.Text = "Interviewee\'s Name [IN]:";
+            // 
+            // lbl_reminder
+            // 
+            this.lbl_reminder.AutoSize = true;
+            this.lbl_reminder.Location = new System.Drawing.Point(4, 4);
+            this.lbl_reminder.Name = "lbl_reminder";
+            this.lbl_reminder.Size = new System.Drawing.Size(179, 13);
+            this.lbl_reminder.TabIndex = 0;
+            this.lbl_reminder.Text = "Remember to add the following tags:";
+            // 
+            // btn_addRole
+            // 
+            this.btn_addRole.Location = new System.Drawing.Point(7, 62);
+            this.btn_addRole.Name = "btn_addRole";
+            this.btn_addRole.Size = new System.Drawing.Size(187, 23);
+            this.btn_addRole.TabIndex = 3;
+            this.btn_addRole.Text = "Insert Job Role";
+            this.btn_addRole.UseVisualStyleBackColor = true;
+            this.btn_addRole.Click += new System.EventHandler(this.btn_addRole_Click);
+            // 
+            // lbl_roleAdded
+            // 
+            this.lbl_roleAdded.AutoSize = true;
+            this.lbl_roleAdded.Location = new System.Drawing.Point(4, 88);
+            this.lbl_roleAdded.Name = "lbl_roleAdded";
+            this.lbl_roleAdded.Size = new System.Drawing.Size(74, 13);
+            this.lbl_roleAdded.TabIndex = 4;
+            this.lbl_roleAdded.Text = "Job Role [JR]:";
+            // 
+            // btn_addFeedback
+            // 
+            this.btn_addFeedback.Location = new System.Drawing.Point(3, 104);
+            this.btn_addFeedback.Name = "btn_addFeedback";
+            this.btn_addFeedback.Size = new System.Drawing.Size(191, 23);
+            this.btn_addFeedback.TabIndex = 5;
+            this.btn_addFeedback.Text = "Insert Feedback Area";
+            this.btn_addFeedback.UseVisualStyleBackColor = true;
+            this.btn_addFeedback.Click += new System.EventHandler(this.btn_addFeedback_Click);
+            // 
+            // lbl_feedbackAdded
+            // 
+            this.lbl_feedbackAdded.AutoSize = true;
+            this.lbl_feedbackAdded.Location = new System.Drawing.Point(4, 130);
+            this.lbl_feedbackAdded.Name = "lbl_feedbackAdded";
+            this.lbl_feedbackAdded.Size = new System.Drawing.Size(105, 13);
+            this.lbl_feedbackAdded.TabIndex = 6;
+            this.lbl_feedbackAdded.Text = "Feedback Area [FA]:";
+            // 
+            // lbl_INStatus
+            // 
+            this.lbl_INStatus.AutoSize = true;
+            this.lbl_INStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_INStatus.Location = new System.Drawing.Point(134, 45);
+            this.lbl_INStatus.Name = "lbl_INStatus";
+            this.lbl_INStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_INStatus.TabIndex = 7;
+            this.lbl_INStatus.Text = "Not Found!";
+            // 
+            // lbl_JRStatus
+            // 
+            this.lbl_JRStatus.AutoSize = true;
+            this.lbl_JRStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_JRStatus.Location = new System.Drawing.Point(134, 88);
+            this.lbl_JRStatus.Name = "lbl_JRStatus";
+            this.lbl_JRStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_JRStatus.TabIndex = 8;
+            this.lbl_JRStatus.Text = "Not Found!";
+            // 
+            // lbl_FAStatus
+            // 
+            this.lbl_FAStatus.AutoSize = true;
+            this.lbl_FAStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_FAStatus.Location = new System.Drawing.Point(134, 130);
+            this.lbl_FAStatus.Name = "lbl_FAStatus";
+            this.lbl_FAStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_FAStatus.TabIndex = 9;
+            this.lbl_FAStatus.Text = "Not Found!";
             // 
             // CreateTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 490);
+            this.ClientSize = new System.Drawing.Size(744, 490);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tb_templateID);
             this.Controls.Add(this.lbl_templateID);
@@ -244,6 +277,7 @@
             this.Text = "Create an Email Template";
             this.Load += new System.EventHandler(this.CreateTemplate_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,19 +288,22 @@
         private System.Windows.Forms.TextBox tb_body;
         private System.Windows.Forms.Label lbl_subject;
         private System.Windows.Forms.TextBox tb_subject;
-        private System.Windows.Forms.Button btn_addName;
-        private System.Windows.Forms.Button btn_position;
-        private System.Windows.Forms.Button btn_feedback;
         private System.Windows.Forms.Button btn_create;
         private System.Windows.Forms.Button btn_help;
-        private System.Windows.Forms.Button btn_feedbackHelp;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.TextBox tb_name;
-        private System.Windows.Forms.Button btn_insertGreeting;
-        private System.Windows.Forms.Button btn_insertSignOff;
         private System.Windows.Forms.Label lbl_templateID;
         private System.Windows.Forms.TextBox tb_templateID;
-        private System.Windows.Forms.Button btn_removeGreeting;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_intervieweesNameAdded;
+        private System.Windows.Forms.Label lbl_reminder;
+        private System.Windows.Forms.Button btn_addName;
+        private System.Windows.Forms.Label lbl_roleAdded;
+        private System.Windows.Forms.Button btn_addRole;
+        private System.Windows.Forms.Button btn_addFeedback;
+        private System.Windows.Forms.Label lbl_FAStatus;
+        private System.Windows.Forms.Label lbl_JRStatus;
+        private System.Windows.Forms.Label lbl_INStatus;
+        private System.Windows.Forms.Label lbl_feedbackAdded;
     }
 }

@@ -20,6 +20,8 @@ namespace HappyTechSystem
     {
         private MetaLayer ml = MetaLayer.instance();
         private EmailBank emailBank = EmailBank.getInst();
+        private TemplateCreator templateCreator = TemplateCreator.getInst();
+        private string str;
         public CreateTemplate()
         {
             InitializeComponent();
@@ -52,10 +54,48 @@ namespace HappyTechSystem
 
         private void CreateTemplateUnlocker(object sender, EventArgs e)
         {
+            str = tb_body.Text;
+
+            if (str.Contains("[IN]"))
+            {
+                lbl_INStatus.ForeColor = Color.Green;
+                lbl_INStatus.Text = "Found!";
+            }
+            else
+            {
+                lbl_INStatus.ForeColor = Color.Red;
+                lbl_INStatus.Text = "Not Found!";
+            }
+
+            if (str.Contains("[JR]"))
+            {
+                lbl_JRStatus.ForeColor = Color.Green;
+                lbl_JRStatus.Text = "Found!";
+            }
+            else
+            {
+                lbl_JRStatus.ForeColor = Color.Red;
+                lbl_JRStatus.Text = "Not Found!";
+            }
+
+            if (str.Contains("[FA]"))
+            {
+                lbl_FAStatus.ForeColor = Color.Green;
+                lbl_FAStatus.Text = "Found!";
+            }
+            else
+            {
+                lbl_FAStatus.ForeColor = Color.Red;
+                lbl_FAStatus.Text = "Not Found!";
+            }
+
             if (
                 string.IsNullOrEmpty(tb_name.Text) ||
                 string.IsNullOrEmpty(tb_subject.Text) ||
-                string.IsNullOrEmpty(tb_body.Text)
+                string.IsNullOrEmpty(tb_body.Text) ||
+                lbl_INStatus.Text != "Found!" ||
+                lbl_JRStatus.Text != "Found!" ||
+                lbl_FAStatus.Text != "Found!"
                 )
 
             {
@@ -74,39 +114,64 @@ namespace HappyTechSystem
             tb_templateID.Text = nextID.ToString();
         }
 
-        private void btn_insertGreeting_Click(object sender, EventArgs e)
-        {
-            tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[Greeting]");
-            btn_insertGreeting.Enabled = false;
-        }
+        //public static string getBetween(string strSource, string strStart, string strEnd)
+        //{
+        //    int start, end;
+        //    if (strSource.Contains(strStart) && strSource.Contains(strEnd))
+        //    {
+        //        start = strSource.IndexOf(strStart, 0) + strStart.Length;
+        //        end = strSource.IndexOf(strEnd, start);
+        //        return strSource.Substring(start, end - start);
+        //    }
+        //    else
+        //    {
+        //        return "";
+        //    }
+        //}
+
 
         private void btn_addName_Click(object sender, EventArgs e)
         {
-            tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[Interviewee's Name]");
-            btn_addName.Enabled = false;
+            if (str.Contains("[IN]"))
+            {
+                MessageBox.Show("The Interviewee's Name is already inserted!\nTo find it, look for the [IN] tag!");
+            }
+            else
+            {
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[IN]");
+            }
+
         }
 
-        private void btn_position_Click(object sender, EventArgs e)
+        private void btn_addRole_Click(object sender, EventArgs e)
         {
-            tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[Position]");
-            btn_position.Enabled = false;
+            if (str.Contains("[JR]"))
+            {
+                MessageBox.Show("The Job Role is already inserted!\nTo find it, look for the [JR] tag!");
+            }
+            else
+            {
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[JR]");
+            }
         }
 
-        private void btn_feedback_Click(object sender, EventArgs e)
+        private void btn_addFeedback_Click(object sender, EventArgs e)
         {
-            tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[Feedback Area for All Questions]");
-            btn_feedback.Enabled = false;
+            if (str.Contains("[FA]"))
+            {
+                MessageBox.Show("The Feedback Area is already inserted!\nTo find it, look for the [FA] tag!");
+            }
+            else
+            {
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[FA]");
+            }
         }
 
-        private void btn_insertSignOff_Click(object sender, EventArgs e)
+        private void btn_create_Click(object sender, EventArgs e)
         {
-            tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[Sign Off]");
-            btn_insertSignOff.Enabled = false;
-        }
-
-        private void btn_removeGreeting_Click(object sender, EventArgs e)
-        {
-            //remove the [Greeting] line from the body of text
+            templateCreator.CreateTemplate(Convert.ToInt32(tb_templateID.Text), tb_name.Text, tb_subject.Text, tb_body.Text);
+            MessageBox.Show("Email Template Created Successfully!\n\nTo view your template, check the 'View Templates' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

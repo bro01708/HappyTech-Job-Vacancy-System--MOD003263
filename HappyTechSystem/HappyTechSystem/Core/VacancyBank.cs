@@ -33,7 +33,7 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
 
-        public List<Vacancy> VacancyList
+        public List<Vacancy> getVacancyList
         {
             get
             {
