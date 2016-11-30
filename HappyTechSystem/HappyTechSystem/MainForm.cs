@@ -164,7 +164,7 @@ namespace HappyTechSystem
             }
 
             //handle database loading here!
-            if (File.Exists("Happytech.accdb"))
+            if (File.Exists(Environment.CurrentDirectory + "/DataBase/"+"Happytech.accdb"))
             {
                 lbl_databaseLoad.ForeColor = Color.Green;
                 lbl_databaseLoad.Text = "File Found!";

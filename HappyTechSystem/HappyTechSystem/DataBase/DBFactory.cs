@@ -13,7 +13,7 @@ namespace HappyTechSystem.DB
         private static DbConnection m_instance = null;
 
         Dictionary<string, string> m_properties;
-        private static string propfile = "properties.dat";
+        private static string propfile = Environment.CurrentDirectory + "/DataBase/"+ "properties.dat";
 
         private DBFactory()
         {
@@ -89,7 +89,7 @@ namespace HappyTechSystem.DB
 
         bool CloseConnection();
 
-        void RunSQL(string sqlStatement);
+        int RunSQL(string sqlStatement);
         /*
         //Insert statement
         public void Insert(); 

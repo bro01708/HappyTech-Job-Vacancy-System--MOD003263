@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -163,7 +166,6 @@
     <EmbeddedResource Include="Forms\ViewVacancies.resx">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="properties.dat" />
     <None Include="Properties\DataSources\HappyTechSystem.Core.QuestionBank.datasource" />
     <None Include="Properties\DataSources\HappyTechSystem.Core.VacancyBank.datasource" />
     <None Include="Properties\Settings.settings">
@@ -184,8 +186,15 @@
     <Content Include="DataBase\Happytech.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="DataBase\properties.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)Bin\Debug\Database\*.*" "$(ProjectDir)Database" /y /s
+</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
