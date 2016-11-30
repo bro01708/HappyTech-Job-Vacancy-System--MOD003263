@@ -8,7 +8,7 @@ namespace HappyTechSystem.Core
 {
     class Interview
     {
-        private string applicantEmailAddress, applicantFirstName, applicantLastName, applicantTitle, cv;
+        private string applicantEmailAddress, applicantName, applicantTitle, cv;
         private int id;
 
         public string ApplicantEmailAddress
@@ -24,29 +24,16 @@ namespace HappyTechSystem.Core
             }
         }
 
-        public string ApplicantFirstName
+        public string getApplicantName
         {
             get
             {
-                return applicantFirstName;
+                return applicantName;
             }
 
             set
             {
-                applicantFirstName = value;
-            }
-        }
-
-        public string ApplicantLastName
-        {
-            get
-            {
-                return applicantLastName;
-            }
-
-            set
-            {
-                applicantLastName = value;
+                applicantName = value;
             }
         }
 

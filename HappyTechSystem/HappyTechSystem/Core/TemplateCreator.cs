@@ -36,7 +36,7 @@ namespace HappyTechSystem.Core
             E.getBody = m_body;
 
             EmailBank EB = EmailBank.getInst();
-            EB.AddToList(E);
+            EB.addTemplateToList(E);
 
         }
     }
