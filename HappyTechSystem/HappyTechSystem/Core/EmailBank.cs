@@ -56,13 +56,19 @@ namespace HappyTechSystem.Core
             get { return templates;}
         }
 
-        public void AddToList(EmailTemplate m_et) 
+        public void addTemplateToList(EmailTemplate m_et) 
         {
             templates.Add(m_et);
             ml.SaveTemplateToDB(m_et);
         }
+        public void addEmailToList(Email e)
+        {
+            emailRecords.Add(e);
+            //ml.SaveTemplateToDB(e);
+        }
+        
 
-        public void RemoveTemplate(int m_id)
+    public void RemoveTemplate(int m_id)
         {
 
         }
