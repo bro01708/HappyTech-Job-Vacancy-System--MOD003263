@@ -114,17 +114,19 @@ namespace HappyTechSystem.DB
         /// Runs non-query SQL statements
         /// </summary>
         /// <param name="sqlStatement"></param>
-        public void RunSQL(string sqlStatement)
+        public int  RunSQL(string sqlStatement)
         {
+            int rowsAffected = 0;
             try
             {
                 OleDbCommand cmd = new OleDbCommand(sqlStatement, connection);
-                cmd.ExecuteNonQuery();
+                rowsAffected =  cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 throw e;
             }
+            return rowsAffected;
         }
     }
 }
