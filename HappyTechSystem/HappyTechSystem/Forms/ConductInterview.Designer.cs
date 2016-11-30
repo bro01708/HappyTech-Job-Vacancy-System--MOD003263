@@ -287,6 +287,7 @@
             this.btn_nextQuestion.TabIndex = 2;
             this.btn_nextQuestion.Text = "Next Question";
             this.btn_nextQuestion.UseVisualStyleBackColor = true;
+            this.btn_nextQuestion.Click += new System.EventHandler(this.btn_nextQuestion_Click);
             // 
             // btn_previousQuestion
             // 

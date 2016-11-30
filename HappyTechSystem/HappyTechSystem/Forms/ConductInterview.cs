@@ -156,5 +156,11 @@ namespace HappyTechSystem
 
 
         }
+
+        private void btn_nextQuestion_Click(object sender, EventArgs e)
+        {
+            tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) + 1).ToString();
+            displayQuestionDetails();
+        }
     }
 }
