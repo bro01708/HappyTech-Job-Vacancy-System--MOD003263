@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Common;
 using System.Reflection.Emit;
 using HappyTechSystem;
+using System.Windows.Forms;
 
 
 namespace HappyTechSystem.DB
@@ -28,7 +29,7 @@ namespace HappyTechSystem.DB
             {
                 StringBuilder sb = new StringBuilder("Provider=");
                 sb.Append(m_properties["Provider"]);
-                sb.Append(";Data Source=\"");
+                sb.Append(";Data Source=\"" + Environment.CurrentDirectory + "/DataBase/");
                 sb.Append(m_properties["Database"]);
                 sb.Append("\"");
                 if (m_properties.ContainsKey("User"))
@@ -41,6 +42,7 @@ namespace HappyTechSystem.DB
                         sb.Append("\"");
                     }
                 }
+                MessageBox.Show(sb.ToString());
                 connection = new OleDbConnection(sb.ToString());
             }
             catch (Exception e)
