@@ -163,7 +163,6 @@
     <EmbeddedResource Include="Forms\ViewVacancies.resx">
       <DependentUpon>ViewVacancies.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="properties.dat" />
     <None Include="Properties\DataSources\HappyTechSystem.Core.QuestionBank.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,6 +182,7 @@
     <Content Include="DataBase\Happytech.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="DataBase\properties.dat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
