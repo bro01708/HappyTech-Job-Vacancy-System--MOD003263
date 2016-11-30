@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HappyTechSystem.Core;
+using System.Windows.Forms;
 
 namespace HappyTechSystem.DB
 {
@@ -96,13 +97,22 @@ namespace HappyTechSystem.DB
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
+                    
+
                     Vacancy V = new Vacancy();
-                    V.Vacancyid = dr.GetInt32(0);
+                    V.GetID = dr.GetInt32(0);
                     V.VacancyName = dr.GetString(1);
                     V.Role = dr.GetString(2);
                     V.PositionsAvailable = dr.GetInt32(3);
                     V.MinumumScore = dr.GetInt32(4);
+                    DbDataReader dr2 = con.Select("Select QuestionID FROM Vacancy_Question WHERE VacancyID = " + V.GetID + " ORDER BY QuestionOrderIndex");
+                    List<int> questionIDs = new List<int>();
+                    while (dr2.Read())
+                    {
+                        questionIDs.Add(dr2.GetInt32(0));
 
+                    }
+                    V.QuestionsToBeUsed = questionIDs;
                     Vs.Add(V);
                 }
 
@@ -255,6 +265,31 @@ namespace HappyTechSystem.DB
             }
 
             return tempFeedback.ToArray();
+        }
+
+        public void SaveVacancyToDB(Vacancy m_vacancy)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int vacancyID = m_vacancy.GetID;
+            string vacancyName = m_vacancy.VacancyName;
+            string role = m_vacancy.Role;
+            int minScore = m_vacancy.MinumumScore;
+            int positionsAvailable = m_vacancy.PositionsAvailable;
+            List<int> questionIDs = m_vacancy.QuestionsToBeUsed;
+
+            String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID +
+                             "','" + vacancyName + "','" + role + "','" + positionsAvailable + "','" + minScore + "')";
+            con.RunSQL(myQuery);
+
+            for (int i = 0; i < questionIDs.Count; i++)
+            {
+                String myQuery2 = "INSERT INTO Vacancy_Question( QuestionID, VacancyID,QuestionOrderIndex) VALUES ('" + questionIDs[i] + "','" + vacancyID + "','" + i + "')";
+                con.RunSQL(myQuery2);
+            }
+
+            con.CloseConnection();
         }
     }
 }

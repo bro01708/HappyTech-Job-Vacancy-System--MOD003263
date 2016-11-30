@@ -10,7 +10,7 @@ namespace HappyTechSystem.Core
     {
         private int vacancyid;
         private List<Interview> interviews = new List<Interview>();
-        private List<Question> questionsToBeUsed = new List<Question>(); //Stores questions for the interview
+        private List<int> questionsToBeUsed = new List<int>(); //Stores questions for the interview
         private int minumumScore;
         private int positionsAvailable;
         private string role;
@@ -55,7 +55,7 @@ namespace HappyTechSystem.Core
             }
         }
 
-        public int Vacancyid
+        public int GetID
         {
             get
             {
@@ -81,7 +81,7 @@ namespace HappyTechSystem.Core
             }
         }
 
-        public List<Question> QuestionsToBeUsed
+        public List<int> QuestionsToBeUsed
         {
             get
             {

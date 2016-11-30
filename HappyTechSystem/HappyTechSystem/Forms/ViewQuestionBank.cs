@@ -152,7 +152,6 @@ namespace HappyTechSystem
                 }
                 catch (Exception)
                 {
-
                     tb_question.Text = "";
                     tb_questionID.Text = "";
                     tb_categoryTag.Text = "";
