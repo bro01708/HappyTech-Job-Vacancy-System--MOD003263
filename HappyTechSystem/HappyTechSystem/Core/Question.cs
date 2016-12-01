@@ -14,36 +14,34 @@ namespace HappyTechSystem.Core
         private string[] responses;
         private string[] feedback;
 
-        public String GetText {  get { return text; } set { text = value; }  }
+        public String GetText
+        {
+            get { return text; }
+            set { text = value; }
+        }
 
-        public String GetTag { get { return tag; } set { tag = value; } }
+        public String GetTag
+        {
+            get { return tag; }
+            set { tag = value; }
+        }
 
-        public int GetID { get { return id; } set { id = value; } }
+        public int GetID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public string[] Responses
         {
-            get
-            {
-                return responses;
-            }
-
-            set
-            {
-                responses = value;
-            }
+            get { return responses; }
+            set { responses = value; }
         }
 
         public string[] Feedback
         {
-            get
-            {
-                return feedback;
-            }
-
-            set
-            {
-                feedback = value;
-            }
+            get { return feedback; }
+            set { feedback = value; }
         }
 
         public override string ToString()

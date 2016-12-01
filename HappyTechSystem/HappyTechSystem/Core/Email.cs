@@ -12,12 +12,29 @@ namespace HappyTechSystem.Core
         private string addresses, content, subject;
         private int sentDate;
 
-        public string getAddress { get { return addresses; } set { addresses = value; } }
-        public string getContent { get { return content; } set { content = value; } }
+        public string getAddress
+        {
+            get { return addresses; }
+            set { addresses = value; } 
+        }
 
-        public string getSubject { get { return subject; } set { subject = value; } }
+        public string getContent
+        {
+            get { return content; }
+            set { content = value; }
+        }
 
-        public int getSentDate { get { return sentDate; } set { sentDate = value; } }
+        public string getSubject
+        {
+            get { return subject; }
+            set { subject = value; }
+        }
+
+        public int getSentDate
+        {
+            get { return sentDate; }
+            set { sentDate = value; }
+        }
 
     }
 }

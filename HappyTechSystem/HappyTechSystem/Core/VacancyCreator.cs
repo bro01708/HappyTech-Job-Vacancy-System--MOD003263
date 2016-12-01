@@ -13,7 +13,7 @@ namespace HappyTechSystem.Core
         {
 
         }
-        private static VacancyCreator uniqueInst = null;
+        private static VacancyCreator uniqueInst;
         public static VacancyCreator getInst()
         {
             if (uniqueInst == null)
@@ -41,7 +41,7 @@ namespace HappyTechSystem.Core
             V.PositionsAvailable = m_positionsAvailable;
             V.getQuestionsToBeUsed = m_questionIDs;
             VacancyBank VB = VacancyBank.getInst();
-            VB.AddToList(V);
+            VB.AddVacancyToList(V);
             
     }
 

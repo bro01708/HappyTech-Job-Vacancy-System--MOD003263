@@ -54,6 +54,7 @@
     <Compile Include="Core\EmailBank.cs" />
     <Compile Include="Core\EmailCreator.cs" />
     <Compile Include="Core\EmailTemplate.cs" />
+    <Compile Include="Core\InterviewCreator.cs" />
     <Compile Include="Core\TemplateCreator.cs" />
     <Compile Include="Core\VacancyBank.cs" />
     <Compile Include="Core\VacancyCreator.cs" />

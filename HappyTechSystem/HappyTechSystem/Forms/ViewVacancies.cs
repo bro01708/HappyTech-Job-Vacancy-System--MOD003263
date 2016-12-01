@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -16,8 +17,11 @@ namespace HappyTechSystem
     /// </summary>
     public partial class ViewVacancies : Form
     {
+        private VacancyBank vacancyBank = VacancyBank.getInst();
+        private QuestionBank questionBank = QuestionBank.getInst();
         //variable that acts as a toggle. used by the edit button event handler
         private byte flag;
+
         public ViewVacancies()
         {
             InitializeComponent();
@@ -54,6 +58,34 @@ namespace HappyTechSystem
                 flag--;
             }
 
+        }
+
+        private void lb_vacancy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Vacancy v = (Vacancy)lb_vacancy.SelectedItem;
+                tb_vacancyName.Text = v.VacancyName;
+                tb_role.Text = v.Role;
+                nud_acceptance.Value = v.MinumumScore;
+                nud_slots.Value = v.PositionsAvailable;
+                lb_questionBank.DataSource = questionBank.getQuestionList;
+                lb_questionsUsed.DataSource = v.getQuestionsToBeUsed;
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void ViewVacancies_Load(object sender, EventArgs e)
+        {
+            lb_vacancy.DataSource = vacancyBank.getVacancyList;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -24,18 +24,12 @@ namespace HappyTechSystem
         private MetaLayer ml;
         private List<int> questionsToBeUsed;
         private int[] responses;
+        private int vacID;
 
         public int[] Responses
         {
-            get
-            {
-                return responses;
-            }
-
-            set
-            {
-                responses = value;
-            }
+            get { return responses; }
+            set { responses = value; }
         }
 
         public ConductInterview()
@@ -85,7 +79,8 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_beginInterview_Click(object sender, EventArgs e)
         {
-
+            vacID = cb_vacancy.SelectedIndex + 1; //necesscary adjuster to associate the correct vacancy
+            MessageBox.Show(vacID.ToString());
             p_setup.Enabled = false;
             p_questions.Enabled = true;
 
@@ -128,8 +123,10 @@ namespace HappyTechSystem
         {
             if (
                 string.IsNullOrEmpty(cb_vacancy.Text) ||
-                string.IsNullOrEmpty(tb_applicantName.Text) ||
                 string.IsNullOrEmpty(tb_interviewerName.Text) ||
+                string.IsNullOrEmpty(cb_title.Text) ||
+                string.IsNullOrEmpty(tb_applicantName.Text) ||
+                string.IsNullOrEmpty(tb_email.Text) ||
                 string.IsNullOrEmpty(tb_cvPath.Text))
             {
                 btn_beginInterview.Enabled = false;
@@ -142,9 +139,9 @@ namespace HappyTechSystem
 
         private void ConductInterview_Load(object sender, EventArgs e)
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = vacancyBank.getVacancyList;
-            cb_vacancy.DataSource = bs;
+            cb_vacancy.DataSource = vacancyBank.getVacancyList;
+            int nextID = vacancyBank.getHighestInterviewID() + 1;
+            tb_interviewID.Text = nextID.ToString();
         }
 
         /// <summary>
@@ -190,7 +187,7 @@ namespace HappyTechSystem
                 tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) + 1).ToString();
                 displayQuestionDetails();
             }
-            else { MessageBox.Show("Select a response before proceeding"); }
+            else { MessageBox.Show("Please select a response to this question before proceeding.", "No Response Given"); }
         }
 
         private void btn_previousQuestion_Click(object sender, EventArgs e)
@@ -299,5 +296,22 @@ namespace HappyTechSystem
             else { rb_rank1.Checked = false; rb_rank2.Checked = false; rb_rank3.Checked = false; rb_rank4.Checked = false; rb_rank5.Checked = false; }
         }
 
+        /// <summary>
+        /// Created by Dan
+        /// CLicking this complete the interview, passing through relevant information and saving it to the database and elsewhere
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_complete_Click(object sender, EventArgs e)
+        {
+            InterviewCreator interviewCreator = InterviewCreator.getInst();
+            //int vacID;
+            //vacID = vacancyBank.getVacancyList.IndexOf(cb_vacancy.Text);
+            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text);
+            MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
+                            "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
+                "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
     }
 }

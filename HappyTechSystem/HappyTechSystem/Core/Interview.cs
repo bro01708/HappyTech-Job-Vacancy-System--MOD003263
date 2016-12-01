@@ -6,76 +6,76 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class Interview
+    /// <summary>
+    /// Created by Susan
+    /// Forms the Interview type, with relevant fields to match
+    /// </summary>
+    public class Interview
     {
-        private string applicantEmailAddress, applicantName, applicantTitle, cv;
-        private int id;
+        private int interviewID, usedVacancyID;
+        private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
+        private int[] ranks;
 
-        public string ApplicantEmailAddress
+
+        public int getUsedVacancyID
         {
-            get
-            {
-                return applicantEmailAddress;
-            }
-
-            set
-            {
-                applicantEmailAddress = value;
-            }
+            get { return usedVacancyID;} 
+            set { usedVacancyID = value; }
         }
 
+        public string getInterviewerName
+        {
+            get { return interviewerName;}
+            set { interviewerName = value; }
+        }
+
+        public string getApplicantTitle
+        {
+            get { return applicantTitle; }
+            set { applicantTitle = value; }
+        }
+
+        /// <summary>
+        /// Created by Susan
+        /// </summary>
         public string getApplicantName
         {
-            get
-            {
-                return applicantName;
-            }
-
-            set
-            {
-                applicantName = value;
-            }
+            get { return applicantName; }
+            set { applicantName = value; }
         }
 
-        public string ApplicantTitle
+        /// <summary>
+        /// Created by Susan
+        /// allows the applicant email string to be called elsewhere
+        /// </summary>
+        public string getApplicantEmail
         {
-            get
-            {
-                return applicantTitle;
-            }
-
-            set
-            {
-                applicantTitle = value;
-            }
+            get { return applicantEmail; }
+            set { applicantEmail = value; }
         }
 
-        public string Cv
+        public string getCVPath
         {
-            get
-            {
-                return cv;
-            }
-
-            set
-            {
-                cv = value;
-            }
+            get { return cvPath; }
+            set { cvPath = value; }
         }
-
-        public int Id
+        public string getAdditionalNotes
         {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
+            get { return additionalNotes; }
+            set { additionalNotes = value; }
         }
 
+        public int getInterviewID
+        {
+            get { return interviewID; }
+            set { interviewID = value; }
+        }
+
+        public int[] getRanks
+        {
+            get { return ranks; }
+            set { ranks = value; }
+        }
         public void AttachCV() //Attaches CV of applicant to be interviewed
         {
             

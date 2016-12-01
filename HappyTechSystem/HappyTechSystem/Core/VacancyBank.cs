@@ -10,6 +10,7 @@ namespace HappyTechSystem.Core
     class VacancyBank
     {
         private List<Vacancy> vacancyList;
+        private List<Interview> interviewList;
         private MetaLayer ml = MetaLayer.instance();
         private bool dbLoaded;
 
@@ -22,6 +23,7 @@ namespace HappyTechSystem.Core
         {
             get { return dbLoaded; }
         }
+
         private static VacancyBank uniqueInst = null;
 
         public static VacancyBank getInst()
@@ -35,25 +37,29 @@ namespace HappyTechSystem.Core
 
         public List<Vacancy> getVacancyList
         {
-            get
-            {
-                return vacancyList;
-            }
-
-            set
-            {
-                vacancyList = value;
-            }
+            get { return vacancyList; }
+            set { vacancyList = value; }
         }
-        
-        public void AddToList(Vacancy m_v)
+
+        public List<Interview> getInterivewList
+        {
+            get { return interviewList; }
+            set { interviewList = value; }
+        }
+
+        public void AddVacancyToList(Vacancy m_v)
         {
             vacancyList.Add(m_v);
             ml.SaveVacancyToDB(m_v);
-            
         }
-        
-        public void RemoveFromList(int m_i)
+
+        public void AddInterviewToList(Interview m_i)
+        {
+            interviewList.Add(m_i);
+            ml.SaveInterviewToDB(m_i);
+        }
+
+        public void RemoveVacancyFromList(int m_i)
         {
             foreach (Vacancy v in vacancyList)
             {
@@ -63,13 +69,14 @@ namespace HappyTechSystem.Core
                 }
             }
         }
-        
+
         public void RefreshDBConnection()
         {
             try
             {
                 MetaLayer ml = MetaLayer.instance();
                 vacancyList = ml.GetVacancies();
+                interviewList = ml.GetInterviews();
                 dbLoaded = true;
             }
             catch (Exception e)
@@ -78,6 +85,7 @@ namespace HappyTechSystem.Core
                 throw e;
             }
         }
+
         public int getHighestVacancyID()
         {
             try
@@ -88,7 +96,19 @@ namespace HappyTechSystem.Core
             }
             catch (Exception e)
             {
+                throw e;
+            }
+        }
 
+        public int getHighestInterviewID()
+        {
+            try
+            {
+                int interviewCount = interviewList.Count();
+                return interviewList[interviewCount - 1].getInterviewID;
+            }
+            catch (Exception e)
+            {
                 throw e;
             }
         }

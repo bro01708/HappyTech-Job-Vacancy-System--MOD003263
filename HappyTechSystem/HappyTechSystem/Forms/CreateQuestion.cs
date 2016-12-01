@@ -157,10 +157,8 @@ namespace HappyTechSystem
 
         private void RefreshCategories()
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = questionBank.getCategoryList;
-            cb_category.DataSource = bs;
-            cb_deleteCategory.DataSource = bs;
+            cb_category.DataSource = questionBank.getCategoryList;
+            cb_deleteCategory.DataSource = questionBank.getCategoryList;
         }
 
         private void categoryCheck(object sender, EventArgs e)

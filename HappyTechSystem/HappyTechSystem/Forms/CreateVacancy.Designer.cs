@@ -62,7 +62,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(118, 13);
+            this.lbl_name.Location = new System.Drawing.Point(136, 13);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(100, 13);
             this.lbl_name.TabIndex = 1;
@@ -79,18 +79,18 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(171, 297);
+            this.btn_add.Location = new System.Drawing.Point(12, 297);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(78, 43);
             this.btn_add.TabIndex = 3;
-            this.btn_add.Text = "Add";
+            this.btn_add.Text = "Add ↓";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_remove
             // 
             this.btn_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_remove.Location = new System.Drawing.Point(261, 298);
+            this.btn_remove.Location = new System.Drawing.Point(421, 318);
             this.btn_remove.Name = "btn_remove";
             this.btn_remove.Size = new System.Drawing.Size(78, 43);
             this.btn_remove.TabIndex = 4;
@@ -204,7 +204,7 @@
             // 
             // tb_VacancyID
             // 
-            this.tb_VacancyID.Location = new System.Drawing.Point(23, 29);
+            this.tb_VacancyID.Location = new System.Drawing.Point(26, 29);
             this.tb_VacancyID.Name = "tb_VacancyID";
             this.tb_VacancyID.ReadOnly = true;
             this.tb_VacancyID.Size = new System.Drawing.Size(30, 20);
@@ -222,9 +222,9 @@
             this.lbl_role.AutoSize = true;
             this.lbl_role.Location = new System.Drawing.Point(352, 13);
             this.lbl_role.Name = "lbl_role";
-            this.lbl_role.Size = new System.Drawing.Size(127, 13);
+            this.lbl_role.Size = new System.Drawing.Size(130, 13);
             this.lbl_role.TabIndex = 20;
-            this.lbl_role.Text = "Specify the job Role/Title";
+            this.lbl_role.Text = "Specify the job Role/Title:";
             // 
             // CreateVacancy
             // 

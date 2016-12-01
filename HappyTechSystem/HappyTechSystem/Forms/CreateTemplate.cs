@@ -112,6 +112,7 @@ namespace HappyTechSystem
         {
             int nextID = emailBank.getHighestTemplateID() + 1;
             tb_templateID.Text = nextID.ToString();
+            str = tb_body.Text;
         }
 
         //public static string getBetween(string strSource, string strStart, string strEnd)

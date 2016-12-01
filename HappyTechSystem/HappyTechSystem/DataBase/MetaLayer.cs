@@ -97,8 +97,6 @@ namespace HappyTechSystem.DB
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
-                    
-
                     Vacancy V = new Vacancy();
                     V.GetID = dr.GetInt32(0);
                     V.VacancyName = dr.GetString(1);
@@ -330,6 +328,66 @@ namespace HappyTechSystem.DB
             }
 
             return questionsToBeUsed;
+        }
+
+        public void SaveInterviewToDB(Interview m_interview)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int interviewID = m_interview.getInterviewID;
+            int vacancyID = m_interview.getUsedVacancyID;
+            string interviewerName = m_interview.getInterviewerName;
+            string applicantTitle = m_interview.getApplicantTitle;
+            string applicantName = m_interview.getApplicantName;
+            string applicantEmail = m_interview.getApplicantEmail;
+            string cvPath = m_interview.getCVPath;
+            string additionalNotes = m_interview.getAdditionalNotes;
+            int[] ranks = m_interview.getRanks;
+
+            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, CVpath, AdditionalNotes) VALUES ('" + interviewID +
+                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "')";
+            con.RunSQL(myQuery);
+
+            con.CloseConnection();
+        }
+
+        /// <summary>
+        /// Created by Dan
+        /// Fetches the interviews from the Database and assigns it to the local list in the vacancy bank
+        /// </summary>
+        /// <returns></returns>
+        public List<Interview> GetInterviews()
+        {
+            List<Interview> il = new List<Interview>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT InterviewID, VacancyID, InterviewerName, Title, ApplicantName, CVpath, AdditionalNotes FROM Interview;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    Interview I = new Interview();
+                    I.getInterviewID = dr.GetInt32(0);
+                    I.getUsedVacancyID = dr.GetInt32(1);
+                    I.getInterviewerName = dr.GetString(2);
+                    I.getApplicantTitle = dr.GetString(3);
+                    I.getApplicantName = dr.GetString(4);
+                    I.getCVPath = dr.GetString(5);
+                    I.getAdditionalNotes = dr.GetString(6);
+
+                    //reading in response ranks to go here
+                    il.Add(I);
+                }
+
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return il;
         }
     }
 }
