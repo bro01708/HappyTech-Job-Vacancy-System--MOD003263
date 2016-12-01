@@ -39,16 +39,16 @@
             this.lbl_templateID = new System.Windows.Forms.Label();
             this.tb_templateID = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_FAStatus = new System.Windows.Forms.Label();
+            this.lbl_JRStatus = new System.Windows.Forms.Label();
+            this.lbl_INStatus = new System.Windows.Forms.Label();
+            this.lbl_feedbackAdded = new System.Windows.Forms.Label();
+            this.btn_addFeedback = new System.Windows.Forms.Button();
+            this.lbl_roleAdded = new System.Windows.Forms.Label();
+            this.btn_addRole = new System.Windows.Forms.Button();
             this.btn_addName = new System.Windows.Forms.Button();
             this.lbl_intervieweesNameAdded = new System.Windows.Forms.Label();
             this.lbl_reminder = new System.Windows.Forms.Label();
-            this.btn_addRole = new System.Windows.Forms.Button();
-            this.lbl_roleAdded = new System.Windows.Forms.Label();
-            this.btn_addFeedback = new System.Windows.Forms.Button();
-            this.lbl_feedbackAdded = new System.Windows.Forms.Label();
-            this.lbl_INStatus = new System.Windows.Forms.Label();
-            this.lbl_JRStatus = new System.Windows.Forms.Label();
-            this.lbl_FAStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.tb_body.Location = new System.Drawing.Point(49, 103);
             this.tb_body.Multiline = true;
             this.tb_body.Name = "tb_body";
+            this.tb_body.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_body.Size = new System.Drawing.Size(479, 321);
             this.tb_body.TabIndex = 3;
             this.tb_body.TextChanged += new System.EventHandler(this.CreateTemplateUnlocker);
@@ -161,6 +162,74 @@
             this.panel1.Size = new System.Drawing.Size(198, 159);
             this.panel1.TabIndex = 23;
             // 
+            // lbl_FAStatus
+            // 
+            this.lbl_FAStatus.AutoSize = true;
+            this.lbl_FAStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_FAStatus.Location = new System.Drawing.Point(134, 130);
+            this.lbl_FAStatus.Name = "lbl_FAStatus";
+            this.lbl_FAStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_FAStatus.TabIndex = 9;
+            this.lbl_FAStatus.Text = "Not Found!";
+            // 
+            // lbl_JRStatus
+            // 
+            this.lbl_JRStatus.AutoSize = true;
+            this.lbl_JRStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_JRStatus.Location = new System.Drawing.Point(134, 88);
+            this.lbl_JRStatus.Name = "lbl_JRStatus";
+            this.lbl_JRStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_JRStatus.TabIndex = 8;
+            this.lbl_JRStatus.Text = "Not Found!";
+            // 
+            // lbl_INStatus
+            // 
+            this.lbl_INStatus.AutoSize = true;
+            this.lbl_INStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbl_INStatus.Location = new System.Drawing.Point(134, 45);
+            this.lbl_INStatus.Name = "lbl_INStatus";
+            this.lbl_INStatus.Size = new System.Drawing.Size(60, 13);
+            this.lbl_INStatus.TabIndex = 7;
+            this.lbl_INStatus.Text = "Not Found!";
+            // 
+            // lbl_feedbackAdded
+            // 
+            this.lbl_feedbackAdded.AutoSize = true;
+            this.lbl_feedbackAdded.Location = new System.Drawing.Point(4, 130);
+            this.lbl_feedbackAdded.Name = "lbl_feedbackAdded";
+            this.lbl_feedbackAdded.Size = new System.Drawing.Size(105, 13);
+            this.lbl_feedbackAdded.TabIndex = 6;
+            this.lbl_feedbackAdded.Text = "Feedback Area [FA]:";
+            // 
+            // btn_addFeedback
+            // 
+            this.btn_addFeedback.Location = new System.Drawing.Point(3, 104);
+            this.btn_addFeedback.Name = "btn_addFeedback";
+            this.btn_addFeedback.Size = new System.Drawing.Size(191, 23);
+            this.btn_addFeedback.TabIndex = 5;
+            this.btn_addFeedback.Text = "Insert Feedback Area";
+            this.btn_addFeedback.UseVisualStyleBackColor = true;
+            this.btn_addFeedback.Click += new System.EventHandler(this.btn_addFeedback_Click);
+            // 
+            // lbl_roleAdded
+            // 
+            this.lbl_roleAdded.AutoSize = true;
+            this.lbl_roleAdded.Location = new System.Drawing.Point(4, 88);
+            this.lbl_roleAdded.Name = "lbl_roleAdded";
+            this.lbl_roleAdded.Size = new System.Drawing.Size(74, 13);
+            this.lbl_roleAdded.TabIndex = 4;
+            this.lbl_roleAdded.Text = "Job Role [JR]:";
+            // 
+            // btn_addRole
+            // 
+            this.btn_addRole.Location = new System.Drawing.Point(7, 62);
+            this.btn_addRole.Name = "btn_addRole";
+            this.btn_addRole.Size = new System.Drawing.Size(187, 23);
+            this.btn_addRole.TabIndex = 3;
+            this.btn_addRole.Text = "Insert Job Role";
+            this.btn_addRole.UseVisualStyleBackColor = true;
+            this.btn_addRole.Click += new System.EventHandler(this.btn_addRole_Click);
+            // 
             // btn_addName
             // 
             this.btn_addName.Location = new System.Drawing.Point(7, 21);
@@ -188,74 +257,6 @@
             this.lbl_reminder.Size = new System.Drawing.Size(179, 13);
             this.lbl_reminder.TabIndex = 0;
             this.lbl_reminder.Text = "Remember to add the following tags:";
-            // 
-            // btn_addRole
-            // 
-            this.btn_addRole.Location = new System.Drawing.Point(7, 62);
-            this.btn_addRole.Name = "btn_addRole";
-            this.btn_addRole.Size = new System.Drawing.Size(187, 23);
-            this.btn_addRole.TabIndex = 3;
-            this.btn_addRole.Text = "Insert Job Role";
-            this.btn_addRole.UseVisualStyleBackColor = true;
-            this.btn_addRole.Click += new System.EventHandler(this.btn_addRole_Click);
-            // 
-            // lbl_roleAdded
-            // 
-            this.lbl_roleAdded.AutoSize = true;
-            this.lbl_roleAdded.Location = new System.Drawing.Point(4, 88);
-            this.lbl_roleAdded.Name = "lbl_roleAdded";
-            this.lbl_roleAdded.Size = new System.Drawing.Size(74, 13);
-            this.lbl_roleAdded.TabIndex = 4;
-            this.lbl_roleAdded.Text = "Job Role [JR]:";
-            // 
-            // btn_addFeedback
-            // 
-            this.btn_addFeedback.Location = new System.Drawing.Point(3, 104);
-            this.btn_addFeedback.Name = "btn_addFeedback";
-            this.btn_addFeedback.Size = new System.Drawing.Size(191, 23);
-            this.btn_addFeedback.TabIndex = 5;
-            this.btn_addFeedback.Text = "Insert Feedback Area";
-            this.btn_addFeedback.UseVisualStyleBackColor = true;
-            this.btn_addFeedback.Click += new System.EventHandler(this.btn_addFeedback_Click);
-            // 
-            // lbl_feedbackAdded
-            // 
-            this.lbl_feedbackAdded.AutoSize = true;
-            this.lbl_feedbackAdded.Location = new System.Drawing.Point(4, 130);
-            this.lbl_feedbackAdded.Name = "lbl_feedbackAdded";
-            this.lbl_feedbackAdded.Size = new System.Drawing.Size(105, 13);
-            this.lbl_feedbackAdded.TabIndex = 6;
-            this.lbl_feedbackAdded.Text = "Feedback Area [FA]:";
-            // 
-            // lbl_INStatus
-            // 
-            this.lbl_INStatus.AutoSize = true;
-            this.lbl_INStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbl_INStatus.Location = new System.Drawing.Point(134, 45);
-            this.lbl_INStatus.Name = "lbl_INStatus";
-            this.lbl_INStatus.Size = new System.Drawing.Size(60, 13);
-            this.lbl_INStatus.TabIndex = 7;
-            this.lbl_INStatus.Text = "Not Found!";
-            // 
-            // lbl_JRStatus
-            // 
-            this.lbl_JRStatus.AutoSize = true;
-            this.lbl_JRStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbl_JRStatus.Location = new System.Drawing.Point(134, 88);
-            this.lbl_JRStatus.Name = "lbl_JRStatus";
-            this.lbl_JRStatus.Size = new System.Drawing.Size(60, 13);
-            this.lbl_JRStatus.TabIndex = 8;
-            this.lbl_JRStatus.Text = "Not Found!";
-            // 
-            // lbl_FAStatus
-            // 
-            this.lbl_FAStatus.AutoSize = true;
-            this.lbl_FAStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbl_FAStatus.Location = new System.Drawing.Point(134, 130);
-            this.lbl_FAStatus.Name = "lbl_FAStatus";
-            this.lbl_FAStatus.Size = new System.Drawing.Size(60, 13);
-            this.lbl_FAStatus.TabIndex = 9;
-            this.lbl_FAStatus.Text = "Not Found!";
             // 
             // CreateTemplate
             // 

@@ -307,7 +307,7 @@ namespace HappyTechSystem
             interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, tb_email.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text);
             MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
                             "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
-                "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

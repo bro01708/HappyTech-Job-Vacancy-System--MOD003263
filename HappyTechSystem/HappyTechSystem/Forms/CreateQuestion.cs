@@ -33,6 +33,7 @@ namespace HappyTechSystem
         private void btn_manageCategories_Click(object sender, EventArgs e)
         {
             gb_question.Enabled = false;
+            p_respFeed.Enabled = false;
             gb_category.Enabled = true;
         }
 
@@ -46,6 +47,7 @@ namespace HappyTechSystem
         {
             RefreshCategories();
             gb_category.Enabled = false;
+            p_respFeed.Enabled = true;
             gb_question.Enabled = true;
         }
 
@@ -157,6 +159,9 @@ namespace HappyTechSystem
 
         private void RefreshCategories()
         {
+            cb_category.DataSource = null;
+            cb_deleteCategory.DataSource = null;
+
             cb_category.DataSource = questionBank.getCategoryList;
             cb_deleteCategory.DataSource = questionBank.getCategoryList;
         }
