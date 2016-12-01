@@ -12,15 +12,15 @@ namespace HappyTechSystem.Core
     /// </summary>
     public class Interview
     {
-        private int interviewID, usedVacancyID;
+        private int interviewID, vacancyID;
         private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
-        private int[] ranks;
+        private int[] answers;
 
 
         public int getUsedVacancyID
         {
-            get { return usedVacancyID;} 
-            set { usedVacancyID = value; }
+            get { return vacancyID;} 
+            set { vacancyID = value; }
         }
 
         public string getInterviewerName
@@ -71,11 +71,19 @@ namespace HappyTechSystem.Core
             set { interviewID = value; }
         }
 
-        public int[] getRanks
+        public int[] Answers
         {
-            get { return ranks; }
-            set { ranks = value; }
+            get
+            {
+                return answers;
+            }
+
+            set
+            {
+                answers = value;
+            }
         }
+
         public void AttachCV() //Attaches CV of applicant to be interviewed
         {
             

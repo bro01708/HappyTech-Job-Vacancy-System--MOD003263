@@ -343,11 +343,19 @@ namespace HappyTechSystem.DB
             string applicantEmail = m_interview.getApplicantEmail;
             string cvPath = m_interview.getCVPath;
             string additionalNotes = m_interview.getAdditionalNotes;
-            int[] ranks = m_interview.getRanks;
+            int[] ranks = m_interview.Answers;
 
             String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes) VALUES ('" + interviewID +
                              "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "')";
+
             con.RunSQL(myQuery);
+
+            for (int i = 0; i < ranks.Length; i++)
+            {
+                string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES('" + i + "','" + interviewID + "','" + ranks[i] + "')";
+                con.RunSQL(myQuery2);
+            }
+            
 
             con.CloseConnection();
         }

@@ -141,6 +141,7 @@ namespace HappyTechSystem
             cb_vacancy.DataSource = vacancyBank.getVacancyList;
             int nextID = vacancyBank.getHighestInterviewID() + 1;
             tb_interviewID.Text = nextID.ToString();
+            tb_interviewerName.Text = MdiParent.Text.Substring(22, MdiParent.Text.Length - 22);
         }
 
         /// <summary>
@@ -304,7 +305,7 @@ namespace HappyTechSystem
         private void btn_complete_Click(object sender, EventArgs e)
         {
             InterviewCreator interviewCreator = InterviewCreator.getInst();
-            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, tb_email.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text);
+            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, tb_email.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text,responses);
             MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
                             "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);

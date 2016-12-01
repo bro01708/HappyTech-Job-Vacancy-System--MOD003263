@@ -362,14 +362,15 @@
             this.lbl_interviewerName.AutoSize = true;
             this.lbl_interviewerName.Location = new System.Drawing.Point(39, 37);
             this.lbl_interviewerName.Name = "lbl_interviewerName";
-            this.lbl_interviewerName.Size = new System.Drawing.Size(143, 13);
+            this.lbl_interviewerName.Size = new System.Drawing.Size(98, 13);
             this.lbl_interviewerName.TabIndex = 17;
-            this.lbl_interviewerName.Text = "Enter the interviewer\'s name:";
+            this.lbl_interviewerName.Text = "Interviewer\'s name:";
             // 
             // tb_interviewerName
             // 
             this.tb_interviewerName.Location = new System.Drawing.Point(220, 34);
             this.tb_interviewerName.Name = "tb_interviewerName";
+            this.tb_interviewerName.ReadOnly = true;
             this.tb_interviewerName.Size = new System.Drawing.Size(238, 20);
             this.tb_interviewerName.TabIndex = 18;
             this.tb_interviewerName.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);

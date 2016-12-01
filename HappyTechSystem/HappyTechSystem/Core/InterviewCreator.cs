@@ -19,7 +19,7 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
 
-        public void CreateInterview(int m_ID, int m_vacancyID, string m_interviewerName, string m_applicantTitle, string m_applicantName, string m_applicantEmail, string m_cvPath, string m_notes)
+        public void CreateInterview(int m_ID, int m_vacancyID, string m_interviewerName, string m_applicantTitle, string m_applicantName, string m_applicantEmail, string m_cvPath, string m_notes, int[] m_questionAnswers)
         {
             Interview I = new Interview();
             I.getInterviewID = m_ID;
@@ -28,8 +28,9 @@ namespace HappyTechSystem.Core
             I.getApplicantTitle = m_applicantTitle;
             I.getApplicantName = m_applicantName;
             I.getApplicantEmail = m_applicantEmail;
-            I.getCVPath = m_cvPath;
+            I.getCVPath = m_cvPath;        
             I.getAdditionalNotes = m_notes;
+            I.Answers = m_questionAnswers;
             VacancyBank VB = VacancyBank.getInst();
             VB.AddInterviewToList(I);
         }
