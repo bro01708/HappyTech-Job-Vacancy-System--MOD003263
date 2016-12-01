@@ -345,7 +345,7 @@ namespace HappyTechSystem.DB
             string additionalNotes = m_interview.getAdditionalNotes;
             int[] ranks = m_interview.getRanks;
 
-            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, CVpath, AdditionalNotes) VALUES ('" + interviewID +
+            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes) VALUES ('" + interviewID +
                              "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "')";
             con.RunSQL(myQuery);
 

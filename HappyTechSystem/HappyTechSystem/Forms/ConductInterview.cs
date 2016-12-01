@@ -80,7 +80,6 @@ namespace HappyTechSystem
         private void btn_beginInterview_Click(object sender, EventArgs e)
         {
             vacID = cb_vacancy.SelectedIndex + 1; //necesscary adjuster to associate the correct vacancy
-            MessageBox.Show(vacID.ToString());
             p_setup.Enabled = false;
             p_questions.Enabled = true;
 
@@ -305,9 +304,7 @@ namespace HappyTechSystem
         private void btn_complete_Click(object sender, EventArgs e)
         {
             InterviewCreator interviewCreator = InterviewCreator.getInst();
-            //int vacID;
-            //vacID = vacancyBank.getVacancyList.IndexOf(cb_vacancy.Text);
-            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text);
+            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, tb_email.Text, cb_title.Text, tb_applicantName.Text, tb_cvPath.Text, tb_notes.Text);
             MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
                             "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
