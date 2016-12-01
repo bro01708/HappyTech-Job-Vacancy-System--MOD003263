@@ -87,13 +87,19 @@ namespace HappyTechSystem.Core
             try
             {
                 int questionCount = questionList.Count();
+
+                if (questionCount == 0)
+                {
+                    return questionCount;
+                }
                 return questionList[questionCount - 1].GetID;
+
                 
             }
             catch (Exception e)
             {
 
-                throw e ;
+                throw e;
             }
         }
 
@@ -109,6 +115,14 @@ namespace HappyTechSystem.Core
                 MetaLayer ml = MetaLayer.instance();
                 questionList = ml.GetQuestions();
                 categoriesList = ml.GetCategories();
+                if (categoriesList.Contains("General"))
+                {
+
+                }
+                else
+                {
+                    categoriesList.Add("General");
+                }
                 dbLoaded = true;
                 foreach (Question q in questionList)
                 {

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HappyTechSystem.Core;
+using HappyTechSystem.Forms;
 
 namespace HappyTechSystem
 {
@@ -145,6 +146,9 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Welcome welcome = new Welcome();
+            formCheck(welcome);
+
             this.WindowState = FormWindowState.Maximized;
 
             MdiClient chld;

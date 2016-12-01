@@ -29,6 +29,11 @@ namespace HappyTechSystem.Core
             try
             {
                 int templateCount = templates.Count();
+
+                if (templateCount == 0)
+                {
+                    return templateCount;
+                }
                 return templates[templateCount - 1].getID;
             }
             catch (Exception e)

@@ -91,6 +91,12 @@ namespace HappyTechSystem.Core
             try
             {
                 int vacancyCount = vacancyList.Count();
+
+                if (vacancyCount == 0)
+                {
+                    return vacancyCount;
+                }
+
                 return vacancyList[vacancyCount - 1].GetID;
 
             }
@@ -105,7 +111,13 @@ namespace HappyTechSystem.Core
             try
             {
                 int interviewCount = interviewList.Count();
+
+                if (interviewCount == 0)
+                {
+                    return interviewCount;
+                }
                 return interviewList[interviewCount - 1].getInterviewID;
+
             }
             catch (Exception e)
             {
