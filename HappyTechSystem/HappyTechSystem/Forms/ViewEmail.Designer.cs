@@ -45,6 +45,7 @@
             this.tb_emailPreview.Multiline = true;
             this.tb_emailPreview.Name = "tb_emailPreview";
             this.tb_emailPreview.ReadOnly = true;
+            this.tb_emailPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_emailPreview.Size = new System.Drawing.Size(371, 301);
             this.tb_emailPreview.TabIndex = 0;
             // 

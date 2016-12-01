@@ -229,6 +229,7 @@
             this.tb_notes.Location = new System.Drawing.Point(281, 277);
             this.tb_notes.Multiline = true;
             this.tb_notes.Name = "tb_notes";
+            this.tb_notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_notes.Size = new System.Drawing.Size(386, 56);
             this.tb_notes.TabIndex = 16;
             // 
@@ -238,6 +239,7 @@
             this.tb_rank5.Multiline = true;
             this.tb_rank5.Name = "tb_rank5";
             this.tb_rank5.ReadOnly = true;
+            this.tb_rank5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_rank5.Size = new System.Drawing.Size(182, 79);
             this.tb_rank5.TabIndex = 14;
             // 
@@ -247,6 +249,7 @@
             this.tb_rank4.Multiline = true;
             this.tb_rank4.Name = "tb_rank4";
             this.tb_rank4.ReadOnly = true;
+            this.tb_rank4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_rank4.Size = new System.Drawing.Size(182, 79);
             this.tb_rank4.TabIndex = 12;
             // 
@@ -256,6 +259,7 @@
             this.tb_rank3.Multiline = true;
             this.tb_rank3.Name = "tb_rank3";
             this.tb_rank3.ReadOnly = true;
+            this.tb_rank3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_rank3.Size = new System.Drawing.Size(182, 79);
             this.tb_rank3.TabIndex = 10;
             // 
@@ -265,6 +269,7 @@
             this.tb_rank2.Multiline = true;
             this.tb_rank2.Name = "tb_rank2";
             this.tb_rank2.ReadOnly = true;
+            this.tb_rank2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_rank2.Size = new System.Drawing.Size(182, 79);
             this.tb_rank2.TabIndex = 8;
             // 
@@ -292,6 +297,7 @@
             this.tb_rank1.Multiline = true;
             this.tb_rank1.Name = "tb_rank1";
             this.tb_rank1.ReadOnly = true;
+            this.tb_rank1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_rank1.Size = new System.Drawing.Size(182, 79);
             this.tb_rank1.TabIndex = 4;
             // 
@@ -321,6 +327,7 @@
             this.tb_questionText.Multiline = true;
             this.tb_questionText.Name = "tb_questionText";
             this.tb_questionText.ReadOnly = true;
+            this.tb_questionText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_questionText.Size = new System.Drawing.Size(443, 102);
             this.tb_questionText.TabIndex = 0;
             // 
