@@ -79,7 +79,7 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_beginInterview_Click(object sender, EventArgs e)
         {
-            vacID = cb_vacancy.SelectedIndex + 1; //necesscary adjuster to associate the correct vacancy
+            vacID = cb_vacancy.SelectedIndex + 1; //necessary adjuster to associate the correct vacancy
             p_setup.Enabled = false;
             p_questions.Enabled = true;
 
@@ -100,7 +100,9 @@ namespace HappyTechSystem
         private void btn_beginHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To begin the interivew process, you will need to first set-up some interviewee information.\n" +
-                            "Make sure all fields are filled out correctly to proceed.", "Why is the 'Begin Interview' button greyed out?", MessageBoxButtons.OK,
+                            "Make sure all fields are filled out correctly to proceed.\n" +
+                            "If the button is still grey, then the vacancy you selected is likely full, and you can no longer conduct any more interviews for it.\n" +
+                            "If you wish to interview someone for a vacancy that is full, consider making a new vacancy.", "Why is the 'Begin Interview' button greyed out?", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
 
@@ -126,7 +128,8 @@ namespace HappyTechSystem
                 string.IsNullOrEmpty(cb_title.Text) ||
                 string.IsNullOrEmpty(tb_applicantName.Text) ||
                 string.IsNullOrEmpty(tb_email.Text) ||
-                string.IsNullOrEmpty(tb_cvPath.Text))
+                string.IsNullOrEmpty(tb_cvPath.Text) ||
+                canConduct((Vacancy)cb_vacancy.SelectedItem) == false)
             {
                 btn_beginInterview.Enabled = false;
             }
@@ -307,10 +310,29 @@ namespace HappyTechSystem
             InterviewCreator interviewCreator = InterviewCreator.getInst();
             int total = responses.Sum();
             interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, cb_title.Text, tb_applicantName.Text, tb_email.Text, tb_cvPath.Text, tb_notes.Text, responses, total);
-            MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
+            MessageBox.Show("The Interview was successfully recorded!\n\n" +
+                            "To view it, check the 'View Interviews' Menu!\n" +
                             "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
                             "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        /// <summary>
+        /// Created by Dan.
+        /// Checks whether the particular interview can take place, based on the number of slots stated in the vacancy.
+        /// </summary>
+        /// <param name="m_v"></param>
+        /// <returns></returns>
+        private bool canConduct(Vacancy m_v)
+        {
+            List<Interview> l = vacancyBank.getInterviewList.Where(i => i.getUsedVacancyID == m_v.GetID).ToList();
+            int count = l.Count;
+
+            if (m_v.PositionsAvailable <= count)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

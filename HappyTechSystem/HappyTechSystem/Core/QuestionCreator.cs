@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +43,18 @@ namespace HappyTechSystem.Core
             Q.Responses = m_responses;
             QuestionBank QB = QuestionBank.getInst();
             QB.addToList(Q);
+        }
+
+        public void ModifyQuestion(int m_ID, string m_Tag, string m_Text, string[] m_responses, string[] m_feedback)
+        {
+            Question Q = new Question();
+            Q.GetID = m_ID;
+            Q.GetTag = m_Tag;
+            Q.GetText = m_Text;
+            Q.Feedback = m_feedback;
+            Q.Responses = m_responses;
+            QuestionBank QB = QuestionBank.getInst();
+            QB.updateList(Q);
         }
 
     }

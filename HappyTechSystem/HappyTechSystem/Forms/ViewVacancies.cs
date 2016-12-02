@@ -69,6 +69,7 @@ namespace HappyTechSystem
         private void lb_vacancy_SelectedIndexChanged(object sender, EventArgs e)
         {
             lb_interviews.Items.Clear();
+            lb_questionsUsed.Items.Clear();
             try
             {
                 Vacancy v = (Vacancy)lb_vacancy.SelectedItem;
@@ -77,7 +78,17 @@ namespace HappyTechSystem
                 nud_acceptance.Value = v.MinumumScore;
                 nud_slots.Value = v.PositionsAvailable;
                 lb_questionBank.DataSource = questionBank.getQuestionList;
-                lb_questionsUsed.DataSource = v.getQuestionsToBeUsed;
+
+                int index = 0;
+                foreach (Question q in questionBank.getQuestionList)
+                {
+                    if (q.GetID == v.getQuestionsToBeUsed[index])
+                    {
+                        lb_questionsUsed.Items.Add(q.ToString());
+                    }
+                    index++;
+                }
+
 
                 foreach (Interview I in vacancyBank.getInterviewList)
                 {
@@ -96,11 +107,21 @@ namespace HappyTechSystem
         private void ViewVacancies_Load(object sender, EventArgs e)
         {
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
+            lb_vacancy.HorizontalScrollbar = true;
+            lb_questionBank.HorizontalScrollbar = true;
+            lb_questionsUsed.HorizontalScrollbar = true;
+            lb_interviews.HorizontalScrollbar = true;
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ViewVacancies_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            lb_interviews.Items.Clear();
+            lb_questionsUsed.Items.Clear();
         }
     }
 }

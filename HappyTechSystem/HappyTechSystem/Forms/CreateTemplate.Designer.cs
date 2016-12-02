@@ -189,9 +189,9 @@
             // 
             // btn_addSenderName
             // 
-            this.btn_addSenderName.Location = new System.Drawing.Point(4, 146);
+            this.btn_addSenderName.Location = new System.Drawing.Point(7, 146);
             this.btn_addSenderName.Name = "btn_addSenderName";
-            this.btn_addSenderName.Size = new System.Drawing.Size(271, 23);
+            this.btn_addSenderName.Size = new System.Drawing.Size(268, 23);
             this.btn_addSenderName.TabIndex = 10;
             this.btn_addSenderName.Text = "Insert Senders Name";
             this.btn_addSenderName.UseVisualStyleBackColor = true;
@@ -238,9 +238,9 @@
             // 
             // btn_addFeedback
             // 
-            this.btn_addFeedback.Location = new System.Drawing.Point(3, 104);
+            this.btn_addFeedback.Location = new System.Drawing.Point(7, 104);
             this.btn_addFeedback.Name = "btn_addFeedback";
-            this.btn_addFeedback.Size = new System.Drawing.Size(271, 23);
+            this.btn_addFeedback.Size = new System.Drawing.Size(267, 23);
             this.btn_addFeedback.TabIndex = 5;
             this.btn_addFeedback.Text = "Insert Feedback Area";
             this.btn_addFeedback.UseVisualStyleBackColor = true;
@@ -310,6 +310,7 @@
             this.Controls.Add(this.tb_body);
             this.Controls.Add(this.lbl_body);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateTemplate";
             this.Text = "Create an Email Template";
             this.Load += new System.EventHandler(this.CreateTemplate_Load);

@@ -15,7 +15,6 @@ namespace HappyTechSystem.Core
         private int interviewID, vacancyID, totalScore;
         private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
         private int[] answers;
-        private string[] questions;
 
 
         public int getUsedVacancyID
@@ -118,7 +117,7 @@ namespace HappyTechSystem.Core
         //}
         public override string ToString()
         {
-            return "(" + interviewID.ToString() + ") - [] - " + applicantName;
+            return "(" + interviewID.ToString() + ") - " + applicantName;
         }
     }
 }

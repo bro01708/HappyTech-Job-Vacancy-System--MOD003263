@@ -75,6 +75,24 @@ namespace HappyTechSystem.Core
                 }
             }
         }
+        /// <summary>
+        /// Created by Dan.
+        /// When a particular question is edited, this will update the database record accordingly.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void updateList(Question m_questionID)
+        {
+            foreach (Question q in questionList)
+            {
+                if (q.GetID == m_questionID.GetID)
+                {
+                    var update = questionList.FirstOrDefault(que => q.GetID == m_questionID.GetID);
+                    update = q;
+                    ml.UpdateQuestionInDB(m_questionID);
+                    break;
+                }
+            }
+        }
 
         /// <summary>
         /// Created By Peter.

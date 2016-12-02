@@ -49,13 +49,13 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.lbl_role = new System.Windows.Forms.Label();
             this.tb_role = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.p_content = new System.Windows.Forms.Panel();
             this.lbl_interviews = new System.Windows.Forms.Label();
             this.lb_interviews = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).BeginInit();
             this.p_editToolbox.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.p_content.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_vacancy
@@ -112,7 +112,6 @@
             // 
             // lb_questionsUsed
             // 
-            this.lb_questionsUsed.Enabled = false;
             this.lb_questionsUsed.FormattingEnabled = true;
             this.lb_questionsUsed.Location = new System.Drawing.Point(272, 121);
             this.lb_questionsUsed.Name = "lb_questionsUsed";
@@ -161,7 +160,6 @@
             // 
             // lb_questionBank
             // 
-            this.lb_questionBank.Enabled = false;
             this.lb_questionBank.FormattingEnabled = true;
             this.lb_questionBank.Location = new System.Drawing.Point(2, 121);
             this.lb_questionBank.Name = "lb_questionBank";
@@ -251,28 +249,28 @@
             this.tb_role.Size = new System.Drawing.Size(100, 20);
             this.tb_role.TabIndex = 15;
             // 
-            // panel1
+            // p_content
             // 
-            this.panel1.Controls.Add(this.lbl_interviews);
-            this.panel1.Controls.Add(this.lb_interviews);
-            this.panel1.Controls.Add(this.tb_role);
-            this.panel1.Controls.Add(this.lb_questionsUsed);
-            this.panel1.Controls.Add(this.lbl_role);
-            this.panel1.Controls.Add(this.lbl_slots);
-            this.panel1.Controls.Add(this.btn_removeQuestion);
-            this.panel1.Controls.Add(this.nud_acceptance);
-            this.panel1.Controls.Add(this.btn_moveQuestion);
-            this.panel1.Controls.Add(this.lbl_minScore);
-            this.panel1.Controls.Add(this.lbl_questionBank);
-            this.panel1.Controls.Add(this.lbl_usedQuestions);
-            this.panel1.Controls.Add(this.lb_questionBank);
-            this.panel1.Controls.Add(this.nud_slots);
-            this.panel1.Controls.Add(this.lbl_vacancyName);
-            this.panel1.Controls.Add(this.tb_vacancyName);
-            this.panel1.Location = new System.Drawing.Point(232, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 255);
-            this.panel1.TabIndex = 60;
+            this.p_content.Controls.Add(this.lbl_interviews);
+            this.p_content.Controls.Add(this.lb_interviews);
+            this.p_content.Controls.Add(this.tb_role);
+            this.p_content.Controls.Add(this.lb_questionsUsed);
+            this.p_content.Controls.Add(this.lbl_role);
+            this.p_content.Controls.Add(this.lbl_slots);
+            this.p_content.Controls.Add(this.btn_removeQuestion);
+            this.p_content.Controls.Add(this.nud_acceptance);
+            this.p_content.Controls.Add(this.btn_moveQuestion);
+            this.p_content.Controls.Add(this.lbl_minScore);
+            this.p_content.Controls.Add(this.lbl_questionBank);
+            this.p_content.Controls.Add(this.lbl_usedQuestions);
+            this.p_content.Controls.Add(this.lb_questionBank);
+            this.p_content.Controls.Add(this.nud_slots);
+            this.p_content.Controls.Add(this.lbl_vacancyName);
+            this.p_content.Controls.Add(this.tb_vacancyName);
+            this.p_content.Location = new System.Drawing.Point(232, 9);
+            this.p_content.Name = "p_content";
+            this.p_content.Size = new System.Drawing.Size(736, 255);
+            this.p_content.TabIndex = 60;
             // 
             // lbl_interviews
             // 
@@ -297,21 +295,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 270);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.p_content);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.lbl_selectVacancy);
             this.Controls.Add(this.lb_vacancy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ViewVacancies";
             this.Text = "Modify and View Vacancies";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewVacancies_FormClosing);
             this.Load += new System.EventHandler(this.ViewVacancies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).EndInit();
             this.p_editToolbox.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.p_content.ResumeLayout(false);
+            this.p_content.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,7 +340,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label lbl_role;
         private System.Windows.Forms.TextBox tb_role;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel p_content;
         private System.Windows.Forms.Label lbl_interviews;
         private System.Windows.Forms.ListBox lb_interviews;
     }

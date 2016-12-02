@@ -98,7 +98,6 @@ namespace HappyTechSystem.DB
 
         public DataSet getDataSet(string sqlStatement)
         {
-
             DataSet dataSet;
 
             // create the object dataAdapter to manipulate a table from the database StudentDissertations specified by connectionToDB
@@ -114,13 +113,13 @@ namespace HappyTechSystem.DB
         /// Runs non-query SQL statements
         /// </summary>
         /// <param name="sqlStatement"></param>
-        public int  RunSQL(string sqlStatement)
+        public int RunSQL(string sqlStatement)
         {
-            int rowsAffected = 0;
+            int rowsAffected;
             try
             {
                 OleDbCommand cmd = new OleDbCommand(sqlStatement, connection);
-                rowsAffected =  cmd.ExecuteNonQuery();
+                rowsAffected = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {

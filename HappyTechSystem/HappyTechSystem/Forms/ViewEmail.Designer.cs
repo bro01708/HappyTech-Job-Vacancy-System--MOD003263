@@ -138,6 +138,7 @@
             this.Controls.Add(this.lb_email);
             this.Controls.Add(this.tb_emailPreview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ViewEmail";
             this.Text = "Modify and View Emails";
             this.p_editToolbox.ResumeLayout(false);

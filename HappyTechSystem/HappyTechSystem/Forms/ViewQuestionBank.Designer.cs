@@ -39,7 +39,6 @@
             this.tb_questionID = new System.Windows.Forms.TextBox();
             this.lbl_category = new System.Windows.Forms.Label();
             this.lbl_questionText = new System.Windows.Forms.Label();
-            this.tb_categoryTag = new System.Windows.Forms.TextBox();
             this.tb_question = new System.Windows.Forms.TextBox();
             this.cb_filterCategories = new System.Windows.Forms.ComboBox();
             this.lbl_questionFilter = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.lbl_rank3 = new System.Windows.Forms.Label();
             this.lbl_rank1 = new System.Windows.Forms.Label();
             this.lbl_rank2 = new System.Windows.Forms.Label();
+            this.cb_categoryTag = new System.Windows.Forms.ComboBox();
             this.p_editToolbox.SuspendLayout();
             this.p_respFeed.SuspendLayout();
             this.gb_feedback.SuspendLayout();
@@ -172,14 +172,6 @@
             this.lbl_questionText.Size = new System.Drawing.Size(76, 13);
             this.lbl_questionText.TabIndex = 59;
             this.lbl_questionText.Text = "Question Text:";
-            // 
-            // tb_categoryTag
-            // 
-            this.tb_categoryTag.Location = new System.Drawing.Point(844, 12);
-            this.tb_categoryTag.Name = "tb_categoryTag";
-            this.tb_categoryTag.ReadOnly = true;
-            this.tb_categoryTag.Size = new System.Drawing.Size(100, 20);
-            this.tb_categoryTag.TabIndex = 78;
             // 
             // tb_question
             // 
@@ -401,11 +393,21 @@
             this.lbl_rank2.TabIndex = 20;
             this.lbl_rank2.Text = "Rank 2 (Poor)";
             // 
+            // cb_categoryTag
+            // 
+            this.cb_categoryTag.Enabled = false;
+            this.cb_categoryTag.FormattingEnabled = true;
+            this.cb_categoryTag.Location = new System.Drawing.Point(844, 11);
+            this.cb_categoryTag.Name = "cb_categoryTag";
+            this.cb_categoryTag.Size = new System.Drawing.Size(100, 21);
+            this.cb_categoryTag.TabIndex = 82;
+            // 
             // ViewQuestionBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 536);
+            this.Controls.Add(this.cb_categoryTag);
             this.Controls.Add(this.p_respFeed);
             this.Controls.Add(this.lbl_questionFilter);
             this.Controls.Add(this.cb_filterCategories);
@@ -413,7 +415,6 @@
             this.Controls.Add(this.tb_questionID);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.lbl_questionText);
-            this.Controls.Add(this.tb_categoryTag);
             this.Controls.Add(this.tb_question);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
@@ -421,6 +422,7 @@
             this.Controls.Add(this.lbl_questionID);
             this.Controls.Add(this.lb_Q);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ViewQuestionBank";
             this.Text = "Modify and View Question Bank";
             this.Load += new System.EventHandler(this.ViewQuestionBank_Load);
@@ -449,7 +451,6 @@
         private System.Windows.Forms.TextBox tb_questionID;
         private System.Windows.Forms.Label lbl_category;
         private System.Windows.Forms.Label lbl_questionText;
-        private System.Windows.Forms.TextBox tb_categoryTag;
         private System.Windows.Forms.TextBox tb_question;
         private System.Windows.Forms.ComboBox cb_filterCategories;
         private System.Windows.Forms.Label lbl_questionFilter;
@@ -471,5 +472,6 @@
         private System.Windows.Forms.Label lbl_rank3;
         private System.Windows.Forms.Label lbl_rank1;
         private System.Windows.Forms.Label lbl_rank2;
+        private System.Windows.Forms.ComboBox cb_categoryTag;
     }
 }

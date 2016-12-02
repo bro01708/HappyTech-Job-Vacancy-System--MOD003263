@@ -45,17 +45,19 @@ namespace HappyTechSystem
             int nextID = vacancyBank.getHighestVacancyID() + 1 ;
             tb_VacancyID.Text = nextID.ToString();
             lb_questionBank.DataSource = questionBank.getQuestionList;
+            lb_questionBank.HorizontalScrollbar = true;
+            lb_questionsToBeUsed.HorizontalScrollbar = true;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             if (lb_questionsToBeUsed.Items.Contains(lb_questionBank.SelectedItem))
             {
-                MessageBox.Show("Can't add duplicate Questions");
+                MessageBox.Show("You cannot add duplicate questions to the 'Questions To Be Used' List.", "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-            lb_questionsToBeUsed.Items.Add(lb_questionBank.SelectedItem);
+                lb_questionsToBeUsed.Items.Add(lb_questionBank.SelectedItem);
             }
             CreateButtonUnlocker();
         }

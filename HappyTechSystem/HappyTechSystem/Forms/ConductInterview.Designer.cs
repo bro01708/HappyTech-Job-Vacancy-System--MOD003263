@@ -521,6 +521,7 @@
             this.Controls.Add(this.btn_complete);
             this.Controls.Add(this.p_questions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ConductInterview";
             this.Text = "Conduct an Interview";
             this.Load += new System.EventHandler(this.ConductInterview_Load);

@@ -108,7 +108,6 @@ namespace HappyTechSystem.DB
                     while (dr2.Read())
                     {
                         questionIDs.Add(dr2.GetInt32(0));
-
                     }
                     V.getQuestionsToBeUsed = questionIDs;
                     Vs.Add(V);
@@ -210,7 +209,37 @@ namespace HappyTechSystem.DB
             DbConnection con = DBFactory.instance();
             string id = m_questionID.ToString();
             con.OpenConnection();
+            con.RunSQL("DELETE FROM Criteria WHERE QuestionID = " + id + ";");
+            con.RunSQL("DELETE FROM Feedback WHERE QuestionID = " + id + ";");
             con.RunSQL("DELETE FROM Question WHERE QuestionID = " + id + ";");
+            con.CloseConnection();
+        }
+
+        /// <summary>
+        /// Created by Dan.
+        /// Edits the record within the database, called from the question bank.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void UpdateQuestionInDB(Question m_question)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+            
+            string questionTag = m_question.GetTag;
+            string questionText = m_question.GetText;
+
+            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText + "' WHERE QuestionID=" + m_question.GetID;
+            con.RunSQL(myQuery);
+
+            //Updates the necesscary criteria and feedback details
+            for (int i = 0; i < 5; i++)
+            {
+                int rank = i + 1;
+                string rankstring = rank.ToString();
+                con.RunSQL("UPDATE Criteria SET Rank='" + rankstring + "', CriteriaText='" + m_question.Responses[i] + "' WHERE QuestionID=" + m_question.GetID);
+                con.RunSQL("UPDATE Feedback SET Rank='" + rankstring + "', FeedbackText='" + m_question.Feedback[i] + "' WHERE QuestionID=" + m_question.GetID);
+            }
+
             con.CloseConnection();
         }
 

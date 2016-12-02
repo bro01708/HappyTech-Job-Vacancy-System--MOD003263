@@ -18,6 +18,7 @@ namespace HappyTechSystem
     public partial class ViewQuestionBank : Form
     {
         private QuestionBank questionBank = QuestionBank.getInst();
+        private VacancyBank vacancyBank = VacancyBank.getInst();
         //private variable used to aid toggling
         private byte flag;
 
@@ -36,7 +37,22 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_save_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Save Question Changes?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string[] responses = { tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text, tb_response5.Text };
+                    string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
+                    QuestionCreator questionCreator = QuestionCreator.getInst();
+                    questionCreator.ModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text, tb_question.Text, responses, feedback);
+                }
+            }
+            catch (Exception err)
+            {
+                
+                throw err;
+            }
         }
 
         /// <summary>
@@ -54,7 +70,8 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = true;
                 lb_Q.Enabled = false;
                 btn_close.Enabled = false;
-                tb_categoryTag.ReadOnly = false;
+                cb_categoryTag.Enabled = true;
+                cb_categoryTag.DataSource = questionBank.getCategoryList;
                 tb_question.ReadOnly = false;
                 tb_feedback1.ReadOnly = false;
                 tb_feedback2.ReadOnly = false;
@@ -73,7 +90,7 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = false;
                 lb_Q.Enabled = true;
                 btn_close.Enabled = true;
-                tb_categoryTag.ReadOnly = true;
+                cb_categoryTag.Enabled = false;
                 tb_question.ReadOnly = true;
                 tb_feedback1.ReadOnly = true;
                 tb_feedback2.ReadOnly = true;
@@ -98,7 +115,8 @@ namespace HappyTechSystem
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
-            
+            lb_Q.HorizontalScrollbar = true;
+
         }
 
         /// <summary>
@@ -114,12 +132,14 @@ namespace HappyTechSystem
 
         private void lb_Q_SelectedIndexChanged(object sender, EventArgs e)
         {
+            clearFields();
+
             try
             {
                 Question q = (Question)lb_Q.SelectedItem;
                 tb_question.Text = q.GetText;
                 tb_questionID.Text = q.GetID.ToString();
-                tb_categoryTag.Text = q.GetTag;
+                cb_categoryTag.Text = q.GetTag;
                 tb_response1.Text = q.Responses[0];
                 tb_response2.Text = q.Responses[1];
                 tb_response3.Text = q.Responses[2];
@@ -134,13 +154,13 @@ namespace HappyTechSystem
             }
             catch (Exception)
             {
-                //MessageBox.Show("Please click an entry in the textbox" + " " + ex.ToString());
+
             }
         }
 
         /// <summary>
-        /// Created by Peter
-        /// Handles deletion of a particular question
+        /// Created by Peter.
+        /// Handles deletion of a particular question, checking whether or not it's still bound to a vacancy.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -148,36 +168,53 @@ namespace HappyTechSystem
         {
             try
             {
-                questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
-                lb_Q.DataSource= null;
-                lb_Q.DataSource = questionBank.getQuestionList;
-                try
+                Question q = (Question)lb_Q.SelectedItem;
+                int associatedQuestions = 0;
+
+                foreach (Vacancy v in vacancyBank.getVacancyList)
                 {
-                    btn_edit.PerformClick();
-                    lb_Q.SelectedIndex = 0;
+                    int index = 0;
+                    foreach (int qID in v.getQuestionsToBeUsed)
+                    {
+                        if (v.getQuestionsToBeUsed[index] == q.GetID)
+                        {
+                            associatedQuestions++;
+                        }
+                        index++;
+                    }
                 }
-                catch (Exception)
+                if (associatedQuestions == 0)
                 {
-                    tb_question.Text = "";
-                    tb_questionID.Text = "";
-                    tb_categoryTag.Text = "";
-                    tb_response1.Text = "";
-                    tb_response2.Text = "";
-                    tb_response3.Text = "";
-                    tb_response4.Text = "";
-                    tb_response5.Text = "";
-                    tb_feedback1.Text = "";
-                    tb_feedback2.Text = "";
-                    tb_feedback3.Text = "";
-                    tb_feedback4.Text = "";
-                    tb_feedback5.Text = "";
+                    DialogResult dialogResult =  MessageBox.Show("You are about to delete this question, including all of it's criteria and feedback information." +
+                                    "\n\nAre you sure you want to delete this question?","Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
+                        lb_Q.DataSource = null;
+                        lb_Q.DataSource = questionBank.getQuestionList;
+                        try
+                        {
+                            btn_edit.PerformClick();
+                            lb_Q.SelectedIndex = 0;
+                        }
+                        catch (Exception)
+                        {
+                            clearFields();
+                        }
+
+                        MessageBox.Show("Question Successfully Deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                
+                else
+                {
+                    MessageBox.Show("You cannot delete this question due to the following reasons:" +
+                                    "\n\n(X) This question is still bound to a Vacancy.", "Cannot Delete Question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
-            catch (Exception )
+            catch (Exception err)
             {
-
+                throw err;
             }
         }
 
@@ -198,6 +235,27 @@ namespace HappyTechSystem
             filters.Insert(0, "All");
             filters.AddRange(questionBank.getCategoryList);
             cb_filterCategories.DataSource = filters;
+        }
+
+        /// <summary>
+        /// Created by Dan.
+        /// Flushes all fields, replacing them with empty strings.
+        /// </summary>
+        private void clearFields()
+        {
+            tb_question.Text = "";
+            tb_questionID.Text = "";
+            cb_categoryTag.Text = "";
+            tb_response1.Text = "";
+            tb_response2.Text = "";
+            tb_response3.Text = "";
+            tb_response4.Text = "";
+            tb_response5.Text = "";
+            tb_feedback1.Text = "";
+            tb_feedback2.Text = "";
+            tb_feedback3.Text = "";
+            tb_feedback4.Text = "";
+            tb_feedback5.Text = "";
         }
     }
 }

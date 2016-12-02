@@ -23,6 +23,7 @@ namespace HappyTechSystem
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionBank = QuestionBank.getInst();
         private string path;
+        private int pass;
 
         public ViewInterview()
         {
@@ -43,6 +44,7 @@ namespace HappyTechSystem
         private void lb_interviews_SelectedIndexChanged(object sender, EventArgs e)
         {
             string qText;
+
             try
             {
                 Interview I = (Interview) lb_interviews.SelectedItem;
@@ -52,11 +54,24 @@ namespace HappyTechSystem
                 tb_interviewerName.Text = I.getInterviewerName;
                 tb_notes.Text = I.getAdditionalNotes;
                 lbl_score.Text = I.getTotal.ToString();
+
+                if (I.getTotal >= pass)
+                {
+                    lbl_status.ForeColor = Color.Green;
+                    lbl_status.Text = "Accepted";
+                }
+                else
+                {
+                    lbl_status.ForeColor = Color.Red;
+                    lbl_status.Text = "Rejected";
+                }
                 path = I.getCVPath;
 
                 List<string> questionsAndRanks = new List<string>(); //final list to display to the textbox
-                Vacancy v = vacancyBank.getVacancyList[I.getUsedVacancyID - 1]; //assigns a local vacancy with the vacancy associated with the interview
-                int[] questionIDs = v.getQuestionsToBeUsed.ToArray(); //an array of the question IDs that are used by the vacancy
+                Vacancy v2 = vacancyBank.getVacancyList[I.getUsedVacancyID - 1];
+                    //assigns a local vacancy with the vacancy associated with the interview
+                int[] questionIDs = v2.getQuestionsToBeUsed.ToArray();
+                    //an array of the question IDs that are used by the vacancy
                 List<Question> questions = questionBank.getQuestionList; //localised question list
 
 
@@ -71,7 +86,7 @@ namespace HappyTechSystem
                         index++;
                         answerIndex++;
                     }
-                    
+
                 }
                 lb_questionRanks.DataSource = questionsAndRanks;
             }
@@ -84,7 +99,10 @@ namespace HappyTechSystem
 
         private void ViewInterview_Load(object sender, EventArgs e)
         {
-            lb_interviews.DataSource = vacancyBank.getInterviewList;
+            lb_vacancies.DataSource = vacancyBank.getVacancyList;
+            lb_vacancies.HorizontalScrollbar = true;
+            lb_interviews.HorizontalScrollbar = true;
+            lb_questionRanks.HorizontalScrollbar = true;
         }
 
         private void btn_cvOpen_Click(object sender, EventArgs e)
@@ -101,6 +119,34 @@ namespace HappyTechSystem
                     "\n\nPath: " + path,
                     "Cannot Open CV");
             }
+        }
+
+        private void lb_vacancies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lb_interviews.Items.Clear();
+            try
+            {
+                Vacancy v = (Vacancy)lb_vacancies.SelectedItem;
+                pass = v.MinumumScore;
+                lbl_vacMinScore.Text = v.MinumumScore.ToString();
+                foreach (Interview i in vacancyBank.getInterviewList)
+                {
+                    if (i.getUsedVacancyID == v.GetID)
+                    {
+                        lb_interviews.Items.Add(i);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        private void ViewInterview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            lb_interviews.Items.Clear();
         }
     }
 }

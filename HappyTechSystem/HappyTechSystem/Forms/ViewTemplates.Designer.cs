@@ -213,6 +213,7 @@
             this.Controls.Add(this.lb_templates);
             this.Controls.Add(this.lbl_select);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ViewTemplates";
             this.Text = "Modify and View Templates";
             this.Load += new System.EventHandler(this.ViewTemplates_Load);

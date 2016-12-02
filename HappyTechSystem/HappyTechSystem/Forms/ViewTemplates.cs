@@ -72,6 +72,7 @@ namespace HappyTechSystem
         private void ViewTemplates_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
+            lb_templates.HorizontalScrollbar = true;
         }
 
         private void lb_templates_SelectedIndexChanged(object sender, EventArgs e)

@@ -55,6 +55,8 @@
             this.lbl_vacancyBank = new System.Windows.Forms.Label();
             this.lbl_emailStatus = new System.Windows.Forms.Label();
             this.lbl_qbStatus = new System.Windows.Forms.Label();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.btn_help = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.p_splash.SuspendLayout();
@@ -214,7 +216,7 @@
             this.lbl_databaseStatus.AutoSize = true;
             this.lbl_databaseStatus.BackColor = System.Drawing.Color.Transparent;
             this.lbl_databaseStatus.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_databaseStatus.Location = new System.Drawing.Point(15, 9);
+            this.lbl_databaseStatus.Location = new System.Drawing.Point(18, 2);
             this.lbl_databaseStatus.Name = "lbl_databaseStatus";
             this.lbl_databaseStatus.Size = new System.Drawing.Size(89, 13);
             this.lbl_databaseStatus.TabIndex = 11;
@@ -225,7 +227,7 @@
             this.lbl_databaseLoad.AutoSize = true;
             this.lbl_databaseLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_databaseLoad.ForeColor = System.Drawing.Color.Red;
-            this.lbl_databaseLoad.Location = new System.Drawing.Point(110, 9);
+            this.lbl_databaseLoad.Location = new System.Drawing.Point(113, 2);
             this.lbl_databaseLoad.Name = "lbl_databaseLoad";
             this.lbl_databaseLoad.Size = new System.Drawing.Size(97, 13);
             this.lbl_databaseLoad.TabIndex = 12;
@@ -267,9 +269,10 @@
             this.p_databaseStatus.Controls.Add(this.lbl_qbStatus);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseLoad);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseStatus);
-            this.p_databaseStatus.Location = new System.Drawing.Point(1127, 27);
+            this.p_databaseStatus.Location = new System.Drawing.Point(1125, 33);
+            this.p_databaseStatus.Margin = new System.Windows.Forms.Padding(0);
             this.p_databaseStatus.Name = "p_databaseStatus";
-            this.p_databaseStatus.Size = new System.Drawing.Size(214, 85);
+            this.p_databaseStatus.Size = new System.Drawing.Size(216, 67);
             this.p_databaseStatus.TabIndex = 15;
             // 
             // lbl_vacancyLoad
@@ -277,7 +280,7 @@
             this.lbl_vacancyLoad.AutoSize = true;
             this.lbl_vacancyLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_vacancyLoad.ForeColor = System.Drawing.Color.Red;
-            this.lbl_vacancyLoad.Location = new System.Drawing.Point(110, 57);
+            this.lbl_vacancyLoad.Location = new System.Drawing.Point(113, 50);
             this.lbl_vacancyLoad.Name = "lbl_vacancyLoad";
             this.lbl_vacancyLoad.Size = new System.Drawing.Size(66, 13);
             this.lbl_vacancyLoad.TabIndex = 18;
@@ -288,7 +291,7 @@
             this.lbl_emailLoad.AutoSize = true;
             this.lbl_emailLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_emailLoad.ForeColor = System.Drawing.Color.Red;
-            this.lbl_emailLoad.Location = new System.Drawing.Point(110, 44);
+            this.lbl_emailLoad.Location = new System.Drawing.Point(113, 37);
             this.lbl_emailLoad.Name = "lbl_emailLoad";
             this.lbl_emailLoad.Size = new System.Drawing.Size(66, 13);
             this.lbl_emailLoad.TabIndex = 17;
@@ -299,7 +302,7 @@
             this.lbl_qbLoad.AutoSize = true;
             this.lbl_qbLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_qbLoad.ForeColor = System.Drawing.Color.Red;
-            this.lbl_qbLoad.Location = new System.Drawing.Point(110, 31);
+            this.lbl_qbLoad.Location = new System.Drawing.Point(113, 24);
             this.lbl_qbLoad.Name = "lbl_qbLoad";
             this.lbl_qbLoad.Size = new System.Drawing.Size(66, 13);
             this.lbl_qbLoad.TabIndex = 16;
@@ -310,7 +313,7 @@
             this.lbl_vacancyBank.AutoSize = true;
             this.lbl_vacancyBank.BackColor = System.Drawing.Color.Transparent;
             this.lbl_vacancyBank.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_vacancyBank.Location = new System.Drawing.Point(15, 57);
+            this.lbl_vacancyBank.Location = new System.Drawing.Point(18, 50);
             this.lbl_vacancyBank.Name = "lbl_vacancyBank";
             this.lbl_vacancyBank.Size = new System.Drawing.Size(80, 13);
             this.lbl_vacancyBank.TabIndex = 15;
@@ -321,7 +324,7 @@
             this.lbl_emailStatus.AutoSize = true;
             this.lbl_emailStatus.BackColor = System.Drawing.Color.Transparent;
             this.lbl_emailStatus.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_emailStatus.Location = new System.Drawing.Point(15, 44);
+            this.lbl_emailStatus.Location = new System.Drawing.Point(18, 37);
             this.lbl_emailStatus.Name = "lbl_emailStatus";
             this.lbl_emailStatus.Size = new System.Drawing.Size(63, 13);
             this.lbl_emailStatus.TabIndex = 14;
@@ -332,11 +335,33 @@
             this.lbl_qbStatus.AutoSize = true;
             this.lbl_qbStatus.BackColor = System.Drawing.Color.Transparent;
             this.lbl_qbStatus.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_qbStatus.Location = new System.Drawing.Point(15, 31);
+            this.lbl_qbStatus.Location = new System.Drawing.Point(18, 24);
             this.lbl_qbStatus.Name = "lbl_qbStatus";
             this.lbl_qbStatus.Size = new System.Drawing.Size(80, 13);
             this.lbl_qbStatus.TabIndex = 13;
             this.lbl_qbStatus.Text = "Question Bank:";
+            // 
+            // btn_close
+            // 
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Location = new System.Drawing.Point(856, 668);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(479, 49);
+            this.btn_close.TabIndex = 17;
+            this.btn_close.Text = "Close Application";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // btn_help
+            // 
+            this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_help.Location = new System.Drawing.Point(12, 668);
+            this.btn_help.Name = "btn_help";
+            this.btn_help.Size = new System.Drawing.Size(479, 49);
+            this.btn_help.TabIndex = 18;
+            this.btn_help.Text = "Need some help?";
+            this.btn_help.UseVisualStyleBackColor = true;
+            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
             // MainForm
             // 
@@ -344,6 +369,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.btn_help);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.p_databaseStatus);
             this.Controls.Add(this.p_splash);
             this.Controls.Add(this.menuStrip1);
@@ -395,5 +422,7 @@
         private System.Windows.Forms.Label lbl_vacancyBank;
         private System.Windows.Forms.Label lbl_emailStatus;
         private System.Windows.Forms.Label lbl_qbStatus;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button btn_help;
     }
 }

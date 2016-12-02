@@ -251,6 +251,7 @@
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lb_questionBank);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateVacancy";
             this.Text = "Create a Vacancy";
             this.Load += new System.EventHandler(this.CreateVacancy_Load);

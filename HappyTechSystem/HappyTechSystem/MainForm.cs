@@ -40,11 +40,15 @@ namespace HappyTechSystem
             {
                 p_splash.SendToBack();
                 p_databaseStatus.SendToBack();
+                btn_close.SendToBack();
+                btn_help.SendToBack();
             }
             else
             {
                 p_splash.BringToFront();
                 p_databaseStatus.BringToFront();
+                btn_close.BringToFront();
+                btn_help.BringToFront();
             }
         }
         /// <summary>
@@ -149,7 +153,7 @@ namespace HappyTechSystem
             Welcome welcome = new Welcome();
             formCheck(welcome);
 
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             MdiClient chld;
 
@@ -189,6 +193,16 @@ namespace HappyTechSystem
                 lbl_vacancyLoad.ForeColor = Color.Green;
                 lbl_vacancyLoad.Text = "Loaded!";
             }
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("", "How to use the Application Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

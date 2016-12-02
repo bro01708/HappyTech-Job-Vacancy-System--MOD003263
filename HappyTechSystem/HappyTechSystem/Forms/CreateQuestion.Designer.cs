@@ -290,7 +290,7 @@
             this.btn_createQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_createQuestion.Location = new System.Drawing.Point(12, 532);
             this.btn_createQuestion.Name = "btn_createQuestion";
-            this.btn_createQuestion.Size = new System.Drawing.Size(1200, 35);
+            this.btn_createQuestion.Size = new System.Drawing.Size(1176, 35);
             this.btn_createQuestion.TabIndex = 24;
             this.btn_createQuestion.Text = "Create Question";
             this.btn_createQuestion.UseVisualStyleBackColor = true;
@@ -299,9 +299,9 @@
             // btn_createQuestionHelp
             // 
             this.btn_createQuestionHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_createQuestionHelp.Location = new System.Drawing.Point(1218, 532);
+            this.btn_createQuestionHelp.Location = new System.Drawing.Point(1194, 532);
             this.btn_createQuestionHelp.Name = "btn_createQuestionHelp";
-            this.btn_createQuestionHelp.Size = new System.Drawing.Size(39, 35);
+            this.btn_createQuestionHelp.Size = new System.Drawing.Size(63, 35);
             this.btn_createQuestionHelp.TabIndex = 25;
             this.btn_createQuestionHelp.Text = "?";
             this.btn_createQuestionHelp.UseVisualStyleBackColor = true;
@@ -339,6 +339,7 @@
             // lbl_deleteConfirmation
             // 
             this.lbl_deleteConfirmation.AutoSize = true;
+            this.lbl_deleteConfirmation.ForeColor = System.Drawing.Color.Green;
             this.lbl_deleteConfirmation.Location = new System.Drawing.Point(226, 73);
             this.lbl_deleteConfirmation.Name = "lbl_deleteConfirmation";
             this.lbl_deleteConfirmation.Size = new System.Drawing.Size(16, 13);
@@ -386,6 +387,7 @@
             // lbl_addConfimation
             // 
             this.lbl_addConfimation.AutoSize = true;
+            this.lbl_addConfimation.ForeColor = System.Drawing.Color.Green;
             this.lbl_addConfimation.Location = new System.Drawing.Point(11, 72);
             this.lbl_addConfimation.Name = "lbl_addConfimation";
             this.lbl_addConfimation.Size = new System.Drawing.Size(16, 13);
@@ -502,6 +504,7 @@
             this.Controls.Add(this.btn_createQuestionHelp);
             this.Controls.Add(this.btn_createQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateQuestion";
             this.Text = "Create a Question";
             this.Load += new System.EventHandler(this.CreateQuestion_Load);
