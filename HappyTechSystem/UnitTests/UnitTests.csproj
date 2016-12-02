@@ -50,8 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="EmailBankTests.cs" />
     <Compile Include="QuestionBankTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VacancyBankTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HappyTechSystem\HappyTechSystem.csproj">
