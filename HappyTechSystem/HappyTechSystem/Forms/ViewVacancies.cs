@@ -41,6 +41,8 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = true;
                 tb_vacancyName.ReadOnly = false;
                 tb_role.Enabled = false;
+                lb_questionBank.Enabled = false;
+                lb_questionsUsed.Enabled = false;
                 nud_acceptance.ReadOnly = false;
                 nud_slots.ReadOnly = false;
                 btn_moveQuestion.Enabled = true;
@@ -53,6 +55,8 @@ namespace HappyTechSystem
                 p_editToolbox.Enabled = false;
                 tb_vacancyName.ReadOnly = true;
                 tb_role.Enabled = true;
+                lb_questionBank.Enabled = true;
+                lb_questionsUsed.Enabled = true;
                 nud_acceptance.ReadOnly = true;
                 nud_slots.ReadOnly = true;
                 btn_moveQuestion.Enabled = false;
@@ -75,7 +79,7 @@ namespace HappyTechSystem
                 lb_questionBank.DataSource = questionBank.getQuestionList;
                 lb_questionsUsed.DataSource = v.getQuestionsToBeUsed;
 
-                foreach (Interview I in vacancyBank.getInterivewList)
+                foreach (Interview I in vacancyBank.getInterviewList)
                 {
                     if (I.getUsedVacancyID == v.GetID)
                     {

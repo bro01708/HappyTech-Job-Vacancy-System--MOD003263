@@ -12,11 +12,10 @@ namespace HappyTechSystem.Core
     /// </summary>
     public class Interview
     {
-        private int interviewID, vacancyID;
+        private int interviewID, vacancyID, totalScore;
         private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
         private int[] answers;
-
-        Vacancy v = new Vacancy();
+        private string[] questions;
 
 
         public int getUsedVacancyID
@@ -86,6 +85,12 @@ namespace HappyTechSystem.Core
             }
         }
 
+        public int getTotal
+        {
+            get { return totalScore; }
+            set { totalScore = value; }
+        }
+
         public void AttachCV() //Attaches CV of applicant to be interviewed
         {
             
@@ -105,11 +110,15 @@ namespace HappyTechSystem.Core
         {
 
         }
+
+        //public void fetchVacancyNameFromID()
+        //{
+        //    Vacancy v = vb.getVacancyList[vacancyID - 1];
+        //    vacName = v.VacancyName;
+        //}
         public override string ToString()
         {
-            //v.GetID = vacancyID;
-            //string vacName = v.VacancyName;
-            return "(" + interviewID.ToString() + ") - [Vacancy ID: " + vacancyID + "] - " + applicantName;
+            return "(" + interviewID.ToString() + ") - [] - " + applicantName;
         }
     }
 }

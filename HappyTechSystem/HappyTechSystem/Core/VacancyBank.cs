@@ -41,7 +41,7 @@ namespace HappyTechSystem.Core
             set { vacancyList = value; }
         }
 
-        public List<Interview> getInterivewList
+        public List<Interview> getInterviewList
         {
             get { return interviewList; }
             set { interviewList = value; }

@@ -344,9 +344,10 @@ namespace HappyTechSystem.DB
             string cvPath = m_interview.getCVPath;
             string additionalNotes = m_interview.getAdditionalNotes;
             int[] ranks = m_interview.Answers;
+            int total = m_interview.getTotal;
 
-            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes) VALUES ('" + interviewID +
-                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "')";
+            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes, TotalScore) VALUES ('" + interviewID +
+                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "','" + total + "')";
 
             con.RunSQL(myQuery);
 
@@ -355,7 +356,6 @@ namespace HappyTechSystem.DB
                 string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES('" + i + "','" + interviewID + "','" + ranks[i] + "')";
                 con.RunSQL(myQuery2);
             }
-            
 
             con.CloseConnection();
         }
@@ -372,7 +372,7 @@ namespace HappyTechSystem.DB
             DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT InterviewID, VacancyID, InterviewerName, Title, ApplicantName, CVpath, AdditionalNotes FROM Interview;");
+                DbDataReader dr = con.Select("SELECT InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes, TotalScore FROM Interview;");
 
                 //Read the data and store them in the list
                 while (dr.Read())
@@ -383,8 +383,10 @@ namespace HappyTechSystem.DB
                     I.getInterviewerName = dr.GetString(2);
                     I.getApplicantTitle = dr.GetString(3);
                     I.getApplicantName = dr.GetString(4);
-                    I.getCVPath = dr.GetString(5);
-                    I.getAdditionalNotes = dr.GetString(6);
+                    I.getApplicantEmail = dr.GetString(5);
+                    I.getCVPath = dr.GetString(6);
+                    I.getAdditionalNotes = dr.GetString(7);
+                    I.getTotal = dr.GetInt32(8);
 
                     DbDataReader dr2 = con.Select("SELECT Rank FROM Answer WHERE InterviewID = " + I.getInterviewID + " ORDER BY QuestionIndex;");
                     List<int> temporaryAnswers = new List<int>();

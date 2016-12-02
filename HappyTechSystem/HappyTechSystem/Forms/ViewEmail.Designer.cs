@@ -36,12 +36,13 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
+            this.lbl_email = new System.Windows.Forms.Label();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tb_emailPreview
             // 
-            this.tb_emailPreview.Location = new System.Drawing.Point(192, 12);
+            this.tb_emailPreview.Location = new System.Drawing.Point(192, 86);
             this.tb_emailPreview.Multiline = true;
             this.tb_emailPreview.Name = "tb_emailPreview";
             this.tb_emailPreview.ReadOnly = true;
@@ -52,15 +53,15 @@
             // lb_email
             // 
             this.lb_email.FormattingEnabled = true;
-            this.lb_email.Location = new System.Drawing.Point(6, 36);
+            this.lb_email.Location = new System.Drawing.Point(6, 23);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(180, 238);
+            this.lb_email.Size = new System.Drawing.Size(180, 329);
             this.lb_email.TabIndex = 1;
             // 
             // lbl_help
             // 
             this.lbl_help.AutoSize = true;
-            this.lbl_help.Location = new System.Drawing.Point(12, 12);
+            this.lbl_help.Location = new System.Drawing.Point(11, 9);
             this.lbl_help.Name = "lbl_help";
             this.lbl_help.Size = new System.Drawing.Size(175, 13);
             this.lbl_help.TabIndex = 4;
@@ -107,7 +108,7 @@
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(7, 280);
+            this.btn_close.Location = new System.Drawing.Point(7, 354);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(179, 33);
             this.btn_close.TabIndex = 57;
@@ -115,11 +116,21 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // lbl_email
+            // 
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Location = new System.Drawing.Point(193, 67);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(76, 13);
+            this.lbl_email.TabIndex = 58;
+            this.lbl_email.Text = "Email Preview:";
+            // 
             // ViewEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 327);
+            this.ClientSize = new System.Drawing.Size(646, 399);
+            this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
@@ -145,5 +156,6 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Label lbl_email;
     }
 }

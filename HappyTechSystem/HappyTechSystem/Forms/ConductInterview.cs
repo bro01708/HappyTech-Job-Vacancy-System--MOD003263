@@ -305,7 +305,8 @@ namespace HappyTechSystem
         private void btn_complete_Click(object sender, EventArgs e)
         {
             InterviewCreator interviewCreator = InterviewCreator.getInst();
-            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, cb_title.Text, tb_applicantName.Text, tb_email.Text, tb_cvPath.Text, tb_notes.Text, responses);
+            int total = responses.Sum();
+            interviewCreator.CreateInterview(Convert.ToInt32(tb_interviewID.Text), vacID, tb_interviewerName.Text, cb_title.Text, tb_applicantName.Text, tb_email.Text, tb_cvPath.Text, tb_notes.Text, responses, total);
             MessageBox.Show("The Interview was successfully recorded! To view it, check the 'View Interviews' Menu!\n" +
                             "It is also possible to see this interview record attached to its associated vacancy in the 'View Vacancies' menu.",
                             "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);

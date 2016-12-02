@@ -149,7 +149,7 @@
             // 
             // tb_questionID
             // 
-            this.tb_questionID.Location = new System.Drawing.Point(735, 12);
+            this.tb_questionID.Location = new System.Drawing.Point(727, 12);
             this.tb_questionID.Name = "tb_questionID";
             this.tb_questionID.ReadOnly = true;
             this.tb_questionID.Size = new System.Drawing.Size(28, 20);
@@ -158,7 +158,7 @@
             // lbl_category
             // 
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(777, 15);
+            this.lbl_category.Location = new System.Drawing.Point(767, 15);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(71, 13);
             this.lbl_category.TabIndex = 58;
@@ -175,7 +175,7 @@
             // 
             // tb_categoryTag
             // 
-            this.tb_categoryTag.Location = new System.Drawing.Point(854, 12);
+            this.tb_categoryTag.Location = new System.Drawing.Point(844, 12);
             this.tb_categoryTag.Name = "tb_categoryTag";
             this.tb_categoryTag.ReadOnly = true;
             this.tb_categoryTag.Size = new System.Drawing.Size(100, 20);
@@ -242,6 +242,7 @@
             this.tb_feedback5.Location = new System.Drawing.Point(978, 19);
             this.tb_feedback5.Multiline = true;
             this.tb_feedback5.Name = "tb_feedback5";
+            this.tb_feedback5.ReadOnly = true;
             this.tb_feedback5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback5.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback5.TabIndex = 16;
@@ -251,6 +252,7 @@
             this.tb_feedback3.Location = new System.Drawing.Point(492, 19);
             this.tb_feedback3.Multiline = true;
             this.tb_feedback3.Name = "tb_feedback3";
+            this.tb_feedback3.ReadOnly = true;
             this.tb_feedback3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback3.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback3.TabIndex = 12;
@@ -260,6 +262,7 @@
             this.tb_feedback1.Location = new System.Drawing.Point(6, 19);
             this.tb_feedback1.Multiline = true;
             this.tb_feedback1.Name = "tb_feedback1";
+            this.tb_feedback1.ReadOnly = true;
             this.tb_feedback1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback1.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback1.TabIndex = 8;
@@ -269,6 +272,7 @@
             this.tb_feedback4.Location = new System.Drawing.Point(735, 19);
             this.tb_feedback4.Multiline = true;
             this.tb_feedback4.Name = "tb_feedback4";
+            this.tb_feedback4.ReadOnly = true;
             this.tb_feedback4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback4.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback4.TabIndex = 14;
@@ -278,6 +282,7 @@
             this.tb_feedback2.Location = new System.Drawing.Point(249, 19);
             this.tb_feedback2.Multiline = true;
             this.tb_feedback2.Name = "tb_feedback2";
+            this.tb_feedback2.ReadOnly = true;
             this.tb_feedback2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback2.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback2.TabIndex = 10;
@@ -301,6 +306,7 @@
             this.tb_response2.Location = new System.Drawing.Point(249, 31);
             this.tb_response2.Multiline = true;
             this.tb_response2.Name = "tb_response2";
+            this.tb_response2.ReadOnly = true;
             this.tb_response2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response2.Size = new System.Drawing.Size(237, 84);
             this.tb_response2.TabIndex = 9;
@@ -310,6 +316,7 @@
             this.tb_response1.Location = new System.Drawing.Point(6, 31);
             this.tb_response1.Multiline = true;
             this.tb_response1.Name = "tb_response1";
+            this.tb_response1.ReadOnly = true;
             this.tb_response1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response1.Size = new System.Drawing.Size(237, 84);
             this.tb_response1.TabIndex = 7;
@@ -319,6 +326,7 @@
             this.tb_response4.Location = new System.Drawing.Point(735, 31);
             this.tb_response4.Multiline = true;
             this.tb_response4.Name = "tb_response4";
+            this.tb_response4.ReadOnly = true;
             this.tb_response4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response4.Size = new System.Drawing.Size(237, 84);
             this.tb_response4.TabIndex = 13;
@@ -328,6 +336,7 @@
             this.tb_response5.Location = new System.Drawing.Point(978, 31);
             this.tb_response5.Multiline = true;
             this.tb_response5.Name = "tb_response5";
+            this.tb_response5.ReadOnly = true;
             this.tb_response5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response5.Size = new System.Drawing.Size(237, 84);
             this.tb_response5.TabIndex = 15;
@@ -337,6 +346,7 @@
             this.tb_response3.Location = new System.Drawing.Point(492, 31);
             this.tb_response3.Multiline = true;
             this.tb_response3.Name = "tb_response3";
+            this.tb_response3.ReadOnly = true;
             this.tb_response3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response3.Size = new System.Drawing.Size(237, 84);
             this.tb_response3.TabIndex = 11;
