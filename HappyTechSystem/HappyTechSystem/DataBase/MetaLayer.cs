@@ -386,6 +386,16 @@ namespace HappyTechSystem.DB
                     I.getCVPath = dr.GetString(5);
                     I.getAdditionalNotes = dr.GetString(6);
 
+                    DbDataReader dr2 = con.Select("SELECT Rank FROM Answer WHERE InterviewID = " + I.getInterviewID + " ORDER BY QuestionIndex;");
+                    List<int> temporaryAnswers = new List<int>();
+
+                    while (dr2.Read())
+                    {
+                        temporaryAnswers.Add(dr2.GetInt32(0));
+                    }
+
+                    I.Answers = temporaryAnswers.ToArray();
+
                     //reading in response ranks to go here
                     il.Add(I);
                 }

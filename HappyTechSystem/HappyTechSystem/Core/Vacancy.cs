@@ -11,6 +11,7 @@ namespace HappyTechSystem.Core
         private int vacancyid;
         //private List<Interview> interviews = new List<Interview>();
         private List<int> questionsToBeUsed = new List<int>(); //Stores questions for the interview
+        private List<Interview> interviewList = new List<Interview>();
         private int minumumScore;
         private int positionsAvailable;
         private string role;
