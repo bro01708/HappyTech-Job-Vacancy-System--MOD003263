@@ -32,10 +32,10 @@ namespace UnitTests
         {
             VacancyBank VB = new VacancyBank();
             Interview I = new Interview();
-            int expected = VB.getInterivewList.Count;
+            int expected = VB.getInterviewList.Count;
             VB.AddInterviewToList(I);
 
-            Assert.AreEqual(VB.getInterivewList[expected], I);
+            Assert.AreEqual(VB.getInterviewList[expected], I);
         }
 
 
