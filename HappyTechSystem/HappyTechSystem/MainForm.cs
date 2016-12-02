@@ -202,7 +202,7 @@ namespace HappyTechSystem
 
         private void btn_help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("", "How to use the Application Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("", "How to use the Application Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -128,8 +128,7 @@ namespace HappyTechSystem
                 string.IsNullOrEmpty(cb_title.Text) ||
                 string.IsNullOrEmpty(tb_applicantName.Text) ||
                 string.IsNullOrEmpty(tb_email.Text) ||
-                string.IsNullOrEmpty(tb_cvPath.Text) ||
-                canConduct((Vacancy)cb_vacancy.SelectedItem) == false)
+                string.IsNullOrEmpty(tb_cvPath.Text))
             {
                 btn_beginInterview.Enabled = false;
             }
@@ -323,16 +322,16 @@ namespace HappyTechSystem
         /// </summary>
         /// <param name="m_v"></param>
         /// <returns></returns>
-        private bool canConduct(Vacancy m_v)
-        {
-            List<Interview> l = vacancyBank.getInterviewList.Where(i => i.getUsedVacancyID == m_v.GetID).ToList();
-            int count = l.Count;
+        //private bool canConduct(Vacancy m_v)
+        //{
+        //    List<Interview> l = vacancyBank.getInterviewList.Where(i => i.getUsedVacancyID == m_v.GetID).ToList();
+        //    int count = l.Count;
 
-            if (m_v.PositionsAvailable <= count)
-            {
-                return false;
-            }
-            return true;
-        }
+        //    if (m_v.PositionsAvailable <= count)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
     }
 }

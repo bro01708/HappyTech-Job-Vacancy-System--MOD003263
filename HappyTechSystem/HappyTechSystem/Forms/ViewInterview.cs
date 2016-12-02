@@ -55,15 +55,20 @@ namespace HappyTechSystem
                 tb_notes.Text = I.getAdditionalNotes;
                 lbl_score.Text = I.getTotal.ToString();
 
-                if (I.getTotal >= pass)
+                if (I.getTotal > pass)
                 {
                     lbl_status.ForeColor = Color.Green;
-                    lbl_status.Text = "Accepted";
+                    lbl_status.Text = "Above Minimum";
+                }
+                else if (I.getTotal == pass)
+                {
+                    lbl_status.ForeColor = Color.Orange;
+                    lbl_status.Text = "Equal to Minimum";
                 }
                 else
                 {
                     lbl_status.ForeColor = Color.Red;
-                    lbl_status.Text = "Rejected";
+                    lbl_status.Text = "Below Minimum";
                 }
                 path = I.getCVPath;
 
@@ -128,7 +133,7 @@ namespace HappyTechSystem
             {
                 Vacancy v = (Vacancy)lb_vacancies.SelectedItem;
                 pass = v.MinumumScore;
-                lbl_vacMinScore.Text = v.MinumumScore.ToString();
+                //lbl_rank.Text = v.MinumumScore.ToString();
                 foreach (Interview i in vacancyBank.getInterviewList)
                 {
                     if (i.getUsedVacancyID == v.GetID)
@@ -147,6 +152,17 @@ namespace HappyTechSystem
         private void ViewInterview_FormClosing(object sender, FormClosingEventArgs e)
         {
             lb_interviews.Items.Clear();
+        }
+
+        private void btn_generateEmails_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Doing this will generate emails for each interview, selecting the top scorers in each interview to fill the " +
+                                                        "vacancy slots." +
+                                                        "\n\nWould you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //gen some emails son!
+            }
         }
     }
 }

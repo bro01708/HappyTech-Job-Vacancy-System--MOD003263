@@ -50,8 +50,9 @@
             this.gb_vacancies = new System.Windows.Forms.GroupBox();
             this.lb_vacancies = new System.Windows.Forms.ListBox();
             this.btn_generateEmails = new System.Windows.Forms.Button();
-            this.lbl_minScore = new System.Windows.Forms.Label();
-            this.lbl_vacMinScore = new System.Windows.Forms.Label();
+            this.lbl_ranking = new System.Windows.Forms.Label();
+            this.lbl_rank = new System.Windows.Forms.Label();
+            this.lbl_rankAdjust = new System.Windows.Forms.Label();
             this.gb_selectInterview.SuspendLayout();
             this.gb_vacancies.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             this.btn_cvOpen.TabIndex = 6;
             this.btn_cvOpen.Text = "Open CV";
             this.btn_cvOpen.UseVisualStyleBackColor = true;
+            this.btn_cvOpen.Click += new System.EventHandler(this.btn_cvOpen_Click);
             // 
             // gb_selectInterview
             // 
@@ -132,7 +134,7 @@
             // 
             this.lbl_totalScore.AutoSize = true;
             this.lbl_totalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalScore.Location = new System.Drawing.Point(10, 413);
+            this.lbl_totalScore.Location = new System.Drawing.Point(12, 447);
             this.lbl_totalScore.Name = "lbl_totalScore";
             this.lbl_totalScore.Size = new System.Drawing.Size(237, 25);
             this.lbl_totalScore.TabIndex = 11;
@@ -142,7 +144,7 @@
             // 
             this.lbl_score.AutoSize = true;
             this.lbl_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_score.Location = new System.Drawing.Point(253, 413);
+            this.lbl_score.Location = new System.Drawing.Point(255, 447);
             this.lbl_score.Name = "lbl_score";
             this.lbl_score.Size = new System.Drawing.Size(48, 25);
             this.lbl_score.TabIndex = 12;
@@ -152,17 +154,17 @@
             // 
             this.lbl_intervieweeStatus.AutoSize = true;
             this.lbl_intervieweeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_intervieweeStatus.Location = new System.Drawing.Point(10, 484);
+            this.lbl_intervieweeStatus.Location = new System.Drawing.Point(12, 484);
             this.lbl_intervieweeStatus.Name = "lbl_intervieweeStatus";
-            this.lbl_intervieweeStatus.Size = new System.Drawing.Size(178, 25);
+            this.lbl_intervieweeStatus.Size = new System.Drawing.Size(235, 25);
             this.lbl_intervieweeStatus.TabIndex = 13;
-            this.lbl_intervieweeStatus.Text = "Interviewee Status:";
+            this.lbl_intervieweeStatus.Text = "Interviewee Score Status:";
             // 
             // lbl_status
             // 
             this.lbl_status.AutoSize = true;
             this.lbl_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_status.Location = new System.Drawing.Point(253, 484);
+            this.lbl_status.Location = new System.Drawing.Point(255, 484);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(48, 25);
             this.lbl_status.TabIndex = 14;
@@ -260,34 +262,46 @@
             this.btn_generateEmails.TabIndex = 24;
             this.btn_generateEmails.Text = "Generate Emails for Vacancy";
             this.btn_generateEmails.UseVisualStyleBackColor = true;
+            this.btn_generateEmails.Click += new System.EventHandler(this.btn_generateEmails_Click);
             // 
-            // lbl_minScore
+            // lbl_ranking
             // 
-            this.lbl_minScore.AutoSize = true;
-            this.lbl_minScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_minScore.Location = new System.Drawing.Point(10, 449);
-            this.lbl_minScore.Name = "lbl_minScore";
-            this.lbl_minScore.Size = new System.Drawing.Size(228, 25);
-            this.lbl_minScore.TabIndex = 25;
-            this.lbl_minScore.Text = "Minimum Score Needed:";
+            this.lbl_ranking.AutoSize = true;
+            this.lbl_ranking.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ranking.Location = new System.Drawing.Point(12, 415);
+            this.lbl_ranking.Name = "lbl_ranking";
+            this.lbl_ranking.Size = new System.Drawing.Size(171, 25);
+            this.lbl_ranking.TabIndex = 25;
+            this.lbl_ranking.Text = "Interview Ranking:";
             // 
-            // lbl_vacMinScore
+            // lbl_rank
             // 
-            this.lbl_vacMinScore.AutoSize = true;
-            this.lbl_vacMinScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vacMinScore.Location = new System.Drawing.Point(253, 449);
-            this.lbl_vacMinScore.Name = "lbl_vacMinScore";
-            this.lbl_vacMinScore.Size = new System.Drawing.Size(48, 25);
-            this.lbl_vacMinScore.TabIndex = 26;
-            this.lbl_vacMinScore.Text = "???";
+            this.lbl_rank.AutoSize = true;
+            this.lbl_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rank.Location = new System.Drawing.Point(255, 415);
+            this.lbl_rank.Name = "lbl_rank";
+            this.lbl_rank.Size = new System.Drawing.Size(48, 25);
+            this.lbl_rank.TabIndex = 26;
+            this.lbl_rank.Text = "???";
+            // 
+            // lbl_rankAdjust
+            // 
+            this.lbl_rankAdjust.AutoSize = true;
+            this.lbl_rankAdjust.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rankAdjust.Location = new System.Drawing.Point(284, 415);
+            this.lbl_rankAdjust.Name = "lbl_rankAdjust";
+            this.lbl_rankAdjust.Size = new System.Drawing.Size(35, 17);
+            this.lbl_rankAdjust.TabIndex = 27;
+            this.lbl_rankAdjust.Text = "???";
             // 
             // ViewInterview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 560);
-            this.Controls.Add(this.lbl_vacMinScore);
-            this.Controls.Add(this.lbl_minScore);
+            this.Controls.Add(this.lbl_rankAdjust);
+            this.Controls.Add(this.lbl_rank);
+            this.Controls.Add(this.lbl_ranking);
             this.Controls.Add(this.btn_generateEmails);
             this.Controls.Add(this.gb_vacancies);
             this.Controls.Add(this.gb_selectInterview);
@@ -344,7 +358,8 @@
         private System.Windows.Forms.GroupBox gb_vacancies;
         private System.Windows.Forms.ListBox lb_vacancies;
         private System.Windows.Forms.Button btn_generateEmails;
-        private System.Windows.Forms.Label lbl_minScore;
-        private System.Windows.Forms.Label lbl_vacMinScore;
+        private System.Windows.Forms.Label lbl_ranking;
+        private System.Windows.Forms.Label lbl_rank;
+        private System.Windows.Forms.Label lbl_rankAdjust;
     }
 }
