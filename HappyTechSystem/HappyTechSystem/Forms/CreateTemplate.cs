@@ -56,7 +56,7 @@ namespace HappyTechSystem
         {
             str = tb_body.Text;
 
-            if (str.Contains("[IN]"))
+            if (str.Contains("[InterviewerName]"))
             {
                 lbl_INStatus.ForeColor = Color.Green;
                 lbl_INStatus.Text = "Found!";
@@ -67,7 +67,7 @@ namespace HappyTechSystem
                 lbl_INStatus.Text = "Not Found!";
             }
 
-            if (str.Contains("[JR]"))
+            if (str.Contains("[JobRole]"))
             {
                 lbl_JRStatus.ForeColor = Color.Green;
                 lbl_JRStatus.Text = "Found!";
@@ -78,7 +78,7 @@ namespace HappyTechSystem
                 lbl_JRStatus.Text = "Not Found!";
             }
 
-            if (str.Contains("[FA]"))
+            if (str.Contains("[FeedbackArea]"))
             {
                 lbl_FAStatus.ForeColor = Color.Green;
                 lbl_FAStatus.Text = "Found!";
@@ -88,6 +88,16 @@ namespace HappyTechSystem
                 lbl_FAStatus.ForeColor = Color.Red;
                 lbl_FAStatus.Text = "Not Found!";
             }
+            if (str.Contains("[SenderName]"))
+            {
+                lbl_SNStatus.ForeColor = Color.Green;
+                lbl_SNStatus.Text = "Found!";
+            }
+            else
+            {
+                lbl_SNStatus.ForeColor = Color.Red;
+                lbl_SNStatus.Text = "Not Found!";
+            }
 
             if (
                 string.IsNullOrEmpty(tb_name.Text) ||
@@ -95,6 +105,7 @@ namespace HappyTechSystem
                 string.IsNullOrEmpty(tb_body.Text) ||
                 lbl_INStatus.Text != "Found!" ||
                 lbl_JRStatus.Text != "Found!" ||
+                lbl_SNStatus.Text != "Found!" ||
                 lbl_FAStatus.Text != "Found!"
                 )
 
@@ -133,38 +144,38 @@ namespace HappyTechSystem
 
         private void btn_addName_Click(object sender, EventArgs e)
         {
-            if (str.Contains("[IN]"))
+            if (str.Contains("[InterviewerName]"))
             {
-                MessageBox.Show("The Interviewee's Name is already inserted!\nTo find it, look for the [IN] tag!");
+                MessageBox.Show("The Interviewee's Name is already inserted!\nTo find it, look for the [InterviewerName] tag!");
             }
             else
             {
-                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[IN]");
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[InterviewerName]");
             }
 
         }
 
         private void btn_addRole_Click(object sender, EventArgs e)
         {
-            if (str.Contains("[JR]"))
+            if (str.Contains("[JobRole]"))
             {
-                MessageBox.Show("The Job Role is already inserted!\nTo find it, look for the [JR] tag!");
+                MessageBox.Show("The Job Role is already inserted!\nTo find it, look for the [JobRole] tag!");
             }
             else
             {
-                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[JR]");
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[JobRole]");
             }
         }
 
         private void btn_addFeedback_Click(object sender, EventArgs e)
         {
-            if (str.Contains("[FA]"))
+            if (str.Contains("[FeedbackArea]"))
             {
-                MessageBox.Show("The Feedback Area is already inserted!\nTo find it, look for the [FA] tag!");
+                MessageBox.Show("The Feedback Area is already inserted!\nTo find it, look for the [FeedbackArea] tag!");
             }
             else
             {
-                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[FA]");
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[FeedbackArea]");
             }
         }
 
@@ -173,6 +184,18 @@ namespace HappyTechSystem
             templateCreator.CreateTemplate(Convert.ToInt32(tb_templateID.Text), tb_name.Text, tb_subject.Text, tb_body.Text);
             MessageBox.Show("Email Template Created Successfully!\n\nTo view your template, check the 'View Templates' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void btn_addSenderName_Click(object sender, EventArgs e)
+        {
+            if (str.Contains("[SenderName]"))
+            {
+                MessageBox.Show("The Sender Name is already inserted!\nTo find it, look for the [SenderName] tag!");
+            }
+            else
+            {
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[SenderName]");
+            }
         }
     }
 }

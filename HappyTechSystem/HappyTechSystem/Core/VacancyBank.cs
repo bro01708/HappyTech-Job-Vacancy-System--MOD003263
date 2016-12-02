@@ -7,7 +7,7 @@ using HappyTechSystem.DB;
 
 namespace HappyTechSystem.Core
 {
-    class VacancyBank
+    public class VacancyBank
     {
         private List<Vacancy> vacancyList;
         private List<Interview> interviewList;
