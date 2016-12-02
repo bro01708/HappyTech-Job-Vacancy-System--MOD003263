@@ -16,6 +16,8 @@ namespace HappyTechSystem.Core
         private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
         private int[] answers;
 
+        Vacancy v = new Vacancy();
+
 
         public int getUsedVacancyID
         {
@@ -102,6 +104,12 @@ namespace HappyTechSystem.Core
         public void StoreRecords() //Stores applicants personal details
         {
 
+        }
+        public override string ToString()
+        {
+            //v.GetID = vacancyID;
+            //string vacName = v.VacancyName;
+            return "(" + interviewID.ToString() + ") - [Vacancy ID: " + vacancyID + "] - " + applicantName;
         }
     }
 }

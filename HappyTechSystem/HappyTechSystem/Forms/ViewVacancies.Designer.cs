@@ -50,8 +50,8 @@
             this.lbl_role = new System.Windows.Forms.Label();
             this.tb_role = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_interviews = new System.Windows.Forms.ListBox();
             this.lbl_interviews = new System.Windows.Forms.Label();
+            this.lb_interviews = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).BeginInit();
             this.p_editToolbox.SuspendLayout();
@@ -274,15 +274,6 @@
             this.panel1.Size = new System.Drawing.Size(736, 255);
             this.panel1.TabIndex = 60;
             // 
-            // lb_interviews
-            // 
-            this.lb_interviews.Enabled = false;
-            this.lb_interviews.FormattingEnabled = true;
-            this.lb_interviews.Location = new System.Drawing.Point(506, 30);
-            this.lb_interviews.Name = "lb_interviews";
-            this.lb_interviews.Size = new System.Drawing.Size(212, 225);
-            this.lb_interviews.TabIndex = 16;
-            // 
             // lbl_interviews
             // 
             this.lbl_interviews.AutoSize = true;
@@ -291,6 +282,15 @@
             this.lbl_interviews.Size = new System.Drawing.Size(113, 13);
             this.lbl_interviews.TabIndex = 17;
             this.lbl_interviews.Text = "Associated Interviews:";
+            // 
+            // lb_interviews
+            // 
+            this.lb_interviews.Enabled = false;
+            this.lb_interviews.FormattingEnabled = true;
+            this.lb_interviews.Location = new System.Drawing.Point(506, 30);
+            this.lb_interviews.Name = "lb_interviews";
+            this.lb_interviews.Size = new System.Drawing.Size(212, 225);
+            this.lb_interviews.TabIndex = 16;
             // 
             // ViewVacancies
             // 
@@ -303,6 +303,7 @@
             this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.lbl_selectVacancy);
             this.Controls.Add(this.lb_vacancy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewVacancies";
             this.Text = "Modify and View Vacancies";
             this.Load += new System.EventHandler(this.ViewVacancies_Load);

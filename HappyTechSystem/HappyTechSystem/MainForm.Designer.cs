@@ -71,7 +71,7 @@
             this.modifyViewToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1350, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -250,7 +250,7 @@
             this.p_splash.Controls.Add(this.lbl_dev);
             this.p_splash.Controls.Add(this.lbl_nav);
             this.p_splash.Controls.Add(this.pb_logo);
-            this.p_splash.Location = new System.Drawing.Point(185, 239);
+            this.p_splash.Location = new System.Drawing.Point(356, 239);
             this.p_splash.Name = "p_splash";
             this.p_splash.Size = new System.Drawing.Size(633, 271);
             this.p_splash.TabIndex = 14;
@@ -267,9 +267,9 @@
             this.p_databaseStatus.Controls.Add(this.lbl_qbStatus);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseLoad);
             this.p_databaseStatus.Controls.Add(this.lbl_databaseStatus);
-            this.p_databaseStatus.Location = new System.Drawing.Point(796, 27);
+            this.p_databaseStatus.Location = new System.Drawing.Point(1127, 27);
             this.p_databaseStatus.Name = "p_databaseStatus";
-            this.p_databaseStatus.Size = new System.Drawing.Size(212, 85);
+            this.p_databaseStatus.Size = new System.Drawing.Size(214, 85);
             this.p_databaseStatus.TabIndex = 15;
             // 
             // lbl_vacancyLoad
@@ -343,11 +343,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.p_databaseStatus);
             this.Controls.Add(this.p_splash);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";

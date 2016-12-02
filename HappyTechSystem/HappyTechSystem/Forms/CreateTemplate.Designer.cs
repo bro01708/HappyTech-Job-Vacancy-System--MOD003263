@@ -274,6 +274,7 @@
             this.Controls.Add(this.lbl_subject);
             this.Controls.Add(this.tb_body);
             this.Controls.Add(this.lbl_body);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreateTemplate";
             this.Text = "Create an Email Template";
             this.Load += new System.EventHandler(this.CreateTemplate_Load);

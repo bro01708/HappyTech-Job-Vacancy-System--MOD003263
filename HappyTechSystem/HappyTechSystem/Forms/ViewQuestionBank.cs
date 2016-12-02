@@ -138,6 +138,12 @@ namespace HappyTechSystem
             }
         }
 
+        /// <summary>
+        /// Created by Peter
+        /// Handles deletion of a particular question
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_delete_Click(object sender, EventArgs e)
         {
             try

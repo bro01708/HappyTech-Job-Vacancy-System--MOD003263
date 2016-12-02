@@ -35,6 +35,8 @@
             this.tb_subject = new System.Windows.Forms.TextBox();
             this.lbl_subject = new System.Windows.Forms.Label();
             this.g_modifyViewTemplates = new System.Windows.Forms.GroupBox();
+            this.tb_templateID = new System.Windows.Forms.TextBox();
+            this.lbl_templateID = new System.Windows.Forms.Label();
             this.tb_body = new System.Windows.Forms.TextBox();
             this.lbl_body = new System.Windows.Forms.Label();
             this.btn_edit = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.lbl_templateID = new System.Windows.Forms.Label();
-            this.tb_templateID = new System.Windows.Forms.TextBox();
             this.g_modifyViewTemplates.SuspendLayout();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +117,23 @@
             this.g_modifyViewTemplates.TabStop = false;
             this.g_modifyViewTemplates.Text = "Modify and View Template";
             // 
+            // tb_templateID
+            // 
+            this.tb_templateID.Location = new System.Drawing.Point(118, 20);
+            this.tb_templateID.Name = "tb_templateID";
+            this.tb_templateID.ReadOnly = true;
+            this.tb_templateID.Size = new System.Drawing.Size(27, 20);
+            this.tb_templateID.TabIndex = 13;
+            // 
+            // lbl_templateID
+            // 
+            this.lbl_templateID.AutoSize = true;
+            this.lbl_templateID.Location = new System.Drawing.Point(18, 23);
+            this.lbl_templateID.Name = "lbl_templateID";
+            this.lbl_templateID.Size = new System.Drawing.Size(68, 13);
+            this.lbl_templateID.TabIndex = 12;
+            this.lbl_templateID.Text = "Template ID:";
+            // 
             // tb_body
             // 
             this.tb_body.Location = new System.Drawing.Point(118, 105);
@@ -184,23 +201,6 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // lbl_templateID
-            // 
-            this.lbl_templateID.AutoSize = true;
-            this.lbl_templateID.Location = new System.Drawing.Point(18, 23);
-            this.lbl_templateID.Name = "lbl_templateID";
-            this.lbl_templateID.Size = new System.Drawing.Size(68, 13);
-            this.lbl_templateID.TabIndex = 12;
-            this.lbl_templateID.Text = "Template ID:";
-            // 
-            // tb_templateID
-            // 
-            this.tb_templateID.Location = new System.Drawing.Point(118, 20);
-            this.tb_templateID.Name = "tb_templateID";
-            this.tb_templateID.ReadOnly = true;
-            this.tb_templateID.Size = new System.Drawing.Size(27, 20);
-            this.tb_templateID.TabIndex = 13;
-            // 
             // ViewTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +212,7 @@
             this.Controls.Add(this.g_modifyViewTemplates);
             this.Controls.Add(this.lb_templates);
             this.Controls.Add(this.lbl_select);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewTemplates";
             this.Text = "Modify and View Templates";
             this.Load += new System.EventHandler(this.ViewTemplates_Load);

@@ -40,6 +40,7 @@ namespace HappyTechSystem
             {
                 p_editToolbox.Enabled = true;
                 tb_vacancyName.ReadOnly = false;
+                tb_role.Enabled = false;
                 nud_acceptance.ReadOnly = false;
                 nud_slots.ReadOnly = false;
                 btn_moveQuestion.Enabled = true;
@@ -51,6 +52,7 @@ namespace HappyTechSystem
             {
                 p_editToolbox.Enabled = false;
                 tb_vacancyName.ReadOnly = true;
+                tb_role.Enabled = true;
                 nud_acceptance.ReadOnly = true;
                 nud_slots.ReadOnly = true;
                 btn_moveQuestion.Enabled = false;
@@ -62,6 +64,7 @@ namespace HappyTechSystem
 
         private void lb_vacancy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lb_interviews.Items.Clear();
             try
             {
                 Vacancy v = (Vacancy)lb_vacancy.SelectedItem;
@@ -71,6 +74,14 @@ namespace HappyTechSystem
                 nud_slots.Value = v.PositionsAvailable;
                 lb_questionBank.DataSource = questionBank.getQuestionList;
                 lb_questionsUsed.DataSource = v.getQuestionsToBeUsed;
+
+                foreach (Interview I in vacancyBank.getInterivewList)
+                {
+                    if (I.getUsedVacancyID == v.GetID)
+                    {
+                        lb_interviews.Items.Add(I);
+                    } 
+                }
             }
             catch (Exception)
             {

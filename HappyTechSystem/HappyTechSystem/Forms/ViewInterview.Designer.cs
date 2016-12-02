@@ -242,6 +242,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lbl_intervieweeName);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewInterview";
             this.Text = "View Interviews";
             this.gb_selectInterview.ResumeLayout(false);

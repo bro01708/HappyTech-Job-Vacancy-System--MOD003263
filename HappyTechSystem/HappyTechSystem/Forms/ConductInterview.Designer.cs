@@ -377,7 +377,6 @@
             // 
             this.tb_interviewerName.Location = new System.Drawing.Point(220, 34);
             this.tb_interviewerName.Name = "tb_interviewerName";
-            this.tb_interviewerName.ReadOnly = true;
             this.tb_interviewerName.Size = new System.Drawing.Size(238, 20);
             this.tb_interviewerName.TabIndex = 18;
             this.tb_interviewerName.TextChanged += new System.EventHandler(this.ConductInterviewUnlocker);
@@ -521,6 +520,7 @@
             this.Controls.Add(this.p_setup);
             this.Controls.Add(this.btn_complete);
             this.Controls.Add(this.p_questions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ConductInterview";
             this.Text = "Conduct an Interview";
             this.Load += new System.EventHandler(this.ConductInterview_Load);

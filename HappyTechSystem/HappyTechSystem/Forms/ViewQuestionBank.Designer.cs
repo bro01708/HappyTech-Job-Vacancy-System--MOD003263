@@ -410,6 +410,7 @@
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lbl_questionID);
             this.Controls.Add(this.lb_Q);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewQuestionBank";
             this.Text = "Modify and View Question Bank";
             this.Load += new System.EventHandler(this.ViewQuestionBank_Load);
