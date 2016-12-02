@@ -119,13 +119,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 324);
+            this.ClientSize = new System.Drawing.Size(646, 327);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.lbl_help);
             this.Controls.Add(this.lb_email);
             this.Controls.Add(this.tb_emailPreview);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewEmail";
             this.Text = "Modify and View Emails";
             this.p_editToolbox.ResumeLayout(false);

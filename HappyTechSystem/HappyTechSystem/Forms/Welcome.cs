@@ -31,5 +31,27 @@ namespace HappyTechSystem.Forms
             MdiParent.Text = "Application Manager - " + name;
             this.Close();
         }
+
+        private void tb_name_TextChanged(object sender, EventArgs e)
+        {
+            UnlockButton();
+        }
+
+        private void UnlockButton()
+        {
+            if (tb_name.Text == "")
+            {
+                btn_start.Enabled = false;
+            }
+            else
+            {
+                btn_start.Enabled = true;
+            }
+        }
+
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+            UnlockButton();
+        }
     }
 }
