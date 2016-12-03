@@ -60,6 +60,7 @@
             // lb_templates
             // 
             this.lb_templates.FormattingEnabled = true;
+            this.lb_templates.HorizontalScrollbar = true;
             this.lb_templates.Location = new System.Drawing.Point(12, 35);
             this.lb_templates.Name = "lb_templates";
             this.lb_templates.Size = new System.Drawing.Size(130, 212);
@@ -69,7 +70,7 @@
             // lbl_templateName
             // 
             this.lbl_templateName.AutoSize = true;
-            this.lbl_templateName.Location = new System.Drawing.Point(18, 56);
+            this.lbl_templateName.Location = new System.Drawing.Point(168, 23);
             this.lbl_templateName.Name = "lbl_templateName";
             this.lbl_templateName.Size = new System.Drawing.Size(97, 13);
             this.lbl_templateName.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             // tb_templateName
             // 
-            this.tb_templateName.Location = new System.Drawing.Point(118, 53);
+            this.tb_templateName.Location = new System.Drawing.Point(268, 20);
             this.tb_templateName.Name = "tb_templateName";
             this.tb_templateName.ReadOnly = true;
             this.tb_templateName.Size = new System.Drawing.Size(100, 20);
@@ -85,7 +86,7 @@
             // 
             // tb_subject
             // 
-            this.tb_subject.Location = new System.Drawing.Point(118, 79);
+            this.tb_subject.Location = new System.Drawing.Point(118, 46);
             this.tb_subject.Name = "tb_subject";
             this.tb_subject.ReadOnly = true;
             this.tb_subject.Size = new System.Drawing.Size(116, 20);
@@ -94,7 +95,7 @@
             // lbl_subject
             // 
             this.lbl_subject.AutoSize = true;
-            this.lbl_subject.Location = new System.Drawing.Point(18, 82);
+            this.lbl_subject.Location = new System.Drawing.Point(18, 49);
             this.lbl_subject.Name = "lbl_subject";
             this.lbl_subject.Size = new System.Drawing.Size(46, 13);
             this.lbl_subject.TabIndex = 8;
@@ -112,7 +113,7 @@
             this.g_modifyViewTemplates.Controls.Add(this.tb_templateName);
             this.g_modifyViewTemplates.Location = new System.Drawing.Point(148, 12);
             this.g_modifyViewTemplates.Name = "g_modifyViewTemplates";
-            this.g_modifyViewTemplates.Size = new System.Drawing.Size(452, 281);
+            this.g_modifyViewTemplates.Size = new System.Drawing.Size(468, 281);
             this.g_modifyViewTemplates.TabIndex = 10;
             this.g_modifyViewTemplates.TabStop = false;
             this.g_modifyViewTemplates.Text = "Modify and View Template";
@@ -136,17 +137,17 @@
             // 
             // tb_body
             // 
-            this.tb_body.Location = new System.Drawing.Point(118, 105);
+            this.tb_body.Location = new System.Drawing.Point(21, 90);
             this.tb_body.Multiline = true;
             this.tb_body.Name = "tb_body";
             this.tb_body.ReadOnly = true;
-            this.tb_body.Size = new System.Drawing.Size(289, 164);
+            this.tb_body.Size = new System.Drawing.Size(425, 185);
             this.tb_body.TabIndex = 11;
             // 
             // lbl_body
             // 
             this.lbl_body.AutoSize = true;
-            this.lbl_body.Location = new System.Drawing.Point(18, 108);
+            this.lbl_body.Location = new System.Drawing.Point(231, 74);
             this.lbl_body.Name = "lbl_body";
             this.lbl_body.Size = new System.Drawing.Size(34, 13);
             this.lbl_body.TabIndex = 10;

@@ -27,10 +27,11 @@ namespace HappyTechSystem.Core
         /// <param name="m_name"></param>
         /// <param name="m_subject"></param>
         /// <param name="m_body"></param>
-        public void CreateTemplate(int m_ID, string m_name, string m_subject, string m_body)
+        public void CreateTemplate(int m_ID, string m_type, string m_name, string m_subject, string m_body)
         {
             EmailTemplate E = new EmailTemplate();
             E.getID = m_ID;
+            E.getType = m_type;
             E.getName = m_name;
             E.getSubject = m_subject;
             E.getBody = m_body;

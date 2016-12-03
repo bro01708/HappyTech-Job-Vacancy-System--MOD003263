@@ -61,6 +61,7 @@
             // lb_vacancy
             // 
             this.lb_vacancy.FormattingEnabled = true;
+            this.lb_vacancy.HorizontalScrollbar = true;
             this.lb_vacancy.Location = new System.Drawing.Point(12, 25);
             this.lb_vacancy.Name = "lb_vacancy";
             this.lb_vacancy.Size = new System.Drawing.Size(214, 199);
@@ -113,6 +114,7 @@
             // lb_questionsUsed
             // 
             this.lb_questionsUsed.FormattingEnabled = true;
+            this.lb_questionsUsed.HorizontalScrollbar = true;
             this.lb_questionsUsed.Location = new System.Drawing.Point(272, 121);
             this.lb_questionsUsed.Name = "lb_questionsUsed";
             this.lb_questionsUsed.Size = new System.Drawing.Size(211, 134);
@@ -161,6 +163,7 @@
             // lb_questionBank
             // 
             this.lb_questionBank.FormattingEnabled = true;
+            this.lb_questionBank.HorizontalScrollbar = true;
             this.lb_questionBank.Location = new System.Drawing.Point(2, 121);
             this.lb_questionBank.Name = "lb_questionBank";
             this.lb_questionBank.Size = new System.Drawing.Size(211, 134);
@@ -285,6 +288,7 @@
             // 
             this.lb_interviews.Enabled = false;
             this.lb_interviews.FormattingEnabled = true;
+            this.lb_interviews.HorizontalScrollbar = true;
             this.lb_interviews.Location = new System.Drawing.Point(506, 30);
             this.lb_interviews.Name = "lb_interviews";
             this.lb_interviews.Size = new System.Drawing.Size(212, 225);

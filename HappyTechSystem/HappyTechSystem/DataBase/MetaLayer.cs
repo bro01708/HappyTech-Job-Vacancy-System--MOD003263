@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using HappyTechSystem.Core;
@@ -61,16 +62,17 @@ namespace HappyTechSystem.DB
             DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT TemplateID, TemplateName, TemplateSubject, TemplateBody FROM EmailTemplate;");
+                DbDataReader dr = con.Select("SELECT TemplateID, TemplateType, TemplateName, TemplateSubject, TemplateBody FROM EmailTemplate;");
 
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
                     EmailTemplate ET = new EmailTemplate();
                     ET.getID = dr.GetInt32(0);
-                    ET.getName = dr.GetString(1);
-                    ET.getSubject = dr.GetString(2);
-                    ET.getBody = dr.GetString(3);
+                    ET.getType = dr.GetString(1);
+                    ET.getName = dr.GetString(2);
+                    ET.getSubject = dr.GetString(3);
+                    ET.getBody = dr.GetString(4);
 
                     // etc.....
 
@@ -325,12 +327,13 @@ namespace HappyTechSystem.DB
             con.OpenConnection();
 
             int templateID = m_template.getID;
+            string templateType = m_template.getType;
             string templateName = m_template.getName;
             string templateSubject = m_template.getSubject;
             string templateBody = m_template.getBody;
 
-            string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID + 
-                "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
+            string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateType, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID + 
+                "','" + templateType + "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
 
             con.RunSQL(myQuery);
 
@@ -437,6 +440,60 @@ namespace HappyTechSystem.DB
             }
 
             return il;
+        }
+
+        /// <summary>
+        /// Created By Dan. 
+        /// Saves the email passed into this method to the data by running a specific SQL query.
+        /// </summary>
+        /// <param name="e"></param>
+        public void SaveEmailToDB(Email e)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int emailID = e.getID;
+            int templateID = e.getTemplateID;
+            int interviewID = e.getInterviewID;
+            string emailAddress = e.getAddress;
+            string subject = e.getSubject;
+            string content = e.getContent;
+            string sendDate = e.getSentDate;
+
+            con.RunSQL("INSERT INTO Email(EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate) VALUES ('" + emailID + "','" + templateID + "','" + interviewID + "','" + emailAddress + "','" + subject + "','" + content + "','" + sendDate + "')");
+
+            con.CloseConnection();
+        }
+
+        public List<Email> GetEmails()
+        {
+            List<Email> el = new List<Email>();
+
+            DbConnection con = DBFactory.instance();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate FROM Email;");
+
+                //Read the data and store them in the list
+                while (dr.Read())
+                {
+                    Email E = new Email();
+                    E.getID = dr.GetInt32(0);
+                    E.getTemplateID = dr.GetInt32(1);
+                    E.getInterviewID = dr.GetInt32(2);
+                    E.getAddress = dr.GetString(3);
+                    E.getSubject = dr.GetString(4);
+                    E.getContent = dr.GetString(5);
+                    E.getSentDate = dr.GetString(6);
+                    el.Add(E);
+                }
+
+                //close Data Reader
+                dr.Close();
+                con.CloseConnection();
+            }
+
+            return el;
         }
     }
 }

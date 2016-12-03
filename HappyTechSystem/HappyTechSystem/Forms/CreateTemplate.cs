@@ -56,7 +56,7 @@ namespace HappyTechSystem
         {
             str = tb_body.Text;
 
-            if (str.Contains("[InterviewerName]"))
+            if (str.Contains("[IntervieweeName]"))
             {
                 lbl_INStatus.ForeColor = Color.Green;
                 lbl_INStatus.Text = "Found!";
@@ -100,6 +100,7 @@ namespace HappyTechSystem
             }
 
             if (
+                string.IsNullOrEmpty(cb_type.Text) ||
                 string.IsNullOrEmpty(tb_name.Text) ||
                 string.IsNullOrEmpty(tb_subject.Text) ||
                 string.IsNullOrEmpty(tb_body.Text) ||
@@ -144,13 +145,13 @@ namespace HappyTechSystem
 
         private void btn_addName_Click(object sender, EventArgs e)
         {
-            if (str.Contains("[InterviewerName]"))
+            if (str.Contains("[IntervieweeName]"))
             {
-                MessageBox.Show("The Interviewee's Name is already inserted!\nTo find it, look for the [InterviewerName] tag!");
+                MessageBox.Show("The Interviewee's Name is already inserted!\nTo find it, look for the [IntervieweeName] tag!");
             }
             else
             {
-                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[InterviewerName]");
+                tb_body.Text = tb_body.Text.Insert(tb_body.SelectionStart, "[IntervieweeName]");
             }
 
         }
@@ -181,7 +182,7 @@ namespace HappyTechSystem
 
         private void btn_create_Click(object sender, EventArgs e)
         {
-            templateCreator.CreateTemplate(Convert.ToInt32(tb_templateID.Text), tb_name.Text, tb_subject.Text, tb_body.Text);
+            templateCreator.CreateTemplate(Convert.ToInt32(tb_templateID.Text), cb_type.Text, tb_name.Text, tb_subject.Text, tb_body.Text);
             MessageBox.Show("Email Template Created Successfully!\n\nTo view your template, check the 'View Templates' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

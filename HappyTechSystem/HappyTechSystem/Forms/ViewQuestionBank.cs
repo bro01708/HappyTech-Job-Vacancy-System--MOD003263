@@ -120,7 +120,6 @@ namespace HappyTechSystem
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
-            lb_Q.HorizontalScrollbar = true;
 
         }
 

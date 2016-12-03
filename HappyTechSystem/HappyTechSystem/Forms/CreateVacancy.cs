@@ -45,8 +45,6 @@ namespace HappyTechSystem
             int nextID = vacancyBank.getHighestVacancyID() + 1 ;
             tb_VacancyID.Text = nextID.ToString();
             lb_questionBank.DataSource = questionBank.getQuestionList;
-            lb_questionBank.HorizontalScrollbar = true;
-            lb_questionsToBeUsed.HorizontalScrollbar = true;
         }
 
         private void btn_add_Click(object sender, EventArgs e)

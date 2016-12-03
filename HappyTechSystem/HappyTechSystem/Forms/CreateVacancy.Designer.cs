@@ -54,6 +54,7 @@
             // lb_questionBank
             // 
             this.lb_questionBank.FormattingEnabled = true;
+            this.lb_questionBank.HorizontalScrollbar = true;
             this.lb_questionBank.Location = new System.Drawing.Point(14, 144);
             this.lb_questionBank.Name = "lb_questionBank";
             this.lb_questionBank.Size = new System.Drawing.Size(485, 147);
@@ -71,6 +72,7 @@
             // lb_questionsToBeUsed
             // 
             this.lb_questionsToBeUsed.FormattingEnabled = true;
+            this.lb_questionsToBeUsed.HorizontalScrollbar = true;
             this.lb_questionsToBeUsed.Location = new System.Drawing.Point(12, 367);
             this.lb_questionsToBeUsed.Name = "lb_questionsToBeUsed";
             this.lb_questionsToBeUsed.Size = new System.Drawing.Size(486, 147);

@@ -133,6 +133,7 @@
             this.tb_questionText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_questionText.Size = new System.Drawing.Size(394, 99);
             this.tb_questionText.TabIndex = 6;
+            this.tb_questionText.TextChanged += new System.EventHandler(this.CreateQuestionUnlocker);
             // 
             // tb_response1
             // 

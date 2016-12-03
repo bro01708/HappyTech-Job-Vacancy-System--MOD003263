@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lbl_welcome = new System.Windows.Forms.Label();
-            this.tb_name = new System.Windows.Forms.TextBox();
             this.btn_start = new System.Windows.Forms.Button();
+            this.cb_name = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_welcome
@@ -42,14 +42,6 @@
             this.lbl_welcome.TabIndex = 0;
             this.lbl_welcome.Text = "Welcome! To get started, please enter your name:";
             // 
-            // tb_name
-            // 
-            this.tb_name.Location = new System.Drawing.Point(82, 25);
-            this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(154, 20);
-            this.tb_name.TabIndex = 1;
-            this.tb_name.TextChanged += new System.EventHandler(this.tb_name_TextChanged);
-            // 
             // btn_start
             // 
             this.btn_start.Location = new System.Drawing.Point(110, 51);
@@ -60,13 +52,25 @@
             this.btn_start.UseVisualStyleBackColor = true;
             this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
+            // cb_name
+            // 
+            this.cb_name.FormattingEnabled = true;
+            this.cb_name.Items.AddRange(new object[] {
+            "Daniel",
+            "Peter",
+            "Susan"});
+            this.cb_name.Location = new System.Drawing.Point(86, 25);
+            this.cb_name.Name = "cb_name";
+            this.cb_name.Size = new System.Drawing.Size(154, 21);
+            this.cb_name.TabIndex = 3;
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 79);
+            this.Controls.Add(this.cb_name);
             this.Controls.Add(this.btn_start);
-            this.Controls.Add(this.tb_name);
             this.Controls.Add(this.lbl_welcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -83,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_welcome;
-        private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Button btn_start;
+        private System.Windows.Forms.ComboBox cb_name;
     }
 }

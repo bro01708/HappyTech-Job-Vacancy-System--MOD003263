@@ -59,6 +59,7 @@
             // lb_interviews
             // 
             this.lb_interviews.FormattingEnabled = true;
+            this.lb_interviews.HorizontalScrollbar = true;
             this.lb_interviews.Location = new System.Drawing.Point(6, 19);
             this.lb_interviews.Name = "lb_interviews";
             this.lb_interviews.Size = new System.Drawing.Size(187, 355);
@@ -124,6 +125,7 @@
             // lb_questionRanks
             // 
             this.lb_questionRanks.FormattingEnabled = true;
+            this.lb_questionRanks.HorizontalScrollbar = true;
             this.lb_questionRanks.Location = new System.Drawing.Point(417, 279);
             this.lb_questionRanks.Name = "lb_questionRanks";
             this.lb_questionRanks.Size = new System.Drawing.Size(313, 108);
@@ -246,6 +248,7 @@
             // lb_vacancies
             // 
             this.lb_vacancies.FormattingEnabled = true;
+            this.lb_vacancies.HorizontalScrollbar = true;
             this.lb_vacancies.Location = new System.Drawing.Point(6, 19);
             this.lb_vacancies.Name = "lb_vacancies";
             this.lb_vacancies.Size = new System.Drawing.Size(187, 355);

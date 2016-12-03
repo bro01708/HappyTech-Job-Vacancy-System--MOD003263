@@ -84,31 +84,6 @@ namespace HappyTechSystem.Core
             set { totalScore = value; }
         }
 
-        public void AttachCV() //Attaches CV of applicant to be interviewed
-        {
-            
-        }
-
-        public void CalculateScore() //Adds up users points to make final score
-        {
-
-        }
-
-        public void SelectVacancy() //Selects which vacancy the interview is for
-        {
-
-        }
-
-        public void StoreRecords() //Stores applicants personal details
-        {
-
-        }
-
-        //public void fetchVacancyNameFromID()
-        //{
-        //    Vacancy v = vb.getVacancyList[vacancyID - 1];
-        //    vacName = v.VacancyName;
-        //}
         public override string ToString()
         {
             return "(" + interviewID.ToString() + ") - [Score: " + totalScore + "] - " + applicantName;

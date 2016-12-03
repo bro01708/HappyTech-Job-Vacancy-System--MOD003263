@@ -41,19 +41,6 @@ namespace HappyTechSystem.Core
             set { vacancyid = value; }
         }
 
-        //internal List<Interview> Interviews
-        //{
-        //    get
-        //    {
-        //        return interviews;
-        //    }
-
-        //    set
-        //    {
-        //        interviews = value;
-        //    }
-        //}
-
         public List<int> getQuestionsToBeUsed
         {
             get { return questionsToBeUsed; }
@@ -66,10 +53,6 @@ namespace HappyTechSystem.Core
             set { role = value; }
         }
 
-        public void GetRankings() //Ranks every users' final score to find the chosen applicant
-        {
-
-        }
         public override string ToString()
         {
             return "(" + vacancyid.ToString() + ") - [" + role + "] - " + vacancyName;

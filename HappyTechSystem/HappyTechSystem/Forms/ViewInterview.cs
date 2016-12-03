@@ -22,6 +22,7 @@ namespace HappyTechSystem
     {
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionBank = QuestionBank.getInst();
+        private EmailBank emailBank = EmailBank.getInst();
         private List<Interview> vacInterviews = new List<Interview>();
         private string path;
         private int pass;
@@ -125,9 +126,6 @@ namespace HappyTechSystem
         {
             wipeAllFields();
             lb_vacancies.DataSource = vacancyBank.getVacancyList;
-            lb_vacancies.HorizontalScrollbar = true;
-            lb_interviews.HorizontalScrollbar = true;
-            lb_questionRanks.HorizontalScrollbar = true;
         }
 
         private void btn_cvOpen_Click(object sender, EventArgs e)
@@ -175,6 +173,8 @@ namespace HappyTechSystem
 
             }
 
+            lb_interviews.SelectedIndex = 0;
+
         }
 
         private void ViewInterview_FormClosing(object sender, FormClosingEventArgs e)
@@ -185,11 +185,42 @@ namespace HappyTechSystem
         private void btn_generateEmails_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Doing this will generate emails for each interview, selecting the top scorers in each interview to fill the " +
-                                                        "vacancy slots.\n\n" +
+                                                        "vacancy slots.\n" +
+                                                        "Continuing with this procedure will close the vacancy, so as to avoid duplicate emails.\n\n" +
                                                         "Would you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
-                //gen some emails son!
+                //email creation!
+                Vacancy v = (Vacancy) lb_vacancies.SelectedItem;
+                //Interview i = (Interview) lb_interviews.SelectedItem;
+                EmailTemplate et = new EmailTemplate();
+
+                EmailCreator emailCreator = EmailCreator.getInst();
+                List<EmailTemplate> let = emailBank.getTemplateList;
+
+                int nextID = emailBank.getHighestEmailID() + 1;
+                int positions = v.PositionsAvailable;
+                int acceptChecker = 0;
+
+                foreach (Interview I in vacInterviews)
+                {
+                    if (acceptChecker < positions)
+                    {
+                        et = let.FirstOrDefault(em => em.getType == "Accept");
+                        emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
+                    }
+                    else
+                    {
+                        et = let.FirstOrDefault(em => em.getType == "Reject");
+                        emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
+                    }
+                    nextID++;
+                    acceptChecker++;
+                }
+                int count = vacInterviews.Count;
+                MessageBox.Show(count + " emails have been generated for the vacancy: " + v.VacancyName + ".\n" +
+                    "To view these Emails, check the 'View Emails' form!","Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 

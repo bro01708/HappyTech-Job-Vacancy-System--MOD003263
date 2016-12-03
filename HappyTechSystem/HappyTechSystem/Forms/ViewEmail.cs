@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HappyTechSystem.Core;
 
 namespace HappyTechSystem
 {
@@ -16,39 +17,30 @@ namespace HappyTechSystem
     /// </summary>
     public partial class ViewEmail : Form
     {
-        //variable to enable toggling. (should be a boolean?)
-        private byte flag;
+        EmailBank emailBank = EmailBank.getInst();
         public ViewEmail()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Created by Dan.
-        /// Button event handler that toggles the active form controls.
-        /// A flag is used to act as a button toggle.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_edit_Click(object sender, EventArgs e)
-        {
-            if (flag == 0)
-            {
-                p_editToolbox.Enabled = true;
-                tb_emailPreview.ReadOnly = false;
-                flag++;
-            }
-            else
-            {
-                p_editToolbox.Enabled = false;
-                tb_emailPreview.ReadOnly = true;
-                flag--;
-            }
-        }
-
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ViewEmail_Load(object sender, EventArgs e)
+        {
+            lb_email.DataSource = emailBank.getEmailList;
+        }
+
+        private void lb_email_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Email email = (Email) lb_email.SelectedItem;
+            tb_emailID.Text = email.getID.ToString();
+            tb_address.Text = email.getAddress;
+            tb_subject.Text = email.getSubject;
+            tb_date.Text = email.getSentDate;
+            tb_emailPreview.Text = email.getContent;
         }
     }
 }

@@ -41,6 +41,23 @@ namespace HappyTechSystem.Core
                 throw e;
             }
         }
+        public int getHighestEmailID()
+        {
+            try
+            {
+                int emailCount = emailRecords.Count();
+
+                if (emailCount == 0)
+                {
+                    return emailCount;
+                }
+                return emailRecords[emailCount - 1].getID;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         public bool getDBLoaded
         {
@@ -61,6 +78,11 @@ namespace HappyTechSystem.Core
             get { return templates;}
         }
 
+        public List<Email> getEmailList
+        {
+            get { return emailRecords; }
+        }
+
         public void addTemplateToList(EmailTemplate m_et) 
         {
             templates.Add(m_et);
@@ -69,11 +91,11 @@ namespace HappyTechSystem.Core
         public void addEmailToList(Email e)
         {
             emailRecords.Add(e);
-            //ml.SaveTemplateToDB(e);
+            ml.SaveEmailToDB(e);
         }
-        
 
-    public void RemoveTemplate(int m_id)
+
+        public void RemoveTemplate(int m_id)
         {
 
         }
@@ -88,6 +110,7 @@ namespace HappyTechSystem.Core
             try
             {
                 templates = ml.GetEmailTemplates();
+                emailRecords = ml.GetEmails();
                 dbLoaded = true;
             }
             catch (Exception e)

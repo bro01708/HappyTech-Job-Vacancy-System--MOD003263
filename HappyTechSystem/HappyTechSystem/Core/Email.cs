@@ -9,13 +9,13 @@ namespace HappyTechSystem.Core
 {
     public class Email
     {
-        private string addresses, content, subject;
-        private int sentDate;
+        private string applicantEmail, content, subject, sentDate;
+        private int emailID, templateID, interviewID;
 
         public string getAddress
         {
-            get { return addresses; }
-            set { addresses = value; } 
+            get { return applicantEmail; }
+            set { applicantEmail = value; } 
         }
 
         public string getContent
@@ -30,11 +30,30 @@ namespace HappyTechSystem.Core
             set { subject = value; }
         }
 
-        public int getSentDate
+        public int getID
+        {
+            get { return emailID; }
+            set { emailID = value; }
+        }
+
+        public int getTemplateID
+        {
+            get { return templateID; }
+            set { templateID = value; }
+        }
+        public int getInterviewID
+        {
+            get { return interviewID; }
+            set { interviewID = value; }
+        }
+        public string getSentDate
         {
             get { return sentDate; }
             set { sentDate = value; }
         }
-
+        public override string ToString()
+        {
+            return "(" + emailID.ToString() + ") - [Interview # "+ interviewID.ToString()+"] - " + applicantEmail;
+        }
     }
 }

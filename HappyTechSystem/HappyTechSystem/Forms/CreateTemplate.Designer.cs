@@ -52,6 +52,8 @@
             this.btn_addName = new System.Windows.Forms.Button();
             this.lbl_intervieweesNameAdded = new System.Windows.Forms.Label();
             this.lbl_reminder = new System.Windows.Forms.Label();
+            this.lbl_type = new System.Windows.Forms.Label();
+            this.cb_type = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -280,9 +282,9 @@
             this.lbl_intervieweesNameAdded.AutoSize = true;
             this.lbl_intervieweesNameAdded.Location = new System.Drawing.Point(4, 45);
             this.lbl_intervieweesNameAdded.Name = "lbl_intervieweesNameAdded";
-            this.lbl_intervieweesNameAdded.Size = new System.Drawing.Size(192, 13);
+            this.lbl_intervieweesNameAdded.Size = new System.Drawing.Size(195, 13);
             this.lbl_intervieweesNameAdded.TabIndex = 1;
-            this.lbl_intervieweesNameAdded.Text = "Interviewee\'s Name [InterviewerName]:";
+            this.lbl_intervieweesNameAdded.Text = "Interviewee\'s Name [IntervieweeName]:";
             // 
             // lbl_reminder
             // 
@@ -293,11 +295,35 @@
             this.lbl_reminder.TabIndex = 0;
             this.lbl_reminder.Text = "Remember to add the following tags:";
             // 
+            // lbl_type
+            // 
+            this.lbl_type.AutoSize = true;
+            this.lbl_type.Location = new System.Drawing.Point(153, 15);
+            this.lbl_type.Name = "lbl_type";
+            this.lbl_type.Size = new System.Drawing.Size(114, 13);
+            this.lbl_type.TabIndex = 24;
+            this.lbl_type.Text = "Select Template Type:";
+            // 
+            // cb_type
+            // 
+            this.cb_type.FormattingEnabled = true;
+            this.cb_type.Items.AddRange(new object[] {
+            "Accept",
+            "Reject",
+            "Consideration"});
+            this.cb_type.Location = new System.Drawing.Point(273, 12);
+            this.cb_type.Name = "cb_type";
+            this.cb_type.Size = new System.Drawing.Size(149, 21);
+            this.cb_type.TabIndex = 25;
+            this.cb_type.TextChanged += new System.EventHandler(this.CreateTemplateUnlocker);
+            // 
             // CreateTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 490);
+            this.Controls.Add(this.cb_type);
+            this.Controls.Add(this.lbl_type);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tb_templateID);
             this.Controls.Add(this.lbl_templateID);
@@ -346,5 +372,7 @@
         private System.Windows.Forms.Button btn_addSenderName;
         private System.Windows.Forms.Label lbl_SNStatus;
         private System.Windows.Forms.Label lbl_senderAdded;
+        private System.Windows.Forms.Label lbl_type;
+        private System.Windows.Forms.ComboBox cb_type;
     }
 }

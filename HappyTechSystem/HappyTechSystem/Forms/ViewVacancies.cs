@@ -107,10 +107,6 @@ namespace HappyTechSystem
         private void ViewVacancies_Load(object sender, EventArgs e)
         {
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
-            lb_vacancy.HorizontalScrollbar = true;
-            lb_questionBank.HorizontalScrollbar = true;
-            lb_questionsUsed.HorizontalScrollbar = true;
-            lb_interviews.HorizontalScrollbar = true;
         }
 
         private void btn_close_Click(object sender, EventArgs e)
