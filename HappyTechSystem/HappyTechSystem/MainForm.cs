@@ -202,7 +202,14 @@ namespace HappyTechSystem
 
         private void btn_help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("", "How to use the Application Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("To begin using the system, use the drop down menus situated at the top of the window.\n"+
+                            "These dropdowns are split up into catergories, and are as folows:\n\n" +
+                            "Create - here you can create new questions, email templates and vacancies to be used within the interview process.\n\n" +
+                            "Conduct Interview - setup and conduct an interview for an applicant. You can select a Vacancy created from the Create Vacancy " +
+                            "menu to use for the interview. Completing the interview will create an interview record for the applicant, viewable in the View Interview form.\n\n" +
+                            "Modify/View - these menus will allow you to edit and delete questions, email and vacancies. You cannot modify or delete interview records and their " +
+                            "associated emails, however.\n\n" +
+                            "If further help is required, click on any '?' buttons you see within the menus, as these will guide you on how to operate the menu.", "How to use the Application Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

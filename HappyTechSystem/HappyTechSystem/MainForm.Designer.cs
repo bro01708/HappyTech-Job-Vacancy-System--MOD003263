@@ -343,6 +343,8 @@
             // 
             // btn_close
             // 
+            this.btn_close.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Location = new System.Drawing.Point(856, 668);
             this.btn_close.Name = "btn_close";
@@ -354,6 +356,8 @@
             // 
             // btn_help
             // 
+            this.btn_help.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_help.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_help.Location = new System.Drawing.Point(12, 668);
             this.btn_help.Name = "btn_help";

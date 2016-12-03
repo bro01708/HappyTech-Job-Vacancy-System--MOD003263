@@ -66,13 +66,15 @@ namespace HappyTechSystem.Core
             ml.SaveInterviewToDB(m_i);
         }
 
-        public void RemoveVacancyFromList(int m_i)
+        public void RemoveVacancyFromList(int m_vacancyID)
         {
             foreach (Vacancy v in vacancyList)
             {
-                if (v.GetID == m_i)
+                if (v.GetID == m_vacancyID)
                 {
                     vacancyList.Remove(v);
+                    //ml.RemoveVacancyFromDB(m_vacancyID);
+                    break;
                 }
             }
         }

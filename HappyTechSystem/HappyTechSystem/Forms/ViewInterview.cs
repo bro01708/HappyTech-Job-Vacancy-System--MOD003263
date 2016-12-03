@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HappyTechSystem.DB;
@@ -94,24 +95,28 @@ namespace HappyTechSystem
                 List<Question> questions = questionBank.getQuestionList; //localised question list
 
 
-                int index = 0;
-                int answerIndex = 0;
+                int index = - 1;
+                int count = questionIDs.Length - 1;
                 foreach (Question q in questions)
                 {
+                    if (index == count)
+                    {
+                        break;
+                    }
+                    index++;
+
                     if (q.GetID == questionIDs[index])
                     {
                         qText = q.GetText;
-                        questionsAndRanks.Add("Scored: " + I.Answers[answerIndex] + " on Question: " + qText);
-                        index++;
-                        answerIndex++;
+                        questionsAndRanks.Add("Scored: " + I.Answers[index] + " on Question: " + qText);
                     }
 
                 }
                 lb_questionRanks.DataSource = questionsAndRanks;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                throw err;
             }
 
         }
@@ -126,6 +131,19 @@ namespace HappyTechSystem
         {
             wipeAllFields();
             lb_vacancies.DataSource = vacancyBank.getVacancyList;
+            EmailTemplate etTest = emailBank.getTemplateList.FirstOrDefault(em => em.getType == "Accept");
+            if (emailBank.getTemplateList.Contains(etTest))
+            {
+                etTest = emailBank.getTemplateList.FirstOrDefault(em => em.getType == "Reject");
+                if (emailBank.getTemplateList.Contains(etTest))
+                {
+                    btn_generateEmails.Enabled = true;
+                }
+            }
+            else
+            {
+                btn_generateEmails.Enabled = false;
+            }
         }
 
         private void btn_cvOpen_Click(object sender, EventArgs e)
@@ -185,42 +203,21 @@ namespace HappyTechSystem
         private void btn_generateEmails_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Doing this will generate emails for each interview, selecting the top scorers in each interview to fill the " +
-                                                        "vacancy slots.\n" +
-                                                        "Continuing with this procedure will close the vacancy, so as to avoid duplicate emails.\n\n" +
-                                                        "Would you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                                        "vacancy slots.\n\n" +
+                                                        "WARNING: Continuing with this procedure will close the vacancy permenantly, so as to avoid duplicate emails.\n\n" +
+                                                        "Would you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
-                //email creation!
-                Vacancy v = (Vacancy) lb_vacancies.SelectedItem;
-                //Interview i = (Interview) lb_interviews.SelectedItem;
-                EmailTemplate et = new EmailTemplate();
-
-                EmailCreator emailCreator = EmailCreator.getInst();
-                List<EmailTemplate> let = emailBank.getTemplateList;
-
-                int nextID = emailBank.getHighestEmailID() + 1;
-                int positions = v.PositionsAvailable;
-                int acceptChecker = 0;
-
-                foreach (Interview I in vacInterviews)
-                {
-                    if (acceptChecker < positions)
-                    {
-                        et = let.FirstOrDefault(em => em.getType == "Accept");
-                        emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
-                    }
-                    else
-                    {
-                        et = let.FirstOrDefault(em => em.getType == "Reject");
-                        emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
-                    }
-                    nextID++;
-                    acceptChecker++;
-                }
-                int count = vacInterviews.Count;
-                MessageBox.Show(count + " emails have been generated for the vacancy: " + v.VacancyName + ".\n" +
-                    "To view these Emails, check the 'View Emails' form!","Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                gb_selectInterview.Enabled = false;
+                gb_vacancies.Enabled = false;
+                p_interviewData.Enabled = false;
+                p_scoreLabels.Enabled = false;
+                btn_close.Enabled = false;
+                cb_accept.DataSource = emailBank.getTemplateList.Where(em => em.getType == "Accept").ToList();
+                cb_reject.DataSource = emailBank.getTemplateList.Where(em => em.getType == "Reject").ToList();
+                p_templates.Enabled = true;
+                btn_generateEmails.Enabled = false;
+                btn_emailHelp.Enabled = false;
             }
         }
 
@@ -258,6 +255,52 @@ namespace HappyTechSystem
             lbl_score.Text = "";
             lbl_status.Text = "";
 
+        }
+
+        private void btn_confirm_Click(object sender, EventArgs e)
+        {
+            //email creation!
+            Vacancy v = (Vacancy)lb_vacancies.SelectedItem;
+            //Interview i = (Interview) lb_interviews.SelectedItem;
+
+            EmailCreator emailCreator = EmailCreator.getInst();
+            List<EmailTemplate> let = emailBank.getTemplateList;
+
+            int nextID = emailBank.getHighestEmailID() + 1;
+            int positions = v.PositionsAvailable;
+            int acceptChecker = 0;
+
+            EmailTemplate et = new EmailTemplate();
+            
+
+            foreach (Interview I in vacInterviews)
+            {
+                if (acceptChecker < positions)
+                {
+                    et = (EmailTemplate)cb_accept.SelectedItem;
+                    emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
+                }
+                else
+                {
+                    et = (EmailTemplate)cb_reject.SelectedItem;
+                    emailCreator.GenerateEmail(nextID, v, et, I, MdiParent.Text);
+                }
+                nextID++;
+                acceptChecker++;
+            }
+            int count = vacInterviews.Count;
+            string vacName = v.VacancyName;
+            vacancyBank.RemoveVacancyFromList(v.GetID);
+            MessageBox.Show(count + " emails have been generated for the vacancy: " + vacName + ".\n" +
+                            "To view these Emails, check the 'View Emails' form!\n\n" +
+                            "The vacancy (" + vacName + ")will now be removed safely, as all emails are generated.", "Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void btn_emailHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To generate emails, you need to ensure that there is at least one 'Accept' and one 'Reject' Template" +
+                            "within the system.", "Why can't I generate any emails?", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -495,5 +495,19 @@ namespace HappyTechSystem.DB
 
             return el;
         }
+
+        public void RemoveTemplateFromDB(int m_templateID)
+        {
+            DbConnection con = DBFactory.instance();
+            string id = m_templateID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM EmailTemplate WHERE TemplateID = " + id + ";");
+            con.CloseConnection();
+        }
+
+        public void RemoveVacancyFromDB(int m_vacancyID)
+        {
+            
+        }
     }
 }

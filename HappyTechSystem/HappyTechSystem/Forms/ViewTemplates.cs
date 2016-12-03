@@ -90,7 +90,7 @@ namespace HappyTechSystem
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -102,7 +102,46 @@ namespace HappyTechSystem
 
             foreach (Email em in emailBank.getEmailList)
             {
-                int index = 0;
+                int templateID = et.getID;
+                if (et.getID == em.getTemplateID)
+                {
+                    associatedEmail++;
+                }
+            }
+
+            if (associatedEmail == 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("You are about to delete this template." +
+                                                            "\n\nAre you sure want to delete this template?", "Delete?",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //deletion of email
+                    emailBank.RemoveTemplate(et.getID);
+                    lb_templates.DataSource = null;
+                    lb_templates.DataSource = emailBank.getTemplateList;
+
+                    try
+                    {
+                        btn_edit.PerformClick();
+                        lb_templates.SelectedIndex = 0;
+                    }
+                    catch (Exception)
+                    {
+                        tb_templateID.Text = "";
+                        tb_templateName.Text = "";
+                        tb_subject.Text = "";
+                        tb_body.Text = "";
+                    }
+
+
+                    MessageBox.Show("Template Successfully Deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete this template due to one or more of the following reasons:"+
+                    "\n\n(X) This template is still bound to emails. Remove those emails to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

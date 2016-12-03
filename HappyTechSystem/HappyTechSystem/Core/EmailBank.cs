@@ -95,9 +95,17 @@ namespace HappyTechSystem.Core
         }
 
 
-        public void RemoveTemplate(int m_id)
+        public void RemoveTemplate(int m_templateID)
         {
-
+            foreach (EmailTemplate et in templates)
+            {
+                if (et.getID == m_templateID)
+                {
+                    templates.Remove(et);
+                    ml.RemoveTemplateFromDB(m_templateID);
+                    break;
+                }
+            }
         }
 
         public void SendEmail()

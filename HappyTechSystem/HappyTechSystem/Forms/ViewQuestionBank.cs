@@ -39,23 +39,34 @@ namespace HappyTechSystem
         {
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Save Question Changes?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Save Question Changes?", "Save?", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    string[] responses = { tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text, tb_response5.Text };
-                    string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
+                    string[] responses =
+                    {
+                        tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text,
+                        tb_response5.Text
+                    };
+                    string[] feedback =
+                    {
+                        tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text,
+                        tb_feedback5.Text
+                    };
                     QuestionCreator questionCreator = QuestionCreator.getInst();
-                    questionCreator.ModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text, tb_question.Text, responses, feedback);
+                    questionCreator.ModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text,
+                        tb_question.Text, responses, feedback);
                     MessageBox.Show("The question was edited successfully.\n\n" +
                                     "For the new changes to load, the form needs to reload.\n" +
-                                    "Open Question Bank again to view changes.", "Edit Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    "Open Question Bank again to view changes.", "Edit Successful", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                     questionBank.RefreshDBConnection();
                     this.Close();
                 }
             }
             catch (Exception err)
             {
-                
+
                 throw err;
             }
         }
@@ -68,7 +79,7 @@ namespace HappyTechSystem
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
-        { 
+        {
 
             if (flag == 0)
             {
@@ -140,7 +151,7 @@ namespace HappyTechSystem
 
             try
             {
-                Question q = (Question)lb_Q.SelectedItem;
+                Question q = (Question) lb_Q.SelectedItem;
                 tb_question.Text = q.GetText;
                 tb_questionID.Text = q.GetID.ToString();
                 cb_categoryTag.Text = q.GetTag;
@@ -172,7 +183,7 @@ namespace HappyTechSystem
         {
             try
             {
-                Question q = (Question)lb_Q.SelectedItem;
+                Question q = (Question) lb_Q.SelectedItem;
                 int associatedQuestions = 0;
 
                 foreach (Vacancy v in vacancyBank.getVacancyList)
@@ -189,13 +200,17 @@ namespace HappyTechSystem
                 }
                 if (associatedQuestions == 0)
                 {
-                    DialogResult dialogResult =  MessageBox.Show("You are about to delete this question, including all of it's criteria and feedback information." +
-                                    "\n\nAre you sure you want to delete this question?","Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult dialogResult =
+                        MessageBox.Show(
+                            "You are about to delete this question, including all of it's criteria and feedback information." +
+                            "\n\nAre you sure you want to delete this question?", "Delete?", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
                         questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
                         lb_Q.DataSource = null;
                         lb_Q.DataSource = questionBank.getQuestionList;
+
                         try
                         {
                             btn_edit.PerformClick();
@@ -205,6 +220,7 @@ namespace HappyTechSystem
                         {
                             clearFields();
                         }
+
 
                         MessageBox.Show("Question Successfully Deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
