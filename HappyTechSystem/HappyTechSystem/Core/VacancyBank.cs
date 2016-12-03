@@ -49,6 +49,11 @@ namespace HappyTechSystem.Core
             set { interviewList = value; }
         }
 
+        /// <summary>
+        /// Created By Dan. 
+        /// Adds the passed in vacancy into the bank's vacancy list, saving to the database as well.
+        /// </summary>
+        /// <param name="m_v"></param>
         public void AddVacancyToList(Vacancy m_v)
         {
             vacancyList.Add(m_v);

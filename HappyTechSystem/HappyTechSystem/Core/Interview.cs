@@ -37,6 +37,7 @@ namespace HappyTechSystem.Core
 
         /// <summary>
         /// Created by Susan
+        /// Getter for applicant name
         /// </summary>
         public string getApplicantName
         {
@@ -73,15 +74,8 @@ namespace HappyTechSystem.Core
 
         public int[] Answers
         {
-            get
-            {
-                return answers;
-            }
-
-            set
-            {
-                answers = value;
-            }
+            get { return answers; }
+            set { answers = value; }
         }
 
         public int getTotal
@@ -117,7 +111,7 @@ namespace HappyTechSystem.Core
         //}
         public override string ToString()
         {
-            return "(" + interviewID.ToString() + ") - " + applicantName;
+            return "(" + interviewID.ToString() + ") - [Score: " + totalScore + "] - " + applicantName;
         }
     }
 }

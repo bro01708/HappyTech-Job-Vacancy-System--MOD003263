@@ -22,6 +22,7 @@ namespace HappyTechSystem
     {
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionBank = QuestionBank.getInst();
+        private List<Interview> vacInterviews = new List<Interview>();
         private string path;
         private int pass;
 
@@ -41,19 +42,31 @@ namespace HappyTechSystem
             this.Close();
         }
 
+        /// <summary>
+        /// Created By Dan. 
+        /// Whenever a new interview is selected in the list, update the relevant fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lb_interviews_SelectedIndexChanged(object sender, EventArgs e)
         {
             string qText;
 
             try
             {
-                Interview I = (Interview) lb_interviews.SelectedItem;
+                Interview I = (Interview)lb_interviews.SelectedItem;
                 tb_title.Text = I.getApplicantTitle;
                 tb_applicantName.Text = I.getApplicantName;
                 tb_emailAddress.Text = I.getApplicantEmail;
                 tb_interviewerName.Text = I.getInterviewerName;
                 tb_notes.Text = I.getAdditionalNotes;
                 lbl_score.Text = I.getTotal.ToString();
+
+                int interviewIndex = vacInterviews.IndexOf(vacInterviews[lb_interviews.SelectedIndex]);
+                int indexAdjust = interviewIndex + 1;
+
+                lbl_rank.Text = indexAdjust.ToString(); 
+                rankAdjuster();
 
                 if (I.getTotal > pass)
                 {
@@ -87,7 +100,7 @@ namespace HappyTechSystem
                     if (q.GetID == questionIDs[index])
                     {
                         qText = q.GetText;
-                        questionsAndRanks.Add(qText + " - Score: " + I.Answers[answerIndex]);
+                        questionsAndRanks.Add("Scored: " + I.Answers[answerIndex] + " on Question: " + qText);
                         index++;
                         answerIndex++;
                     }
@@ -102,6 +115,12 @@ namespace HappyTechSystem
 
         }
 
+        /// <summary>
+        /// Createed By Dan. 
+        /// Event handler for form loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewInterview_Load(object sender, EventArgs e)
         {
             lb_vacancies.DataSource = vacancyBank.getVacancyList;
@@ -129,6 +148,7 @@ namespace HappyTechSystem
         private void lb_vacancies_SelectedIndexChanged(object sender, EventArgs e)
         {
             lb_interviews.Items.Clear();
+            vacInterviews.Clear();
             try
             {
                 Vacancy v = (Vacancy)lb_vacancies.SelectedItem;
@@ -137,9 +157,15 @@ namespace HappyTechSystem
                 foreach (Interview i in vacancyBank.getInterviewList)
                 {
                     if (i.getUsedVacancyID == v.GetID)
-                    {
-                        lb_interviews.Items.Add(i);
+                    { 
+                        vacInterviews.Add(i);
+                        vacInterviews.Sort((p, q) => q.getTotal.CompareTo(p.getTotal)); //sorts list by highest scorer first
                     }
+                }
+                lb_interviews.Items.Clear();
+                foreach (Interview I in vacInterviews)
+                {
+                    lb_interviews.Items.Add(I);
                 }
             }
             catch (Exception)
@@ -157,11 +183,32 @@ namespace HappyTechSystem
         private void btn_generateEmails_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Doing this will generate emails for each interview, selecting the top scorers in each interview to fill the " +
-                                                        "vacancy slots." +
-                                                        "\n\nWould you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                                        "vacancy slots.\n\n" +
+                                                        "Would you like to proceed?", "Generate Emails?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 //gen some emails son!
+            }
+        }
+
+        private void rankAdjuster()
+        {
+            if (lbl_rank.Text.EndsWith("1"))
+            {
+                lbl_rank.Text = "1st";
+            }
+            else if (lbl_rank.Text.EndsWith("2"))
+            {
+                lbl_rank.Text = "2nd";
+            }
+            else if (lbl_rank.Text.EndsWith("3"))
+            {
+                lbl_rank.Text = "3rd";
+            }
+            else
+            {
+                string str = lbl_rank.Text;
+                lbl_rank.Text = str + "th";
             }
         }
     }

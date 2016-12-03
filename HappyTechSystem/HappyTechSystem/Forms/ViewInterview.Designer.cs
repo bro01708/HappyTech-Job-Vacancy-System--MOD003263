@@ -52,7 +52,6 @@
             this.btn_generateEmails = new System.Windows.Forms.Button();
             this.lbl_ranking = new System.Windows.Forms.Label();
             this.lbl_rank = new System.Windows.Forms.Label();
-            this.lbl_rankAdjust = new System.Windows.Forms.Label();
             this.gb_selectInterview.SuspendLayout();
             this.gb_vacancies.SuspendLayout();
             this.SuspendLayout();
@@ -184,11 +183,11 @@
             // lbl_questionsAsked
             // 
             this.lbl_questionsAsked.AutoSize = true;
-            this.lbl_questionsAsked.Location = new System.Drawing.Point(495, 263);
+            this.lbl_questionsAsked.Location = new System.Drawing.Point(507, 263);
             this.lbl_questionsAsked.Name = "lbl_questionsAsked";
-            this.lbl_questionsAsked.Size = new System.Drawing.Size(144, 13);
+            this.lbl_questionsAsked.Size = new System.Drawing.Size(131, 13);
             this.lbl_questionsAsked.TabIndex = 16;
-            this.lbl_questionsAsked.Text = "Questions Asked + Rankings";
+            this.lbl_questionsAsked.Text = "Scores for Each Question:";
             // 
             // lbl_email
             // 
@@ -284,22 +283,11 @@
             this.lbl_rank.TabIndex = 26;
             this.lbl_rank.Text = "???";
             // 
-            // lbl_rankAdjust
-            // 
-            this.lbl_rankAdjust.AutoSize = true;
-            this.lbl_rankAdjust.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rankAdjust.Location = new System.Drawing.Point(284, 415);
-            this.lbl_rankAdjust.Name = "lbl_rankAdjust";
-            this.lbl_rankAdjust.Size = new System.Drawing.Size(35, 17);
-            this.lbl_rankAdjust.TabIndex = 27;
-            this.lbl_rankAdjust.Text = "???";
-            // 
             // ViewInterview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 560);
-            this.Controls.Add(this.lbl_rankAdjust);
             this.Controls.Add(this.lbl_rank);
             this.Controls.Add(this.lbl_ranking);
             this.Controls.Add(this.btn_generateEmails);
@@ -360,6 +348,5 @@
         private System.Windows.Forms.Button btn_generateEmails;
         private System.Windows.Forms.Label lbl_ranking;
         private System.Windows.Forms.Label lbl_rank;
-        private System.Windows.Forms.Label lbl_rankAdjust;
     }
 }
