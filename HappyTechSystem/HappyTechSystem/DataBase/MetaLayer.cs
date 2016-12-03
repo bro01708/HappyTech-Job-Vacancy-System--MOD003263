@@ -228,16 +228,16 @@ namespace HappyTechSystem.DB
             string questionTag = m_question.GetTag;
             string questionText = m_question.GetText;
 
-            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText + "' WHERE QuestionID=" + m_question.GetID;
+            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText +
+                             "' WHERE QuestionID=" + m_question.GetID;
             con.RunSQL(myQuery);
 
             //Updates the necesscary criteria and feedback details
             for (int i = 0; i < 5; i++)
             {
                 int rank = i + 1;
-                string rankstring = rank.ToString();
-                con.RunSQL("UPDATE Criteria SET Rank='" + rankstring + "', CriteriaText='" + m_question.Responses[i] + "' WHERE QuestionID=" + m_question.GetID);
-                con.RunSQL("UPDATE Feedback SET Rank='" + rankstring + "', FeedbackText='" + m_question.Feedback[i] + "' WHERE QuestionID=" + m_question.GetID);
+                con.RunSQL("UPDATE Criteria SET CriteriaText='" + m_question.Responses[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
+                con.RunSQL("UPDATE Feedback SET FeedbackText='" + m_question.Feedback[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
             }
 
             con.CloseConnection();

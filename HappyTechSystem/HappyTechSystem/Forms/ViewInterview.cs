@@ -51,7 +51,7 @@ namespace HappyTechSystem
         private void lb_interviews_SelectedIndexChanged(object sender, EventArgs e)
         {
             string qText;
-
+            wipeAllFields();
             try
             {
                 Interview I = (Interview)lb_interviews.SelectedItem;
@@ -123,6 +123,7 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void ViewInterview_Load(object sender, EventArgs e)
         {
+            wipeAllFields();
             lb_vacancies.DataSource = vacancyBank.getVacancyList;
             lb_vacancies.HorizontalScrollbar = true;
             lb_interviews.HorizontalScrollbar = true;
@@ -147,8 +148,9 @@ namespace HappyTechSystem
 
         private void lb_vacancies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lb_interviews.Items.Clear();
+            wipeAllFields();
             vacInterviews.Clear();
+            lb_interviews.Items.Clear();
             try
             {
                 Vacancy v = (Vacancy)lb_vacancies.SelectedItem;
@@ -210,6 +212,21 @@ namespace HappyTechSystem
                 string str = lbl_rank.Text;
                 lbl_rank.Text = str + "th";
             }
+        }
+
+        private void wipeAllFields()
+        {
+            tb_title.Text = "";
+            tb_applicantName.Text = "";
+            tb_interviewerName.Text = "";
+            tb_emailAddress.Text = "";
+            tb_notes.Text = "";
+            lb_questionRanks.DataSource = null;
+            lb_questionRanks.Items.Clear();
+            lbl_rank.Text = "";
+            lbl_score.Text = "";
+            lbl_status.Text = "";
+
         }
     }
 }

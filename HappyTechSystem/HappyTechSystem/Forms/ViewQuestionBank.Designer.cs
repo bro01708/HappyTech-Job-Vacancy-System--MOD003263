@@ -182,6 +182,7 @@
             this.tb_question.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_question.Size = new System.Drawing.Size(455, 133);
             this.tb_question.TabIndex = 60;
+            this.tb_question.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // cb_filterCategories
             // 
@@ -238,6 +239,7 @@
             this.tb_feedback5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback5.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback5.TabIndex = 16;
+            this.tb_feedback5.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_feedback3
             // 
@@ -248,6 +250,7 @@
             this.tb_feedback3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback3.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback3.TabIndex = 12;
+            this.tb_feedback3.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_feedback1
             // 
@@ -258,6 +261,7 @@
             this.tb_feedback1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback1.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback1.TabIndex = 8;
+            this.tb_feedback1.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_feedback4
             // 
@@ -268,6 +272,7 @@
             this.tb_feedback4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback4.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback4.TabIndex = 14;
+            this.tb_feedback4.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_feedback2
             // 
@@ -278,6 +283,7 @@
             this.tb_feedback2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_feedback2.Size = new System.Drawing.Size(237, 84);
             this.tb_feedback2.TabIndex = 10;
+            this.tb_feedback2.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // gb_responses
             // 
@@ -302,6 +308,7 @@
             this.tb_response2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response2.Size = new System.Drawing.Size(237, 84);
             this.tb_response2.TabIndex = 9;
+            this.tb_response2.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_response1
             // 
@@ -312,6 +319,7 @@
             this.tb_response1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response1.Size = new System.Drawing.Size(237, 84);
             this.tb_response1.TabIndex = 7;
+            this.tb_response1.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_response4
             // 
@@ -322,6 +330,7 @@
             this.tb_response4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response4.Size = new System.Drawing.Size(237, 84);
             this.tb_response4.TabIndex = 13;
+            this.tb_response4.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_response5
             // 
@@ -332,6 +341,7 @@
             this.tb_response5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response5.Size = new System.Drawing.Size(237, 84);
             this.tb_response5.TabIndex = 15;
+            this.tb_response5.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // tb_response3
             // 
@@ -342,6 +352,7 @@
             this.tb_response3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_response3.Size = new System.Drawing.Size(237, 84);
             this.tb_response3.TabIndex = 11;
+            this.tb_response3.TextChanged += new System.EventHandler(this.saveUnlocker);
             // 
             // lbl_rank5
             // 

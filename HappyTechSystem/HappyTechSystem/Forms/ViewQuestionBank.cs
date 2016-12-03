@@ -46,6 +46,11 @@ namespace HappyTechSystem
                     string[] feedback = { tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text, tb_feedback5.Text };
                     QuestionCreator questionCreator = QuestionCreator.getInst();
                     questionCreator.ModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text, tb_question.Text, responses, feedback);
+                    MessageBox.Show("The question was edited successfully.\n\n" +
+                                    "For the new changes to load, the form needs to reload.\n" +
+                                    "Open Question Bank again to view changes.", "Edit Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    questionBank.RefreshDBConnection();
+                    this.Close();
                 }
             }
             catch (Exception err)
@@ -256,6 +261,33 @@ namespace HappyTechSystem
             tb_feedback3.Text = "";
             tb_feedback4.Text = "";
             tb_feedback5.Text = "";
+        }
+
+        /// <summary>
+        /// Created By Dan. 
+        /// Unlocks the save changes button if all fields arent empty
+        /// </summary>
+        private void saveUnlocker(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tb_question.Text) ||
+                string.IsNullOrEmpty(tb_response1.Text) ||
+                string.IsNullOrEmpty(tb_response2.Text) ||
+                string.IsNullOrEmpty(tb_response3.Text) ||
+                string.IsNullOrEmpty(tb_response4.Text) ||
+                string.IsNullOrEmpty(tb_response5.Text) ||
+                string.IsNullOrEmpty(tb_feedback1.Text) ||
+                string.IsNullOrEmpty(tb_feedback2.Text) ||
+                string.IsNullOrEmpty(tb_feedback3.Text) ||
+                string.IsNullOrEmpty(tb_feedback4.Text) ||
+                string.IsNullOrEmpty(tb_feedback5.Text)
+                )
+            {
+                btn_save.Enabled = false;
+            }
+            else
+            {
+                btn_save.Enabled = true;
+            }
         }
     }
 }

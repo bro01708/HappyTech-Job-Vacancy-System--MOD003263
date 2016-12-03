@@ -86,8 +86,6 @@ namespace HappyTechSystem.Core
             {
                 if (q.GetID == m_questionID.GetID)
                 {
-                    var update = questionList.FirstOrDefault(que => q.GetID == m_questionID.GetID);
-                    update = q;
                     ml.UpdateQuestionInDB(m_questionID);
                     break;
                 }
