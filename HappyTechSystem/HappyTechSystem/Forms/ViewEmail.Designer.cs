@@ -47,7 +47,7 @@
             // 
             // tb_emailPreview
             // 
-            this.tb_emailPreview.Location = new System.Drawing.Point(206, 117);
+            this.tb_emailPreview.Location = new System.Drawing.Point(246, 117);
             this.tb_emailPreview.Multiline = true;
             this.tb_emailPreview.Name = "tb_emailPreview";
             this.tb_emailPreview.ReadOnly = true;
@@ -61,7 +61,7 @@
             this.lb_email.HorizontalScrollbar = true;
             this.lb_email.Location = new System.Drawing.Point(6, 36);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(194, 316);
+            this.lb_email.Size = new System.Drawing.Size(234, 316);
             this.lb_email.TabIndex = 1;
             this.lb_email.SelectedIndexChanged += new System.EventHandler(this.lb_email_SelectedIndexChanged);
             // 
@@ -79,7 +79,7 @@
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Location = new System.Drawing.Point(6, 358);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(194, 29);
+            this.btn_close.Size = new System.Drawing.Size(234, 29);
             this.btn_close.TabIndex = 57;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(392, 101);
+            this.lbl_email.Location = new System.Drawing.Point(432, 101);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(76, 13);
             this.lbl_email.TabIndex = 58;
@@ -97,7 +97,7 @@
             // lbl_emailID
             // 
             this.lbl_emailID.AutoSize = true;
-            this.lbl_emailID.Location = new System.Drawing.Point(206, 13);
+            this.lbl_emailID.Location = new System.Drawing.Point(246, 13);
             this.lbl_emailID.Name = "lbl_emailID";
             this.lbl_emailID.Size = new System.Drawing.Size(49, 13);
             this.lbl_emailID.TabIndex = 59;
@@ -105,7 +105,7 @@
             // 
             // tb_emailID
             // 
-            this.tb_emailID.Location = new System.Drawing.Point(261, 10);
+            this.tb_emailID.Location = new System.Drawing.Point(301, 10);
             this.tb_emailID.Name = "tb_emailID";
             this.tb_emailID.ReadOnly = true;
             this.tb_emailID.Size = new System.Drawing.Size(27, 20);
@@ -114,7 +114,7 @@
             // lbl_templateUsed
             // 
             this.lbl_templateUsed.AutoSize = true;
-            this.lbl_templateUsed.Location = new System.Drawing.Point(307, 13);
+            this.lbl_templateUsed.Location = new System.Drawing.Point(347, 13);
             this.lbl_templateUsed.Name = "lbl_templateUsed";
             this.lbl_templateUsed.Size = new System.Drawing.Size(82, 13);
             this.lbl_templateUsed.TabIndex = 61;
@@ -122,7 +122,7 @@
             // 
             // tb_template
             // 
-            this.tb_template.Location = new System.Drawing.Point(395, 10);
+            this.tb_template.Location = new System.Drawing.Point(435, 10);
             this.tb_template.Name = "tb_template";
             this.tb_template.ReadOnly = true;
             this.tb_template.Size = new System.Drawing.Size(168, 20);
@@ -131,7 +131,7 @@
             // lbl_emailAddress
             // 
             this.lbl_emailAddress.AutoSize = true;
-            this.lbl_emailAddress.Location = new System.Drawing.Point(206, 45);
+            this.lbl_emailAddress.Location = new System.Drawing.Point(246, 45);
             this.lbl_emailAddress.Name = "lbl_emailAddress";
             this.lbl_emailAddress.Size = new System.Drawing.Size(102, 13);
             this.lbl_emailAddress.TabIndex = 63;
@@ -139,7 +139,7 @@
             // 
             // tb_address
             // 
-            this.tb_address.Location = new System.Drawing.Point(314, 42);
+            this.tb_address.Location = new System.Drawing.Point(354, 42);
             this.tb_address.Name = "tb_address";
             this.tb_address.ReadOnly = true;
             this.tb_address.Size = new System.Drawing.Size(148, 20);
@@ -148,7 +148,7 @@
             // lbl_subject
             // 
             this.lbl_subject.AutoSize = true;
-            this.lbl_subject.Location = new System.Drawing.Point(206, 71);
+            this.lbl_subject.Location = new System.Drawing.Point(246, 71);
             this.lbl_subject.Name = "lbl_subject";
             this.lbl_subject.Size = new System.Drawing.Size(46, 13);
             this.lbl_subject.TabIndex = 65;
@@ -156,7 +156,7 @@
             // 
             // tb_subject
             // 
-            this.tb_subject.Location = new System.Drawing.Point(314, 68);
+            this.tb_subject.Location = new System.Drawing.Point(354, 68);
             this.tb_subject.Name = "tb_subject";
             this.tb_subject.ReadOnly = true;
             this.tb_subject.Size = new System.Drawing.Size(148, 20);
@@ -165,7 +165,7 @@
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(494, 45);
+            this.lbl_date.Location = new System.Drawing.Point(534, 45);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(58, 13);
             this.lbl_date.TabIndex = 67;
@@ -173,7 +173,7 @@
             // 
             // tb_date
             // 
-            this.tb_date.Location = new System.Drawing.Point(558, 42);
+            this.tb_date.Location = new System.Drawing.Point(598, 42);
             this.tb_date.Name = "tb_date";
             this.tb_date.ReadOnly = true;
             this.tb_date.Size = new System.Drawing.Size(75, 20);
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 399);
+            this.ClientSize = new System.Drawing.Size(698, 399);
             this.Controls.Add(this.tb_date);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.tb_subject);

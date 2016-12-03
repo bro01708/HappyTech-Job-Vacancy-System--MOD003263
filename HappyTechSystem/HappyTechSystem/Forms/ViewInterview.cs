@@ -220,7 +220,7 @@ namespace HappyTechSystem
                 int count = vacInterviews.Count;
                 MessageBox.Show(count + " emails have been generated for the vacancy: " + v.VacancyName + ".\n" +
                     "To view these Emails, check the 'View Emails' form!","Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
             }
         }
 

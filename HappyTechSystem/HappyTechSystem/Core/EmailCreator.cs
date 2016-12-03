@@ -69,6 +69,7 @@ namespace HappyTechSystem.Core
                 string strPRE = str;
                 str = (strPRE + "\r\n" + s);
             }
+            str = str + "\r\n";
 
             builder.Replace("[FeedbackArea]", str);
 

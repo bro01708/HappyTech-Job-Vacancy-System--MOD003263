@@ -35,6 +35,7 @@
             this.tb_subject = new System.Windows.Forms.TextBox();
             this.lbl_subject = new System.Windows.Forms.Label();
             this.g_modifyViewTemplates = new System.Windows.Forms.GroupBox();
+            this.lbl_type = new System.Windows.Forms.Label();
             this.tb_templateID = new System.Windows.Forms.TextBox();
             this.lbl_templateID = new System.Windows.Forms.Label();
             this.tb_body = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
+            this.cb_type = new System.Windows.Forms.ComboBox();
             this.g_modifyViewTemplates.SuspendLayout();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +65,14 @@
             this.lb_templates.HorizontalScrollbar = true;
             this.lb_templates.Location = new System.Drawing.Point(12, 35);
             this.lb_templates.Name = "lb_templates";
-            this.lb_templates.Size = new System.Drawing.Size(130, 212);
+            this.lb_templates.Size = new System.Drawing.Size(130, 225);
             this.lb_templates.TabIndex = 1;
             this.lb_templates.SelectedIndexChanged += new System.EventHandler(this.lb_templates_SelectedIndexChanged);
             // 
             // lbl_templateName
             // 
             this.lbl_templateName.AutoSize = true;
-            this.lbl_templateName.Location = new System.Drawing.Point(168, 23);
+            this.lbl_templateName.Location = new System.Drawing.Point(227, 49);
             this.lbl_templateName.Name = "lbl_templateName";
             this.lbl_templateName.Size = new System.Drawing.Size(97, 13);
             this.lbl_templateName.TabIndex = 2;
@@ -78,15 +80,15 @@
             // 
             // tb_templateName
             // 
-            this.tb_templateName.Location = new System.Drawing.Point(268, 20);
+            this.tb_templateName.Location = new System.Drawing.Point(330, 46);
             this.tb_templateName.Name = "tb_templateName";
             this.tb_templateName.ReadOnly = true;
-            this.tb_templateName.Size = new System.Drawing.Size(100, 20);
+            this.tb_templateName.Size = new System.Drawing.Size(116, 20);
             this.tb_templateName.TabIndex = 3;
             // 
             // tb_subject
             // 
-            this.tb_subject.Location = new System.Drawing.Point(118, 46);
+            this.tb_subject.Location = new System.Drawing.Point(92, 46);
             this.tb_subject.Name = "tb_subject";
             this.tb_subject.ReadOnly = true;
             this.tb_subject.Size = new System.Drawing.Size(116, 20);
@@ -103,6 +105,8 @@
             // 
             // g_modifyViewTemplates
             // 
+            this.g_modifyViewTemplates.Controls.Add(this.cb_type);
+            this.g_modifyViewTemplates.Controls.Add(this.lbl_type);
             this.g_modifyViewTemplates.Controls.Add(this.tb_templateID);
             this.g_modifyViewTemplates.Controls.Add(this.lbl_templateID);
             this.g_modifyViewTemplates.Controls.Add(this.tb_body);
@@ -113,14 +117,23 @@
             this.g_modifyViewTemplates.Controls.Add(this.tb_templateName);
             this.g_modifyViewTemplates.Location = new System.Drawing.Point(148, 12);
             this.g_modifyViewTemplates.Name = "g_modifyViewTemplates";
-            this.g_modifyViewTemplates.Size = new System.Drawing.Size(468, 281);
+            this.g_modifyViewTemplates.Size = new System.Drawing.Size(468, 305);
             this.g_modifyViewTemplates.TabIndex = 10;
             this.g_modifyViewTemplates.TabStop = false;
             this.g_modifyViewTemplates.Text = "Modify and View Template";
             // 
+            // lbl_type
+            // 
+            this.lbl_type.AutoSize = true;
+            this.lbl_type.Location = new System.Drawing.Point(227, 23);
+            this.lbl_type.Name = "lbl_type";
+            this.lbl_type.Size = new System.Drawing.Size(81, 13);
+            this.lbl_type.TabIndex = 14;
+            this.lbl_type.Text = "Template Type:";
+            // 
             // tb_templateID
             // 
-            this.tb_templateID.Location = new System.Drawing.Point(118, 20);
+            this.tb_templateID.Location = new System.Drawing.Point(92, 19);
             this.tb_templateID.Name = "tb_templateID";
             this.tb_templateID.ReadOnly = true;
             this.tb_templateID.Size = new System.Drawing.Size(27, 20);
@@ -137,17 +150,17 @@
             // 
             // tb_body
             // 
-            this.tb_body.Location = new System.Drawing.Point(21, 90);
+            this.tb_body.Location = new System.Drawing.Point(21, 105);
             this.tb_body.Multiline = true;
             this.tb_body.Name = "tb_body";
             this.tb_body.ReadOnly = true;
-            this.tb_body.Size = new System.Drawing.Size(425, 185);
+            this.tb_body.Size = new System.Drawing.Size(425, 170);
             this.tb_body.TabIndex = 11;
             // 
             // lbl_body
             // 
             this.lbl_body.AutoSize = true;
-            this.lbl_body.Location = new System.Drawing.Point(231, 74);
+            this.lbl_body.Location = new System.Drawing.Point(214, 89);
             this.lbl_body.Name = "lbl_body";
             this.lbl_body.Size = new System.Drawing.Size(34, 13);
             this.lbl_body.TabIndex = 10;
@@ -181,6 +194,7 @@
             this.btn_delete.TabIndex = 50;
             this.btn_delete.Text = "Delete Template";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_save
             // 
@@ -194,7 +208,7 @@
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(12, 253);
+            this.btn_close.Location = new System.Drawing.Point(12, 277);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(130, 40);
             this.btn_close.TabIndex = 57;
@@ -202,11 +216,24 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // cb_type
+            // 
+            this.cb_type.Enabled = false;
+            this.cb_type.FormattingEnabled = true;
+            this.cb_type.Items.AddRange(new object[] {
+            "Accept",
+            "Reject",
+            "Consideration"});
+            this.cb_type.Location = new System.Drawing.Point(330, 19);
+            this.cb_type.Name = "cb_type";
+            this.cb_type.Size = new System.Drawing.Size(116, 21);
+            this.cb_type.TabIndex = 16;
+            // 
             // ViewTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 299);
+            this.ClientSize = new System.Drawing.Size(697, 329);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.p_editToolbox);
@@ -244,5 +271,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.TextBox tb_templateID;
         private System.Windows.Forms.Label lbl_templateID;
+        private System.Windows.Forms.Label lbl_type;
+        private System.Windows.Forms.ComboBox cb_type;
     }
 }

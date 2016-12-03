@@ -19,6 +19,7 @@ namespace HappyTechSystem
     {
         //variable that acts as a toggle within the edit button
         private byte flag;
+        private EmailBank emailBank = EmailBank.getInst();
 
         public ViewTemplates()
         {
@@ -42,6 +43,7 @@ namespace HappyTechSystem
             {
                 p_editToolbox.Enabled = true;
                 lb_templates.Enabled = false;
+                cb_type.Enabled = true;
                 tb_templateName.ReadOnly = false;
                 tb_subject.ReadOnly = false;
                 tb_body.ReadOnly = false;
@@ -51,6 +53,7 @@ namespace HappyTechSystem
             {
                 p_editToolbox.Enabled = false;
                 lb_templates.Enabled = true;
+                cb_type.Enabled = false;
                 tb_templateName.ReadOnly = true;
                 tb_subject.ReadOnly = true;
                 tb_body.ReadOnly = true;
@@ -81,12 +84,25 @@ namespace HappyTechSystem
                 EmailTemplate et = (EmailTemplate) lb_templates.SelectedItem;
                 tb_templateID.Text = et.getID.ToString();
                 tb_templateName.Text = et.getName;
+                cb_type.Text = et.getType;
                 tb_subject.Text = et.getSubject;
                 tb_body.Text = et.getBody;
             }
             catch (Exception)
             {
                 
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            //delete the selected template
+            EmailTemplate et = (EmailTemplate) lb_templates.SelectedItem;
+            int associatedEmail = 0;
+
+            foreach (Email em in emailBank.getEmailList)
+            {
+                int index = 0;
             }
         }
     }
