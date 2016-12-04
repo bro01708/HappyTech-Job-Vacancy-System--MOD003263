@@ -28,6 +28,8 @@ namespace UnitTests
         /// Tests adding an interview to the vacancy bank
         /// 02/12/2016
 
+        [TestMethod]
+
         public void Test_AddInterviewToList()
         {
             VacancyBank VB = new VacancyBank();
@@ -37,6 +39,29 @@ namespace UnitTests
 
             Assert.AreEqual(VB.getInterviewList[expected], I);
         }
+
+        /// <summary>
+        /// Created by Susan
+        /// 04/12/2016
+        /// //Tests removing a vacancy from the vacancy bank
+        /// </summary>
+
+        [TestMethod]
+
+        public void Test_RemoveVacancyFromList()
+        {
+            VacancyBank VB = new VacancyBank();
+            Vacancy I = new Vacancy();
+            I.GetID = 100;
+            VB.AddVacancyToList(I);
+
+            int expected = VB.getVacancyList.Count - 1;
+            VB.RemoveVacancyFromList(100);
+            int after = VB.getVacancyList.Count;
+            Assert.AreEqual(expected, after);
+
+        }
+      
 
 
     }
