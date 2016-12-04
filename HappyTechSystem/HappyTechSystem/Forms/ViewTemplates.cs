@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using HappyTechSystem.Core;
 
 namespace HappyTechSystem
@@ -18,7 +19,7 @@ namespace HappyTechSystem
     public partial class ViewTemplates : Form
     {
         //variable that acts as a toggle within the edit button
-        private byte flag;
+        private bool flag = true;
         private EmailBank emailBank = EmailBank.getInst();
 
         public ViewTemplates()
@@ -39,7 +40,7 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            if (flag == 0)
+            if (flag)
             {
                 p_editToolbox.Enabled = true;
                 lb_templates.Enabled = false;
@@ -47,7 +48,7 @@ namespace HappyTechSystem
                 tb_templateName.ReadOnly = false;
                 tb_subject.ReadOnly = false;
                 tb_body.ReadOnly = false;
-                flag++;
+                flag = false;
             }
             else
             {
@@ -57,7 +58,7 @@ namespace HappyTechSystem
                 tb_templateName.ReadOnly = true;
                 tb_subject.ReadOnly = true;
                 tb_body.ReadOnly = true;
-                flag--;
+                flag = true;
             }
         }
 
@@ -103,7 +104,6 @@ namespace HappyTechSystem
 
             foreach (Email em in emailBank.getEmailList)
             {
-                int templateID = et.getID;
                 if (et.getID == em.getTemplateID)
                 {
                     associatedEmail++;
@@ -112,9 +112,8 @@ namespace HappyTechSystem
 
             if (associatedEmail == 0)
             {
-                DialogResult dialogResult = MessageBox.Show("You are about to delete this template." +
-                                                            "\n\nAre you sure want to delete this template?", "Delete?",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("You are about to delete this template permanently." +
+                                                            "\n\nAre you sure you want to delete this template?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //deletion of email
@@ -134,15 +133,15 @@ namespace HappyTechSystem
                         tb_subject.Text = "";
                         tb_body.Text = "";
                     }
-
-
+                    
                     MessageBox.Show("Template Successfully Deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 MessageBox.Show("You cannot delete this template due to one or more of the following reasons:"+
-                    "\n\n(X) This template is still bound to emails. Remove those emails to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "\n\n(X) This template is still bound to emails. There are " + associatedEmail +" associated emails using this template -  check to see which ones they " +
+                                "are by checking the 'View Templates' menu.\n Removing these emails will allow you to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

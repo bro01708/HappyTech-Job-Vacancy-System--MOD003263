@@ -50,10 +50,10 @@
             this.lbl_role = new System.Windows.Forms.Label();
             this.tb_role = new System.Windows.Forms.TextBox();
             this.p_content = new System.Windows.Forms.Panel();
+            this.tb_vacancyID = new System.Windows.Forms.TextBox();
+            this.lbl_vacancyID = new System.Windows.Forms.Label();
             this.lbl_interviews = new System.Windows.Forms.Label();
             this.lb_interviews = new System.Windows.Forms.ListBox();
-            this.lbl_vacancyID = new System.Windows.Forms.Label();
-            this.tb_vacancyID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).BeginInit();
             this.p_editToolbox.SuspendLayout();
@@ -121,6 +121,7 @@
             this.lb_questionsUsed.Name = "lb_questionsUsed";
             this.lb_questionsUsed.Size = new System.Drawing.Size(211, 134);
             this.lb_questionsUsed.TabIndex = 6;
+            this.lb_questionsUsed.SelectedIndexChanged += new System.EventHandler(this.lb_questionsUsed_SelectedIndexChanged);
             // 
             // lbl_usedQuestions
             // 
@@ -141,6 +142,7 @@
             this.btn_removeQuestion.TabIndex = 13;
             this.btn_removeQuestion.Text = "[R]";
             this.btn_removeQuestion.UseVisualStyleBackColor = true;
+            this.btn_removeQuestion.Click += new System.EventHandler(this.btn_removeQuestion_Click);
             // 
             // btn_moveQuestion
             // 
@@ -152,6 +154,7 @@
             this.btn_moveQuestion.TabIndex = 12;
             this.btn_moveQuestion.Text = "-->";
             this.btn_moveQuestion.UseVisualStyleBackColor = true;
+            this.btn_moveQuestion.Click += new System.EventHandler(this.btn_moveQuestion_Click);
             // 
             // lbl_questionBank
             // 
@@ -170,6 +173,7 @@
             this.lb_questionBank.Name = "lb_questionBank";
             this.lb_questionBank.Size = new System.Drawing.Size(211, 134);
             this.lb_questionBank.TabIndex = 10;
+            this.lb_questionBank.SelectedIndexChanged += new System.EventHandler(this.lb_questionBank_SelectedIndexChanged);
             // 
             // lbl_vacancyName
             // 
@@ -216,6 +220,7 @@
             this.btn_delete.TabIndex = 50;
             this.btn_delete.Text = "Delete Vacancy";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_save
             // 
@@ -279,6 +284,23 @@
             this.p_content.Size = new System.Drawing.Size(736, 255);
             this.p_content.TabIndex = 60;
             // 
+            // tb_vacancyID
+            // 
+            this.tb_vacancyID.Location = new System.Drawing.Point(21, 20);
+            this.tb_vacancyID.Name = "tb_vacancyID";
+            this.tb_vacancyID.ReadOnly = true;
+            this.tb_vacancyID.Size = new System.Drawing.Size(28, 20);
+            this.tb_vacancyID.TabIndex = 58;
+            // 
+            // lbl_vacancyID
+            // 
+            this.lbl_vacancyID.AutoSize = true;
+            this.lbl_vacancyID.Location = new System.Drawing.Point(4, 4);
+            this.lbl_vacancyID.Name = "lbl_vacancyID";
+            this.lbl_vacancyID.Size = new System.Drawing.Size(66, 13);
+            this.lbl_vacancyID.TabIndex = 18;
+            this.lbl_vacancyID.Text = "Vacancy ID:";
+            // 
             // lbl_interviews
             // 
             this.lbl_interviews.AutoSize = true;
@@ -297,23 +319,6 @@
             this.lb_interviews.Name = "lb_interviews";
             this.lb_interviews.Size = new System.Drawing.Size(212, 225);
             this.lb_interviews.TabIndex = 16;
-            // 
-            // lbl_vacancyID
-            // 
-            this.lbl_vacancyID.AutoSize = true;
-            this.lbl_vacancyID.Location = new System.Drawing.Point(4, 4);
-            this.lbl_vacancyID.Name = "lbl_vacancyID";
-            this.lbl_vacancyID.Size = new System.Drawing.Size(66, 13);
-            this.lbl_vacancyID.TabIndex = 18;
-            this.lbl_vacancyID.Text = "Vacancy ID:";
-            // 
-            // tb_vacancyID
-            // 
-            this.tb_vacancyID.Location = new System.Drawing.Point(21, 20);
-            this.tb_vacancyID.Name = "tb_vacancyID";
-            this.tb_vacancyID.ReadOnly = true;
-            this.tb_vacancyID.Size = new System.Drawing.Size(28, 20);
-            this.tb_vacancyID.TabIndex = 58;
             // 
             // ViewVacancies
             // 

@@ -167,7 +167,7 @@
             this.tb_body.Multiline = true;
             this.tb_body.Name = "tb_body";
             this.tb_body.ReadOnly = true;
-            this.tb_body.Size = new System.Drawing.Size(425, 170);
+            this.tb_body.Size = new System.Drawing.Size(425, 194);
             this.tb_body.TabIndex = 11;
             // 
             // lbl_body

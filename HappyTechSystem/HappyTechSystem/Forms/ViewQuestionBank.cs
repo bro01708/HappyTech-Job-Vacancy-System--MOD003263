@@ -20,7 +20,7 @@ namespace HappyTechSystem
         private QuestionBank questionBank = QuestionBank.getInst();
         private VacancyBank vacancyBank = VacancyBank.getInst();
         //private variable used to aid toggling
-        private byte flag;
+        private bool flag = true;
 
         public ViewQuestionBank()
         {
@@ -66,7 +66,6 @@ namespace HappyTechSystem
             }
             catch (Exception err)
             {
-
                 throw err;
             }
         }
@@ -81,7 +80,7 @@ namespace HappyTechSystem
         private void btn_edit_Click(object sender, EventArgs e)
         {
 
-            if (flag == 0)
+            if (flag)
             {
                 p_editToolbox.Enabled = true;
                 lb_Q.Enabled = false;
@@ -99,7 +98,7 @@ namespace HappyTechSystem
                 tb_response3.ReadOnly = false;
                 tb_response4.ReadOnly = false;
                 tb_response5.ReadOnly = false;
-                flag++;
+                flag = false;
             }
             else
             {
@@ -118,7 +117,7 @@ namespace HappyTechSystem
                 tb_response3.ReadOnly = true;
                 tb_response4.ReadOnly = true;
                 tb_response5.ReadOnly = true;
-                flag--;
+                flag = true;
             }
         }
 
@@ -208,6 +207,7 @@ namespace HappyTechSystem
                             MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
+                        //deletion of question
                         questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
                         lb_Q.DataSource = null;
                         lb_Q.DataSource = questionBank.getQuestionList;
@@ -228,8 +228,8 @@ namespace HappyTechSystem
                 }
                 else
                 {
-                    MessageBox.Show("You cannot delete this question due to the following reasons:" +
-                                    "\n\n(X) This question is still bound to a Vacancy.", "Cannot Delete Question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You cannot delete this question due to the one or more of following reasons:" +
+                                    "\n\n(X) This question is still bound to a Vacancy, including its Response Criterion and Feedback information.", "Cannot Delete Question", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

@@ -20,7 +20,7 @@ namespace HappyTechSystem
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionBank = QuestionBank.getInst();
         //variable that acts as a toggle. used by the edit button event handler
-        private byte flag;
+        private bool flag = true;
 
         public ViewVacancies()
         {
@@ -36,32 +36,29 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            if (flag == 0)
+            if (flag)
             {
                 p_editToolbox.Enabled = true;
+                lb_vacancy.Enabled = false;
                 tb_vacancyName.ReadOnly = false;
                 tb_role.Enabled = false;
-                lb_questionBank.Enabled = false;
-                lb_questionsUsed.Enabled = false;
                 nud_acceptance.ReadOnly = false;
                 nud_slots.ReadOnly = false;
                 btn_moveQuestion.Enabled = true;
-                btn_removeQuestion.Enabled = true;
-                flag++;
+                flag = false;
 
             }
             else
             {
                 p_editToolbox.Enabled = false;
+                lb_vacancy.Enabled = true;
                 tb_vacancyName.ReadOnly = true;
                 tb_role.Enabled = true;
-                lb_questionBank.Enabled = true;
-                lb_questionsUsed.Enabled = true;
                 nud_acceptance.ReadOnly = true;
                 nud_slots.ReadOnly = true;
                 btn_moveQuestion.Enabled = false;
                 btn_removeQuestion.Enabled = false;
-                flag--;
+                flag = true;
             }
 
         }
@@ -69,16 +66,17 @@ namespace HappyTechSystem
         private void lb_vacancy_SelectedIndexChanged(object sender, EventArgs e)
         {
             lb_interviews.Items.Clear();
+            lb_questionBank.Items.Clear();
             lb_questionsUsed.Items.Clear();
+
             try
             {
-                Vacancy v = (Vacancy)lb_vacancy.SelectedItem;
+                Vacancy v = (Vacancy) lb_vacancy.SelectedItem;
                 tb_vacancyID.Text = v.GetID.ToString();
                 tb_vacancyName.Text = v.VacancyName;
                 tb_role.Text = v.Role;
                 nud_acceptance.Value = v.MinumumScore;
                 nud_slots.Value = v.PositionsAvailable;
-                lb_questionBank.DataSource = questionBank.getQuestionList;
 
                 int index = 0;
                 int count = v.getQuestionsToBeUsed.Count;
@@ -86,6 +84,8 @@ namespace HappyTechSystem
                 {
                     foreach (Question q in questionBank.getQuestionList)
                     {
+                        lb_questionBank.Items.Add(q.ToString());
+
                         if (index == count)
                         {
                             break;
@@ -98,24 +98,23 @@ namespace HappyTechSystem
                         }
                     }
                 } while (index != count);
-                
-                
+
                 foreach (Interview I in vacancyBank.getInterviewList)
                 {
                     if (I.getUsedVacancyID == v.GetID)
                     {
                         lb_interviews.Items.Add(I);
-                    } 
+                    }
                 }
             }
-            catch (Exception err)
+            catch (Exception)
             {
-                throw err;
             }
         }
 
         private void ViewVacancies_Load(object sender, EventArgs e)
         {
+            p_editToolbox.Enabled = false;
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
             lb_vacancy.SelectedIndex = 0;
         }
@@ -128,7 +127,114 @@ namespace HappyTechSystem
         private void ViewVacancies_FormClosing(object sender, FormClosingEventArgs e)
         {
             lb_interviews.Items.Clear();
+            lb_questionBank.Items.Clear();
             lb_questionsUsed.Items.Clear();
+        }
+
+        /// <summary>
+        /// Created By Dan. 
+        /// Removes the vacancy from the database and any local lists.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            Vacancy v = (Vacancy) lb_vacancy.SelectedItem;
+            int associatedInterviews = 0;
+
+            foreach (Interview i in vacancyBank.getInterviewList)
+            {
+                int vacancyID = i.getUsedVacancyID;
+                if (i.getUsedVacancyID == v.GetID)
+                {
+                    associatedInterviews++;
+                }
+            }
+
+            if (associatedInterviews == 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("You are about to delete this vacancy permanently." +
+                                                            "\n\nAre you sure you want to delete this vacancy?",
+                                                            "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //deletion of vacancy record
+                    vacancyBank.RemoveVacancyFromList(v.GetID);
+                    lb_vacancy.DataSource = null;
+                    lb_vacancy.DataSource = vacancyBank.getVacancyList;
+
+
+                    try
+                    {
+                        btn_edit.PerformClick();
+                        lb_vacancy.SelectedIndex = 0;
+                    }
+                    catch (Exception)
+                    {
+                        tb_vacancyID.Text = "";
+                        tb_vacancyName.Text = "";
+                        tb_role.Text = "";
+                        nud_acceptance.Text = "";
+                        nud_slots.Text = "";
+                    }
+
+                    MessageBox.Show("The vacancy " + v.VacancyName +" was successfully deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete this vacancy due to one of more of the following reasons:" +
+                                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy - generate emails for those interviews " +
+                                "or remove them.", "Cannot Delete Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_moveQuestion_Click(object sender, EventArgs e)
+        {
+            removeCheck();
+
+            if (lb_questionsUsed.Items.Contains(lb_questionBank.SelectedItem))
+            {
+                MessageBox.Show("You cannot add duplicate questions to the 'Questions To Be Used' List.", "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                lb_questionsUsed.Items.Add(lb_questionBank.SelectedItem);
+            }
+        }
+
+        private void btn_removeQuestion_Click(object sender, EventArgs e)
+        {
+            lb_questionsUsed.Items.Remove(lb_questionsUsed.SelectedItem);
+        }
+
+        private void removeCheck()
+        {
+            if (p_editToolbox.Enabled)
+            {
+                if (lb_questionsUsed.Items.Count == 5)
+                {
+                    btn_removeQuestion.Enabled = false;
+                }
+                else
+                {
+                    btn_removeQuestion.Enabled = true;
+                }
+            }
+            else
+            {
+                btn_removeQuestion.Enabled = false;
+            }
+        }
+
+        private void lb_questionBank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            removeCheck();
+        }
+
+        private void lb_questionsUsed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            removeCheck();
         }
     }
 }

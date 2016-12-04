@@ -73,7 +73,7 @@ namespace HappyTechSystem.Core
                 if (v.GetID == m_vacancyID)
                 {
                     vacancyList.Remove(v);
-                    //ml.RemoveVacancyFromDB(m_vacancyID);
+                    ml.RemoveVacancyFromDB(m_vacancyID);
                     break;
                 }
             }

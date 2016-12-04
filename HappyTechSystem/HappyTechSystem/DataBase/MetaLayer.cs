@@ -507,6 +507,21 @@ namespace HappyTechSystem.DB
 
         public void RemoveVacancyFromDB(int m_vacancyID)
         {
+            DbConnection con = DBFactory.instance();
+            string id = m_vacancyID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Vacancy_Question WHERE VacancyID = " + id + ";");
+            con.RunSQL("DELETE FROM Vacancy WHERE VacancyID = " + id + ";");
+            con.CloseConnection();
+        }
+
+        public void UpdateTemplateInDB(EmailTemplate m_emailTemplate)
+        {
+            
+        }
+
+        public void UpdateVacancyInDB(Vacancy m_vacancy)
+        {
             
         }
     }
