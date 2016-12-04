@@ -54,8 +54,8 @@ namespace HappyTechSystem
                         tb_feedback5.Text
                     };
                     QuestionCreator questionCreator = QuestionCreator.getInst();
-                    questionCreator.ModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text,
-                        tb_question.Text, responses, feedback);
+                    questionCreator.CreateModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text,
+                        tb_question.Text, responses, feedback, 1);
                     MessageBox.Show("The question was edited successfully.\n\n" +
                                     "For the new changes to load, the form needs to reload.\n" +
                                     "Open Question Bank again to view changes.", "Edit Successful", MessageBoxButtons.OK,
@@ -209,7 +209,6 @@ namespace HappyTechSystem
                     {
                         //deletion of question
                         questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
-                        lb_Q.DataSource = null;
                         lb_Q.DataSource = questionBank.getQuestionList;
 
                         try

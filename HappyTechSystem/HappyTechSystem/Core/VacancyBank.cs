@@ -66,6 +66,12 @@ namespace HappyTechSystem.Core
             ml.SaveInterviewToDB(m_i);
         }
 
+        public void UpdateList(Vacancy m_v)
+        {
+            ml.UpdateVacancyInDB(m_v);
+            RefreshDBConnection();
+        }
+
         public void RemoveVacancyFromList(int m_vacancyID)
         {
             foreach (Vacancy v in vacancyList)

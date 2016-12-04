@@ -80,11 +80,16 @@ namespace HappyTechSystem
 
                 int index = 0;
                 int count = v.getQuestionsToBeUsed.Count;
+
+                foreach (Question q in questionBank.getQuestionList)
+                {
+                    lb_questionBank.Items.Add(q.ToString());
+                }
+
                 do
                 {
                     foreach (Question q in questionBank.getQuestionList)
                     {
-                        lb_questionBank.Items.Add(q.ToString());
 
                         if (index == count)
                         {
@@ -107,8 +112,9 @@ namespace HappyTechSystem
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                throw err;
             }
         }
 
@@ -160,7 +166,6 @@ namespace HappyTechSystem
                 {
                     //deletion of vacancy record
                     vacancyBank.RemoveVacancyFromList(v.GetID);
-                    lb_vacancy.DataSource = null;
                     lb_vacancy.DataSource = vacancyBank.getVacancyList;
 
 
@@ -235,6 +240,24 @@ namespace HappyTechSystem
         private void lb_questionsUsed_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeCheck();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            Vacancy v = (Vacancy) lb_vacancy.SelectedItem;
+            DialogResult dialogResult = MessageBox.Show("You are about to overwrite this vacancy.\n\nAre you sure?",
+                "Overwrite Vacancy?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                VacancyCreator vacancyCreator = VacancyCreator.getInst();
+                vacancyCreator.CreateModifyVacancy();
+                lb_vacancy.DataSource = vacancyBank.getVacancyList;
+
+                btn_edit.PerformClick();
+                lb_vacancy.SelectedIndex = 0;
+
+                MessageBox.Show("The vacancy '" + v.VacancyName +"' was successfully modified.", "Edit Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

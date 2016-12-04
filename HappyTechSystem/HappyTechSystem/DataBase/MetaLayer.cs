@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -26,6 +27,7 @@ namespace HappyTechSystem.DB
             return m_instance;
         }
 
+        #region Get From DB
         // Could just have a set of static helper methods rather than a singleton!
         public List<Question> GetQuestions()
         {
@@ -52,8 +54,6 @@ namespace HappyTechSystem.DB
 
             return Questions;
         }
-
-        //public Question
 
         public List<EmailTemplate> GetEmailTemplates()
         {
@@ -168,82 +168,10 @@ namespace HappyTechSystem.DB
                 dr.Close();
                 con.CloseConnection();
             }
-            
+
             return categories;
         }
-        /// <summary>
-        /// Created by Peter
-        /// Recieves a question, splits it down into its attributes, and plugs those into an SQL query that is run by the "RunSQL" method
-        /// </summary>
-        /// <param name="m_question"></param>
-        public void SaveQuestionToDB(Question m_question)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
 
-            int questionID = m_question.GetID;
-            string questionTag = m_question.GetTag;
-            string questionText = m_question.GetText;
-
-            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
-                             "','" + questionTag + "','" + questionText + "')";
-            con.RunSQL(myQuery);
-            //Following sections loop through ranks 1-5 and writes the assosiated response and feeback at that rank for the question being loaded.
-            for (int i = 0; i < 5; i++)
-            {
-                int rank = i + 1;
-                string rankstring = rank.ToString();
-                con.RunSQL("INSERT INTO Criteria(Rank, CriteriaText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Responses[i]+"','" + questionID +"')");
-                con.RunSQL("INSERT INTO Feedback(Rank, FeedbackText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Feedback[i] + "','" + questionID + "')");
-            }
-
-            con.CloseConnection();
-        }
-
-        /// <summary>
-        /// Created By Peter
-        /// Recieves an integer of questionID , converts it to string and uses it as an 
-        /// identifier in a delete query which makes use of the Cascade Delete function of the access db.
-        /// </summary>
-        /// <param name="m_questionID"></param>
-        public void RemoveQuestionFromDB(int m_questionID)
-        {
-            DbConnection con = DBFactory.instance();
-            string id = m_questionID.ToString();
-            con.OpenConnection();
-            con.RunSQL("DELETE FROM Criteria WHERE QuestionID = " + id + ";");
-            con.RunSQL("DELETE FROM Feedback WHERE QuestionID = " + id + ";");
-            con.RunSQL("DELETE FROM Question WHERE QuestionID = " + id + ";");
-            con.CloseConnection();
-        }
-
-        /// <summary>
-        /// Created by Dan.
-        /// Edits the record within the database, called from the question bank.
-        /// </summary>
-        /// <param name="m_questionID"></param>
-        public void UpdateQuestionInDB(Question m_question)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
-            
-            string questionTag = m_question.GetTag;
-            string questionText = m_question.GetText;
-
-            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText +
-                             "' WHERE QuestionID=" + m_question.GetID;
-            con.RunSQL(myQuery);
-
-            //Updates the necesscary criteria and feedback details
-            for (int i = 0; i < 5; i++)
-            {
-                int rank = i + 1;
-                con.RunSQL("UPDATE Criteria SET CriteriaText='" + m_question.Responses[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
-                con.RunSQL("UPDATE Feedback SET FeedbackText='" + m_question.Feedback[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
-            }
-
-            con.CloseConnection();
-        }
 
         public string[] GetResponses(int m_questionID)
         {
@@ -272,7 +200,7 @@ namespace HappyTechSystem.DB
         }
         public string[] GetFeedback(int m_questionID)
         {
-            List<string> tempFeedback= new List<string>();
+            List<string> tempFeedback = new List<string>();
 
             DbConnection con = DBFactory.instance();
             if (con.OpenConnection())
@@ -296,50 +224,6 @@ namespace HappyTechSystem.DB
             return tempFeedback.ToArray();
         }
 
-        public void SaveVacancyToDB(Vacancy m_vacancy)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
-
-            int vacancyID = m_vacancy.GetID;
-            string vacancyName = m_vacancy.VacancyName;
-            string role = m_vacancy.Role;
-            int minScore = m_vacancy.MinumumScore;
-            int positionsAvailable = m_vacancy.PositionsAvailable;
-            List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
-
-            String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID +
-                             "','" + vacancyName + "','" + role + "','" + positionsAvailable + "','" + minScore + "')";
-            con.RunSQL(myQuery);
-
-            for (int i = 0; i < questionIDs.Count; i++)
-            {
-                String myQuery2 = "INSERT INTO Vacancy_Question( QuestionID, VacancyID,QuestionOrderIndex) VALUES ('" + questionIDs[i] + "','" + vacancyID + "','" + i + "')";
-                con.RunSQL(myQuery2);
-            }
-
-            con.CloseConnection();
-        }
-
-        public void SaveTemplateToDB(EmailTemplate m_template)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
-
-            int templateID = m_template.getID;
-            string templateType = m_template.getType;
-            string templateName = m_template.getName;
-            string templateSubject = m_template.getSubject;
-            string templateBody = m_template.getBody;
-
-            string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateType, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID + 
-                "','" + templateType + "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
-
-            con.RunSQL(myQuery);
-
-            con.CloseConnection();
-        }
-
         public List<int> getQuestionsToBeUsed(Vacancy m_Vacancy)
         {
             List<int> questionsToBeUsed = new List<int>();
@@ -361,37 +245,6 @@ namespace HappyTechSystem.DB
 
             return questionsToBeUsed;
         }
-
-        public void SaveInterviewToDB(Interview m_interview)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
-
-            int interviewID = m_interview.getInterviewID;
-            int vacancyID = m_interview.getUsedVacancyID;
-            string interviewerName = m_interview.getInterviewerName;
-            string applicantTitle = m_interview.getApplicantTitle;
-            string applicantName = m_interview.getApplicantName;
-            string applicantEmail = m_interview.getApplicantEmail;
-            string cvPath = m_interview.getCVPath;
-            string additionalNotes = m_interview.getAdditionalNotes;
-            int[] ranks = m_interview.Answers;
-            int total = m_interview.getTotal;
-
-            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes, TotalScore) VALUES ('" + interviewID +
-                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "','" + total + "')";
-
-            con.RunSQL(myQuery);
-
-            for (int i = 0; i < ranks.Length; i++)
-            {
-                string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES('" + i + "','" + interviewID + "','" + ranks[i] + "')";
-                con.RunSQL(myQuery2);
-            }
-
-            con.CloseConnection();
-        }
-
         /// <summary>
         /// Created by Dan
         /// Fetches the interviews from the Database and assigns it to the local list in the vacancy bank
@@ -441,30 +294,6 @@ namespace HappyTechSystem.DB
 
             return il;
         }
-
-        /// <summary>
-        /// Created By Dan. 
-        /// Saves the email passed into this method to the data by running a specific SQL query.
-        /// </summary>
-        /// <param name="e"></param>
-        public void SaveEmailToDB(Email e)
-        {
-            DbConnection con = DBFactory.instance();
-            con.OpenConnection();
-
-            int emailID = e.getID;
-            int templateID = e.getTemplateID;
-            int interviewID = e.getInterviewID;
-            string emailAddress = e.getAddress;
-            string subject = e.getSubject;
-            string content = e.getContent;
-            string sendDate = e.getSentDate;
-
-            con.RunSQL("INSERT INTO Email(EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate) VALUES ('" + emailID + "','" + templateID + "','" + interviewID + "','" + emailAddress + "','" + subject + "','" + content + "','" + sendDate + "')");
-
-            con.CloseConnection();
-        }
-
         public List<Email> GetEmails()
         {
             List<Email> el = new List<Email>();
@@ -496,6 +325,200 @@ namespace HappyTechSystem.DB
             return el;
         }
 
+        #endregion
+
+        #region Add to DB
+
+        /// <summary>
+        /// Created by Peter
+        /// Recieves a question, splits it down into its attributes, and plugs those into an SQL query that is run by the "RunSQL" method
+        /// </summary>
+        /// <param name="m_question"></param>
+        public void SaveQuestionToDB(Question m_question)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int questionID = m_question.GetID;
+            string questionTag = m_question.GetTag;
+            string questionText = m_question.GetText;
+
+            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
+                             "','" + questionTag + "','" + questionText + "')";
+            con.RunSQL(myQuery);
+            //Following sections loop through ranks 1-5 and writes the assosiated response and feeback at that rank for the question being loaded.
+            for (int i = 0; i < 5; i++)
+            {
+                int rank = i + 1;
+                string rankstring = rank.ToString();
+                con.RunSQL("INSERT INTO Criteria(Rank, CriteriaText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Responses[i] + "','" + questionID + "')");
+                con.RunSQL("INSERT INTO Feedback(Rank, FeedbackText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Feedback[i] + "','" + questionID + "')");
+            }
+
+            con.CloseConnection();
+        }
+        public void SaveVacancyToDB(Vacancy m_vacancy)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int vacancyID = m_vacancy.GetID;
+            string vacancyName = m_vacancy.VacancyName;
+            string role = m_vacancy.Role;
+            int minScore = m_vacancy.MinumumScore;
+            int positionsAvailable = m_vacancy.PositionsAvailable;
+            List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
+
+            String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID +
+                             "','" + vacancyName + "','" + role + "','" + positionsAvailable + "','" + minScore + "')";
+            con.RunSQL(myQuery);
+
+            for (int i = 0; i < questionIDs.Count; i++)
+            {
+                String myQuery2 = "INSERT INTO Vacancy_Question( QuestionID, VacancyID,QuestionOrderIndex) VALUES ('" + questionIDs[i] + "','" + vacancyID + "','" + i + "')";
+                con.RunSQL(myQuery2);
+            }
+
+            con.CloseConnection();
+        }
+
+        public void SaveTemplateToDB(EmailTemplate m_template)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int templateID = m_template.getID;
+            string templateType = m_template.getType;
+            string templateName = m_template.getName;
+            string templateSubject = m_template.getSubject;
+            string templateBody = m_template.getBody;
+
+            string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateType, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID +
+                "','" + templateType + "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
+
+            con.RunSQL(myQuery);
+
+            con.CloseConnection();
+        }
+        public void SaveInterviewToDB(Interview m_interview)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int interviewID = m_interview.getInterviewID;
+            int vacancyID = m_interview.getUsedVacancyID;
+            string interviewerName = m_interview.getInterviewerName;
+            string applicantTitle = m_interview.getApplicantTitle;
+            string applicantName = m_interview.getApplicantName;
+            string applicantEmail = m_interview.getApplicantEmail;
+            string cvPath = m_interview.getCVPath;
+            string additionalNotes = m_interview.getAdditionalNotes;
+            int[] ranks = m_interview.Answers;
+            int total = m_interview.getTotal;
+
+            String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes, TotalScore) VALUES ('" + interviewID +
+                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "','" + total + "')";
+
+            con.RunSQL(myQuery);
+
+            for (int i = 0; i < ranks.Length; i++)
+            {
+                string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES('" + i + "','" + interviewID + "','" + ranks[i] + "')";
+                con.RunSQL(myQuery2);
+            }
+
+            con.CloseConnection();
+        }
+
+        /// <summary>
+        /// Created By Dan. 
+        /// Saves the email passed into this method to the data by running a specific SQL query.
+        /// </summary>
+        /// <param name="e"></param>
+        public void SaveEmailToDB(Email e)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int emailID = e.getID;
+            int templateID = e.getTemplateID;
+            int interviewID = e.getInterviewID;
+            string emailAddress = e.getAddress;
+            string subject = e.getSubject;
+            string content = e.getContent;
+            string sendDate = e.getSentDate;
+
+            con.RunSQL("INSERT INTO Email(EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate) VALUES ('" + emailID + "','" + templateID + "','" + interviewID + "','" + emailAddress + "','" + subject + "','" + content + "','" + sendDate + "')");
+
+            con.CloseConnection();
+        }
+
+        #endregion
+
+        #region Update DB
+
+        /// <summary>
+        /// Created by Dan.
+        /// Edits the record within the database, called from the question bank.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void UpdateQuestionInDB(Question m_question)
+        {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            string questionTag = m_question.GetTag;
+            string questionText = m_question.GetText;
+
+            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText +
+                             "' WHERE QuestionID=" + m_question.GetID;
+            con.RunSQL(myQuery);
+
+            //Updates the necesscary criteria and feedback details
+            for (int i = 0; i < 5; i++)
+            {
+                int rank = i + 1;
+                con.RunSQL("UPDATE Criteria SET CriteriaText='" + m_question.Responses[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
+                con.RunSQL("UPDATE Feedback SET FeedbackText='" + m_question.Feedback[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
+            }
+
+            con.CloseConnection();
+        }
+        public void UpdateTemplateInDB(EmailTemplate m_emailTemplate)
+        {
+
+        }
+
+        public void UpdateVacancyInDB(Vacancy m_vacancy)
+        {
+
+        }
+
+        public void UpdateEmailInDB(Email m_email)
+        {
+            
+        }
+
+        #endregion
+
+        #region Remove From DB
+
+        /// <summary>
+        /// Created By Peter
+        /// Recieves an integer of questionID , converts it to string and uses it as an 
+        /// identifier in a delete query which makes use of the Cascade Delete function of the access db.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void RemoveQuestionFromDB(int m_questionID)
+        {
+            DbConnection con = DBFactory.instance();
+            string id = m_questionID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Criteria WHERE QuestionID = " + id + ";");
+            con.RunSQL("DELETE FROM Feedback WHERE QuestionID = " + id + ";");
+            con.RunSQL("DELETE FROM Question WHERE QuestionID = " + id + ";");
+            con.CloseConnection();
+        }
         public void RemoveTemplateFromDB(int m_templateID)
         {
             DbConnection con = DBFactory.instance();
@@ -515,14 +538,11 @@ namespace HappyTechSystem.DB
             con.CloseConnection();
         }
 
-        public void UpdateTemplateInDB(EmailTemplate m_emailTemplate)
+        public void RemoveEmailFromDB(int m_emailID)
         {
             
         }
 
-        public void UpdateVacancyInDB(Vacancy m_vacancy)
-        {
-            
-        }
+        #endregion
     }
 }

@@ -228,7 +228,7 @@
             this.lbl_role.TabIndex = 20;
             this.lbl_role.Text = "Specify the job Role/Title:";
             // 
-            // CreateVacancy
+            // CreateModifyVacancy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

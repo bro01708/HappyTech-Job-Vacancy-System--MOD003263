@@ -87,6 +87,7 @@ namespace HappyTechSystem.Core
                 if (q.GetID == m_questionID.GetID)
                 {
                     ml.UpdateQuestionInDB(m_questionID);
+                    RefreshDBConnection();
                     break;
                 }
             }

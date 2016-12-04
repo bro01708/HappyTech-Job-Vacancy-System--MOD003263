@@ -118,7 +118,6 @@ namespace HappyTechSystem
                 {
                     //deletion of email
                     emailBank.RemoveTemplate(et.getID);
-                    lb_templates.DataSource = null;
                     lb_templates.DataSource = emailBank.getTemplateList;
 
                     try
@@ -142,6 +141,16 @@ namespace HappyTechSystem
                 MessageBox.Show("You cannot delete this template due to one or more of the following reasons:"+
                     "\n\n(X) This template is still bound to emails. There are " + associatedEmail +" associated emails using this template -  check to see which ones they " +
                                 "are by checking the 'View Templates' menu.\n Removing these emails will allow you to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("You are about to overwrite this template with the changes you have made.\n\nAre you sure you want to overwrite this template?",
+                "Overwrite Template?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+
             }
         }
     }

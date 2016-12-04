@@ -31,7 +31,7 @@ namespace HappyTechSystem.Core
         /// <param name="m_minimumScore"></param>
         /// <param name="m_positionsAvailable"></param>
         /// <param name="m_Questions"></param>
-        public void CreateVacancy(int m_vacancyID, string m_vacancyName, string m_role, int m_minimumScore, int m_positionsAvailable , List<int>m_questionIDs)
+        public void CreateModifyVacancy(int m_vacancyID, string m_vacancyName, string m_role, int m_minimumScore, int m_positionsAvailable , List<int>m_questionIDs, int flag)
     {
             Vacancy V = new Vacancy();
             V.GetID = m_vacancyID;
@@ -41,8 +41,16 @@ namespace HappyTechSystem.Core
             V.PositionsAvailable = m_positionsAvailable;
             V.getQuestionsToBeUsed = m_questionIDs;
             VacancyBank VB = VacancyBank.getInst();
+
+        if (flag == 0)
+        {
             VB.AddVacancyToList(V);
-            
+        }
+        else
+        {
+            VB.UpdateList(V);
+        }
+
     }
 
     }
