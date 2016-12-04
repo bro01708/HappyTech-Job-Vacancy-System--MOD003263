@@ -95,23 +95,26 @@ namespace HappyTechSystem
                 List<Question> questions = questionBank.getQuestionList; //localised question list
 
 
-                int index = - 1;
-                int count = questionIDs.Length - 1;
-                foreach (Question q in questions)
+                int index = 0;
+                int count = questionIDs.Length;
+                do
                 {
-                    if (index == count)
+                    foreach (Question q in questions)
                     {
-                        break;
-                    }
-                    index++;
+                        if (index == count)
+                        {
+                            break;
+                        }
 
-                    if (q.GetID == questionIDs[index])
-                    {
-                        qText = q.GetText;
-                        questionsAndRanks.Add("Scored: " + I.Answers[index] + " on Question: " + qText);
+                        if (q.GetID == questionIDs[index])
+                        {
+                            qText = q.GetText;
+                            questionsAndRanks.Add("Scored: " + I.Answers[index] + " on Question: " + qText);
+                            index++;
+                        }
                     }
+                } while (index != count);
 
-                }
                 lb_questionRanks.DataSource = questionsAndRanks;
             }
             catch (Exception err)
@@ -144,6 +147,8 @@ namespace HappyTechSystem
             {
                 btn_generateEmails.Enabled = false;
             }
+
+            lb_vacancies.SelectedIndex = 0;
         }
 
         private void btn_cvOpen_Click(object sender, EventArgs e)
@@ -186,9 +191,9 @@ namespace HappyTechSystem
                     lb_interviews.Items.Add(I);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                throw err;
             }
 
             lb_interviews.SelectedIndex = 0;

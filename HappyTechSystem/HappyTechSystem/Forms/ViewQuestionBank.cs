@@ -131,6 +131,7 @@ namespace HappyTechSystem
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
+            lb_Q.SelectedIndex = 0;
 
         }
 

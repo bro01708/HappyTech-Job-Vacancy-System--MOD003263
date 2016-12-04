@@ -73,6 +73,7 @@ namespace HappyTechSystem
             try
             {
                 Vacancy v = (Vacancy)lb_vacancy.SelectedItem;
+                tb_vacancyID.Text = v.GetID.ToString();
                 tb_vacancyName.Text = v.VacancyName;
                 tb_role.Text = v.Role;
                 nud_acceptance.Value = v.MinumumScore;
@@ -80,16 +81,25 @@ namespace HappyTechSystem
                 lb_questionBank.DataSource = questionBank.getQuestionList;
 
                 int index = 0;
-                foreach (Question q in questionBank.getQuestionList)
+                int count = v.getQuestionsToBeUsed.Count;
+                do
                 {
-                    if (q.GetID == v.getQuestionsToBeUsed[index])
+                    foreach (Question q in questionBank.getQuestionList)
                     {
-                        lb_questionsUsed.Items.Add(q.ToString());
+                        if (index == count)
+                        {
+                            break;
+                        }
+
+                        if (q.GetID == v.getQuestionsToBeUsed[index])
+                        {
+                            lb_questionsUsed.Items.Add(q.ToString());
+                            index++;
+                        }
                     }
-                    index++;
-                }
-
-
+                } while (index != count);
+                
+                
                 foreach (Interview I in vacancyBank.getInterviewList)
                 {
                     if (I.getUsedVacancyID == v.GetID)
@@ -98,15 +108,16 @@ namespace HappyTechSystem
                     } 
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                
+                throw err;
             }
         }
 
         private void ViewVacancies_Load(object sender, EventArgs e)
         {
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
+            lb_vacancy.SelectedIndex = 0;
         }
 
         private void btn_close_Click(object sender, EventArgs e)

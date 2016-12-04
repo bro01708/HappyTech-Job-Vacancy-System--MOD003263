@@ -31,13 +31,14 @@ namespace HappyTechSystem
         private void ViewEmail_Load(object sender, EventArgs e)
         {
             lb_email.DataSource = emailBank.getEmailList;
+            lb_email.SelectedIndex = 0;
         }
 
         private void lb_email_SelectedIndexChanged(object sender, EventArgs e)
         {
             Email email = (Email) lb_email.SelectedItem;
             tb_emailID.Text = email.getID.ToString();
-            tb_template.Text = emailBank.getTemplateList.Where(et => et.getID == email.getID).ToString();
+            tb_template.Text = emailBank.getTemplateList.Where(temp => temp.getID == email.getTemplateID).ToList().First().ToString();
             tb_address.Text = email.getAddress;
             tb_subject.Text = email.getSubject;
             tb_date.Text = email.getSentDate;

@@ -52,6 +52,8 @@
             this.p_content = new System.Windows.Forms.Panel();
             this.lbl_interviews = new System.Windows.Forms.Label();
             this.lb_interviews = new System.Windows.Forms.ListBox();
+            this.lbl_vacancyID = new System.Windows.Forms.Label();
+            this.tb_vacancyID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_acceptance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_slots)).BeginInit();
             this.p_editToolbox.SuspendLayout();
@@ -80,7 +82,7 @@
             // lbl_minScore
             // 
             this.lbl_minScore.AutoSize = true;
-            this.lbl_minScore.Location = new System.Drawing.Point(177, 31);
+            this.lbl_minScore.Location = new System.Drawing.Point(243, 12);
             this.lbl_minScore.Name = "lbl_minScore";
             this.lbl_minScore.Size = new System.Drawing.Size(158, 13);
             this.lbl_minScore.TabIndex = 2;
@@ -88,7 +90,7 @@
             // 
             // nud_acceptance
             // 
-            this.nud_acceptance.Location = new System.Drawing.Point(353, 29);
+            this.nud_acceptance.Location = new System.Drawing.Point(281, 31);
             this.nud_acceptance.Name = "nud_acceptance";
             this.nud_acceptance.ReadOnly = true;
             this.nud_acceptance.Size = new System.Drawing.Size(77, 20);
@@ -97,15 +99,15 @@
             // lbl_slots
             // 
             this.lbl_slots.AutoSize = true;
-            this.lbl_slots.Location = new System.Drawing.Point(177, 58);
+            this.lbl_slots.Location = new System.Drawing.Point(264, 53);
             this.lbl_slots.Name = "lbl_slots";
-            this.lbl_slots.Size = new System.Drawing.Size(73, 13);
+            this.lbl_slots.Size = new System.Drawing.Size(124, 13);
             this.lbl_slots.TabIndex = 4;
-            this.lbl_slots.Text = "Position Slots:";
+            this.lbl_slots.Text = "Hirable Slots for Position:";
             // 
             // nud_slots
             // 
-            this.nud_slots.Location = new System.Drawing.Point(353, 58);
+            this.nud_slots.Location = new System.Drawing.Point(281, 70);
             this.nud_slots.Name = "nud_slots";
             this.nud_slots.ReadOnly = true;
             this.nud_slots.Size = new System.Drawing.Size(77, 20);
@@ -172,7 +174,7 @@
             // lbl_vacancyName
             // 
             this.lbl_vacancyName.AutoSize = true;
-            this.lbl_vacancyName.Location = new System.Drawing.Point(33, 8);
+            this.lbl_vacancyName.Location = new System.Drawing.Point(110, 12);
             this.lbl_vacancyName.Name = "lbl_vacancyName";
             this.lbl_vacancyName.Size = new System.Drawing.Size(80, 13);
             this.lbl_vacancyName.TabIndex = 9;
@@ -180,7 +182,7 @@
             // 
             // tb_vacancyName
             // 
-            this.tb_vacancyName.Location = new System.Drawing.Point(23, 26);
+            this.tb_vacancyName.Location = new System.Drawing.Point(100, 30);
             this.tb_vacancyName.Name = "tb_vacancyName";
             this.tb_vacancyName.ReadOnly = true;
             this.tb_vacancyName.Size = new System.Drawing.Size(100, 20);
@@ -238,7 +240,7 @@
             // lbl_role
             // 
             this.lbl_role.AutoSize = true;
-            this.lbl_role.Location = new System.Drawing.Point(47, 49);
+            this.lbl_role.Location = new System.Drawing.Point(124, 53);
             this.lbl_role.Name = "lbl_role";
             this.lbl_role.Size = new System.Drawing.Size(49, 13);
             this.lbl_role.TabIndex = 14;
@@ -246,7 +248,7 @@
             // 
             // tb_role
             // 
-            this.tb_role.Location = new System.Drawing.Point(23, 65);
+            this.tb_role.Location = new System.Drawing.Point(100, 69);
             this.tb_role.Name = "tb_role";
             this.tb_role.ReadOnly = true;
             this.tb_role.Size = new System.Drawing.Size(100, 20);
@@ -254,6 +256,8 @@
             // 
             // p_content
             // 
+            this.p_content.Controls.Add(this.tb_vacancyID);
+            this.p_content.Controls.Add(this.lbl_vacancyID);
             this.p_content.Controls.Add(this.lbl_interviews);
             this.p_content.Controls.Add(this.lb_interviews);
             this.p_content.Controls.Add(this.tb_role);
@@ -293,6 +297,23 @@
             this.lb_interviews.Name = "lb_interviews";
             this.lb_interviews.Size = new System.Drawing.Size(212, 225);
             this.lb_interviews.TabIndex = 16;
+            // 
+            // lbl_vacancyID
+            // 
+            this.lbl_vacancyID.AutoSize = true;
+            this.lbl_vacancyID.Location = new System.Drawing.Point(4, 4);
+            this.lbl_vacancyID.Name = "lbl_vacancyID";
+            this.lbl_vacancyID.Size = new System.Drawing.Size(66, 13);
+            this.lbl_vacancyID.TabIndex = 18;
+            this.lbl_vacancyID.Text = "Vacancy ID:";
+            // 
+            // tb_vacancyID
+            // 
+            this.tb_vacancyID.Location = new System.Drawing.Point(21, 20);
+            this.tb_vacancyID.Name = "tb_vacancyID";
+            this.tb_vacancyID.ReadOnly = true;
+            this.tb_vacancyID.Size = new System.Drawing.Size(28, 20);
+            this.tb_vacancyID.TabIndex = 58;
             // 
             // ViewVacancies
             // 
@@ -347,5 +368,7 @@
         private System.Windows.Forms.Panel p_content;
         private System.Windows.Forms.Label lbl_interviews;
         private System.Windows.Forms.ListBox lb_interviews;
+        private System.Windows.Forms.Label lbl_vacancyID;
+        private System.Windows.Forms.TextBox tb_vacancyID;
     }
 }
