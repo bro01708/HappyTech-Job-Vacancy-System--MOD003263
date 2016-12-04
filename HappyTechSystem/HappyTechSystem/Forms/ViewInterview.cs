@@ -56,7 +56,7 @@ namespace HappyTechSystem
             wipeAllFields();
             try
             {
-                Interview I = (Interview)lb_interviews.SelectedItem;
+                Interview I = (Interview) lb_interviews.SelectedItem;
                 tb_title.Text = I.getApplicantTitle;
                 tb_applicantName.Text = I.getApplicantName;
                 tb_emailAddress.Text = I.getApplicantEmail;
@@ -67,7 +67,7 @@ namespace HappyTechSystem
                 int interviewIndex = vacInterviews.IndexOf(vacInterviews[lb_interviews.SelectedIndex]);
                 int indexAdjust = interviewIndex + 1;
 
-                lbl_rank.Text = indexAdjust.ToString(); 
+                lbl_rank.Text = indexAdjust.ToString();
                 rankAdjuster();
 
                 if (I.getTotal > pass)
@@ -89,9 +89,9 @@ namespace HappyTechSystem
 
                 List<string> questionsAndRanks = new List<string>(); //final list to display to the textbox
                 Vacancy v2 = vacancyBank.getVacancyList[I.getUsedVacancyID - 1];
-                    //assigns a local vacancy with the vacancy associated with the interview
+                //assigns a local vacancy with the vacancy associated with the interview
                 int[] questionIDs = v2.getQuestionsToBeUsed.ToArray();
-                    //an array of the question IDs that are used by the vacancy
+                //an array of the question IDs that are used by the vacancy
                 List<Question> questions = questionBank.getQuestionList; //localised question list
 
 
@@ -117,9 +117,8 @@ namespace HappyTechSystem
 
                 lb_questionRanks.DataSource = questionsAndRanks;
             }
-            catch (Exception err)
+            catch (Exception)
             {
-                throw err;
             }
 
         }
@@ -148,7 +147,17 @@ namespace HappyTechSystem
                 btn_generateEmails.Enabled = false;
             }
 
-            lb_vacancies.SelectedIndex = 0;
+            try
+            {
+                lb_vacancies.SelectedIndex = 0;
+                lb_interviews.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                btn_generateEmails.Enabled = false;
+                wipeAllFields();
+            }
+
         }
 
         private void btn_cvOpen_Click(object sender, EventArgs e)
@@ -195,9 +204,6 @@ namespace HappyTechSystem
             {
                 throw err;
             }
-
-            lb_interviews.SelectedIndex = 0;
-
         }
 
         private void ViewInterview_FormClosing(object sender, FormClosingEventArgs e)
@@ -304,7 +310,7 @@ namespace HappyTechSystem
 
         private void btn_emailHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To generate emails, you need to ensure that there is at least one 'Accept' and one 'Reject' Template" +
+            MessageBox.Show("To generate emails, you need to ensure that there is at least one 'Accept' and one 'Reject' Template " +
                             "within the system.", "Why can't I generate any emails?", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

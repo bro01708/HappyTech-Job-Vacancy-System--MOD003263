@@ -27,7 +27,7 @@ namespace HappyTechSystem.Core
         /// <param name="m_name"></param>
         /// <param name="m_subject"></param>
         /// <param name="m_body"></param>
-        public void CreateTemplate(int m_ID, string m_type, string m_name, string m_subject, string m_body)
+        public void CreateModifyTemplate(int m_ID, string m_type, string m_name, string m_subject, string m_body, int flag)
         {
             EmailTemplate E = new EmailTemplate();
             E.getID = m_ID;
@@ -37,8 +37,15 @@ namespace HappyTechSystem.Core
             E.getBody = m_body;
 
             EmailBank EB = EmailBank.getInst();
-            EB.addTemplateToList(E);
-
+            if (flag == 0)
+            {
+                EB.addTemplateToList(E);
+            }
+            else
+            {
+                EB.UpdateTemplateList(E);
+            }
+            
         }
     }
 }

@@ -94,7 +94,6 @@ namespace HappyTechSystem.Core
             ml.SaveEmailToDB(e);
         }
 
-
         public void RemoveTemplate(int m_templateID)
         {
             foreach (EmailTemplate et in templates)
@@ -106,6 +105,30 @@ namespace HappyTechSystem.Core
                     break;
                 }
             }
+        }
+
+        public void RemoveEmail(int m_emailID)
+        {
+            foreach (Email e in emailRecords)
+            {
+                if (e.getID == m_emailID)
+                {
+                    emailRecords.Remove(e);
+                    ml.RemoveEmailFromDB(m_emailID);
+                }
+            }
+        }
+
+        public void UpdateTemplateList(EmailTemplate m_et)
+        {
+            ml.UpdateTemplateInDB(m_et);
+            RefreshDBConnection();
+        }
+
+        public void UpdateEmailList(Email m_e)
+        {
+            ml.UpdateEmailInDB(m_e);
+            RefreshDBConnection();
         }
 
         public void SendEmail()

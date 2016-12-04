@@ -68,7 +68,7 @@ namespace HappyTechSystem
 
         private void CreateButtonUnlocker()
         {
-            if (lb_questionsToBeUsed.Items.Count >= 5 && tb_vacancyName != null && nud_interviewSlots.Value >= 1 && tb_role != null)
+            if (lb_questionsToBeUsed.Items.Count >= 5 && tb_vacancyName != null && nud_interviewSlots.Value >= 1 && tb_role != null && tb_vacancyName.Text != null && tb_role.Text != null)
             {
                 btn_create.Enabled = true;
             }
@@ -98,6 +98,11 @@ namespace HappyTechSystem
             vacancyCreator.CreateModifyVacancy(Convert.ToInt32(tb_VacancyID.Text), tb_vacancyName.Text, tb_role.Text, Convert.ToInt32(nud_acceptanceScore.Value), Convert.ToInt32(nud_interviewSlots.Value), questionIDs, 0);
             MessageBox.Show("Vacancy Created Successfully!\n\nTo view your vacancy, check the 'View Vacancies' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void tb_role_TextChanged(object sender, EventArgs e)
+        {
+            CreateButtonUnlocker();
         }
     }
 }

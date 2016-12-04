@@ -54,6 +54,7 @@
             this.lbl_reminder = new System.Windows.Forms.Label();
             this.lbl_type = new System.Windows.Forms.Label();
             this.cb_type = new System.Windows.Forms.ComboBox();
+            this.btn_feedbackHelp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,6 +153,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_feedbackHelp);
             this.panel1.Controls.Add(this.lbl_SNStatus);
             this.panel1.Controls.Add(this.lbl_senderAdded);
             this.panel1.Controls.Add(this.btn_addSenderName);
@@ -242,7 +244,7 @@
             // 
             this.btn_addFeedback.Location = new System.Drawing.Point(7, 104);
             this.btn_addFeedback.Name = "btn_addFeedback";
-            this.btn_addFeedback.Size = new System.Drawing.Size(267, 23);
+            this.btn_addFeedback.Size = new System.Drawing.Size(224, 23);
             this.btn_addFeedback.TabIndex = 5;
             this.btn_addFeedback.Text = "Insert Feedback Area";
             this.btn_addFeedback.UseVisualStyleBackColor = true;
@@ -317,6 +319,17 @@
             this.cb_type.TabIndex = 25;
             this.cb_type.TextChanged += new System.EventHandler(this.CreateTemplateUnlocker);
             // 
+            // btn_feedbackHelp
+            // 
+            this.btn_feedbackHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_feedbackHelp.Location = new System.Drawing.Point(237, 104);
+            this.btn_feedbackHelp.Name = "btn_feedbackHelp";
+            this.btn_feedbackHelp.Size = new System.Drawing.Size(37, 24);
+            this.btn_feedbackHelp.TabIndex = 13;
+            this.btn_feedbackHelp.Text = "?";
+            this.btn_feedbackHelp.UseVisualStyleBackColor = true;
+            this.btn_feedbackHelp.Click += new System.EventHandler(this.btn_feedbackHelp_Click);
+            // 
             // CreateTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,5 +387,6 @@
         private System.Windows.Forms.Label lbl_senderAdded;
         private System.Windows.Forms.Label lbl_type;
         private System.Windows.Forms.ComboBox cb_type;
+        private System.Windows.Forms.Button btn_feedbackHelp;
     }
 }

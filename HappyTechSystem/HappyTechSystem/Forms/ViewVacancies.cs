@@ -66,7 +66,6 @@ namespace HappyTechSystem
         private void lb_vacancy_SelectedIndexChanged(object sender, EventArgs e)
         {
             lb_interviews.Items.Clear();
-            lb_questionBank.Items.Clear();
             lb_questionsUsed.Items.Clear();
 
             try
@@ -81,16 +80,15 @@ namespace HappyTechSystem
                 int index = 0;
                 int count = v.getQuestionsToBeUsed.Count;
 
-                foreach (Question q in questionBank.getQuestionList)
-                {
-                    lb_questionBank.Items.Add(q.ToString());
-                }
+                //foreach (Question q in questionBank.getQuestionList)
+                //{
+                //    lb_questionBank.Items.Add(q.ToString());
+                //}
 
                 do
                 {
                     foreach (Question q in questionBank.getQuestionList)
                     {
-
                         if (index == count)
                         {
                             break;
@@ -98,7 +96,7 @@ namespace HappyTechSystem
 
                         if (q.GetID == v.getQuestionsToBeUsed[index])
                         {
-                            lb_questionsUsed.Items.Add(q.ToString());
+                            lb_questionsUsed.Items.Add((Question) q);
                             index++;
                         }
                     }
@@ -122,7 +120,15 @@ namespace HappyTechSystem
         {
             p_editToolbox.Enabled = false;
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
-            lb_vacancy.SelectedIndex = 0;
+            lb_questionBank.DataSource = questionBank.getQuestionList;
+            try
+            {
+                lb_vacancy.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                wipeAllFields();
+            }
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -133,7 +139,6 @@ namespace HappyTechSystem
         private void ViewVacancies_FormClosing(object sender, FormClosingEventArgs e)
         {
             lb_interviews.Items.Clear();
-            lb_questionBank.Items.Clear();
             lb_questionsUsed.Items.Clear();
         }
 
@@ -161,7 +166,7 @@ namespace HappyTechSystem
             {
                 DialogResult dialogResult = MessageBox.Show("You are about to delete this vacancy permanently." +
                                                             "\n\nAre you sure you want to delete this vacancy?",
-                                                            "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //deletion of vacancy record
@@ -176,14 +181,11 @@ namespace HappyTechSystem
                     }
                     catch (Exception)
                     {
-                        tb_vacancyID.Text = "";
-                        tb_vacancyName.Text = "";
-                        tb_role.Text = "";
-                        nud_acceptance.Text = "";
-                        nud_slots.Text = "";
+                        wipeAllFields();
                     }
 
-                    MessageBox.Show("The vacancy " + v.VacancyName +" was successfully deleted.", "Deletion Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The vacancy " + v.VacancyName + " was successfully deleted.", "Deletion Complete",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -200,11 +202,12 @@ namespace HappyTechSystem
 
             if (lb_questionsUsed.Items.Contains(lb_questionBank.SelectedItem))
             {
-                MessageBox.Show("You cannot add duplicate questions to the 'Questions To Be Used' List.", "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You cannot add duplicate questions to the 'Questions To Be Used' List.",
+                    "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                lb_questionsUsed.Items.Add(lb_questionBank.SelectedItem);
+                lb_questionsUsed.Items.Add((Question) lb_questionBank.SelectedItem);
             }
         }
 
@@ -245,19 +248,62 @@ namespace HappyTechSystem
         private void btn_save_Click(object sender, EventArgs e)
         {
             Vacancy v = (Vacancy) lb_vacancy.SelectedItem;
-            DialogResult dialogResult = MessageBox.Show("You are about to overwrite this vacancy.\n\nAre you sure?",
-                "Overwrite Vacancy?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.Yes)
+            int associatedInterviews = 0;
+
+            foreach (Interview i in vacancyBank.getInterviewList)
             {
-                VacancyCreator vacancyCreator = VacancyCreator.getInst();
-                vacancyCreator.CreateModifyVacancy();
-                lb_vacancy.DataSource = vacancyBank.getVacancyList;
-
-                btn_edit.PerformClick();
-                lb_vacancy.SelectedIndex = 0;
-
-                MessageBox.Show("The vacancy '" + v.VacancyName +"' was successfully modified.", "Edit Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int vacancyID = i.getUsedVacancyID;
+                if (i.getUsedVacancyID == v.GetID)
+                {
+                    associatedInterviews++;
+                }
             }
+
+            if (associatedInterviews == 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("You are about to overwrite this vacancy.\n\nAre you sure?",
+                    "Overwrite Vacancy?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    List<int> questionIDs = new List<int>();
+                    foreach (Question q in lb_questionsUsed.Items)
+                    {
+                        questionIDs.Add(q.GetID);
+                    }
+
+                    VacancyCreator vacancyCreator = VacancyCreator.getInst();
+                    vacancyCreator.CreateModifyVacancy(v.GetID, tb_vacancyName.Text, tb_role.Text,
+                        Convert.ToInt32(nud_acceptance.Value), Convert.ToInt32(nud_slots.Value), questionIDs, 1);
+                    lb_vacancy.DataSource = vacancyBank.getVacancyList;
+
+                    try
+                    {
+                        btn_edit.PerformClick();
+                        lb_vacancy.SelectedIndex = 0;
+                    }
+                    catch (Exception)
+                    {
+                        wipeAllFields();
+                    }
+
+                    MessageBox.Show("The vacancy '" + v.VacancyName + "' was successfully modified.", "Edit Successful",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You cannot edit this vacancy due to one of more of the following reasons:" +
+                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy.", "Cannot Modify Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void wipeAllFields()
+        {
+            tb_vacancyID.Text = "";
+            tb_vacancyName.Text = "";
+            tb_role.Text = "";
+            nud_acceptance.Text = "";
+            nud_slots.Text = "";
         }
     }
 }

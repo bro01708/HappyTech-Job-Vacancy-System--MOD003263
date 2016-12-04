@@ -37,36 +37,61 @@ namespace HappyTechSystem
         /// <param name="e"></param>
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
+            Question q = (Question) lb_Q.SelectedItem;
+            int associatedQuestions = 0;
+
+            foreach (Vacancy v in vacancyBank.getVacancyList)
             {
-                DialogResult dialogResult = MessageBox.Show("Save Question Changes?", "Save?", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.Yes)
+                int index = 0;
+                foreach (int qID in v.getQuestionsToBeUsed)
                 {
-                    string[] responses =
+                    if (v.getQuestionsToBeUsed[index] == q.GetID)
                     {
-                        tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text,
-                        tb_response5.Text
-                    };
-                    string[] feedback =
-                    {
-                        tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text,
-                        tb_feedback5.Text
-                    };
-                    QuestionCreator questionCreator = QuestionCreator.getInst();
-                    questionCreator.CreateModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text,
-                        tb_question.Text, responses, feedback, 1);
-                    MessageBox.Show("The question was edited successfully.\n\n" +
-                                    "For the new changes to load, the form needs to reload.\n" +
-                                    "Open Question Bank again to view changes.", "Edit Successful", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    questionBank.RefreshDBConnection();
-                    this.Close();
+                        associatedQuestions++;
+                    }
+                    index++;
                 }
             }
-            catch (Exception err)
+            if (associatedQuestions == 0)
             {
-                throw err;
+                try
+                {
+                    DialogResult dialogResult = MessageBox.Show("Save Question Changes?", "Save?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        string[] responses =
+                        {
+                            tb_response1.Text, tb_response2.Text, tb_response3.Text, tb_response4.Text,
+                            tb_response5.Text
+                        };
+                        string[] feedback =
+                        {
+                            tb_feedback1.Text, tb_feedback2.Text, tb_feedback3.Text, tb_feedback4.Text,
+                            tb_feedback5.Text
+                        };
+                        QuestionCreator questionCreator = QuestionCreator.getInst();
+                        questionCreator.CreateModifyQuestion(Convert.ToInt32(tb_questionID.Text), cb_categoryTag.Text,
+                            tb_question.Text, responses, feedback, 1);
+                        MessageBox.Show("The question was edited successfully.\n\n" +
+                                        "For the new changes to load, the form needs to reload.\n" +
+                                        "Open Question Bank again to view changes.", "Edit Successful",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                catch (Exception err)
+                {
+                    throw err;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete this question due to the one or more of following reasons:" +
+                                "\n\n(X) This question is still bound to a Vacancy, including its Response Criterion and Feedback information.",
+                    "Cannot Delete Question", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,8 +155,15 @@ namespace HappyTechSystem
         private void ViewQuestionBank_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
-            lb_Q.SelectedIndex = 0;
 
+            try
+            {
+                lb_Q.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                clearFields();
+            }
         }
 
         /// <summary>
@@ -209,6 +241,7 @@ namespace HappyTechSystem
                     {
                         //deletion of question
                         questionBank.removeFromList(Convert.ToInt32(tb_questionID.Text));
+                        questionBank.RefreshDBConnection();
                         lb_Q.DataSource = questionBank.getQuestionList;
 
                         try

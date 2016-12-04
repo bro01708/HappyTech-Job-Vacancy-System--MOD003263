@@ -218,6 +218,7 @@
             this.tb_role.Name = "tb_role";
             this.tb_role.Size = new System.Drawing.Size(176, 20);
             this.tb_role.TabIndex = 19;
+            this.tb_role.TextChanged += new System.EventHandler(this.tb_role_TextChanged);
             // 
             // lbl_role
             // 
@@ -228,7 +229,7 @@
             this.lbl_role.TabIndex = 20;
             this.lbl_role.Text = "Specify the job Role/Title:";
             // 
-            // CreateModifyVacancy
+            // CreateVacancy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

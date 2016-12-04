@@ -125,6 +125,7 @@ namespace HappyTechSystem
             int nextID = emailBank.getHighestTemplateID() + 1;
             tb_templateID.Text = nextID.ToString();
             str = tb_body.Text;
+            cb_type.SelectedIndex = 0;
         }
 
         //public static string getBetween(string strSource, string strStart, string strEnd)
@@ -182,7 +183,7 @@ namespace HappyTechSystem
 
         private void btn_create_Click(object sender, EventArgs e)
         {
-            templateCreator.CreateTemplate(Convert.ToInt32(tb_templateID.Text), cb_type.Text, tb_name.Text, tb_subject.Text, tb_body.Text);
+            templateCreator.CreateModifyTemplate(Convert.ToInt32(tb_templateID.Text), cb_type.Text, tb_name.Text, tb_subject.Text, tb_body.Text, 0);
             MessageBox.Show("Email Template Created Successfully!\n\nTo view your template, check the 'View Templates' menu!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

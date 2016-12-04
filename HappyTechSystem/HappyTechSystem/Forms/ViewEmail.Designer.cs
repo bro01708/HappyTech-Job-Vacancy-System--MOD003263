@@ -47,6 +47,8 @@
             this.p_editToolbox = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_sendEmails = new System.Windows.Forms.Button();
+            this.gb_sendEmails = new System.Windows.Forms.GroupBox();
             this.p_editToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             this.tb_emailPreview.Name = "tb_emailPreview";
             this.tb_emailPreview.ReadOnly = true;
             this.tb_emailPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_emailPreview.Size = new System.Drawing.Size(505, 252);
+            this.tb_emailPreview.Size = new System.Drawing.Size(505, 217);
             this.tb_emailPreview.TabIndex = 0;
             // 
             // lb_email
@@ -170,7 +172,7 @@
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(534, 45);
+            this.lbl_date.Location = new System.Drawing.Point(519, 45);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(58, 13);
             this.lbl_date.TabIndex = 67;
@@ -178,7 +180,7 @@
             // 
             // tb_date
             // 
-            this.tb_date.Location = new System.Drawing.Point(598, 42);
+            this.tb_date.Location = new System.Drawing.Point(583, 42);
             this.tb_date.Name = "tb_date";
             this.tb_date.ReadOnly = true;
             this.tb_date.Size = new System.Drawing.Size(75, 20);
@@ -192,6 +194,7 @@
             this.btn_edit.TabIndex = 69;
             this.btn_edit.Text = "Toggle Edit Mode";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // p_editToolbox
             // 
@@ -212,6 +215,7 @@
             this.btn_delete.TabIndex = 50;
             this.btn_delete.Text = "Delete Email";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_save
             // 
@@ -222,12 +226,35 @@
             this.btn_save.TabIndex = 53;
             this.btn_save.Text = "Save Changes";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_sendEmails
+            // 
+            this.btn_sendEmails.Enabled = false;
+            this.btn_sendEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sendEmails.Location = new System.Drawing.Point(246, 358);
+            this.btn_sendEmails.Name = "btn_sendEmails";
+            this.btn_sendEmails.Size = new System.Drawing.Size(505, 29);
+            this.btn_sendEmails.TabIndex = 71;
+            this.btn_sendEmails.Text = "Prepare to Send Emails";
+            this.btn_sendEmails.UseVisualStyleBackColor = true;
+            // 
+            // gb_sendEmails
+            // 
+            this.gb_sendEmails.Location = new System.Drawing.Point(770, 13);
+            this.gb_sendEmails.Name = "gb_sendEmails";
+            this.gb_sendEmails.Size = new System.Drawing.Size(319, 374);
+            this.gb_sendEmails.TabIndex = 72;
+            this.gb_sendEmails.TabStop = false;
+            this.gb_sendEmails.Text = "Send Emails";
             // 
             // ViewEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 399);
+            this.ClientSize = new System.Drawing.Size(1101, 399);
+            this.Controls.Add(this.gb_sendEmails);
+            this.Controls.Add(this.btn_sendEmails);
             this.Controls.Add(this.p_editToolbox);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.tb_date);
@@ -277,5 +304,7 @@
         private System.Windows.Forms.Panel p_editToolbox;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_sendEmails;
+        private System.Windows.Forms.GroupBox gb_sendEmails;
     }
 }

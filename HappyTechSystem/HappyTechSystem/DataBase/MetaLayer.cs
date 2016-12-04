@@ -375,7 +375,7 @@ namespace HappyTechSystem.DB
 
             for (int i = 0; i < questionIDs.Count; i++)
             {
-                String myQuery2 = "INSERT INTO Vacancy_Question( QuestionID, VacancyID,QuestionOrderIndex) VALUES ('" + questionIDs[i] + "','" + vacancyID + "','" + i + "')";
+                String myQuery2 = "INSERT INTO Vacancy_Question(VacancyID, QuestionID, QuestionOrderIndex) VALUES ('" + vacancyID + "','" + questionIDs[i] + "','" + i + "')";
                 con.RunSQL(myQuery2);
             }
 
@@ -486,17 +486,55 @@ namespace HappyTechSystem.DB
         }
         public void UpdateTemplateInDB(EmailTemplate m_emailTemplate)
         {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
 
+            int templateID = m_emailTemplate.getID;
+            string type = m_emailTemplate.getType;
+            string name = m_emailTemplate.getName;
+            string subject = m_emailTemplate.getSubject;
+            string body = m_emailTemplate.getBody;
+
+            con.RunSQL("UPDATE EmailTemplate SET TemplateType='" + type + "', TemplateName='" + name + "', TemplateSubject='" + subject + "', TemplateBody='" + body + "' WHERE TemplateID=" + templateID);
+
+            con.CloseConnection();
         }
 
         public void UpdateVacancyInDB(Vacancy m_vacancy)
         {
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
 
+            int vacancyID = m_vacancy.GetID;
+            string vacancyName = m_vacancy.VacancyName;
+            string role = m_vacancy.Role;
+            int minScore = m_vacancy.MinumumScore;
+            int positionsAvailable = m_vacancy.PositionsAvailable;
+            List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
+
+            con.RunSQL("UPDATE Vacancy SET VacancyName='" + vacancyName + "', Role='" + role + "', PositionsAvailable=" + positionsAvailable + ", MinimumScore=" + minScore + " WHERE VacancyID=" + vacancyID);
+
+            for (int i = 0; i < questionIDs.Count; i++)
+            {
+                con.RunSQL("UPDATE Vacancy_Question SET QuestionID=" + questionIDs[i] + " WHERE QuestionOrderIndex=" + i + " AND VacancyID=" + vacancyID);
+            }
+
+            con.CloseConnection();
         }
 
         public void UpdateEmailInDB(Email m_email)
         {
-            
+            DbConnection con = DBFactory.instance();
+            con.OpenConnection();
+
+            int id = m_email.getID;
+            string address = m_email.getAddress;
+            string subject = m_email.getSubject;
+            string content = m_email.getContent;
+
+            con.RunSQL("UPDATE Email SET EmailAddress='" + address + "', Subject='" + subject + "', Content='" + content + "' WHERE EmailID=" + id);
+
+            con.CloseConnection();
         }
 
         #endregion
@@ -540,7 +578,11 @@ namespace HappyTechSystem.DB
 
         public void RemoveEmailFromDB(int m_emailID)
         {
-            
+            DbConnection con = DBFactory.instance();
+            string id = m_emailID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Email WHERE EmailID=" + id + ";");
+            con.CloseConnection();
         }
 
         #endregion

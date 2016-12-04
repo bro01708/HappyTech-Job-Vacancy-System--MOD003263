@@ -28,7 +28,8 @@ namespace HappyTechSystem.Core
         /// Created by Susan
         /// 30/11/2016
         /// Accepts a vacancy and interview and template type in order to modify a template with dyanmic information and return it to the email bank
-        public void GenerateEmail(int m_ID, Vacancy m_vacancy, EmailTemplate m_template, Interview m_interview, string m_mdiParentText)
+        public void GenerateEmail(int m_ID, Vacancy m_vacancy, EmailTemplate m_template, Interview m_interview,
+            string m_mdiParentText)
         {
             Email e = new Email();
             Vacancy v = m_vacancy;
@@ -81,7 +82,26 @@ namespace HappyTechSystem.Core
             EmailBank EB = EmailBank.getInst();
             EB.addEmailToList(e);
 
-    }
+        }
 
+        /// <summary>
+        /// Created by Dan. 
+        /// Slimmed down modification of an email, as some fields cannot be changed once an email is generated.
+        /// </summary>
+        /// <param name="m_emailID"></param>
+        /// <param name="m_address"></param>
+        /// <param name="m_subject"></param>
+        /// <param name="m_content"></param>
+        public void ModifyEmail(int m_emailID, string m_address, string m_subject, string m_content)
+        {
+            EmailBank eb = EmailBank.getInst();
+            Email e = eb.getEmailList.First(em => em.getID == m_emailID);
+            //e.getID = m_emailID;
+            e.getAddress = m_address;
+            e.getSubject = m_subject;
+            e.getContent = m_content;
+
+            eb.UpdateEmailList(e);
+        }
     }
 }
