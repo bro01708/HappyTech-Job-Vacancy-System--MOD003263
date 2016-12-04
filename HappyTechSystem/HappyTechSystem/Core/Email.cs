@@ -9,7 +9,8 @@ namespace HappyTechSystem.Core
 {
     public class Email
     {
-        private string applicantEmail, content, subject, sentDate;
+        private string applicantEmail, content, subject;
+        private string sentDate = "Not Yet Sent";
         private int emailID, templateID, interviewID;
 
         public string getAddress

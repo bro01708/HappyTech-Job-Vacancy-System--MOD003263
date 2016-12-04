@@ -4,21 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HappyTechSystem.DB;
+using System.Net.Mail;
+using System.Net;
 
 namespace HappyTechSystem.Core
 {
     public class EmailBank
     {
         private MetaLayer ml = MetaLayer.instance();
+
         /// Created by Susan
         /// 25/11/2016
         /// Stores and manages emails and email templates
 
-        private List<Email> emailRecords= new List<Email>(); //Stores all applicants email addresses
+        private List<Email> emailRecords = new List<Email>(); //Stores all applicants email addresses
+
         private List<EmailTemplate> templates = new List<EmailTemplate>();
         private bool dbLoaded;
 
         private static EmailBank uniqueInst = null;
+
         public EmailBank()
         {
             RefreshDBConnection();
@@ -41,6 +46,7 @@ namespace HappyTechSystem.Core
                 throw e;
             }
         }
+
         public int getHighestEmailID()
         {
             try
@@ -75,7 +81,7 @@ namespace HappyTechSystem.Core
 
         public List<EmailTemplate> getTemplateList
         {
-            get { return templates;}
+            get { return templates; }
         }
 
         public List<Email> getEmailList
@@ -83,11 +89,12 @@ namespace HappyTechSystem.Core
             get { return emailRecords; }
         }
 
-        public void addTemplateToList(EmailTemplate m_et) 
+        public void addTemplateToList(EmailTemplate m_et)
         {
             templates.Add(m_et);
             ml.SaveTemplateToDB(m_et);
         }
+
         public void addEmailToList(Email e)
         {
             emailRecords.Add(e);
@@ -109,14 +116,23 @@ namespace HappyTechSystem.Core
 
         public void RemoveEmail(int m_emailID)
         {
-            foreach (Email e in emailRecords)
+            try
             {
-                if (e.getID == m_emailID)
+                foreach (Email e in emailRecords)
                 {
-                    emailRecords.Remove(e);
-                    ml.RemoveEmailFromDB(m_emailID);
+                    if (e.getID == m_emailID)
+                    {
+                        emailRecords.Remove(e);
+                        ml.RemoveEmailFromDB(m_emailID);
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+            }
+
+
         }
 
         public void UpdateTemplateList(EmailTemplate m_et)
@@ -131,9 +147,25 @@ namespace HappyTechSystem.Core
             RefreshDBConnection();
         }
 
-        public void SendEmail()
+        public void SendEmail(Email m_em)
         {
+            SmtpClient client = new SmtpClient("smtp.gmail.com");
+            MailMessage mail = new MailMessage("happytech1337@gmail.com", m_em.getAddress);
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("happytech1337@gmail.com", "happytech");
+            client.EnableSsl = true;
+            mail.Subject = m_em.getSubject;
+            mail.Body = m_em.getContent;
 
+            try
+            {
+                client.Send(mail);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void RefreshDBConnection()

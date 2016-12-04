@@ -13,6 +13,7 @@ namespace HappyTechSystem.Core
     {
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionbank = QuestionBank.getInst();
+        private EmailBank EB = EmailBank.getInst();
 
         private static EmailCreator uniqueInst = null;
 
@@ -79,7 +80,6 @@ namespace HappyTechSystem.Core
             e.getContent = newTempContent;
             e.getSentDate = "Not Yet Sent";
 
-            EmailBank EB = EmailBank.getInst();
             EB.addEmailToList(e);
 
         }
@@ -94,14 +94,26 @@ namespace HappyTechSystem.Core
         /// <param name="m_content"></param>
         public void ModifyEmail(int m_emailID, string m_address, string m_subject, string m_content)
         {
-            EmailBank eb = EmailBank.getInst();
-            Email e = eb.getEmailList.First(em => em.getID == m_emailID);
-            //e.getID = m_emailID;
+            Email e = EB.getEmailList.First(em => em.getID == m_emailID);
             e.getAddress = m_address;
             e.getSubject = m_subject;
             e.getContent = m_content;
 
-            eb.UpdateEmailList(e);
+            EB.UpdateEmailList(e);
+        }
+
+        /// <summary>
+        /// Created By Dan. 
+        /// Small method that will edit an emails sent date.
+        /// </summary>
+        /// <param name="m_emailID"></param>
+        /// <param name="m_dateSent"></param>
+        public void AdjustEmailSentDate(int m_emailID, string m_dateSent)
+        {
+            Email e = EB.getEmailList.First(em => em.getID == m_emailID);
+            e.getSentDate = m_dateSent;
+
+            EB.UpdateEmailList(e);
         }
     }
 }

@@ -119,6 +119,8 @@ namespace HappyTechSystem
         private void ViewVacancies_Load(object sender, EventArgs e)
         {
             p_editToolbox.Enabled = false;
+            lb_questionBank.TabStop = true;
+            lb_questionsUsed.TabStop = true;
             lb_vacancy.DataSource = vacancyBank.getVacancyList;
             lb_questionBank.DataSource = questionBank.getQuestionList;
             try
@@ -191,8 +193,9 @@ namespace HappyTechSystem
             else
             {
                 MessageBox.Show("You cannot delete this vacancy due to one of more of the following reasons:" +
-                                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy - generate emails for those interviews " +
-                                "or remove them.", "Cannot Delete Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy - " +
+                                "generate emails for those interviews to proceed with vacancy deletion.", 
+                                "Cannot Delete Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -293,7 +296,9 @@ namespace HappyTechSystem
             else
             {
                 MessageBox.Show("You cannot edit this vacancy due to one of more of the following reasons:" +
-                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy.", "Cannot Modify Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "\n\n(X) There are still interviews pending for email generation that are tied to this vacancy - " +
+                                "generate emails for those interviews to proceed with vacancy modification.",
+                                "Cannot Modify Vacancy", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

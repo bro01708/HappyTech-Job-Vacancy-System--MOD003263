@@ -207,9 +207,8 @@ namespace HappyTechSystem
                             "Create - here you can create new questions, email templates and vacancies to be used within the interview process.\n\n" +
                             "Conduct Interview - setup and conduct an interview for an applicant. You can select a Vacancy created from the Create Vacancy " +
                             "menu to use for the interview. Completing the interview will create an interview record for the applicant, viewable in the View Interview form.\n\n" +
-                            "Modify/View - these menus will allow you to edit and delete questions, email and vacancies. You cannot modify or delete interview records and their " +
-                            "associated emails, however.\n\n" +
-                            "If further help is required, click on any '?' buttons you see within the menus, as these will guide you on how to operate the menu.", "How to use the Application Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Modify/View - these menus will allow you to edit and delete questions, emails and vacancies. You cannot modify or delete interview records, however.\n\n" +
+                            "If further help is required, click on any '?' buttons you see within the menus, as these will guide you on how to operate that specific menu.", "How to use the Application Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

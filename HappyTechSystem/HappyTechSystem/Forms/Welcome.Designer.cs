@@ -38,15 +38,16 @@
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Location = new System.Drawing.Point(39, 9);
             this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(243, 13);
+            this.lbl_welcome.Size = new System.Drawing.Size(247, 13);
             this.lbl_welcome.TabIndex = 0;
-            this.lbl_welcome.Text = "Welcome! To get started, please enter your name:";
+            this.lbl_welcome.Text = "Welcome! To get started, please select your name:";
             // 
             // btn_start
             // 
-            this.btn_start.Location = new System.Drawing.Point(110, 51);
+            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.Location = new System.Drawing.Point(42, 51);
             this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(101, 23);
+            this.btn_start.Size = new System.Drawing.Size(240, 29);
             this.btn_start.TabIndex = 2;
             this.btn_start.Text = "Get Started!";
             this.btn_start.UseVisualStyleBackColor = true;
@@ -68,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 79);
+            this.ClientSize = new System.Drawing.Size(320, 92);
             this.Controls.Add(this.cb_name);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.lbl_welcome);

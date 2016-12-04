@@ -73,7 +73,7 @@
             // lbl_selectVacancy
             // 
             this.lbl_selectVacancy.AutoSize = true;
-            this.lbl_selectVacancy.Location = new System.Drawing.Point(9, 9);
+            this.lbl_selectVacancy.Location = new System.Drawing.Point(22, 9);
             this.lbl_selectVacancy.Name = "lbl_selectVacancy";
             this.lbl_selectVacancy.Size = new System.Drawing.Size(186, 13);
             this.lbl_selectVacancy.TabIndex = 1;

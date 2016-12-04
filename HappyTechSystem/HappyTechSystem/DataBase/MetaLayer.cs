@@ -531,8 +531,9 @@ namespace HappyTechSystem.DB
             string address = m_email.getAddress;
             string subject = m_email.getSubject;
             string content = m_email.getContent;
+            string sentDate = m_email.getSentDate;
 
-            con.RunSQL("UPDATE Email SET EmailAddress='" + address + "', Subject='" + subject + "', Content='" + content + "' WHERE EmailID=" + id);
+            con.RunSQL("UPDATE Email SET EmailAddress='" + address + "', Subject='" + subject + "', Content='" + content + "', SentDate='" + sentDate + "' WHERE EmailID=" + id);
 
             con.CloseConnection();
         }

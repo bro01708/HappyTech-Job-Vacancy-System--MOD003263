@@ -79,7 +79,7 @@
             this.lb_templates.HorizontalScrollbar = true;
             this.lb_templates.Location = new System.Drawing.Point(12, 35);
             this.lb_templates.Name = "lb_templates";
-            this.lb_templates.Size = new System.Drawing.Size(130, 238);
+            this.lb_templates.Size = new System.Drawing.Size(130, 264);
             this.lb_templates.TabIndex = 1;
             this.lb_templates.SelectedIndexChanged += new System.EventHandler(this.lb_templates_SelectedIndexChanged);
             // 
