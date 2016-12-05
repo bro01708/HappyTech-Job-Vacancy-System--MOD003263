@@ -89,7 +89,7 @@ namespace HappyTechSystem.DB
 
         bool CloseConnection();
 
-        int RunSQL(string sqlStatement);
+        int RunSQL(string sqlStatement, params KeyValuePair<string, object>[] args);
         /*
         //Insert statement
         public void Insert(); 
