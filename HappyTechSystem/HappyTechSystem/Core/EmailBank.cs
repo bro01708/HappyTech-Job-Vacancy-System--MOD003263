@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HappyTechSystem.DB;
 using System.Net.Mail;
 using System.Net;
+using System.Windows.Forms;
 
 namespace HappyTechSystem.Core
 {
@@ -163,13 +164,14 @@ namespace HappyTechSystem.Core
             client.EnableSsl = true;
             mail.Subject = m_em.getSubject;
             mail.Body = m_em.getContent;
-
             try
             {
                 client.Send(mail);
+                
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString(), "");
             }
         }
 
