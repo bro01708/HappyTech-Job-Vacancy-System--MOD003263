@@ -7,6 +7,10 @@ using HappyTechSystem.DB;
 using System.Net.Mail;
 using System.Net;
 using System.Windows.Forms;
+using PdfSharp.Pdf;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+using System.IO;
 
 namespace HappyTechSystem.Core
 {
@@ -164,8 +168,9 @@ namespace HappyTechSystem.Core
             mail.Body = m_em.getContent;
             try
             {
-                client.Send(mail);
-                
+                //client.Send(mail);
+                PDFGen(m_em);
+                               
             }
             catch (Exception err)
             {
@@ -190,6 +195,30 @@ namespace HappyTechSystem.Core
                 dbLoaded = false;
                 throw e;
             }
+        }
+
+        public void PDFGen(Email m_em)
+        {
+            Document doc = new Document();
+            Section sec = doc.AddSection();
+            sec.AddParagraph(m_em.getAddress);
+            sec.AddParagraph(m_em.getSubject);
+            sec.AddParagraph(m_em.getContent);
+            PdfDocumentRenderer pdfrend = new PdfDocumentRenderer();
+            pdfrend.Document = doc;
+            pdfrend.RenderDocument();
+            if (Directory.Exists(Environment.CurrentDirectory + "\\StoredEmails"))
+            {
+
+            }
+            else
+            {
+                Directory.CreateDirectory(Environment.CurrentDirectory + "\\StoredEmails");
+                
+            }
+            string filename = Environment.CurrentDirectory + "\\StoredEmails\\" + m_em.getAddress + ".pdf";
+            pdfrend.PdfDocument.Save(filename);
+            
         }
     }
 }
