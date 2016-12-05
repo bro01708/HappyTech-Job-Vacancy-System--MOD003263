@@ -74,8 +74,6 @@ namespace HappyTechSystem.DB
                     ET.getSubject = dr.GetString(3);
                     ET.getBody = dr.GetString(4);
 
-                    // etc.....
-
                     ETs.Add(ET);
                 }
 

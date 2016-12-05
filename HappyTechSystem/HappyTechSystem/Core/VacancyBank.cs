@@ -26,7 +26,7 @@ namespace HappyTechSystem.Core
             get { return dbLoaded; }
         }
 
-        private static VacancyBank uniqueInst = null;
+        private static VacancyBank uniqueInst;
 
         public static VacancyBank getInst()
         {
@@ -72,6 +72,11 @@ namespace HappyTechSystem.Core
             RefreshDBConnection();
         }
 
+        /// <summary>
+        /// Created By Dan. 
+        /// Iterates over all vacancies in the local list and find the one that matches the id passed into this method, removing it
+        /// </summary>
+        /// <param name="m_vacancyID"></param>
         public void RemoveVacancyFromList(int m_vacancyID)
         {
             foreach (Vacancy v in vacancyList)
@@ -105,7 +110,7 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int vacancyCount = vacancyList.Count();
+                int vacancyCount = vacancyList.Count;
 
                 if (vacancyCount == 0)
                 {
@@ -125,7 +130,7 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int interviewCount = interviewList.Count();
+                int interviewCount = interviewList.Count;
 
                 if (interviewCount == 0)
                 {

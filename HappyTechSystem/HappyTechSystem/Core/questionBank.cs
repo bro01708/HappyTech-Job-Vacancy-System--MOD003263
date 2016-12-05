@@ -103,7 +103,7 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int questionCount = questionList.Count();
+                int questionCount = questionList.Count;
 
                 if (questionCount == 0)
                 {

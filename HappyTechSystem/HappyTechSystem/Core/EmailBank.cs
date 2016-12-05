@@ -22,7 +22,7 @@ namespace HappyTechSystem.Core
         private List<EmailTemplate> templates = new List<EmailTemplate>();
         private bool dbLoaded;
 
-        private static EmailBank uniqueInst = null;
+        private static EmailBank uniqueInst;
 
         public EmailBank()
         {
@@ -33,7 +33,7 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int templateCount = templates.Count();
+                int templateCount = templates.Count;
 
                 if (templateCount == 0)
                 {
@@ -51,7 +51,7 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int emailCount = emailRecords.Count();
+                int emailCount = emailRecords.Count;
 
                 if (emailCount == 0)
                 {
@@ -147,6 +147,11 @@ namespace HappyTechSystem.Core
             RefreshDBConnection();
         }
 
+        /// <summary>
+        /// Created by Dan. 
+        /// Uses SMTP to send emails from a certain mock email address to applicants.
+        /// </summary>
+        /// <param name="m_em"></param>
         public void SendEmail(Email m_em)
         {
             SmtpClient client = new SmtpClient("smtp.gmail.com");
@@ -168,6 +173,10 @@ namespace HappyTechSystem.Core
             }
         }
 
+        /// <summary>
+        /// Created By Dan. 
+        /// Fetches the email templates and emails from the database, assigning them to the local lists.
+        /// </summary>
         public void RefreshDBConnection()
         {
             try

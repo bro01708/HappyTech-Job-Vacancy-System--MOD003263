@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
+    /// <summary>
+    /// Created by Dan. 
+    /// Class to state the type "email template". This class also features gets and its own ToString() override.
+    /// </summary>
     public class EmailTemplate
     {
         /// Created by Susan
         /// 25/11/2016
         /// Returns email template values
 
-        private string  type, name, body, subject;
+        private string type, name, body, subject;
         private int id;
 
         public int getID

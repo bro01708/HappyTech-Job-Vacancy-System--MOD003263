@@ -9,13 +9,17 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem.Core
 {
+    /// <summary>
+    /// Created by Dan.
+    /// Class to form an email based on fields passed to it.
+    /// </summary>
     class EmailCreator
     {
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionbank = QuestionBank.getInst();
         private EmailBank EB = EmailBank.getInst();
 
-        private static EmailCreator uniqueInst = null;
+        private static EmailCreator uniqueInst;
 
         public static EmailCreator getInst()
         {
@@ -64,12 +68,11 @@ namespace HappyTechSystem.Core
             builder.Replace("[JobRole]", v.Role);
             builder.Replace("[SenderName]", m_mdiParentText.Substring(22, m_mdiParentText.Length - 22));
 
-            //this will need some work to display correctly.
             string str = "";
             foreach (string s in feedback)
             {
                 string strPRE = str;
-                str = (strPRE + "\r\n" + s);
+                str = strPRE + "\r\n" + s;
             }
             str = str + "\r\n";
 
@@ -81,7 +84,6 @@ namespace HappyTechSystem.Core
             e.getSentDate = "Not Yet Sent";
 
             EB.addEmailToList(e);
-
         }
 
         /// <summary>

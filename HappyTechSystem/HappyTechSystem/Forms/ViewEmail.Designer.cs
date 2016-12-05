@@ -271,9 +271,9 @@
             // btn_send
             // 
             this.btn_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_send.Location = new System.Drawing.Point(6, 274);
+            this.btn_send.Location = new System.Drawing.Point(6, 267);
             this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(307, 65);
+            this.btn_send.Size = new System.Drawing.Size(307, 72);
             this.btn_send.TabIndex = 2;
             this.btn_send.Text = "Send Emails";
             this.btn_send.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@
             // lbl_select
             // 
             this.lbl_select.AutoSize = true;
-            this.lbl_select.Location = new System.Drawing.Point(43, 31);
+            this.lbl_select.Location = new System.Drawing.Point(52, 23);
             this.lbl_select.Name = "lbl_select";
             this.lbl_select.Size = new System.Drawing.Size(227, 13);
             this.lbl_select.TabIndex = 0;

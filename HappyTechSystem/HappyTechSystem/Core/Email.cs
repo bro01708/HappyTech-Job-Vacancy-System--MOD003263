@@ -7,6 +7,11 @@ using HappyTechSystem;
 
 namespace HappyTechSystem.Core
 {
+    /// <summary>
+    /// Created By Susan. 
+    /// Creates the email type, with relevant fields that make up an email record.
+    /// Features gets and its own ToString() override.
+    /// </summary>
     public class Email
     {
         private string applicantEmail, content, subject;
