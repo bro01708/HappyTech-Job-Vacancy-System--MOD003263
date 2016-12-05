@@ -14,7 +14,7 @@ namespace HappyTechSystem.DB
 {
     public class MetaLayer
     {
-        private static MetaLayer m_instance = null;
+        private static MetaLayer m_instance;
 
         private MetaLayer() { }
 
@@ -341,16 +341,19 @@ namespace HappyTechSystem.DB
             string questionTag = m_question.GetTag;
             string questionText = m_question.GetText;
 
-            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
-                             "','" + questionTag + "','" + questionText + "')";
-            con.RunSQL(myQuery);
+//            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID +
+//                             "','" + questionTag + "','" + questionText + "')";
+
+            String myQuery = "INSERT INTO Question(QuestionID, QuestionTag, QuestionText) VALUES ('" + questionID + "', @questionTag, @questionText)";
+
+            con.RunSQL(myQuery, new KeyValuePair<string, object>("@questionTag", questionTag), new KeyValuePair<string, object>("@questionText", questionText));
             //Following sections loop through ranks 1-5 and writes the assosiated response and feeback at that rank for the question being loaded.
             for (int i = 0; i < 5; i++)
             {
                 int rank = i + 1;
                 string rankstring = rank.ToString();
-                con.RunSQL("INSERT INTO Criteria(Rank, CriteriaText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Responses[i] + "','" + questionID + "')");
-                con.RunSQL("INSERT INTO Feedback(Rank, FeedbackText, QuestionID) VALUES ('" + rankstring + "','" + m_question.Feedback[i] + "','" + questionID + "')");
+                con.RunSQL("INSERT INTO Criteria(Rank, CriteriaText, QuestionID) VALUES ('" + rankstring + "', @Responses, '" + questionID + "')", new KeyValuePair<string, object>("@Responses", m_question.Responses[i]));
+                con.RunSQL("INSERT INTO Feedback(Rank, FeedbackText, QuestionID) VALUES ('" + rankstring + "', @Feedback, '" + questionID + "')", new KeyValuePair<string, object>("@Feedback", m_question.Feedback[i]));
             }
 
             con.CloseConnection();
@@ -367,9 +370,8 @@ namespace HappyTechSystem.DB
             int positionsAvailable = m_vacancy.PositionsAvailable;
             List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
 
-            String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID +
-                             "','" + vacancyName + "','" + role + "','" + positionsAvailable + "','" + minScore + "')";
-            con.RunSQL(myQuery);
+            String myQuery = "INSERT INTO Vacancy(VacancyID, VacancyName, Role, PositionsAvailable, MinimumScore) VALUES ('" + vacancyID + "', @vacancyName, @role, '" + positionsAvailable + "','" + minScore +"')";
+            con.RunSQL(myQuery, new KeyValuePair<string, object>("@vacancyName", vacancyName), new KeyValuePair<string, object>("@role", role));
 
             for (int i = 0; i < questionIDs.Count; i++)
             {
@@ -392,9 +394,9 @@ namespace HappyTechSystem.DB
             string templateBody = m_template.getBody;
 
             string myQuery = "INSERT INTO EmailTemplate(TemplateID, TemplateType, TemplateName, TemplateSubject, TemplateBody) VALUES ('" + templateID +
-                "','" + templateType + "','" + templateName + "','" + templateSubject + "','" + templateBody + "')";
+                "', @templateType, @templateName, @templateSubject, @templateBody)";
 
-            con.RunSQL(myQuery);
+            con.RunSQL(myQuery, new KeyValuePair<string, object>("@templateType", templateType), new KeyValuePair<string, object>("@templateName", templateName), new KeyValuePair<string, object>("@templateSubject", templateSubject), new KeyValuePair<string, object>("@templateBody", templateBody));
 
             con.CloseConnection();
         }
@@ -415,13 +417,13 @@ namespace HappyTechSystem.DB
             int total = m_interview.getTotal;
 
             String myQuery = "INSERT INTO Interview(InterviewID, VacancyID, InterviewerName, Title, ApplicantName, ApplicantEmailAddress, CVpath, AdditionalNotes, TotalScore) VALUES ('" + interviewID +
-                             "','" + vacancyID + "','" + interviewerName + "','" + applicantTitle + "','" + applicantName + "','" + applicantEmail + "','" + cvPath + "','" + additionalNotes + "','" + total + "')";
+                             "','" + vacancyID + "', @interviewerName, @title, @applicantName, @email, @cvPath, @notes,'" + total + "')";
 
-            con.RunSQL(myQuery);
+            con.RunSQL(myQuery, new KeyValuePair<string, object>("@interviewerName", interviewerName), new KeyValuePair<string, object>("@title", applicantTitle), new KeyValuePair<string, object>("@applicantName", applicantName), new KeyValuePair<string, object>("@email", applicantEmail), new KeyValuePair<string, object>("@cvPath", cvPath), new KeyValuePair<string, object>("@notes", additionalNotes));
 
             for (int i = 0; i < ranks.Length; i++)
             {
-                string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES('" + i + "','" + interviewID + "','" + ranks[i] + "')";
+                string myQuery2 = "INSERT INTO Answer (QuestionIndex, InterviewID, Rank) VALUES ('" + i + "','" + interviewID + "','" + ranks[i] + "')";
                 con.RunSQL(myQuery2);
             }
 
@@ -446,7 +448,7 @@ namespace HappyTechSystem.DB
             string content = e.getContent;
             string sendDate = e.getSentDate;
 
-            con.RunSQL("INSERT INTO Email(EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate) VALUES ('" + emailID + "','" + templateID + "','" + interviewID + "','" + emailAddress + "','" + subject + "','" + content + "','" + sendDate + "')");
+            con.RunSQL("INSERT INTO Email(EmailID, TemplateID, InterviewID, EmailAddress, Subject, Content, SentDate) VALUES ('" + emailID + "','" + templateID + "','" + interviewID + "', @email, @subject, @content,'" + sendDate + "')", new KeyValuePair<string, object>("@address", emailAddress), new KeyValuePair<string, object>("@subject", subject), new KeyValuePair<string, object>("@content", content));
 
             con.CloseConnection();
         }
@@ -468,16 +470,15 @@ namespace HappyTechSystem.DB
             string questionTag = m_question.GetTag;
             string questionText = m_question.GetText;
 
-            String myQuery = "UPDATE Question SET QuestionTag='" + questionTag + "', QuestionText='" + questionText +
-                             "' WHERE QuestionID=" + m_question.GetID;
-            con.RunSQL(myQuery);
+            String myQuery = "UPDATE Question SET QuestionTag=@tag, QuestionText=@text WHERE QuestionID=" + m_question.GetID;
+            con.RunSQL(myQuery, new KeyValuePair<string, object>("@tag", questionTag), new KeyValuePair<string, object>("@text", questionText));
 
             //Updates the necesscary criteria and feedback details
             for (int i = 0; i < 5; i++)
             {
                 int rank = i + 1;
-                con.RunSQL("UPDATE Criteria SET CriteriaText='" + m_question.Responses[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
-                con.RunSQL("UPDATE Feedback SET FeedbackText='" + m_question.Feedback[i] + "' WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID);
+                con.RunSQL("UPDATE Criteria SET CriteriaText=@response WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID, new KeyValuePair<string, object>("@response", m_question.Responses[i]));
+                con.RunSQL("UPDATE Feedback SET FeedbackText=@feedback WHERE Rank=" + rank + " AND QuestionID= " + m_question.GetID, new KeyValuePair<string, object>("@feedback", m_question.Feedback[i]));
             }
 
             con.CloseConnection();
@@ -493,7 +494,7 @@ namespace HappyTechSystem.DB
             string subject = m_emailTemplate.getSubject;
             string body = m_emailTemplate.getBody;
 
-            con.RunSQL("UPDATE EmailTemplate SET TemplateType='" + type + "', TemplateName='" + name + "', TemplateSubject='" + subject + "', TemplateBody='" + body + "' WHERE TemplateID=" + templateID);
+            con.RunSQL("UPDATE EmailTemplate SET TemplateType=@type, TemplateName=@name, TemplateSubject=@subject, TemplateBody=@body WHERE TemplateID=" + templateID, new KeyValuePair<string, object>("@type", type), new KeyValuePair<string, object>("@name", name), new KeyValuePair<string, object>("@subject", subject), new KeyValuePair<string, object>("@body", body));
 
             con.CloseConnection();
         }
@@ -510,7 +511,7 @@ namespace HappyTechSystem.DB
             int positionsAvailable = m_vacancy.PositionsAvailable;
             List<int> questionIDs = m_vacancy.getQuestionsToBeUsed;
 
-            con.RunSQL("UPDATE Vacancy SET VacancyName='" + vacancyName + "', Role='" + role + "', PositionsAvailable=" + positionsAvailable + ", MinimumScore=" + minScore + " WHERE VacancyID=" + vacancyID);
+            con.RunSQL("UPDATE Vacancy SET VacancyName=@vacName, Role=@role, PositionsAvailable=" + positionsAvailable + ", MinimumScore=" + minScore + " WHERE VacancyID=" + vacancyID, new KeyValuePair<string, object>("@vacName", vacancyName), new KeyValuePair<string, object>("@role", role));
 
             for (int i = 0; i < questionIDs.Count; i++)
             {
@@ -531,7 +532,7 @@ namespace HappyTechSystem.DB
             string content = m_email.getContent;
             string sentDate = m_email.getSentDate;
 
-            con.RunSQL("UPDATE Email SET EmailAddress='" + address + "', Subject='" + subject + "', Content='" + content + "', SentDate='" + sentDate + "' WHERE EmailID=" + id);
+            con.RunSQL("UPDATE Email SET EmailAddress= @email, Subject=@subject, Content=@content, SentDate='" + sentDate + "' WHERE EmailID=" + id, new KeyValuePair<string, object>("@address", address), new KeyValuePair<string, object>("@subject", subject), new KeyValuePair<string, object>("@content", content));
 
             con.CloseConnection();
         }

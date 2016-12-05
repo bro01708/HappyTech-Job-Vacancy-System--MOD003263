@@ -131,8 +131,6 @@ namespace HappyTechSystem.Core
             {
 
             }
-
-
         }
 
         public void UpdateTemplateList(EmailTemplate m_et)
