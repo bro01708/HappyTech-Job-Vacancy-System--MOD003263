@@ -18,10 +18,19 @@ namespace UnitTests
         {
             VacancyBank VB = new VacancyBank();
             Vacancy V = new Vacancy();
+            int nextID = VB.getHighestVacancyID() + 1;
+            V.GetID = nextID;
+            V.VacancyName = "Test";
+            V.Role = "Test";
+            V.MinumumScore = 10;
+            V.PositionsAvailable = 1;
+
             int expected = VB.getVacancyList.Count;
             VB.AddVacancyToList(V);
 
             Assert.AreEqual(VB.getVacancyList[expected], V);
+
+            VB.RemoveVacancyFromList(V.GetID);
         }
 
         /// Created by Susan
@@ -34,35 +43,30 @@ namespace UnitTests
         {
             VacancyBank VB = new VacancyBank();
             Interview I = new Interview();
+            int nextID = VB.getHighestInterviewID() + 1;
+            I.getInterviewID = nextID;
+            I.getUsedVacancyID = 1;
+            I.getTotal = 1337;
+            I.getInterviewerName = "Test";
+            I.getApplicantTitle = "Test";
+            I.getApplicantName = "Test";
+            I.getApplicantEmail = "Test";
+            I.getCVPath = "Test";
+            I.getAdditionalNotes = "Test";
+
+            int[] answers = new int[5];
+            answers[0] = 5;
+            answers[1] = 5;
+            answers[2] = 5;
+            answers[3] = 5;
+            answers[4] = 5;
+
+            I.Answers = answers;
+
             int expected = VB.getInterviewList.Count;
             VB.AddInterviewToList(I);
 
             Assert.AreEqual(VB.getInterviewList[expected], I);
         }
-
-        /// <summary>
-        /// Created by Susan
-        /// 04/12/2016
-        /// //Tests removing a vacancy from the vacancy bank
-        /// </summary>
-
-        [TestMethod]
-
-        public void Test_RemoveVacancyFromList()
-        {
-            VacancyBank VB = new VacancyBank();
-            Vacancy I = new Vacancy();
-            I.GetID = 100;
-            VB.AddVacancyToList(I);
-
-            int expected = VB.getVacancyList.Count - 1;
-            VB.RemoveVacancyFromList(100);
-            int after = VB.getVacancyList.Count;
-            Assert.AreEqual(expected, after);
-
-        }
-      
-
-
     }
 }

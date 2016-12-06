@@ -19,11 +19,19 @@ namespace UnitTests
         {
             EmailBank EB = new EmailBank();
             EmailTemplate T = new EmailTemplate();
+            int nextID = EB.getHighestTemplateID() + 1;
+            T.getID = nextID;
+            T.getType = "Test";
+            T.getName = "Test";
+            T.getBody = "Test";
+            T.getSubject = "Test";
+
             int expected = EB.getTemplateList.Count;
             EB.addTemplateToList(T);
 
             Assert.AreEqual(EB.getTemplateList[expected], T);
 
+            EB.RemoveTemplate(T.getID);
         }
 
         /// Created by Susan
