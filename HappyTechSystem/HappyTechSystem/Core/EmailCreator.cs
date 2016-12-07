@@ -47,8 +47,8 @@ namespace HappyTechSystem.Core
             e.getInterviewID = i.getInterviewID;
             e.getAddress = i.getApplicantEmail;
             e.getSubject = et.getSubject;
-
-            //feedback area builder
+            
+            //Created by Peter - feedback area builder
             string tempContent;
             List<string> feedback = new List<string>();
 
@@ -57,7 +57,7 @@ namespace HappyTechSystem.Core
                 Question q = questionbank.getQuestionList.FirstOrDefault(o => o.GetID == v.getQuestionsToBeUsed[index]);
                 int score = i.Answers[index];
                 int respLoc = score - 1;
-                feedback.Add(q.Responses[respLoc]);
+                feedback.Add(q.Feedback[respLoc]);
             }
 
             //content string builder

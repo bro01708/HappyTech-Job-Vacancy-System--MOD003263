@@ -151,8 +151,8 @@ namespace HappyTechSystem
             else
             {
                 MessageBox.Show("You cannot delete this template due to one or more of the following reasons:"+
-                    "\n\n(X) This template is still bound to an email/emails. There are " + associatedEmail +" associated emails using this template -  check to see which ones they " +
-                                "are by checking the 'View Templates' menu.\n Removing these emails will allow you to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "\n\n(X) This template is still bound to an email/emails.\nThere are " + associatedEmail +" associated emails using this template - check to see which ones they " +
+                                "are by checking the 'View Templates' menu.\nRemoving these emails will allow you to remove this template.","Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -201,8 +201,8 @@ namespace HappyTechSystem
             else
             {
                 MessageBox.Show("You cannot delete this template due to one or more of the following reasons:" +
-                    "\n\n(X) This template is still bound to an email/emails. There are " + associatedEmail + " associated emails using this template -  check to see which ones they " +
-                                "are by checking the 'View Templates' menu.\n Removing these emails will allow you to remove this template.", "Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "\n\n(X) This template is still bound to an email/emails.\nThere are " + associatedEmail + " associated emails using this template - check to see which ones they " +
+                                "are by checking the 'View Templates' menu.\nRemoving these emails will allow you to remove this template.", "Cannot Delete Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

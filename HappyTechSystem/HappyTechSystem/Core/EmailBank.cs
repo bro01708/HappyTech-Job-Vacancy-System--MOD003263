@@ -178,7 +178,7 @@ namespace HappyTechSystem.Core
             mail.Body = m_em.getContent;
             try
             {
-                client.Send(mail);
+                //client.Send(mail);
                 PDFGen(m_em);
                                
             }
