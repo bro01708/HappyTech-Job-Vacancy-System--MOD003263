@@ -582,6 +582,16 @@ namespace HappyTechSystem.DB
             con.CloseConnection();
         }
 
+        public void RemoveInterviewFromDB(int m_interviewID)
+        {
+            DbConnection con = DB.DBFactory.instance();
+            string id = m_interviewID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Answer WHERE InterviewID=" + id + ";");
+            con.RunSQL("DELETE FROM Interview WHERE InterviewID=" + id + ";");
+            con.CloseConnection();
+        }
+
         public void RemoveEmailFromDB(int m_emailID)
         {
             DbConnection con = DBFactory.instance();

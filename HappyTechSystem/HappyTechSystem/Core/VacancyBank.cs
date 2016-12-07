@@ -90,6 +90,26 @@ namespace HappyTechSystem.Core
             }
         }
 
+        public void RemoveInterviewFromList(int m_interviewID)
+        {
+            try
+            {
+                foreach (Interview i in interviewList)
+                {
+                    if (i.getInterviewID == m_interviewID)
+                    {
+                        interviewList.Remove(i);
+                        ml.RemoveInterviewFromDB(m_interviewID);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
         public void RefreshDBConnection()
         {
             try
