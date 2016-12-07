@@ -91,21 +91,21 @@
             // newQuestionToolStripMenuItem
             // 
             this.newQuestionToolStripMenuItem.Name = "newQuestionToolStripMenuItem";
-            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.newQuestionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.newQuestionToolStripMenuItem.Text = "New Question";
             this.newQuestionToolStripMenuItem.Click += new System.EventHandler(this.newQuestionToolStripMenuItem_Click);
             // 
             // newEmailTempleToolStripMenuItem
             // 
             this.newEmailTempleToolStripMenuItem.Name = "newEmailTempleToolStripMenuItem";
-            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.newEmailTempleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.newEmailTempleToolStripMenuItem.Text = "New Email Template";
             this.newEmailTempleToolStripMenuItem.Click += new System.EventHandler(this.newEmailTempleToolStripMenuItem_Click);
             // 
             // newVacancyToolStripMenuItem
             // 
             this.newVacancyToolStripMenuItem.Name = "newVacancyToolStripMenuItem";
-            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.newVacancyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.newVacancyToolStripMenuItem.Text = "New Vacancy";
             this.newVacancyToolStripMenuItem.Click += new System.EventHandler(this.newVacancyToolStripMenuItem_Click);
             // 
@@ -134,35 +134,35 @@
             // modifyViewQuestionBankToolStripMenuItem
             // 
             this.modifyViewQuestionBankToolStripMenuItem.Name = "modifyViewQuestionBankToolStripMenuItem";
-            this.modifyViewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewQuestionBankToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.modifyViewQuestionBankToolStripMenuItem.Text = "Question Bank";
             this.modifyViewQuestionBankToolStripMenuItem.Click += new System.EventHandler(this.modifyViewQuestionBankToolStripMenuItemClick);
             // 
             // modifyViewEmailTemplatesToolStripMenuItem
             // 
             this.modifyViewEmailTemplatesToolStripMenuItem.Name = "modifyViewEmailTemplatesToolStripMenuItem";
-            this.modifyViewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewEmailTemplatesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.modifyViewEmailTemplatesToolStripMenuItem.Text = "Email Templates";
             this.modifyViewEmailTemplatesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailTemplatesToolStripMenuItem_Click);
             // 
             // modifyViewVacanciesToolStripMenuItem
             // 
             this.modifyViewVacanciesToolStripMenuItem.Name = "modifyViewVacanciesToolStripMenuItem";
-            this.modifyViewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewVacanciesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.modifyViewVacanciesToolStripMenuItem.Text = "Vacancies";
             this.modifyViewVacanciesToolStripMenuItem.Click += new System.EventHandler(this.modifyViewVacanciesToolStripMenuItem_Click);
             // 
             // modifyViewInterviewsToolStripMenuItem
             // 
             this.modifyViewInterviewsToolStripMenuItem.Name = "modifyViewInterviewsToolStripMenuItem";
-            this.modifyViewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewInterviewsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.modifyViewInterviewsToolStripMenuItem.Text = "Interviews";
             this.modifyViewInterviewsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewInterviewsToolStripMenuItem_Click);
             // 
             // modifyViewEmailsToolStripMenuItem
             // 
             this.modifyViewEmailsToolStripMenuItem.Name = "modifyViewEmailsToolStripMenuItem";
-            this.modifyViewEmailsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.modifyViewEmailsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.modifyViewEmailsToolStripMenuItem.Text = "Emails";
             this.modifyViewEmailsToolStripMenuItem.Click += new System.EventHandler(this.modifyViewEmailsToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             this.lbl_dev.BackColor = System.Drawing.Color.Transparent;
             this.lbl_dev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dev.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_dev.Location = new System.Drawing.Point(162, 232);
+            this.lbl_dev.Location = new System.Drawing.Point(169, 232);
             this.lbl_dev.Name = "lbl_dev";
             this.lbl_dev.Size = new System.Drawing.Size(311, 15);
             this.lbl_dev.TabIndex = 5;
@@ -190,7 +190,7 @@
             this.lbl_nav.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nav.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_nav.Location = new System.Drawing.Point(53, 174);
+            this.lbl_nav.Location = new System.Drawing.Point(72, 174);
             this.lbl_nav.Name = "lbl_nav";
             this.lbl_nav.Size = new System.Drawing.Size(499, 26);
             this.lbl_nav.TabIndex = 7;

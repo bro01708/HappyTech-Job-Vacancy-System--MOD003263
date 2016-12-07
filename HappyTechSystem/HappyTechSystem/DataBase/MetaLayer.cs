@@ -222,6 +222,12 @@ namespace HappyTechSystem.DB
             return tempFeedback.ToArray();
         }
 
+        /// <summary>
+        /// Created By Peter. 
+        /// Fetches the questions that a vacancy is to use from the question table.
+        /// </summary>
+        /// <param name="m_Vacancy"></param>
+        /// <returns></returns>
         public List<int> getQuestionsToBeUsed(Vacancy m_Vacancy)
         {
             List<int> questionsToBeUsed = new List<int>();
@@ -573,6 +579,16 @@ namespace HappyTechSystem.DB
             con.OpenConnection();
             con.RunSQL("DELETE FROM Vacancy_Question WHERE VacancyID = " + id + ";");
             con.RunSQL("DELETE FROM Vacancy WHERE VacancyID = " + id + ";");
+            con.CloseConnection();
+        }
+
+        public void RemoveInterviewFromDB(int m_interviewID)
+        {
+            DbConnection con = DB.DBFactory.instance();
+            string id = m_interviewID.ToString();
+            con.OpenConnection();
+            con.RunSQL("DELETE FROM Answer WHERE InterviewID=" + id + ";");
+            con.RunSQL("DELETE FROM Interview WHERE InterviewID=" + id + ";");
             con.CloseConnection();
         }
 

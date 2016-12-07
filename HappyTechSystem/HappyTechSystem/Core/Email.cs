@@ -59,7 +59,7 @@ namespace HappyTechSystem.Core
         }
         public override string ToString()
         {
-            return "(" + emailID.ToString() + ") - [Interview # "+ interviewID.ToString()+"] - " + applicantEmail;
+            return "(" + emailID.ToString() + ") - " + applicantEmail;
         }
     }
 }
