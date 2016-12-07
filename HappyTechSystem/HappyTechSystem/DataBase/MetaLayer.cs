@@ -222,6 +222,12 @@ namespace HappyTechSystem.DB
             return tempFeedback.ToArray();
         }
 
+        /// <summary>
+        /// Created By Peter. 
+        /// Fetches the questions that a vacancy is to use from the question table.
+        /// </summary>
+        /// <param name="m_Vacancy"></param>
+        /// <returns></returns>
         public List<int> getQuestionsToBeUsed(Vacancy m_Vacancy)
         {
             List<int> questionsToBeUsed = new List<int>();

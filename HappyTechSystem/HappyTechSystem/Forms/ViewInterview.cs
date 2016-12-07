@@ -304,7 +304,7 @@ namespace HappyTechSystem
             vacancyBank.RemoveVacancyFromList(v.GetID);
             MessageBox.Show(count + " emails have been generated for the vacancy: " + vacName + ".\n" +
                             "To view these Emails, check the 'View Emails' form!\n\n" +
-                            "The vacancy (" + vacName + ")will now be removed safely, as all emails are generated.", "Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "The vacancy (" + vacName + ") will now be removed safely, as all emails are generated.", "Email Generation Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

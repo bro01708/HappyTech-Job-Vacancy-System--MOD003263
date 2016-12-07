@@ -100,12 +100,22 @@ namespace HappyTechSystem.Core
             ml.SaveTemplateToDB(m_et);
         }
 
+        /// <summary>
+        /// Created by Peter.
+        /// Adds emails to the local list and the database.
+        /// </summary>
+        /// <param name="e"></param>
         public void addEmailToList(Email e)
         {
             emailRecords.Add(e);
             ml.SaveEmailToDB(e);
         }
 
+        /// <summary>
+        /// Created by Dan. 
+        /// Removes the passed in template from the local list and the database.
+        /// </summary>
+        /// <param name="m_templateID"></param>
         public void RemoveTemplate(int m_templateID)
         {
             foreach (EmailTemplate et in templates)
@@ -168,7 +178,7 @@ namespace HappyTechSystem.Core
             mail.Body = m_em.getContent;
             try
             {
-                //client.Send(mail);
+                client.Send(mail);
                 PDFGen(m_em);
                                
             }
@@ -197,6 +207,11 @@ namespace HappyTechSystem.Core
             }
         }
 
+        /// <summary>
+        /// Created By Peter. 
+        /// Generates a PDF based on the email generated for an interview.
+        /// </summary>
+        /// <param name="m_em"></param>
         public void PDFGen(Email m_em)
         {
             Document doc = new Document();
@@ -216,7 +231,7 @@ namespace HappyTechSystem.Core
                 Directory.CreateDirectory(Environment.CurrentDirectory + "\\StoredEmails");
                 
             }
-            string filename = Environment.CurrentDirectory + "\\StoredEmails\\" + m_em.getAddress + ".pdf";
+            string filename = Environment.CurrentDirectory + "\\StoredEmails\\" + m_em.getInterviewID + " - " + m_em.getAddress + " - Email_Copy.pdf";
             pdfrend.PdfDocument.Save(filename);
             
         }

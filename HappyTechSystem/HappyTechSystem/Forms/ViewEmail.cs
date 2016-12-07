@@ -216,9 +216,8 @@ namespace HappyTechSystem
                             MessageBox.Show("Some emails could not be sent due to one or more of following reasons:\n\n" +
                                             "(X) The applicant email addresses stated are not in the correct format or do not actually exist.", "Error Sending Emails", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        btn_back.PerformClick();
-
                     }
+                    btn_back.PerformClick();
                 }
             }
             

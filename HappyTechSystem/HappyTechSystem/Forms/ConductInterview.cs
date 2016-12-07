@@ -68,11 +68,10 @@ namespace HappyTechSystem
                 }
                 tb_cvPath.Text = file;
             }
-    ;
         }
 
         /// <summary>
-        /// Created by Dan.
+        /// Created by Peter.
         /// A button to begin the interview. Disables the first panel of controls, and enables the second.
         /// </summary>
         /// <param name="sender"></param>
@@ -182,9 +181,15 @@ namespace HappyTechSystem
             updateRadioButtons(questionListIndex);
         }
 
+        /// <summary>
+        /// Created By Peter. 
+        /// Advances the question in the interview to the next question id.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_nextQuestion_Click(object sender, EventArgs e)
         {
-            if (rb_rank1.Checked == true || rb_rank2.Checked == true || rb_rank3.Checked == true || rb_rank4.Checked == true || rb_rank5.Checked == true)
+            if (rb_rank1.Checked || rb_rank2.Checked || rb_rank3.Checked || rb_rank4.Checked || rb_rank5.Checked)
             {
                 tb_questionIndex.Text = (Convert.ToInt32(tb_questionIndex.Text) + 1).ToString();
                 displayQuestionDetails();
@@ -232,7 +237,7 @@ namespace HappyTechSystem
 
         private void rb_rank1_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_rank1.Checked == true)
+            if (rb_rank1.Checked)
             {
                 setResponseInResponseList(sender);
             }
@@ -240,7 +245,7 @@ namespace HappyTechSystem
 
         private void rb_rank2_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_rank2.Checked == true)
+            if (rb_rank2.Checked)
             {
                 setResponseInResponseList(sender);
             }
@@ -248,7 +253,7 @@ namespace HappyTechSystem
 
         private void rb_rank3_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_rank3.Checked == true)
+            if (rb_rank3.Checked)
             {
                 setResponseInResponseList(sender);
             }
@@ -256,7 +261,7 @@ namespace HappyTechSystem
 
         private void rb_rank4_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_rank4.Checked == true)
+            if (rb_rank4.Checked)
             {
                 setResponseInResponseList(sender);
             }
@@ -264,7 +269,7 @@ namespace HappyTechSystem
 
         private void rb_rank5_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_rank5.Checked == true)
+            if (rb_rank5.Checked)
             {
                 setResponseInResponseList(sender);
             }
@@ -315,23 +320,5 @@ namespace HappyTechSystem
                             "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
-
-        /// <summary>
-        /// Created by Dan.
-        /// Checks whether the particular interview can take place, based on the number of slots stated in the vacancy.
-        /// </summary>
-        /// <param name="m_v"></param>
-        /// <returns></returns>
-        //private bool canConduct(Vacancy m_v)
-        //{
-        //    List<Interview> l = vacancyBank.getInterviewList.Where(i => i.getUsedVacancyID == m_v.GetID).ToList();
-        //    int count = l.Count;
-
-        //    if (m_v.PositionsAvailable <= count)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
     }
 }
