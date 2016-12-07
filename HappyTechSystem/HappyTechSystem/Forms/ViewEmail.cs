@@ -210,6 +210,7 @@ namespace HappyTechSystem
                             emailBank.SendEmail(em);
                             emailCreator.AdjustEmailSentDate(em.getID, DateTime.Now.ToShortDateString());
                             MessageBox.Show(clb_emails.CheckedItems.Count.ToString() + " email(s) has/have been sent to their destination address(es).", "Email Sent!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (clb_emails.Items.Count == 0) { break; }
                         }
                         catch (Exception)
                         {

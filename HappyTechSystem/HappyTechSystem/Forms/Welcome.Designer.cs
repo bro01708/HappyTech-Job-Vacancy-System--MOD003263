@@ -57,9 +57,9 @@
             // 
             this.cb_name.FormattingEnabled = true;
             this.cb_name.Items.AddRange(new object[] {
-            "Daniel",
-            "Peter",
-            "Susan"});
+            "Daniel Stuart",
+            "Peter Brown\t",
+            "Susan Wilson"});
             this.cb_name.Location = new System.Drawing.Point(86, 25);
             this.cb_name.Name = "cb_name";
             this.cb_name.Size = new System.Drawing.Size(154, 21);

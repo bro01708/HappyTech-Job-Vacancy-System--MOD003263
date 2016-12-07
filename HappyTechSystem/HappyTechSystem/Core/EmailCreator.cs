@@ -57,7 +57,7 @@ namespace HappyTechSystem.Core
                 Question q = questionbank.getQuestionList.FirstOrDefault(o => o.GetID == v.getQuestionsToBeUsed[index]);
                 int score = i.Answers[index];
                 int respLoc = score - 1;
-                feedback.Add(q.Responses[respLoc]);
+                feedback.Add(q.Feedback[respLoc]);
             }
 
             //content string builder
@@ -72,7 +72,7 @@ namespace HappyTechSystem.Core
             foreach (string s in feedback)
             {
                 string strPRE = str;
-                str = strPRE + "\r\n" + s;
+                str = strPRE + "\r\n\n" + s;
             }
             str = str + "\r\n";
 
