@@ -2769,7 +2769,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -2873,7 +2873,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2883,7 +2883,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2898,7 +2898,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
@@ -2924,7 +2924,7 @@ If so we will use this instead.</body>
                 <coveredLifelines>
                   <lifelineMoniker
                     Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                    LastKnownName="V : Vacancy"
+                    LastKnownName="VacancyCreator"
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
                     Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
@@ -2952,7 +2952,7 @@ If so we will use this instead.</body>
                     <coveredLifelines>
                       <lifelineMoniker
                         Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                        LastKnownName="V : Vacancy"
+                        LastKnownName="VacancyCreator"
                         LastKnownLocation="UML.uml" />
                     </coveredLifelines>
                     <operands>
@@ -2962,7 +2962,7 @@ If so we will use this instead.</body>
                         <coveredLifelines>
                           <lifelineMoniker
                             Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                            LastKnownName="V : Vacancy"
+                            LastKnownName="VacancyCreator"
                             LastKnownLocation="UML.uml" />
                         </coveredLifelines>
                         <guard>
@@ -2986,7 +2986,7 @@ If so we will use this instead.</body>
                         <coveredLifelines>
                           <lifelineMoniker
                             Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                            LastKnownName="V : Vacancy"
+                            LastKnownName="VacancyCreator"
                             LastKnownLocation="UML.uml" />
                         </coveredLifelines>
                         <guard>
@@ -3114,7 +3114,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3174,7 +3174,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3204,7 +3204,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3282,7 +3282,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3302,7 +3302,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3340,7 +3340,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3350,7 +3350,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3360,7 +3360,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -3396,7 +3396,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3406,7 +3406,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3424,7 +3424,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3434,7 +3434,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3444,7 +3444,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3454,7 +3454,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3464,7 +3464,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -3500,7 +3500,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3510,7 +3510,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3528,7 +3528,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3538,7 +3538,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3618,7 +3618,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3942,7 +3942,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3990,7 +3990,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3998,9 +3998,9 @@ If so we will use this instead.</body>
         <lifelines>
           <lifeline
             Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-            name="V : Vacancy"
+            name="VacancyCreator"
             isActor="false"
-            lifelineDisplayName="V : Vacancy">
+            lifelineDisplayName="VacancyCreator">
             <represents>
               <propertyMoniker
                 Id="56b79ef0-c54f-4dee-b850-5f2eedbe4ff8"
@@ -4384,8 +4384,8 @@ If so we will use this instead.</body>
             isComposite="false">
             <type_NamedElement>
               <classMoniker
-                Id="954cad59-1d79-4a0f-ad0e-8fdc24ddb486"
-                LastKnownName="Vacancy"
+                Id="60a5c573-d4ae-4d35-959c-52f2f1b14dbe"
+                LastKnownName="VacancyCreator"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
