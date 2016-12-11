@@ -221,6 +221,7 @@
     <Content Include="DataBase\Happytech.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\hplogo.png" />
     <None Include="DataBase\properties.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
