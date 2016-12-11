@@ -45,51 +45,75 @@ namespace UnitTests
 
             EmailBank EB = new EmailBank();
             Email E = new Email();
+            int nextID = EB.getHighestEmailID() + 1;
+            E.getID = nextID;
+            E.getAddress = "Test";
+            E.getContent = "Test";
+            E.getInterviewID = 1;
+            E.getSentDate = "Test";
+            E.getSubject = "Test";
+            E.getTemplateID = 1;
+
             int expected = EB.getEmailList.Count;
             EB.addEmailToList(E);
 
-            Assert.AreEqual(EB.getEmailList[expected], E);                     
+            Assert.AreEqual(EB.getEmailList[expected], E);
+            string str = E.ToString();                   
+            
+            EB.RemoveEmail(E.getID);
+        }
+
+        [TestMethod]
+
+        public void Test_PDFGen()
+        {
             
         }
 
-
         [TestMethod]
 
-        ///Created by Susan
-         ///Tests removing an email template from the email bank
-         ///04/12/2016
-
-        public void Test_RemoveTemplate()
+        public void Test_SendEmail()
         {
-            EmailBank EB = new EmailBank();
-            EmailTemplate E = new EmailTemplate();
-            E.getID = 100;
-            EB.addTemplateToList(E);
-
-            int expected = EB.getTemplateList.Count - 1;
-            EB.RemoveTemplate(100);
-            int after = EB.getTemplateList.Count;
-            Assert.AreEqual(expected, after);
+            
         }
 
-        [TestMethod]
+        //[TestMethod]
 
-        ///Created by Susan
-        ///Tests removing an email from the email bank
-        ///04/12/2016
+        /////Created by Susan
+        // ///Tests removing an email template from the email bank
+        // ///04/12/2016
 
-        public void Test_RemoveEmail()
-        {
-            EmailBank EB = new EmailBank();
-            Email E = new Email();
-            E.getID = 100;
-            EB.addEmailToList(E);
+        //public void Test_RemoveTemplate()
+        //{
+        //    EmailBank EB = new EmailBank();
+        //    EmailTemplate E = new EmailTemplate();
+        //    E.getID = 100;
+        //    EB.addTemplateToList(E);
 
-            int expected = EB.getEmailList.Count - 1;
-            EB.RemoveEmail(100);
-            int after = EB.getEmailList.Count;
-            Assert.AreEqual(expected, after);
-        }
+        //    int expected = EB.getTemplateList.Count - 1;
+        //    EB.RemoveTemplate(100);
+        //    int after = EB.getTemplateList.Count;
+        //    Assert.AreEqual(expected, after);
+        //}
+
+        //[TestMethod]
+
+        /////Created by Susan
+        /////Tests removing an email from the email bank
+        /////04/12/2016
+
+        //public void Test_RemoveEmail()
+        //{
+        //    EmailBank EB = new EmailBank();
+        //    Email E = new Email();
+        //    E.getID = 100;
+        //    EB.addEmailToList(E);
+
+        //    int expected = EB.getEmailList.Count - 1;
+        //    EB.RemoveEmail(100);
+        //    int after = EB.getEmailList.Count;
+        //    Assert.AreEqual(expected, after);
+        //}
 
     }
 
