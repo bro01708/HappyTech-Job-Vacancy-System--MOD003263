@@ -19,9 +19,7 @@ namespace UnitTests
         [TestMethod]
         public void GenerateEmailTest()
         {
-            bool success;
-            try
-            {
+            
                 EmailBank EB = new EmailBank();
                 EmailCreator EC = new EmailCreator();
                 Vacancy V = new Vacancy();
@@ -37,14 +35,9 @@ namespace UnitTests
                 ET.getName = "Test";
                 ET.getBody = "Test";
                 ET.getSubject = "Test";
-                EC.GenerateEmail(9999999, V, ET, I, "testtesttesttesttesttesttesttesttesttesttesttesttesttest");
-                success = true;
-            }
-            catch
-            {
-                success = false;
-            }
-            Assert.AreEqual(true, success);
+                int newemailID = EB.getHighestEmailID();
+                EC.GenerateEmail(newemailID, V, ET, I, "testtesttesttesttesttesttesttesttesttesttesttesttesttest");
+                
         }
     }
 }
