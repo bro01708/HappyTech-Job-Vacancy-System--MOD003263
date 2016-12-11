@@ -2133,15 +2133,15 @@ If so we will use this instead.</body>
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <operands>
@@ -2159,15 +2159,15 @@ If so we will use this instead.</body>
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
                     Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                    LastKnownName="EF : EmailBank"
+                    LastKnownName="EmailCreator"
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
                     Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                    LastKnownName="QB : QuestionBank"
+                    LastKnownName="Question"
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
-                    Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                    LastKnownName="E : email"
+                    Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                    LastKnownName="EmailBank"
                     LastKnownLocation="UML.uml" />
                 </coveredLifelines>
                 <fragments>
@@ -2284,12 +2284,12 @@ If so we will use this instead.</body>
                     LastKnownName="OperandOccurrenceSpecification38"
                     LastKnownLocation="UML.uml" />
                   <operandOccurrenceSpecificationMoniker
-                    Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-                    LastKnownName="OperandOccurrenceSpecification39"
+                    Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+                    LastKnownName="OperandOccurrenceSpecification53"
                     LastKnownLocation="UML.uml" />
                   <operandOccurrenceSpecificationMoniker
-                    Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-                    LastKnownName="OperandOccurrenceSpecification40"
+                    Id="cd544656-8206-433e-a955-8535dc9fd538"
+                    LastKnownName="OperandOccurrenceSpecification54"
                     LastKnownLocation="UML.uml" />
                 </operandOccurrenceSpecifications>
               </interactionOperand>
@@ -2301,7 +2301,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2311,27 +2311,17 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="49277c74-6235-40a7-9eee-cf23a0d64c9a"
-            name="OperandOccurrenceSpecification5">
+            Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+            name="OperandOccurrenceSpecification53">
             <covered>
               <lifelineMoniker
-                Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-            name="OperandOccurrenceSpecification39">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2342,6 +2332,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
                 LastKnownName="Interview"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="49277c74-6235-40a7-9eee-cf23a0d64c9a"
+            name="OperandOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
+                LastKnownName="V : Vacancy"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2416,22 +2416,22 @@ If so we will use this instead.</body>
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="d460dbd5-a720-4cf9-baa0-4337ff005840"
-            name="MessageOccurrenceSpecification95">
-            <covered>
-              <lifelineMoniker
-                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
-                LastKnownName="Interview"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a5a7139d-7b4d-4c2c-a148-3b87ca11eb57"
             name="MessageOccurrenceSpecification96">
             <covered>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
                 LastKnownName="V : Vacancy"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d460dbd5-a720-4cf9-baa0-4337ff005840"
+            name="MessageOccurrenceSpecification95">
+            <covered>
+              <lifelineMoniker
+                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
+                LastKnownName="Interview"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2504,16 +2504,6 @@ If so we will use this instead.</body>
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="47383614-d0c1-46cd-a78d-118b32a067fe"
-            name="MessageOccurrenceSpecification90">
-            <covered>
-              <lifelineMoniker
-                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
-                LastKnownName="Interview"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="6096dbb2-35f7-4051-a19a-c8007e198097"
             name="MessageOccurrenceSpecification89">
             <covered>
@@ -2524,8 +2514,8 @@ If so we will use this instead.</body>
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="9369ea1e-7eed-4575-a8ee-d389df3dc7f6"
-            name="MessageOccurrenceSpecification91">
+            Id="47383614-d0c1-46cd-a78d-118b32a067fe"
+            name="MessageOccurrenceSpecification90">
             <covered>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
@@ -2540,6 +2530,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
                 LastKnownName="V : Vacancy"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9369ea1e-7eed-4575-a8ee-d389df3dc7f6"
+            name="MessageOccurrenceSpecification91">
+            <covered>
+              <lifelineMoniker
+                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
+                LastKnownName="Interview"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2775,7 +2775,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -2804,14 +2804,6 @@ If so we will use this instead.</body>
                 LastKnownName="MessageOccurrenceSpecification122"
                 LastKnownLocation="UML.uml" />
               <messageOccurrenceSpecificationMoniker
-                Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-                LastKnownName="MessageOccurrenceSpecification123"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="21a34988-437b-4db7-9373-72e34602c512"
-                LastKnownName="MessageOccurrenceSpecification126"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
                 Id="403af92d-d14a-4be7-aeef-d2a9fbb94824"
                 LastKnownName="MessageOccurrenceSpecification127"
                 LastKnownLocation="UML.uml" />
@@ -2822,6 +2814,10 @@ If so we will use this instead.</body>
               <executionOccurrenceSpecificationMoniker
                 Id="5d32f37b-2f9a-4c92-b024-5c49c54cc815"
                 LastKnownName="ExecutionOccurrenceSpecification96"
+                LastKnownLocation="UML.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="62791c17-e075-40e0-8bd6-32997d587307"
+                LastKnownName="MessageOccurrenceSpecification129"
                 LastKnownLocation="UML.uml" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
@@ -2839,7 +2835,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2859,7 +2855,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2869,7 +2865,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -2909,7 +2905,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2919,7 +2915,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2929,7 +2925,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2939,7 +2935,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2949,7 +2945,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2967,115 +2963,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="66365ae6-eb83-47ad-8f75-d010760b5fb7"
-            name="BehaviorExecutionSpecification47">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-                LastKnownName="ExecutionOccurrenceSpecification94"
-                LastKnownLocation="UML.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-                LastKnownName="ExecutionOccurrenceSpecification93"
-                LastKnownLocation="UML.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="824d7635-48d3-4606-bec9-dff0322beeda"
-                LastKnownName="MessageOccurrenceSpecification124"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-                LastKnownName="MessageOccurrenceSpecification125"
-                LastKnownLocation="UML.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-            name="ExecutionOccurrenceSpecification93">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="d21400dc-6b15-430c-ae46-bc35afe87480"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="UML.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="824d7635-48d3-4606-bec9-dff0322beeda"
-            name="MessageOccurrenceSpecification124">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-            name="MessageOccurrenceSpecification123">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-            name="MessageOccurrenceSpecification125">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="21a34988-437b-4db7-9373-72e34602c512"
-            name="MessageOccurrenceSpecification126">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-            name="ExecutionOccurrenceSpecification94">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="3a329819-dfb9-484f-8438-48e4e8a0c95e"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="UML.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3085,7 +2973,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3095,7 +2983,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -3131,7 +3019,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3141,7 +3029,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3159,10 +3047,76 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1bf7d0f1-7e1c-4317-ad36-3bde4942b6e6"
+            name="BehaviorExecutionSpecification49">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+                LastKnownName="ExecutionOccurrenceSpecification98"
+                LastKnownLocation="UML.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+                LastKnownName="ExecutionOccurrenceSpecification97"
+                LastKnownLocation="UML.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+                LastKnownName="MessageOccurrenceSpecification130"
+                LastKnownLocation="UML.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+            name="ExecutionOccurrenceSpecification97">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3b87eeab-fc84-4747-bdc2-6a163c35aae8"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="UML.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="62791c17-e075-40e0-8bd6-32997d587307"
+            name="MessageOccurrenceSpecification129">
+            <covered>
+              <lifelineMoniker
+                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+            name="MessageOccurrenceSpecification130">
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="17748f9e-56b6-4833-a80b-dcd208d3486e"
             name="ExecutionOccurrenceSpecification88">
@@ -3177,17 +3131,35 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+            name="ExecutionOccurrenceSpecification98">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="69d072f4-fd75-4301-b91f-c41735b3e151"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="UML.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="ce969072-1cdd-48b1-a4a1-4cf11e09a8cf"
-            name="OperandOccurrenceSpecification10">
+            Id="ecc85663-0f76-44a2-a1c4-a95bad294f65"
+            name="OperandOccurrenceSpecification38">
             <covered>
               <lifelineMoniker
-                Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3202,22 +3174,12 @@ If so we will use this instead.</body>
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-            name="OperandOccurrenceSpecification40">
+            Id="ce969072-1cdd-48b1-a4a1-4cf11e09a8cf"
+            name="OperandOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="ecc85663-0f76-44a2-a1c4-a95bad294f65"
-            name="OperandOccurrenceSpecification38">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                Id="e13a9151-5594-4536-81a6-27724ce02b28"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3228,6 +3190,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
                 LastKnownName="Interview"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="cd544656-8206-433e-a955-8535dc9fd538"
+            name="OperandOccurrenceSpecification54">
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3311,9 +3283,9 @@ If so we will use this instead.</body>
           </lifeline>
           <lifeline
             Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-            name="EF : EmailBank"
+            name="EmailCreator"
             isActor="false"
-            lifelineDisplayName="EF : EmailBank">
+            lifelineDisplayName="EmailCreator">
             <represents>
               <propertyMoniker
                 Id="9328f8e3-eea9-43d5-a0d4-f86ec0fff566"
@@ -3340,9 +3312,9 @@ If so we will use this instead.</body>
           </lifeline>
           <lifeline
             Id="e13a9151-5594-4536-81a6-27724ce02b28"
-            name="QB : QuestionBank"
+            name="Question"
             isActor="false"
-            lifelineDisplayName="QB : QuestionBank">
+            lifelineDisplayName="Question">
             <represents>
               <propertyMoniker
                 Id="1d12d094-e54b-46fe-ba6c-f11753253860"
@@ -3368,26 +3340,31 @@ If so we will use this instead.</body>
             </topLevelOccurrences>
           </lifeline>
           <lifeline
-            Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-            name="E : email"
+            Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+            name="EmailBank"
             isActor="false"
-            lifelineDisplayName="E : email">
+            lifelineDisplayName="EmailBank">
+            <represents>
+              <propertyMoniker
+                Id="40af8372-aeba-464d-a4ce-b463e2078042"
+                LastKnownLocation="UML.uml" />
+            </represents>
             <topLevelOccurrences>
               <operandOccurrenceSpecificationMoniker
-                Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-                LastKnownName="OperandOccurrenceSpecification39"
+                Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+                LastKnownName="OperandOccurrenceSpecification53"
                 LastKnownLocation="UML.uml" />
               <executionOccurrenceSpecificationMoniker
-                Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-                LastKnownName="ExecutionOccurrenceSpecification93"
+                Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+                LastKnownName="ExecutionOccurrenceSpecification97"
                 LastKnownLocation="UML.uml" />
               <executionOccurrenceSpecificationMoniker
-                Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-                LastKnownName="ExecutionOccurrenceSpecification94"
+                Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+                LastKnownName="ExecutionOccurrenceSpecification98"
                 LastKnownLocation="UML.uml" />
               <operandOccurrenceSpecificationMoniker
-                Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-                LastKnownName="OperandOccurrenceSpecification40"
+                Id="cd544656-8206-433e-a955-8535dc9fd538"
+                LastKnownName="OperandOccurrenceSpecification54"
                 LastKnownLocation="UML.uml" />
             </topLevelOccurrences>
           </lifeline>
@@ -3395,7 +3372,7 @@ If so we will use this instead.</body>
         <messages>
           <message
             Id="c10cbfbc-a9b1-495f-8840-21bca7eb7e4f"
-            name="generateEmails()"
+            name="CreateModifyVacancy()"
             messageKind="Found"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -3414,7 +3391,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="45458f45-f940-4d8f-9a41-48ffcfebf8ca"
-            name="getdetails()"
+            name="Answers()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3452,7 +3429,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="1e53cef1-4883-4af5-af5e-5e91f1ced72b"
-            name="getresponses()"
+            name="getTotal()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3490,7 +3467,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="b4026218-205f-4898-a082-578e370a0b3f"
-            name="Result = Accept "
+            name="totalScore(max value) = Accept "
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3509,7 +3486,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="4f0a75e6-11e0-4232-adf2-1e8f76e22b36"
-            name="Result = Reject"
+            name="totalScore = Reject"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3528,7 +3505,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="410736d2-935f-415d-92ab-bf3d2d4036b9"
-            name="createEmail(interview details,Type, responselist&lt;&gt;,questionlist&lt;&gt;)"
+            name="GenerateEmail(interview details,Type, responselist&lt;&gt;,questionlist&lt;&gt;)"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -3547,7 +3524,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="16bb7f6b-06e2-42c1-910b-915477ff2f3f"
-            name="getfeedback()"
+            name="Responses()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3584,46 +3561,8 @@ If so we will use this instead.</body>
             </receiveEvent>
           </message>
           <message
-            Id="6524eafb-81ba-42f4-95a2-913752d84ec4"
-            name="&lt;&lt;create&gt;&gt;"
-            messageKind="Complete"
-            messageSort="CreateMessage"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-                LastKnownName="MessageOccurrenceSpecification123"
-                LastKnownLocation="UML.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="824d7635-48d3-4606-bec9-dff0322beeda"
-                LastKnownName="MessageOccurrenceSpecification124"
-                LastKnownLocation="UML.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="09f908a1-5a8a-4af9-b42f-2f59dd82ab02"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-                LastKnownName="MessageOccurrenceSpecification125"
-                LastKnownLocation="UML.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="21a34988-437b-4db7-9373-72e34602c512"
-                LastKnownName="MessageOccurrenceSpecification126"
-                LastKnownLocation="UML.uml" />
-            </receiveEvent>
-          </message>
-          <message
             Id="6dfc3613-8ea4-47fb-b392-51ae521c9474"
-            name="addtolist"
+            name="addEmailToList()"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3637,6 +3576,25 @@ If so we will use this instead.</body>
               <messageOccurrenceSpecificationMoniker
                 Id="9da77487-6afa-4638-bbc2-d949fd5f2ebc"
                 LastKnownName="MessageOccurrenceSpecification128"
+                LastKnownLocation="UML.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3371104f-8bc1-423c-a380-8be52150fe53"
+            name="SendEmail()"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="62791c17-e075-40e0-8bd6-32997d587307"
+                LastKnownName="MessageOccurrenceSpecification129"
+                LastKnownLocation="UML.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+                LastKnownName="MessageOccurrenceSpecification130"
                 LastKnownLocation="UML.uml" />
             </receiveEvent>
           </message>
@@ -3685,8 +3643,8 @@ If so we will use this instead.</body>
             isComposite="false">
             <type_NamedElement>
               <classMoniker
-                Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
-                LastKnownName="QuestionBank"
+                Id="8a3855d7-4a55-4dae-be87-03177d65fbd3"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
@@ -3708,6 +3666,22 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="9328f8e3-eea9-43d5-a0d4-f86ec0fff566"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="4e12f757-93ec-45fe-8421-711cd8e886d6"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="40af8372-aeba-464d-a4ce-b463e2078042"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4326,16 +4300,6 @@ If so we will use this instead.</body>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <executionEvent
-        Id="d21400dc-6b15-430c-ae46-bc35afe87480"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="3a329819-dfb9-484f-8438-48e4e8a0c95e"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
         Id="e8431a29-8be1-4c3c-a6eb-13fbf2f3915b"
         name="ExecutionEvent" />
     </packageHasNamedElement>
@@ -4659,6 +4623,16 @@ If so we will use this instead.</body>
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3b87eeab-fc84-4747-bdc2-6a163c35aae8"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="69d072f4-fd75-4301-b91f-c41735b3e151"
+        name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
