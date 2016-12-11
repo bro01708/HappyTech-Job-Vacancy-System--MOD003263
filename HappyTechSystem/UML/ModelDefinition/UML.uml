@@ -172,7 +172,7 @@ If so we will use this instead.</body>
             isAbstract="false">
             <classMoniker
               Id="47fce1a5-f8b6-4ccd-afe9-318f7af2b756"
-              LastKnownName="Qcreate"
+              LastKnownName="QuestionCreator"
               LastKnownLocation="UML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -225,7 +225,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="f0cfff50-3cf3-4a8f-b388-dd67d5963461"
-            name="criteria[]"
+            name="responses"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -399,7 +399,7 @@ If so we will use this instead.</body>
           </operation>
           <operation
             Id="224e4be0-2aaf-4416-b0dc-c1607062a0a2"
-            name="GetCriteria"
+            name="Responses"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -423,7 +423,7 @@ If so we will use this instead.</body>
           </operation>
           <operation
             Id="0989944e-2c88-4213-8ce0-993d06a3f940"
-            name="GetFeedback"
+            name="Feedback"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -518,7 +518,7 @@ If so we will use this instead.</body>
             isAbstract="false">
             <classMoniker
               Id="47fce1a5-f8b6-4ccd-afe9-318f7af2b756"
-              LastKnownName="Qcreate"
+              LastKnownName="QuestionCreator"
               LastKnownLocation="UML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -737,6 +737,40 @@ If so we will use this instead.</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="bc032106-1b4d-4d6c-b4d7-e1f24c6c242f"
+            name="updateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dda8fb12-9dc6-42bc-863a-c61e5bf5b26f"
+                  name="m_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f50e3734-5e33-4de3-b26e-259e6fe11d0e"
+            name="getHighestQuestionID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3aea4111-ebc2-4528-8842-5a99b64b856f"
+            name="RefreshDBConnection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -941,25 +975,6 @@ If so we will use this instead.</body>
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="fde1c0af-195e-4c4d-aaab-2e374e3a10f7"
-            name="vacancyCode"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="76dfc4cc-c761-46a0-8b50-0bbed29faeb8"
             name="questionsToBeUsed"
             visibility="Private"
@@ -980,7 +995,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="25e54850-da63-48d2-bf65-42412f5007f3"
-            name="interviews"
+            name="interviewList"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -998,9 +1013,8 @@ If so we will use this instead.</body>
             </type_NamedElement>
           </property>
           <property
-            Id="c48e4d8f-214b-4207-af53-2cd4a155ee6d"
-            name="requiredScore"
-            visibility="Private"
+            Id="cc11602c-d9f7-4719-a858-2c0fe149a992"
+            name="vacancyID"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1016,27 +1030,179 @@ If so we will use this instead.</body>
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="62e45728-4937-4767-85d0-6d756ea1de75"
+            name="minimumScore"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d6e4d636-6323-4cab-84f9-2cf88977332c"
+            name="positionsAvailable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e750169b-9e13-47c1-b371-71bdac967ca6"
+            name="role"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ee4469e4-042e-41d2-8542-12ba09550c3b"
+            name="vacancyName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="71d15c55-005d-4cff-b5d3-41b804b5128f"
-            name="rankings"
+            Id="52b54111-793a-4e8d-8678-a09037fa074f"
+            name="VacancyName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="63a89865-b1ed-4a0a-989f-15162693a3c9"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="61dbfce2-fa52-4e2e-9c10-d8d83d56c0d9"
+            name="PositionsAvailable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f391f731-c093-4bc3-8aed-e5c69de28ec5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="aa948fdd-d5d7-4c7b-9ce3-97f941648eeb"
+            name="MinimumScore"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e5a0b85-9ca5-4412-a072-b9a47250dd40"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="043751ed-5fa7-4e64-86c7-5ee7cf1d55ca"
+            name="GetID: int"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="cf28ac51-b342-4b1d-a6b3-92701e17a3df"
-            name="CreateInterview"
+            Id="0a3210c9-e532-4bef-b6aa-01d63b7f7d37"
+            name="getQuestionsToBeUsed&lt;List&gt; : int"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="587ad0bf-760e-4159-ad8d-a46e1c90b04d"
-            name="FormatEmails"
+            Id="585e810e-b312-49e3-81cc-46a1a0030c43"
+            name="Role: string"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="13c3b0bb-e16d-4f8f-b7ca-43871cc5e935"
+            name="ToString"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1072,7 +1238,7 @@ If so we will use this instead.</body>
         <ownedAttributesInternal>
           <property
             Id="ee43815c-be2d-46d0-bafa-0575541fa3da"
-            name="applicantEmailAddress"
+            name="applicantEmail"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1091,8 +1257,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="2b8c55e4-6776-4c68-9890-a50920841d5a"
-            name="applicantFirstName"
-            visibility="Private"
+            name="interviewerName"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1110,8 +1275,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="00a35783-6df7-4e3e-94b2-e0321d504291"
-            name="applicantLastName"
-            visibility="Private"
+            name="applicantName"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1148,7 +1312,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="7bfcfbcd-1dcf-4598-be62-ebda53895918"
-            name="cv"
+            name="cvPath"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1165,35 +1329,245 @@ If so we will use this instead.</body>
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="d29e6276-9e2d-4ed0-a3c0-fb4a91e657d6"
+            name="additionalNotes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b8e7f462-c31c-4a21-949a-764a84783888"
+            name="interviewID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ccadc480-ef79-47ad-8a91-3133ae74c915"
+            name="vacancyID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="67d0dbf1-8601-434f-bc43-a8a140e6d11b"
+            name="totalScore"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="28a92941-e22b-4d47-bdb2-da6964344eff"
+            name="answers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="61adcc0e-266d-479c-afaf-f0a7946001b7"
-            name="calculateScore"
+            Id="0d765600-d2b8-4e70-a6a1-f4cd0ae8169c"
+            name="getApplicantEmail"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="922807e9-bb6c-4e94-be9f-ae45b111bd1e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
-            Id="6335d59e-b521-4e7e-953e-a243ee3694a3"
-            name="attachCV"
+            Id="481c99b7-5379-46cd-a436-ba666103b540"
+            name="getCVPath"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9533cf28-09ed-43df-b54b-71a5ee70094e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
-            Id="3833ad48-9c32-41f7-a531-a65f37a0a06f"
-            name="storeRecords"
+            Id="d79bb55d-976f-431a-891b-96b28ce97c5c"
+            name="getAdditionalNotes"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e0dfa237-c8c9-4531-b08d-1faffe9be7c6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                      LastKnownName="string"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
-            Id="1e652a5b-9278-4a55-bd0c-f432db2b1f33"
-            name="selectVacancy"
+            Id="c48f96ad-d99f-466c-94c8-a14257439047"
+            name="getInterviewID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fe63479e-8ed4-4197-9fd3-42dd1182ba7f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="51e7f064-2885-4ff8-a1b1-338c9289d3b6"
+            name="answers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="83994c7b-b362-431b-b5f8-6185a2afb9f3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bc5d5ee0-0c49-4945-a8c7-29d34a64589e"
+            name="getTotal"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3a7b28c0-47ab-47c0-b7d4-1df582be5799"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a3f9b229-993f-4558-bd83-8a489d823153"
+            name="ToString"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1358,45 +1732,6 @@ If so we will use this instead.</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
-          <association
-            Id="3537dd18-47c4-42bd-b69c-b20579120090"
-            isDerived="false"
-            sourceEndRoleName="EmailBank"
-            targetEndRoleName="EmailSender"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="d4262d19-3376-46ee-9bb8-f9015b8d1a1b"
-              LastKnownName="EmailSender"
-              LastKnownLocation="UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="893d8842-731d-46a6-a02a-a3808a0483e3"
-                  name="EmailBank"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="960ac44a-6d3e-43e6-a620-fd68fb7ae3bc"
-                  name="EmailSender"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1420,8 +1755,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="422ce01f-ee06-4a47-b11f-5fedf4705fff"
-            name="hrManager"
-            visibility="Private"
+            name="templates"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1432,37 +1766,353 @@ If so we will use this instead.</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
-                LastKnownName="string"
+                Id="7740d2b5-d484-4256-870b-c382e16cf87a"
+                LastKnownName="list&lt;EmailTemplate&gt;"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5494d6fc-db1e-433c-9914-2bae9b993af9"
+            name="dbLoaded"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ff6349b7-b83b-4050-85f7-3966af42b133"
+                LastKnownName="bool"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8312124e-2bcd-434f-9b1c-8507002f3f7e"
+            name="ml"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6a362f00-6fb1-4843-b2d7-1ce5bf826253"
+                LastKnownName="metalayer"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="78635893-2264-4d4d-b8cd-91e12000661d"
-            name="createEmail"
+            Id="04caf167-237b-484a-93b8-94b8f392d30c"
+            name="EmailBank"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="b0ef81b2-dbe6-4f1c-988c-5bb5891e5b16"
-            name="sendEmail"
+            Id="635a0245-8af9-4cb5-b64c-b46479246ccc"
+            name="getHighestTemplateID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7fdb84cf-c90a-42f6-bc2d-78b317cb26d1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6d374924-6aef-469f-a08b-16d55b531314"
+            name="getHighestEmailID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="644a0ee5-a00f-49d3-b1bb-a751d2307a79"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                      LastKnownName="int"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a8eaf0a1-8a11-4d1a-961b-492addd7d61c"
+            name="getDBLoaded"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea5df7b9-42f8-4f41-bccc-e69a83237c09"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ff6349b7-b83b-4050-85f7-3966af42b133"
+                      LastKnownName="bool"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2ef6697b-3f9b-4458-acc9-748bc1bbdca8"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="afd0d1d2-f468-4413-b4e0-327b8f1180d0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d"
+                      LastKnownName="EmailBank"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4f75c4b9-6244-4097-8056-f7c90795eb8a"
+            name="getHighestTemplate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="56ef4228-645a-4755-8e9e-47139bddd8f1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d2b58b0c-09ba-4698-b8ff-a9a6acd66d84"
+                      LastKnownName="List&lt;EmailTemplate&gt;"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6ed2a426-aa5f-4d03-bf64-4ed3c97f6d4f"
+            name="getEmailList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="12b948e9-03c0-444b-b318-9bd11da2db89"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="282d4a19-7333-4b6c-aadc-0dcaaa484ca9"
+                      LastKnownName="List&lt;Email&gt;"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ed6bd3c1-ad4b-4b68-9562-e1645c299f5c"
+            name="addTemplateToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="335602d1-1fc1-499f-935f-2c21d86a525d"
+                  name="m_et"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0a4c8375-9d6b-4ac8-a2cf-e7d422307a90"
+            name="addEmailToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1be9ddfa-35cc-4469-b62a-b0bea6d5ab0f"
+                  name="e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="543abb24-b381-4f4f-9e56-37e24e0342d4"
+            name="RemoveTemplate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6d8c1658-8228-46ff-8744-0d55116f5a2c"
+                  name="m_templateID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="afc25f07-4fc7-447a-97fe-c61e51640323"
+            name="RemoveEmail"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9390398d-32d4-4d82-bfd2-1715d9845c83"
+                  name="m_emailID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="258c2e69-9045-4fb7-aebc-a4066ebe1d14"
+            name="UpdateTemplateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="80bd1f09-7297-4458-af83-075b862311bd"
+                  name="m_et"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0620cee0-ca7d-459b-b0cf-6e41a1e26a3b"
+            name="UpdateEmailList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d0fbbb71-807f-449e-af73-cc2396d31ae4"
+                  name="m_e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4d60558e-3b7d-49f0-b491-65056d8968fa"
+            name="SendEmail"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="63a11826-a1d9-4c04-9d5f-c8ab1927432a"
+                  name="m_em"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5ae2e3cf-7652-4604-9097-18baebbde764"
+            name="RefreshDBConnection"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="cf16c988-7c18-442b-b53a-2f6c5e8442f3"
-            name="previewEmail"
+            Id="590394ce-b42b-4eca-a1bc-92717c3a6365"
+            name="PDFGen"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="375702f0-c022-4364-bea9-ce7614c4d862"
+                  name="m_em"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1491,7 +2141,7 @@ If so we will use this instead.</body>
             isAbstract="false">
             <classMoniker
               Id="127c1906-ffbf-419b-903d-08f05361353b"
-              LastKnownName="EmailTemplateCreator"
+              LastKnownName="TemplateCreator"
               LastKnownLocation="UML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1544,8 +2194,7 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="bd53c7e0-d03e-4db8-8229-ab08ea3b6deb"
-            name="header"
-            visibility="Private"
+            name="subject"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1581,28 +2230,8 @@ If so we will use this instead.</body>
             </type_NamedElement>
           </property>
           <property
-            Id="aca59808-7ce3-4df0-bff6-9f68b38b6dfd"
-            name="greeting"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
-                LastKnownName="string"
-                LastKnownLocation="UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="d50d0a23-3dee-45cc-8ee8-fb4fcd479a8d"
-            name="signOff"
-            visibility="Private"
+            name="name"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1645,32 +2274,8 @@ If so we will use this instead.</body>
             </ownedParameters>
           </operation>
           <operation
-            Id="82fe6764-b96b-4b88-b9ad-7838a7404df2"
-            name="GetGreeting"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="0379cea0-3fb8-413d-abfb-66c865a4a241"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
-                      LastKnownName="Void"
-                      LastKnownLocation="UML.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="dc4b753c-b67a-4b57-82c5-8f7d5b551bc2"
-            name="GetHeader"
+            name="GetSubject"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1740,6 +2345,38 @@ If so we will use this instead.</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="abda21ba-3376-4eda-89e2-c8731467df65"
+            name="GetID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9677ee5f-085e-4563-9e07-ff406de6141b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="62716bd1-997e-4d32-a55f-c6d14f0ecf6a"
+                      LastKnownName="Void"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="64edfe0f-f283-4934-a96f-a78df25c4e47"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1800,7 +2437,6 @@ If so we will use this instead.</body>
           <property
             Id="b26c63d7-254b-48ab-800c-43ecae08a8c7"
             name="content"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1808,11 +2444,17 @@ If so we will use this instead.</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="cf2c4314-9606-4891-98bb-be3fa82aba43"
-            name="adressee"
-            visibility="Private"
+            name="applicantEmail"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1820,11 +2462,17 @@ If so we will use this instead.</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="6500c892-52b9-4683-92e7-8ffe50f60f25"
-            name="subject"
-            visibility="Private"
+            name="sentDate"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1832,11 +2480,17 @@ If so we will use this instead.</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="b8a8dec5-bf52-4245-86fc-97ee15bde836"
-            name="sentDate"
-            visibility="Private"
+            name="subject"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1844,8 +2498,127 @@ If so we will use this instead.</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fddb0bcd-447a-422d-b5ac-64847a73c52e"
+                LastKnownName="string"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b8d9d2a6-d7ca-435a-891f-b9127e4c2232"
+            name="emailID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3c9e792d-cd85-449c-9f87-78c57927735f"
+            name="interviewID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c2abd0f0-d792-4e03-b4fc-1ee732e6438d"
+            name="templateID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbdf69d4-7d5d-476c-8f8e-8f94a3a114eb"
+                LastKnownName="int"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f1b84e23-52f7-4101-938b-dfdab270c23c"
+            name="getAddress"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8d7819a9-0a34-483c-afa9-8af50d364590"
+            name="getContent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0c7be44b-9d8e-432b-96f8-84ade1238929"
+            name="getSubject"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3fca0c12-22a8-4c18-a07d-0932d9f037bf"
+            name="getID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6262fbea-9e89-4052-94d9-0d44728ed68f"
+            name="getTemplateID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d4a31163-4c36-4653-8cb8-4ac0f7118811"
+            name="getSentDate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8a073fd3-d187-42d6-9e87-ada5f7ae3ee1"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2133,15 +2906,15 @@ If so we will use this instead.</body>
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
               <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <operands>
@@ -2159,15 +2932,15 @@ If so we will use this instead.</body>
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
                     Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                    LastKnownName="EF : EmailBank"
+                    LastKnownName="EmailCreator"
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
                     Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                    LastKnownName="QB : QuestionBank"
+                    LastKnownName="Question"
                     LastKnownLocation="UML.uml" />
                   <lifelineMoniker
-                    Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                    LastKnownName="E : email"
+                    Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                    LastKnownName="EmailBank"
                     LastKnownLocation="UML.uml" />
                 </coveredLifelines>
                 <fragments>
@@ -2284,12 +3057,12 @@ If so we will use this instead.</body>
                     LastKnownName="OperandOccurrenceSpecification38"
                     LastKnownLocation="UML.uml" />
                   <operandOccurrenceSpecificationMoniker
-                    Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-                    LastKnownName="OperandOccurrenceSpecification39"
+                    Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+                    LastKnownName="OperandOccurrenceSpecification53"
                     LastKnownLocation="UML.uml" />
                   <operandOccurrenceSpecificationMoniker
-                    Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-                    LastKnownName="OperandOccurrenceSpecification40"
+                    Id="cd544656-8206-433e-a955-8535dc9fd538"
+                    LastKnownName="OperandOccurrenceSpecification54"
                     LastKnownLocation="UML.uml" />
                 </operandOccurrenceSpecifications>
               </interactionOperand>
@@ -2301,7 +3074,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2311,27 +3084,17 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="49277c74-6235-40a7-9eee-cf23a0d64c9a"
-            name="OperandOccurrenceSpecification5">
+            Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+            name="OperandOccurrenceSpecification53">
             <covered>
               <lifelineMoniker
-                Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
-                LastKnownName="V : Vacancy"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-            name="OperandOccurrenceSpecification39">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2342,6 +3105,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
                 LastKnownName="Interview"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="49277c74-6235-40a7-9eee-cf23a0d64c9a"
+            name="OperandOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
+                LastKnownName="V : Vacancy"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2504,16 +3277,6 @@ If so we will use this instead.</body>
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="47383614-d0c1-46cd-a78d-118b32a067fe"
-            name="MessageOccurrenceSpecification90">
-            <covered>
-              <lifelineMoniker
-                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
-                LastKnownName="Interview"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="6096dbb2-35f7-4051-a19a-c8007e198097"
             name="MessageOccurrenceSpecification89">
             <covered>
@@ -2524,8 +3287,8 @@ If so we will use this instead.</body>
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="9369ea1e-7eed-4575-a8ee-d389df3dc7f6"
-            name="MessageOccurrenceSpecification91">
+            Id="47383614-d0c1-46cd-a78d-118b32a067fe"
+            name="MessageOccurrenceSpecification90">
             <covered>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
@@ -2540,6 +3303,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="7eba6d5e-e896-4224-8881-7218b4fb2283"
                 LastKnownName="V : Vacancy"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9369ea1e-7eed-4575-a8ee-d389df3dc7f6"
+            name="MessageOccurrenceSpecification91">
+            <covered>
+              <lifelineMoniker
+                Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
+                LastKnownName="Interview"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2775,7 +3548,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -2804,14 +3577,6 @@ If so we will use this instead.</body>
                 LastKnownName="MessageOccurrenceSpecification122"
                 LastKnownLocation="UML.uml" />
               <messageOccurrenceSpecificationMoniker
-                Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-                LastKnownName="MessageOccurrenceSpecification123"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="21a34988-437b-4db7-9373-72e34602c512"
-                LastKnownName="MessageOccurrenceSpecification126"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
                 Id="403af92d-d14a-4be7-aeef-d2a9fbb94824"
                 LastKnownName="MessageOccurrenceSpecification127"
                 LastKnownLocation="UML.uml" />
@@ -2822,6 +3587,10 @@ If so we will use this instead.</body>
               <executionOccurrenceSpecificationMoniker
                 Id="5d32f37b-2f9a-4c92-b024-5c49c54cc815"
                 LastKnownName="ExecutionOccurrenceSpecification96"
+                LastKnownLocation="UML.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="62791c17-e075-40e0-8bd6-32997d587307"
+                LastKnownName="MessageOccurrenceSpecification129"
                 LastKnownLocation="UML.uml" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
@@ -2839,7 +3608,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2859,7 +3628,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2869,7 +3638,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -2909,7 +3678,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2919,7 +3688,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2929,7 +3698,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2939,7 +3708,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2949,7 +3718,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2967,115 +3736,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="66365ae6-eb83-47ad-8f75-d010760b5fb7"
-            name="BehaviorExecutionSpecification47">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-                LastKnownName="ExecutionOccurrenceSpecification94"
-                LastKnownLocation="UML.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-                LastKnownName="ExecutionOccurrenceSpecification93"
-                LastKnownLocation="UML.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="824d7635-48d3-4606-bec9-dff0322beeda"
-                LastKnownName="MessageOccurrenceSpecification124"
-                LastKnownLocation="UML.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-                LastKnownName="MessageOccurrenceSpecification125"
-                LastKnownLocation="UML.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-            name="ExecutionOccurrenceSpecification93">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="d21400dc-6b15-430c-ae46-bc35afe87480"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="UML.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="824d7635-48d3-4606-bec9-dff0322beeda"
-            name="MessageOccurrenceSpecification124">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-            name="MessageOccurrenceSpecification123">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-            name="MessageOccurrenceSpecification125">
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="21a34988-437b-4db7-9373-72e34602c512"
-            name="MessageOccurrenceSpecification126">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-            name="ExecutionOccurrenceSpecification94">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="3a329819-dfb9-484f-8438-48e4e8a0c95e"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="UML.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3085,7 +3746,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3095,7 +3756,7 @@ If so we will use this instead.</body>
             <coveredLifelines>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </coveredLifelines>
             <finish>
@@ -3131,7 +3792,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3141,7 +3802,7 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3159,10 +3820,76 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1bf7d0f1-7e1c-4317-ad36-3bde4942b6e6"
+            name="BehaviorExecutionSpecification49">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+                LastKnownName="ExecutionOccurrenceSpecification98"
+                LastKnownLocation="UML.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+                LastKnownName="ExecutionOccurrenceSpecification97"
+                LastKnownLocation="UML.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+                LastKnownName="MessageOccurrenceSpecification130"
+                LastKnownLocation="UML.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+            name="ExecutionOccurrenceSpecification97">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3b87eeab-fc84-4747-bdc2-6a163c35aae8"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="UML.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="62791c17-e075-40e0-8bd6-32997d587307"
+            name="MessageOccurrenceSpecification129">
+            <covered>
+              <lifelineMoniker
+                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+            name="MessageOccurrenceSpecification130">
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="17748f9e-56b6-4833-a80b-dcd208d3486e"
             name="ExecutionOccurrenceSpecification88">
@@ -3177,17 +3904,35 @@ If so we will use this instead.</body>
             <covered>
               <lifelineMoniker
                 Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+            name="ExecutionOccurrenceSpecification98">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="69d072f4-fd75-4301-b91f-c41735b3e151"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="UML.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="ce969072-1cdd-48b1-a4a1-4cf11e09a8cf"
-            name="OperandOccurrenceSpecification10">
+            Id="ecc85663-0f76-44a2-a1c4-a95bad294f65"
+            name="OperandOccurrenceSpecification38">
             <covered>
               <lifelineMoniker
-                Id="e13a9151-5594-4536-81a6-27724ce02b28"
-                LastKnownName="QB : QuestionBank"
+                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
+                LastKnownName="EmailCreator"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3202,22 +3947,12 @@ If so we will use this instead.</body>
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-            name="OperandOccurrenceSpecification40">
+            Id="ce969072-1cdd-48b1-a4a1-4cf11e09a8cf"
+            name="OperandOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
-                Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-                LastKnownName="E : email"
-                LastKnownLocation="UML.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="ecc85663-0f76-44a2-a1c4-a95bad294f65"
-            name="OperandOccurrenceSpecification38">
-            <covered>
-              <lifelineMoniker
-                Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-                LastKnownName="EF : EmailBank"
+                Id="e13a9151-5594-4536-81a6-27724ce02b28"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3228,6 +3963,16 @@ If so we will use this instead.</body>
               <lifelineMoniker
                 Id="c7772c84-94e9-4a41-b126-6e704c7319a0"
                 LastKnownName="Interview"
+                LastKnownLocation="UML.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="cd544656-8206-433e-a955-8535dc9fd538"
+            name="OperandOccurrenceSpecification54">
+            <covered>
+              <lifelineMoniker
+                Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+                LastKnownName="EmailBank"
                 LastKnownLocation="UML.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3311,9 +4056,9 @@ If so we will use this instead.</body>
           </lifeline>
           <lifeline
             Id="d94b13ab-928f-4ac1-bcdd-7b949c7d8755"
-            name="EF : EmailBank"
+            name="EmailCreator"
             isActor="false"
-            lifelineDisplayName="EF : EmailBank">
+            lifelineDisplayName="EmailCreator">
             <represents>
               <propertyMoniker
                 Id="9328f8e3-eea9-43d5-a0d4-f86ec0fff566"
@@ -3340,9 +4085,9 @@ If so we will use this instead.</body>
           </lifeline>
           <lifeline
             Id="e13a9151-5594-4536-81a6-27724ce02b28"
-            name="QB : QuestionBank"
+            name="Question"
             isActor="false"
-            lifelineDisplayName="QB : QuestionBank">
+            lifelineDisplayName="Question">
             <represents>
               <propertyMoniker
                 Id="1d12d094-e54b-46fe-ba6c-f11753253860"
@@ -3368,26 +4113,31 @@ If so we will use this instead.</body>
             </topLevelOccurrences>
           </lifeline>
           <lifeline
-            Id="a8902076-a97e-491b-b81b-0c3d6e1d60b6"
-            name="E : email"
+            Id="f615cbd0-9dd8-4795-8f35-64e188b1104e"
+            name="EmailBank"
             isActor="false"
-            lifelineDisplayName="E : email">
+            lifelineDisplayName="EmailBank">
+            <represents>
+              <propertyMoniker
+                Id="40af8372-aeba-464d-a4ce-b463e2078042"
+                LastKnownLocation="UML.uml" />
+            </represents>
             <topLevelOccurrences>
               <operandOccurrenceSpecificationMoniker
-                Id="c6a2a9c7-e7d7-4799-b691-3024ad458a83"
-                LastKnownName="OperandOccurrenceSpecification39"
+                Id="40529dd4-a9b1-4452-9e24-383644a4d9fc"
+                LastKnownName="OperandOccurrenceSpecification53"
                 LastKnownLocation="UML.uml" />
               <executionOccurrenceSpecificationMoniker
-                Id="12d3a123-ed23-4509-91d9-504fdd9c6b40"
-                LastKnownName="ExecutionOccurrenceSpecification93"
+                Id="7ad7462b-4320-44d8-868d-a638bd6f8cda"
+                LastKnownName="ExecutionOccurrenceSpecification97"
                 LastKnownLocation="UML.uml" />
               <executionOccurrenceSpecificationMoniker
-                Id="1fcb3983-c8ef-4d62-a3bb-1dc9ea96cc3e"
-                LastKnownName="ExecutionOccurrenceSpecification94"
+                Id="8e1ae230-8af3-4921-a7a1-b45c2abd0d7e"
+                LastKnownName="ExecutionOccurrenceSpecification98"
                 LastKnownLocation="UML.uml" />
               <operandOccurrenceSpecificationMoniker
-                Id="af9aa2d7-eb20-4692-ac68-d865f714bab9"
-                LastKnownName="OperandOccurrenceSpecification40"
+                Id="cd544656-8206-433e-a955-8535dc9fd538"
+                LastKnownName="OperandOccurrenceSpecification54"
                 LastKnownLocation="UML.uml" />
             </topLevelOccurrences>
           </lifeline>
@@ -3395,7 +4145,7 @@ If so we will use this instead.</body>
         <messages>
           <message
             Id="c10cbfbc-a9b1-495f-8840-21bca7eb7e4f"
-            name="generateEmails()"
+            name="CreateModifyVacancy()"
             messageKind="Found"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -3414,7 +4164,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="45458f45-f940-4d8f-9a41-48ffcfebf8ca"
-            name="getdetails()"
+            name="Answers()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3452,7 +4202,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="1e53cef1-4883-4af5-af5e-5e91f1ced72b"
-            name="getresponses()"
+            name="getTotal()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3490,7 +4240,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="b4026218-205f-4898-a082-578e370a0b3f"
-            name="Result = Accept "
+            name="totalScore(max value) = Accept "
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3509,7 +4259,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="4f0a75e6-11e0-4232-adf2-1e8f76e22b36"
-            name="Result = Reject"
+            name="totalScore = Reject"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3528,7 +4278,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="410736d2-935f-415d-92ab-bf3d2d4036b9"
-            name="createEmail(interview details,Type, responselist&lt;&gt;,questionlist&lt;&gt;)"
+            name="GenerateEmail(interview details,Type, responselist&lt;&gt;,questionlist&lt;&gt;)"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -3547,7 +4297,7 @@ If so we will use this instead.</body>
           </message>
           <message
             Id="16bb7f6b-06e2-42c1-910b-915477ff2f3f"
-            name="getfeedback()"
+            name="Responses()"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -3584,46 +4334,8 @@ If so we will use this instead.</body>
             </receiveEvent>
           </message>
           <message
-            Id="6524eafb-81ba-42f4-95a2-913752d84ec4"
-            name="&lt;&lt;create&gt;&gt;"
-            messageKind="Complete"
-            messageSort="CreateMessage"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="eee9aa1c-d600-4aa1-b433-daec3e2b641e"
-                LastKnownName="MessageOccurrenceSpecification123"
-                LastKnownLocation="UML.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="824d7635-48d3-4606-bec9-dff0322beeda"
-                LastKnownName="MessageOccurrenceSpecification124"
-                LastKnownLocation="UML.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="09f908a1-5a8a-4af9-b42f-2f59dd82ab02"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="04fc5219-fb9f-4905-a6b8-4980a4517cf5"
-                LastKnownName="MessageOccurrenceSpecification125"
-                LastKnownLocation="UML.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="21a34988-437b-4db7-9373-72e34602c512"
-                LastKnownName="MessageOccurrenceSpecification126"
-                LastKnownLocation="UML.uml" />
-            </receiveEvent>
-          </message>
-          <message
             Id="6dfc3613-8ea4-47fb-b392-51ae521c9474"
-            name="addtolist"
+            name="addEmailToList()"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="true">
@@ -3637,6 +4349,25 @@ If so we will use this instead.</body>
               <messageOccurrenceSpecificationMoniker
                 Id="9da77487-6afa-4638-bbc2-d949fd5f2ebc"
                 LastKnownName="MessageOccurrenceSpecification128"
+                LastKnownLocation="UML.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3371104f-8bc1-423c-a380-8be52150fe53"
+            name="SendEmail()"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="62791c17-e075-40e0-8bd6-32997d587307"
+                LastKnownName="MessageOccurrenceSpecification129"
+                LastKnownLocation="UML.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="24a68395-7487-4043-ab0b-f5f528407f8a"
+                LastKnownName="MessageOccurrenceSpecification130"
                 LastKnownLocation="UML.uml" />
             </receiveEvent>
           </message>
@@ -3685,8 +4416,8 @@ If so we will use this instead.</body>
             isComposite="false">
             <type_NamedElement>
               <classMoniker
-                Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
-                LastKnownName="QuestionBank"
+                Id="8a3855d7-4a55-4dae-be87-03177d65fbd3"
+                LastKnownName="Question"
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
@@ -3708,6 +4439,22 @@ If so we will use this instead.</body>
           </property>
           <property
             Id="9328f8e3-eea9-43d5-a0d4-f86ec0fff566"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="4e12f757-93ec-45fe-8421-711cd8e886d6"
+                LastKnownName="EmailCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="40af8372-aeba-464d-a4ce-b463e2078042"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4326,16 +5073,6 @@ If so we will use this instead.</body>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <executionEvent
-        Id="d21400dc-6b15-430c-ae46-bc35afe87480"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="3a329819-dfb9-484f-8438-48e4e8a0c95e"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
         Id="e8431a29-8be1-4c3c-a6eb-13fbf2f3915b"
         name="ExecutionEvent" />
     </packageHasNamedElement>
@@ -4355,19 +5092,108 @@ If so we will use this instead.</body>
     <packageHasNamedElement>
       <class
         Id="47fce1a5-f8b6-4ccd-afe9-318f7af2b756"
-        name="Qcreate"
+        name="QuestionCreator"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="6148910d-a61d-4c23-8186-4d94c7569b14"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="711af9c2-463f-40c8-b95b-b623f8c506b7"
+                LastKnownName="QuestionCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="86180693-5889-4b8f-9603-7b702718a974"
-            name="CreateQuestion"
+            Id="67a0eebe-ffac-4baf-8771-090e04f1d519"
+            name="GetInst"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f22e33c1-ef79-42af-8739-676732d2b17f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="711af9c2-463f-40c8-b95b-b623f8c506b7"
+                      LastKnownName="QuestionCreator"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="93248332-37fb-4f9b-b5c5-b7e946557ba4"
+            name="CreateModifyQuestion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="80a8f738-799a-4511-8ef7-5c283b74e884"
+                  name="m_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="762ef82a-8b4f-4ccc-98e9-7b3580c10a5f"
+                  name="m_tag"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9186408c-1767-41ea-b81a-89b39fba5ddf"
+                  name="m_text"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07dc205d-af24-4f36-bd33-9bcb79b372b4"
+                  name="m_responses"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb576b23-1a89-4033-bfae-5995a2a7db16"
+                  name="m_feedback"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="24974303-23af-44ff-b61e-f4c3061894f5"
+                  name="flag"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -4419,12 +5245,146 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="9d1d2bb4-c00a-44c0-9fd2-c64226017a76"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="5bbf31e0-6a54-4092-9495-7e5a5ad59e5e"
+                LastKnownName="InterviewCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="800903e9-219c-4936-be17-c293113a1b53"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5cceb537-a9fa-480c-bcdf-1eabcb3c6d25"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="5bbf31e0-6a54-4092-9495-7e5a5ad59e5e"
+                      LastKnownName="InterviewCreator"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6155562e-b3e0-420b-b334-260cbf5cecf6"
+            name="CreateInterview"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3fb337fc-c064-4d16-8413-f845cd49f6ba"
+                  name="m_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c0f2ce9d-485a-46f7-a3ab-5ae16a947503"
+                  name="m_vacancyID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8fff71d2-b495-4c99-b0c6-06cd21e88367"
+                  name="m_interviewername"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="825f7fad-eb7b-40e8-9b6f-92714e512a1f"
+                  name="m_applicantTitle"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b2d35b40-c97b-42ff-bc24-e19f7c213ac9"
+                  name="m_applicantName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf410673-5966-43ad-8de9-bbaaf71a5c3b"
+                  name="m_applicantEmail"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4220fde6-933a-43e8-97c0-021afcc232f5"
+                  name="m_applicantEmail"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6821dba6-4fa7-4e7d-83ad-5fb0bf51bfb8"
+                  name="m_cvPath"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d3fc902c-0bd6-4853-99ee-d9c98f3c540a"
+                  name="m_notes"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="676f222c-1d53-4eb9-af79-8c192135da3a"
+                  name="m_questionAnswers"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b085743a-77a7-460f-bc4e-f3b27fb6717b"
+                  name="m_total("
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="127c1906-ffbf-419b-903d-08f05361353b"
-        name="EmailTemplateCreator"
+        name="TemplateCreator"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -4469,6 +5429,60 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="82130730-4594-48b7-95be-e7993fecf430"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="127c1906-ffbf-419b-903d-08f05361353b"
+                LastKnownName="TemplateCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="66c050f7-4fda-4416-bc20-e34aed4f8645"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a64dbfb3-3e61-413d-897a-45d4d16813bc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="127c1906-ffbf-419b-903d-08f05361353b"
+                      LastKnownName="TemplateCreator"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="10847f1a-9996-412c-a62e-4e5cc8d6a4fd"
+            name="CreateModifyTemplate(m_id, m_type, m_name, m_subject, m_body, flag"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4477,7 +5491,168 @@ If so we will use this instead.</body>
         name="EmailCreator"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="3d4de382-0111-4614-8c4d-3368850ee266"
+            name="vacancyBank"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="a8951c84-fa4e-492e-bc89-15396017f5d4"
+                LastKnownName="VacancyBank"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ffe82d3c-e313-4ac0-b1c6-f31887f08701"
+            name="EB"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="6ba86616-d1dd-484a-9100-6ca0be2ddf2d"
+                LastKnownName="EmailBank"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8656bd4d-e45d-40a0-b314-7083d0230b07"
+            name="questionBank"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1cb1be04-4364-4cb5-9a85-dd6472095126"
+                LastKnownName="QuestionBank"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4273f291-0d9a-44bd-b8b7-1f0ea6bc03f9"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="51d6c610-bfe9-4b73-b572-d383679dcbbb"
+            name="ModifyEmail"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="946f5fbe-1b7b-4e29-9a63-9eaaabd39080"
+                  name="m_emailID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e54d5c79-8acd-45d8-9816-a0e81cd86256"
+                  name="m_address"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="139d0c8b-3ba0-4ed6-992c-4af13a185529"
+                  name="m_subject"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e773436-e0a1-4ff7-a824-71c78b4beeca"
+                  name="m_content"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="606a14d8-d6c3-4091-910e-e1da57bd51bf"
+            name="GenerateEmail"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a5f90a54-c5bc-490b-8868-cf33d807a5ca"
+                  name="m_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f445dcfd-b34f-44ae-91c4-0166316e9be6"
+                  name="m_vacancy)"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4cd7bb42-1c8a-46d8-b829-e6551fbcc8f8"
+                  name="m_template"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="19032cb5-dbdc-4e98-b28a-a0ca6bb14da2"
+                  name="m_interview"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a52fce18-d1cf-4e52-97ec-7d05e20aee66"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8879908c-334a-4176-9e92-a1dd7122a640"
+            name="AdjustEmailSentDate(m_emailID, m_dateSent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -4540,6 +5715,260 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="65d4b335-8462-468a-b189-8d0fa3cc41c6"
+            name="vacancyList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="5621706e-722d-4f13-b904-a887f953785e"
+                LastKnownName="List&lt;Vacancy&gt;"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e7fd7fc3-6455-45ec-8053-f9fb9177c3e1"
+            name="interviewList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ddb51179-4bad-4ca0-8b8b-0509440c3e4a"
+                LastKnownName="List&lt;Interview&gt;"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fb04dc37-49f9-4bda-8d4a-6f7e908d9ece"
+            name="dbloaded"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ff6349b7-b83b-4050-85f7-3966af42b133"
+                LastKnownName="bool"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c296fd1c-050f-4fff-a300-663f080d07b9"
+            name="ml"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6611f00f-2834-4f5a-9116-8e737e5e141a"
+                LastKnownName="Metalayer"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2ba44876-9ea5-426f-8456-72fb3cf11171"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e10d84b9-ab19-40db-bb7e-8f833e45d8f4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a8951c84-fa4e-492e-bc89-15396017f5d4"
+                      LastKnownName="VacancyBank"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d4953632-bd34-484c-8eef-a82f8791368d"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ceb506c6-1cea-4c9f-a245-f380bd328fcd"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a8951c84-fa4e-492e-bc89-15396017f5d4"
+                      LastKnownName="VacancyBank"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9515fdb9-2d08-49bd-a9f2-6cc7e199a136"
+            name="getVacancyList&lt;vacancy&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d6b7af96-a237-4f9d-927b-ff82eaacac85"
+            name="getInterviewList&lt;Interview&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7d7f01af-3545-4d00-b0f4-766537e09795"
+            name="AddVacancyToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e79835c1-f935-42f5-8987-bcea84e7801a"
+                  name="m_v"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="56a1ece8-bf33-4712-a4b3-c98d15762032"
+            name="AddInterviewToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0a1918fa-60b1-4c25-854c-67d1f5c6a7e1"
+                  name="m_i"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4ceadb00-3361-4ba7-8940-3696ef5bae5f"
+            name="UpdateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7b5dbad-ef6c-49f6-b4ac-371a8a9e7151"
+                  name="m_v"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6f8ec58c-a2ca-4d88-bd34-f09c129fc6be"
+            name="RemoveVacancyFromList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ba5f36a2-d845-40c2-8be6-b84baf3d48f6"
+                  name="m_vacancyID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fb3b5a54-e345-45f6-8837-6793c0e4b4ca"
+            name="RemoveInerviewFromList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="501826af-ef86-4ee5-a90e-dd90f5657685"
+                  name="m_interviewID"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="06ab6146-0f74-42cd-8b61-10b307d5353c"
+            name="RefreshDBConnection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="914f6274-c0f1-4b79-af2d-3f5c7f8de247"
+            name="getHighestVacancyID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="39f14cb6-b412-4d35-a666-1f145b3d8af5"
+            name="getHighestInterviewID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4590,15 +6019,61 @@ If so we will use this instead.</body>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="981386ef-8b8e-40ca-bf6a-e3bacc668d8e"
+            name="uniqueInst"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="60a5c573-d4ae-4d35-959c-52f2f1b14dbe"
+                LastKnownName="VacancyCreator"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b5dc0a02-2256-4e85-951f-8bd36e544d9b"
+            name="CreateModifyVacancy"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="95293c3b-a06d-4fe7-840f-68b4a4dcd15b"
+            name="getInst"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d56923fe-c9bd-4e6f-b448-e2e6fde5d5f2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="60a5c573-d4ae-4d35-959c-52f2f1b14dbe"
+                      LastKnownName="VacancyCreator"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="d4262d19-3376-46ee-9bb8-f9015b8d1a1b"
-        name="EmailSender"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -4659,6 +6134,51 @@ If so we will use this instead.</body>
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3b87eeab-fc84-4747-bdc2-6a163c35aae8"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="69d072f4-fd75-4301-b91f-c41735b3e151"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5621706e-722d-4f13-b904-a887f953785e"
+        name="List&lt;Vacancy&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ff6349b7-b83b-4050-85f7-3966af42b133"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6611f00f-2834-4f5a-9116-8e737e5e141a"
+        name="Metalayer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7740d2b5-d484-4256-870b-c382e16cf87a"
+        name="list&lt;EmailTemplate&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6a362f00-6fb1-4843-b2d7-1ce5bf826253"
+        name="metalayer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d2b58b0c-09ba-4698-b8ff-a9a6acd66d84"
+        name="List&lt;EmailTemplate&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="282d4a19-7333-4b6c-aadc-0dcaaa484ca9"
+        name="List&lt;Email&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
