@@ -13,7 +13,7 @@ namespace HappyTechSystem.Core
     /// Created by Dan.
     /// Class to form an email based on fields passed to it.
     /// </summary>
-    class EmailCreator
+    public class EmailCreator
     {
         private VacancyBank vacancyBank = VacancyBank.getInst();
         private QuestionBank questionbank = QuestionBank.getInst();

@@ -1,6 +1,7 @@
 ﻿using HappyTechSystem.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.IO;
 
 namespace UnitTests
 {
@@ -62,18 +63,44 @@ namespace UnitTests
             
             EB.RemoveEmail(E.getID);
         }
-
+        /// <summary>
+        /// Created By peter to test generation of pdfs , sets  uo temp emailbank and email , 
+        /// runs the generation and tests to see if the file exists.
+        /// </summary>
         [TestMethod]
-
+      
         public void Test_PDFGen()
         {
-            
+            EmailBank eb = new EmailBank();
+            Email m_email = new Email();
+            m_email.getID = 9999999;
+            m_email.getAddress = "bro01708@gmail.com";
+            m_email.getSubject = "testsubject";
+            m_email.getContent = "testcontent";
+            m_email.getInterviewID = 999999;
+            eb.PDFGen(m_email);
+            bool fileexists = false;
+            if(File.Exists(Environment.CurrentDirectory + "\\StoredEmails\\" + m_email.getInterviewID + " - " + m_email.getAddress + " - Email_Copy.pdf"))
+            {
+                fileexists = true;
+            }
+            Assert.AreEqual(true, fileexists);
         }
 
         [TestMethod]
 
         public void Test_SendEmail()
         {
+            EmailBank eb = new EmailBank();
+            Email m_email = new Email();
+            m_email.getID = 9999999;
+            m_email.getAddress = "bro01708@gmail.com";
+            m_email.getSubject = "testsubject";
+            m_email.getContent = "testcontent";
+            m_email.getInterviewID = 999999;
+            bool noerrors;
+            try {eb.SendEmail(m_email); noerrors = true; } catch { noerrors = false; }
+            Assert.AreEqual(true, noerrors);
             
         }
 

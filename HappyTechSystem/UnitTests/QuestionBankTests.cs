@@ -13,7 +13,7 @@ namespace UnitTests
         /// Test that adding a question to the question bank works (Automatically adjusts to QB size)
         /// </summary>
         [TestMethod]
-        public void Test_AddQuestionToList()
+        public void Test_AddAndRemoveQuestionsFromList()
         {
             QuestionBank QB = QuestionBank.getInst();
             Question Q = new Question();
