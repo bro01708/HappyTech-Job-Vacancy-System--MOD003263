@@ -74,7 +74,7 @@ namespace UnitTests
                 List<int> qtbu = new List<int>(new int[] { 1, 2, 3, 4, 5 });
                 VC.CreateModifyVacancy(nextid, "test", "tester", 10, 1, qtbu, 0);
                 VC.CreateModifyVacancy(nextid, "test", "tester", 10, 1, qtbu, 1);
-
+                success = true;
             }
             catch { success = false; };
 
