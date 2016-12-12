@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class VacancyCreator
+    public class VacancyCreator
     {
 
         public VacancyCreator()

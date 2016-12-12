@@ -15,6 +15,7 @@ namespace UnitTests
         [TestMethod]
         public void Test_AddAndRemoveQuestionsFromList()
         {
+            QuestionBank QB1 = new QuestionBank();
             QuestionBank QB = QuestionBank.getInst();
             Question Q = new Question();
             int nextID = QB.getHighestQuestionID() + 1;

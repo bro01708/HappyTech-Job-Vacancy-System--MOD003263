@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class TemplateCreator
+    public class TemplateCreator
     {
         private static TemplateCreator uniqueInst = null;
 

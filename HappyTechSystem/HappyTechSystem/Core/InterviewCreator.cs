@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class InterviewCreator
+    public class InterviewCreator
     {
         private static InterviewCreator uniqueInst;
 

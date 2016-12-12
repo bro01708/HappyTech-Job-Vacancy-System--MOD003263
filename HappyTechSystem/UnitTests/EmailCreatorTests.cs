@@ -20,8 +20,8 @@ namespace UnitTests
         public void GenerateEmailTest()
         {
             
-                EmailBank EB = new EmailBank();
-                EmailCreator EC = new EmailCreator();
+                EmailBank EB = EmailBank.getInst();
+                EmailCreator EC = EmailCreator.getInst();
                 Vacancy V = new Vacancy();
                 List<int> qtbu = new List<int>(new int[] { 1, 2, 3, 4, 5 });
                 V.getQuestionsToBeUsed = qtbu;

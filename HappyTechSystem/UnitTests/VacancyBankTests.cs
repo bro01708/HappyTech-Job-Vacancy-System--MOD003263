@@ -16,7 +16,7 @@ namespace UnitTests
 
         public void Test_AddVacancyToList()
         {
-            VacancyBank VB = new VacancyBank();
+            VacancyBank VB = VacancyBank.getInst();
             Vacancy V = new Vacancy();
             int nextID = VB.getHighestVacancyID() + 1;
             V.GetID = nextID;
@@ -41,7 +41,7 @@ namespace UnitTests
 
         public void Test_AddInterviewToList()
         {
-            VacancyBank VB = new VacancyBank();
+            VacancyBank VB = VacancyBank.getInst();
             Interview I = new Interview();
             int nextID = VB.getHighestInterviewID() + 1;
             I.getInterviewID = nextID;

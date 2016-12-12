@@ -25,7 +25,10 @@ namespace HappyTechSystem
         private VacancyBank vacancyBank = VacancyBank.getInst();
         public MainForm()
         {
+            
             InitializeComponent();
+
+
         }
 
         /// <summary>

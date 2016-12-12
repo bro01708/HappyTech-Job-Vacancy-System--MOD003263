@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace HappyTechSystem.Core
 {
-    class QuestionCreator
+    public class QuestionCreator
     {
         public QuestionCreator()
         {

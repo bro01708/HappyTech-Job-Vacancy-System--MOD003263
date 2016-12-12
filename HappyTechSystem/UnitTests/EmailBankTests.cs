@@ -18,7 +18,7 @@ namespace UnitTests
 
         public void Test_addTemplateToList()
         {
-            EmailBank EB = new EmailBank();
+            EmailBank EB = EmailBank.getInst();
             EmailTemplate T = new EmailTemplate();
             int nextID = EB.getHighestTemplateID() + 1;
             T.getID = nextID;
@@ -44,7 +44,8 @@ namespace UnitTests
         public void Test_addEmailToTlist()
         {
 
-            EmailBank EB = new EmailBank();
+            EmailBank EB = EmailBank.getInst();
+            EmailCreator EC = EmailCreator.getInst();
             Email E = new Email();
             int nextID = EB.getHighestEmailID() + 1;
             E.getID = nextID;
@@ -71,7 +72,7 @@ namespace UnitTests
       
         public void Test_PDFGen()
         {
-            EmailBank eb = new EmailBank();
+            EmailBank eb = EmailBank.getInst();
             Email m_email = new Email();
             m_email.getID = 9999999;
             m_email.getAddress = "bro01708@gmail.com";
@@ -91,7 +92,7 @@ namespace UnitTests
 
         public void Test_SendEmail()
         {
-            EmailBank eb = new EmailBank();
+            EmailBank eb = EmailBank.getInst();
             Email m_email = new Email();
             m_email.getID = 9999999;
             m_email.getAddress = "bro01708@gmail.com";
