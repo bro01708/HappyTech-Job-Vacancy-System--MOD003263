@@ -17,10 +17,18 @@ namespace UnitTests
         [TestMethod]
         public void TestGetEmails()
         {
-
-            MetaLayer ml = MetaLayer.instance();
-            List<Email> EL = ml.GetEmails();
-
+            bool success;
+            try
+            {
+                MetaLayer ml = MetaLayer.instance();
+                List<Email> EL = ml.GetEmails();
+                success=true;
+            }
+            catch
+            {
+                success = false;
+            }
+            Assert.AreEqual(true, success);
         }
 
         [TestMethod]
