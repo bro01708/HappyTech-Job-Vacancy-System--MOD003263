@@ -29,6 +29,10 @@ namespace HappyTechSystem.DB
 
         #region Get From DB
         // Could just have a set of static helper methods rather than a singleton!
+        /// <summary>
+        /// Created by peter
+        /// </summary>
+        /// <returns></returns>
         public List<Question> GetQuestions()
         {
             List<Question> Questions = new List<Question>();
@@ -55,6 +59,10 @@ namespace HappyTechSystem.DB
             return Questions;
         }
 
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <returns></returns>
         public List<EmailTemplate> GetEmailTemplates()
         {
             List<EmailTemplate> ETs = new List<EmailTemplate>();
@@ -84,7 +92,10 @@ namespace HappyTechSystem.DB
 
             return ETs;
         }
-
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <returns></returns>
         public List<Vacancy> GetVacancies()
         {
             List<Vacancy> Vs = new List<Vacancy>();
@@ -147,6 +158,10 @@ namespace HappyTechSystem.DB
             return Questions.Count;
         }
 
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetCategories()
         {
             List<string> categories = new List<string>();
@@ -170,7 +185,11 @@ namespace HappyTechSystem.DB
             return categories;
         }
 
-
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        /// <returns></returns>
         public string[] GetResponses(int m_questionID)
         {
             List<string> tempResponses = new List<string>();
@@ -196,6 +215,11 @@ namespace HappyTechSystem.DB
 
             return tempResponses.ToArray();
         }
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        /// <returns></returns>
         public string[] GetFeedback(int m_questionID)
         {
             List<string> tempFeedback = new List<string>();
@@ -364,6 +388,11 @@ namespace HappyTechSystem.DB
 
             con.CloseConnection();
         }
+
+        /// <summary>
+        /// created by peter
+        /// </summary>
+        /// <param name="m_vacancy"></param>
         public void SaveVacancyToDB(Vacancy m_vacancy)
         {
             DbConnection con = DBFactory.instance();
