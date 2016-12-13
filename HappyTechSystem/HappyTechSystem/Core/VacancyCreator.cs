@@ -23,8 +23,11 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
         /// <summary>
-        /// Created By Peter,
+        /// Created By Peter
         /// Interprets information from ui, creates the Vacancy and passes it through to VacancyBank to store.
+        /// 
+        /// -- Edit by Dan
+        /// Allows both creation and modification of a vacancy, using a flag to determine what operation to perform.
         /// </summary>
         /// <param name="m_vacancyID"></param>
         /// <param name="m_vacancyName"></param>

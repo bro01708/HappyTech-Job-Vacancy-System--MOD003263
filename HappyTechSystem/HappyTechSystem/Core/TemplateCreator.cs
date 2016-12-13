@@ -22,6 +22,8 @@ namespace HappyTechSystem.Core
         /// <summary>
         /// Created by Susan on 25/11/2016
         /// Constructor which creates new email template
+        /// -- Edit by Dan
+        /// Allows both creation and modification of a template, using a flag to determine what operation to perform.
         /// </summary>
         /// <param name="m_ID"></param>
         /// <param name="m_name"></param>

@@ -8,7 +8,7 @@ namespace UnitTests
 
     public class VacancyBankTests
     {
-        /// Created by Susan
+        /// Created by Susan, edited by Dan
         /// Tests adding a vacancy to the vacancy bank
         /// 02/12/2016
 
@@ -33,7 +33,7 @@ namespace UnitTests
             VB.RemoveVacancyFromList(V.GetID);
         }
 
-        /// Created by Susan
+        /// Created by Susan, edited by Dan
         /// Tests adding an interview to the vacancy bank
         /// 02/12/2016
 

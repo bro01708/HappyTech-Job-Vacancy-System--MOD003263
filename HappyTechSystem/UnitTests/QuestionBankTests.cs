@@ -9,7 +9,7 @@ namespace UnitTests
     public class QuestionBankTests
     {
         /// <summary>
-        /// Created By Peter.
+        /// Created By Dan.
         /// Test that adding a question to the question bank works (Automatically adjusts to QB size)
         /// </summary>
         [TestMethod]

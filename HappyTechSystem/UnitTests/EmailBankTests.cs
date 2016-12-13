@@ -10,7 +10,7 @@ namespace UnitTests
     public class EmailBankTests
     {
         /// <summary>
-        /// Created by Susan
+        /// Created by Dan
         /// Tests adding a template to the email bank
         /// 02/12/2016
 
