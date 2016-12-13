@@ -6,23 +6,46 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class TemplateCreator
+    public class TemplateCreator
     {
-        /// </summary>
-        /// Created by Susan
-        /// 25/11/2016
-        /// <Constructor which creates new email template
+        private static TemplateCreator uniqueInst = null;
 
-        public void CreateTemplate(int m_ID, string m_name, string m_subject, string m_body)
+        public static TemplateCreator getInst()
+        {
+            if (uniqueInst == null)
+            {
+                uniqueInst = new TemplateCreator();
+            }
+            return uniqueInst;
+        }
+
+        /// <summary>
+        /// Created by Susan on 25/11/2016
+        /// Constructor which creates new email template
+        /// </summary>
+        /// <param name="m_ID"></param>
+        /// <param name="m_name"></param>
+        /// <param name="m_subject"></param>
+        /// <param name="m_body"></param>
+        public void CreateModifyTemplate(int m_ID, string m_type, string m_name, string m_subject, string m_body, int flag)
         {
             EmailTemplate E = new EmailTemplate();
-            E.ID = m_ID;
-            E.Name = m_name;
-            E.Subject = m_subject;
-            E.Body = m_body;
+            E.getID = m_ID;
+            E.getType = m_type;
+            E.getName = m_name;
+            E.getSubject = m_subject;
+            E.getBody = m_body;
 
-            EmailBank EB = new EmailBank();
-
+            EmailBank EB = EmailBank.getInst();
+            if (flag == 0)
+            {
+                EB.addTemplateToList(E);
+            }
+            else
+            {
+                EB.UpdateTemplateList(E);
+            }
+            
         }
     }
 }

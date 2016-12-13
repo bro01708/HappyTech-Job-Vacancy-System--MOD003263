@@ -6,107 +6,87 @@ using System.Threading.Tasks;
 
 namespace HappyTechSystem.Core
 {
-    class Interview
+    /// <summary>
+    /// Created by Susan
+    /// Forms the Interview type, with relevant fields to match
+    /// </summary>
+    public class Interview
     {
-        private string applicantEmailAddress, applicantFirstName, applicantLastName, applicantTitle, cv;
-        private int id;
+        private int interviewID, vacancyID, totalScore;
+        private string interviewerName, applicantTitle, applicantName, applicantEmail, cvPath, additionalNotes;
+        private int[] answers;
 
-        public string ApplicantEmailAddress
+
+        public int getUsedVacancyID
         {
-            get
-            {
-                return applicantEmailAddress;
-            }
-
-            set
-            {
-                applicantEmailAddress = value;
-            }
+            get { return vacancyID;} 
+            set { vacancyID = value; }
         }
 
-        public string ApplicantFirstName
+        public string getInterviewerName
         {
-            get
-            {
-                return applicantFirstName;
-            }
-
-            set
-            {
-                applicantFirstName = value;
-            }
+            get { return interviewerName;}
+            set { interviewerName = value; }
         }
 
-        public string ApplicantLastName
+        public string getApplicantTitle
         {
-            get
-            {
-                return applicantLastName;
-            }
-
-            set
-            {
-                applicantLastName = value;
-            }
+            get { return applicantTitle; }
+            set { applicantTitle = value; }
         }
 
-        public string ApplicantTitle
+        /// <summary>
+        /// Created by Susan
+        /// Getter for applicant name
+        /// </summary>
+        public string getApplicantName
         {
-            get
-            {
-                return applicantTitle;
-            }
-
-            set
-            {
-                applicantTitle = value;
-            }
+            get { return applicantName; }
+            set { applicantName = value; }
         }
 
-        public string Cv
+        /// <summary>
+        /// Created by Susan
+        /// allows the applicant email string to be called elsewhere
+        /// </summary>
+        public string getApplicantEmail
         {
-            get
-            {
-                return cv;
-            }
-
-            set
-            {
-                cv = value;
-            }
+            get { return applicantEmail; }
+            set { applicantEmail = value; }
         }
 
-        public int Id
+        public string getCVPath
         {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
+            get { return cvPath; }
+            set { cvPath = value; }
+        }
+        public string getAdditionalNotes
+        {
+            get { return additionalNotes; }
+            set { additionalNotes = value; }
         }
 
-        public void AttachCV() //Attaches CV of applicant to be interviewed
+        public int getInterviewID
         {
-            
+            get { return interviewID; }
+            set { interviewID = value; }
         }
 
-        public void CalculateScore() //Adds up users points to make final score
+        public int[] Answers
         {
-
+            get { return answers; }
+            set { answers = value; }
         }
 
-        public void SelectVacancy() //Selects which vacancy the interview is for
+        public int getTotal
         {
-
+            get { return totalScore; }
+            set { totalScore = value; }
         }
 
-        public void StoreRecords() //Stores applicants personal details
+        public override string ToString()
         {
-
+            return "(" + interviewID.ToString() + ") - [Score: " + totalScore + "] - " + applicantName;
         }
     }
 }

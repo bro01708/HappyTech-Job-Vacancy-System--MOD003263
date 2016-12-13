@@ -10,16 +10,16 @@ namespace HappyTechSystem.DB
 {
     class DBFactory
     {
-        private static DbConection m_instance = null;
+        private static DbConnection m_instance = null;
 
         Dictionary<string, string> m_properties;
-        private static string propfile = "properties.dat";
+        private static string propfile = Environment.CurrentDirectory + "/DataBase/"+ "properties.dat";
 
         private DBFactory()
         {
             m_properties = new Dictionary<string, string>();
         }
-        public static DbConection instance()
+        public static DbConnection instance()
         {
             if (null == m_instance)
             {
@@ -28,9 +28,9 @@ namespace HappyTechSystem.DB
             }
             return m_instance;
         }
-        private DbConection getConection()
+        private DbConnection getConection()
         {
-            DbConection connection = null;
+            DbConnection connection = null;
 
             try
             {
@@ -83,12 +83,13 @@ namespace HappyTechSystem.DB
         public DBException(string message) : base(message) { }
     }
 
-    public interface DbConection
+    public interface DbConnection
     {
         bool OpenConnection();
 
         bool CloseConnection();
 
+        int RunSQL(string sqlStatement, params KeyValuePair<string, object>[] args);
         /*
         //Insert statement
         public void Insert(); 

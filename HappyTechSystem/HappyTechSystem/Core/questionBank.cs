@@ -12,14 +12,23 @@ namespace HappyTechSystem.Core
     public class QuestionBank
     {
         //Holds the list of available quesiton objects for access by any other class
+        private MetaLayer ml = MetaLayer.instance();
         private List<Question> questionList;
+        private List<string> categoriesList;
+        
 
         //Flag to confirm DB load Correctly
         private bool dbLoaded;
 
         public QuestionBank()
         {
+            categoriesList = new List<string>();
             RefreshDBConnection();
+        }
+
+        public bool getDBLoaded
+        {
+            get { return dbLoaded; }
         }
 
         private static QuestionBank uniqueInst = null;
@@ -32,15 +41,20 @@ namespace HappyTechSystem.Core
             return uniqueInst;
         }
 
-        public List<Question> getQ
+        public List<Question> getQuestionList
         {
             get { return questionList; }
+        }
+
+        public List<String> getCategoryList
+        {
+            get { return categoriesList; }
         }
 
         public void addToList(Question m_q)
         {
             questionList.Add(m_q);
-
+            ml.SaveQuestionToDB(m_q);
         }
         
         /// <summary>
@@ -56,6 +70,25 @@ namespace HappyTechSystem.Core
                 if (q.GetID == m_question_ID)
                 {
                     questionList.Remove(q);
+                    ml.RemoveQuestionFromDB(m_question_ID);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// Created by Dan.
+        /// When a particular question is edited, this will update the database record accordingly.
+        /// </summary>
+        /// <param name="m_questionID"></param>
+        public void updateList(Question m_questionID)
+        {
+            foreach (Question q in questionList)
+            {
+                if (q.GetID == m_questionID.GetID)
+                {
+                    ml.UpdateQuestionInDB(m_questionID);
+                    RefreshDBConnection();
+                    break;
                 }
             }
         }
@@ -70,14 +103,20 @@ namespace HappyTechSystem.Core
         {
             try
             {
-                int questionCount = questionList.Count();
+                int questionCount = questionList.Count;
+
+                if (questionCount == 0)
+                {
+                    return questionCount;
+                }
                 return questionList[questionCount - 1].GetID;
+
                 
             }
             catch (Exception e)
             {
 
-                throw e ;
+                throw e;
             }
         }
 
@@ -92,7 +131,21 @@ namespace HappyTechSystem.Core
             {
                 MetaLayer ml = MetaLayer.instance();
                 questionList = ml.GetQuestions();
+                categoriesList = ml.GetCategories();
+                if (categoriesList.Contains("General"))
+                {
+
+                }
+                else
+                {
+                    categoriesList.Add("General");
+                }
                 dbLoaded = true;
+                foreach (Question q in questionList)
+                {
+                    q.Feedback = ml.GetFeedback(q.GetID);
+                    q.Responses = ml.GetResponses(q.GetID);
+                }
             }
             catch (Exception e)
             {

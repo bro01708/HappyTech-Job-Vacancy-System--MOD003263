@@ -4,29 +4,32 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data;
 using System.Data.Common;
+using System.Reflection.Emit;
 using HappyTechSystem;
+using System.Windows.Forms;
 
 
 namespace HappyTechSystem.DB
 {
-    class OLEDBConnection : DbConection
+    class OLEDBConnection : DbConnection
     {
         private Dictionary<string, string> m_properties;
         private OleDbConnection connection;
+
         public OLEDBConnection(Dictionary<string, string> properties)
         {
             m_properties = properties;
             initialize();
         }
 
-        
+
         private void initialize()
         {
             try
             {
                 StringBuilder sb = new StringBuilder("Provider=");
                 sb.Append(m_properties["Provider"]);
-                sb.Append(";Data Source=\"");
+                sb.Append(";Data Source=\"" + Environment.CurrentDirectory + "/DataBase/");
                 sb.Append(m_properties["Database"]);
                 sb.Append("\"");
                 if (m_properties.ContainsKey("User"))
@@ -82,7 +85,7 @@ namespace HappyTechSystem.DB
             try
             {
                 OleDbCommand command = new OleDbCommand(query);
-                command.Connection = (OleDbConnection)connection;
+                command.Connection = (OleDbConnection) connection;
                 reader = command.ExecuteReader();
             }
             catch (Exception e)
@@ -95,7 +98,6 @@ namespace HappyTechSystem.DB
 
         public DataSet getDataSet(string sqlStatement)
         {
-
             DataSet dataSet;
 
             // create the object dataAdapter to manipulate a table from the database StudentDissertations specified by connectionToDB
@@ -106,6 +108,28 @@ namespace HappyTechSystem.DB
             //return the dataSet
             return dataSet;
         }
+        /// <summary>
+        /// Created by Peter
+        /// Runs non-query SQL statements
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        public int RunSQL(string sqlStatement, params KeyValuePair<string, object>[] args)
+        {
+            int rowsAffected;
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand(sqlStatement, connection);
+                foreach (KeyValuePair<string, object> p in args) {
+                    cmd.Parameters.AddWithValue(p.Key, p.Value);
+                }
+                rowsAffected = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return rowsAffected;
+        }
     }
-    }
+}
 
